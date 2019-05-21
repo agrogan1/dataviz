@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Andy Grogan-Kaylor" />
+  <meta name="dcterms.date" content="2019-05-21" />
+  <title>Variables &amp; Visualization</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="variables-and-visualization_files/reveal.js-3.3.0.1/css/reveal.css"/>
+
+
+
+<link rel="stylesheet" href="variables-and-visualization_files/reveal.js-3.3.0.1/css/theme/solarized.css" id="theme">
+
+
+  <!-- some tweaks to reveal css -->
+  <style type="text/css">
+    .reveal h1 { font-size: 2.0em; }
+    .reveal h2 { font-size: 1.5em;  }
+    .reveal h3 { font-size: 1.25em;	}
+    .reveal h4 { font-size: 1em;	}
+
+    .reveal .slides>section,
+    .reveal .slides>section>section {
+      padding: 0px 0px;
+    }
+
+
+
+    .reveal table {
+      border-width: 1px;
+      border-spacing: 2px;
+      border-style: dotted;
+      border-color: gray;
+      border-collapse: collapse;
+      font-size: 0.7em;
+    }
+
+    .reveal table th {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      font-weight: bold;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal table td {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+
+  </style>
+
+    <style type="text/css">code{white-space: pre;}</style>
+
+
+<!-- Printing and PDF exports -->
+<script id="paper-css" type="application/dynamic-css">
+
+/* Default Print Stylesheet Template
+   by Rob Glazebrook of CSSnewbie.com
+   Last Updated: June 4, 2008
+
+   Feel free (nay, compelled) to edit, append, and
+   manipulate this file as you see fit. */
+
+
+@media print {
+
+	/* SECTION 1: Set default width, margin, float, and
+	   background. This prevents elements from extending
+	   beyond the edge of the printed page, and prevents
+	   unnecessary background images from printing */
+	html {
+		background: #fff;
+		width: auto;
+		height: auto;
+		overflow: visible;
+	}
+	body {
+		background: #fff;
+		font-size: 20pt;
+		width: auto;
+		height: auto;
+		border: 0;
+		margin: 0 5%;
+		padding: 0;
+		overflow: visible;
+		float: none !important;
+	}
+
+	/* SECTION 2: Remove any elements not needed in print.
+	   This would include navigation, ads, sidebars, etc. */
+	.nestedarrow,
+	.controls,
+	.fork-reveal,
+	.share-reveal,
+	.state-background,
+	.reveal .progress,
+	.reveal .backgrounds {
+		display: none !important;
+	}
+
+	/* SECTION 3: Set body font face, size, and color.
+	   Consider using a serif font for readability. */
+	body, p, td, li, div {
+		font-size: 20pt!important;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		color: #000;
+	}
+
+	/* SECTION 4: Set heading font face, sizes, and color.
+	   Differentiate your headings from your body text.
+	   Perhaps use a large sans-serif for distinction. */
+	h1,h2,h3,h4,h5,h6 {
+		color: #000!important;
+		height: auto;
+		line-height: normal;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		text-shadow: 0 0 0 #000 !important;
+		text-align: left;
+		letter-spacing: normal;
+	}
+	/* Need to reduce the size of the fonts for printing */
+	h1 { font-size: 28pt !important;  }
+	h2 { font-size: 24pt !important; }
+	h3 { font-size: 22pt !important; }
+	h4 { font-size: 22pt !important; font-variant: small-caps; }
+	h5 { font-size: 21pt !important; }
+	h6 { font-size: 20pt !important; font-style: italic; }
+
+	/* SECTION 5: Make hyperlinks more usable.
+	   Ensure links are underlined, and consider appending
+	   the URL to the end of the link for usability. */
+	a:link,
+	a:visited {
+		color: #000 !important;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	/*
+	.reveal a:link:after,
+	.reveal a:visited:after {
+		content: " (" attr(href) ") ";
+		color: #222 !important;
+		font-size: 90%;
+	}
+	*/
+
+
+	/* SECTION 6: more reveal.js specific additions by @skypanther */
+	ul, ol, div, p {
+		visibility: visible;
+		position: static;
+		width: auto;
+		height: auto;
+		display: block;
+		overflow: visible;
+		margin: 0;
+		text-align: left !important;
+	}
+	.reveal pre,
+	.reveal table {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.reveal pre code {
+		padding: 20px;
+		border: 1px solid #ddd;
+	}
+	.reveal blockquote {
+		margin: 20px 0;
+	}
+	.reveal .slides {
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 0 !important;
+		zoom: 1 !important;
+
+		overflow: visible !important;
+		display: block !important;
+
+		text-align: left !important;
+		-webkit-perspective: none;
+		   -moz-perspective: none;
+		    -ms-perspective: none;
+		        perspective: none;
+
+		-webkit-perspective-origin: 50% 50%;
+		   -moz-perspective-origin: 50% 50%;
+		    -ms-perspective-origin: 50% 50%;
+		        perspective-origin: 50% 50%;
+	}
+	.reveal .slides section {
+		visibility: visible !important;
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+		display: block !important;
+		overflow: visible !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 60px 20px !important;
+		z-index: auto !important;
+
+		opacity: 1 !important;
+
+		page-break-after: always !important;
+
+		-webkit-transform-style: flat !important;
+		   -moz-transform-style: flat !important;
+		    -ms-transform-style: flat !important;
+		        transform-style: flat !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+
+		-webkit-transition: none !important;
+		   -moz-transition: none !important;
+		    -ms-transition: none !important;
+		        transition: none !important;
+	}
+	.reveal .slides section.stack {
+		padding: 0 !important;
+	}
+	.reveal section:last-of-type {
+		page-break-after: avoid !important;
+	}
+	.reveal section .fragment {
+		opacity: 1 !important;
+		visibility: visible !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+	}
+	.reveal section img {
+		display: block;
+		margin: 15px 0px;
+		background: rgba(255,255,255,1);
+		border: 1px solid #666;
+		box-shadow: none;
+	}
+
+	.reveal section small {
+		font-size: 0.8em;
+	}
+
+}  
+</script>
+
+
+<script id="pdf-css" type="application/dynamic-css">
+    
+/**
+ * This stylesheet is used to print reveal.js
+ * presentations to PDF.
+ *
+ * https://github.com/hakimel/reveal.js#pdf-export
+ */
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+
+body {
+	margin: 0 auto !important;
+	border: 0;
+	padding: 0;
+	float: none !important;
+	overflow: visible;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+
+/* Remove any elements not needed in print. */
+.nestedarrow,
+.reveal .controls,
+.reveal .progress,
+.reveal .playback,
+.reveal.overview,
+.fork-reveal,
+.share-reveal,
+.state-background {
+	display: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-shadow: 0 0 0 #000 !important;
+}
+
+.reveal pre code {
+	overflow: hidden !important;
+	font-family: Courier, 'Courier New', monospace !important;
+}
+
+ul, ol, div, p {
+	visibility: visible;
+	position: static;
+	width: auto;
+	height: auto;
+	display: block;
+	overflow: visible;
+	margin: auto;
+}
+.reveal {
+	width: auto !important;
+	height: auto !important;
+	overflow: hidden !important;
+}
+.reveal .slides {
+	position: static;
+	width: 100%;
+	height: auto;
+
+	left: auto;
+	top: auto;
+	margin: 0 !important;
+	padding: 0 !important;
+
+	overflow: visible;
+	display: block;
+
+	-webkit-perspective: none;
+	   -moz-perspective: none;
+	    -ms-perspective: none;
+	        perspective: none;
+
+	-webkit-perspective-origin: 50% 50%; /* there isn't a none/auto value but 50-50 is the default */
+	   -moz-perspective-origin: 50% 50%;
+	    -ms-perspective-origin: 50% 50%;
+	        perspective-origin: 50% 50%;
+}
+
+.reveal .slides section {
+	page-break-after: always !important;
+
+	visibility: visible !important;
+	position: relative !important;
+	display: block !important;
+	position: relative !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+	box-sizing: border-box !important;
+	min-height: 1px;
+
+	opacity: 1 !important;
+
+	-webkit-transform-style: flat !important;
+	   -moz-transform-style: flat !important;
+	    -ms-transform-style: flat !important;
+	        transform-style: flat !important;
+
+	-webkit-transform: none !important;
+	   -moz-transform: none !important;
+	    -ms-transform: none !important;
+	        transform: none !important;
+}
+
+.reveal section.stack {
+	margin: 0 !important;
+	padding: 0 !important;
+	page-break-after: avoid !important;
+	height: auto !important;
+	min-height: auto !important;
+}
+
+.reveal img {
+	box-shadow: none;
+}
+
+.reveal .roll {
+	overflow: visible;
+	line-height: 1em;
+}
+
+/* Slide backgrounds are placed inside of their slide when exporting to PDF */
+.reveal section .slide-background {
+	display: block !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+/* All elements should be above the slide-background */
+.reveal section>* {
+	position: relative;
+	z-index: 1;
+}
+
+/* Display slide speaker notes when 'showNotes' is enabled */
+.reveal .speaker-notes-pdf {
+	display: block;
+	width: 100%;
+	max-height: none;
+	left: auto;
+	top: auto;
+	z-index: 100;
+}
+
+/* Display slide numbers when 'slideNumber' is enabled */
+.reveal .slide-number-pdf {
+	display: block;
+	position: absolute;
+	font-size: 14px;
+}
+
+</script>
+
+
+<script>
+var style = document.createElement( 'style' );
+style.type = 'text/css';
+var style_script_id = window.location.search.match( /print-pdf/gi ) ? 'pdf-css' : 'paper-css';
+var style_script = document.getElementById(style_script_id).text;
+style.innerHTML = style_script;
+document.getElementsByTagName('head')[0].appendChild(style);
+</script>
+
+    <link href="variables-and-visualization_files/font-awesome/css/all.css" rel="stylesheet" />
+    <link href="variables-and-visualization_files/font-awesome/css/v4-shims.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">Variables &amp; Visualization</h1>
+  <h1 class="subtitle">What Is The Story You Are Trying To Tell?</h1>
+    <h2 class="author">Andy Grogan-Kaylor</h2>
+    <h3 class="date">May 21, 2019</h3>
+</section>
+
+<section><section id="how-to-navigate-this-presentation-scroll-down" class="title-slide slide level1"><h1>How to Navigate This Presentation (scroll down ⇩)</h1></section><section id="navigation" class="slide level2">
+<h2>Navigation</h2>
+<ul>
+<li><strong>o</strong> for outline</li>
+<li><strong>f</strong> for full screen</li>
+<li><strong>alt-click</strong> for zoom</li>
+<li><strong>pen</strong> icons in lower left hand corner can be used for annotations.</li>
+</ul>
+</section></section>
+<section><section id="introduction-scroll-down" class="title-slide slide level1"><h1>Introduction (scroll down ⇩)</h1></section><section id="possibilities" class="slide level2">
+<h2>Possibilities</h2>
+<div class="figure">
+<img src="variables-and-visualization_files/figure-revealjs/unnamed-chunk-2-1.png" alt="possible visualizations" width="768" />
+<p class="caption">
+possible visualizations
+</p>
+</div>
+</section><section id="background" class="slide level2">
+<h2>Background</h2>
+<ul>
+<li>Deciding upon the right data visualization to represent your data can be a daunting process.</li>
+<li>I believe that a <em>starting point</em> for this thinking is some basic statistical thinking about the <em>type</em> of variables that you have.</li>
+<li>At the broadest level, variables may be conceptualized as <em>categorical</em> variables, or <em>continuous</em> variables.</li>
+</ul>
+</section><section id="data-often-come-from-a-survey-questionnaire." class="slide level2">
+<h2>Data Often Come From A Survey Questionnaire.</h2>
+<div class="figure">
+<img src="variables-and-visualization_files/figure-revealjs/unnamed-chunk-3-1.png" alt="hypothetical questionnaire" width="768" />
+<p class="caption">
+hypothetical questionnaire
+</p>
+</div>
+</section><section id="what-is-data" class="slide level2">
+<h2>What is Data?</h2>
+<p>A data set is nothing more than a series of rows and columns that contain answers to responses to a survey.</p>
+<ul>
+<li>Rows are usually used for individuals, while columns indicate the questionnaire answers, or measures, from those people.</li>
+<li>Answers to questions are often given numerical responses (e.g. “no” is frequently coded as “0” and “yes” is frequently coded as “1”)</li>
+</ul>
+<table style="width:35%;">
+<caption>Hypothetical Data</caption>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 8%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">person</th>
+<th style="text-align: center;">Q1</th>
+<th style="text-align: center;">Q2</th>
+<th style="text-align: center;">Q3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">100</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">200</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">-9</td>
+</tr>
+</tbody>
+</table>
+</section><section id="some-notes-on-data" class="slide level2">
+<h2>Some Notes on Data</h2>
+<ul>
+<li>In working through our research questions, we’ll constantly be going back and forth between the actual data (to see the pattern of responses) and the documentation, to figure out the actual question asked as well as how the different responses are coded.</li>
+<li>Often in a spreadsheet, you’ll see the full text of a question written out (e.g. “What is your gender identity”?)</li>
+<li>Most programs that work with data are going to want abbreviations (e.g. “Q1” or “gender”&quot;) for the questions. These abbreviations should usually have no spaces and be 8 characters or less.</li>
+</ul>
+</section><section id="missing-data" class="slide level2">
+<h2>Missing Data</h2>
+<ul>
+<li>One cell of the sample data set has a negative number.</li>
+<li>Frequently negative numbers are used to indicate what are called “missing values”. A missing value is a response like “don’t know”&quot; or “refused to answer” or “did not answer”.</li>
+<li>Before we start doing calculations with our data, we’ll want to change negative numbers to true missing values (usually symbolized by a “.” or “NA”, so that they don’t goof up our calculations.)</li>
+</ul>
+</section><section id="what-are-variables" class="slide level2">
+<h2>What are Variables?</h2>
+<ul>
+<li>By variables, I simply mean the columns of data that you have.</li>
+<li>For our purposes, you may think of variables as synonymous with questionnaire items, or columns of data.</li>
+</ul>
+</section><section id="variable-types" class="slide level2">
+<h2>Variable Types</h2>
+<ul>
+<li><em>categorical variables</em> represent unordered categories like <em>neighborhood</em>, or <em>religious affiliation</em>, or <em>place of residence</em>.</li>
+<li><em>continuous variables</em> represent a continuous scale like a <em>mental health scale</em>, or a <em>measure of life expectancy</em>.</li>
+</ul>
+</section><section id="a-data-visualization-strategy" class="slide level2">
+<h2>A Data Visualization Strategy</h2>
+<p>Once we have discerned the type of variable that have, there are two followup questions we may ask before deciding upon a chart strategy:</p>
+<ul>
+<li>Is our graph about <strong>one thing at a time</strong>?
+<ul>
+<li>How much of <em>x</em> is there?</li>
+<li>What is the distribution of <em>x</em>?</li>
+</ul></li>
+<li>Is our graph about <strong>two things at a time</strong>?
+<ul>
+<li>What is the relationship of <em>x</em> and <em>y</em>?</li>
+<li>How are <em>x</em> and <em>y</em> associated?</li>
+</ul></li>
+</ul>
+</section><section id="more-on-strategy" class="slide level2">
+<h2>More On Strategy</h2>
+<p><img src="variables-and-visualization_files/figure-revealjs/unnamed-chunk-6-1.png" width="768" /></p>
+</section></section>
+<section><section id="simulated-data-scroll-down" class="title-slide slide level1"><h1>Simulated Data (scroll down ⇩)</h1></section><section id="background-1" class="slide level2">
+<h2>Background</h2>
+<p>This example uses simulated data on social work clients, of the kind that a social service agency might collect.</p>
+<table style="width:71%;">
+<caption>Simulated Data</caption>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 22%" />
+<col style="width: 13%" />
+<col style="width: 23%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">age</th>
+<th style="text-align: center;">mental_health</th>
+<th style="text-align: center;">group</th>
+<th style="text-align: center;">neighborhood</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">65.93</td>
+<td style="text-align: center;">110.6</td>
+<td style="text-align: center;">Group A</td>
+<td style="text-align: center;">Neighborhood C</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">31.73</td>
+<td style="text-align: center;">117.1</td>
+<td style="text-align: center;">Group A</td>
+<td style="text-align: center;">Neighborhood A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">44.99</td>
+<td style="text-align: center;">85.06</td>
+<td style="text-align: center;">Group A</td>
+<td style="text-align: center;">Neighborhood A</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">36.65</td>
+<td style="text-align: center;">94.64</td>
+<td style="text-align: center;">Group A</td>
+<td style="text-align: center;">Neighborhood B</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">26.18</td>
+<td style="text-align: center;">89.77</td>
+<td style="text-align: center;">Group B</td>
+<td style="text-align: center;">Neighborhood A</td>
+</tr>
+</tbody>
+</table>
+</section></section>
+<section><section id="show-one-thing-at-a-time.-scroll-down" class="title-slide slide level1"><h1>Show One Thing At A Time. (scroll down ⇩)</h1></section><section id="rationale" class="slide level2">
+<h2>Rationale</h2>
+<p>We start by visualizing one indicator at a time.</p>
+</section><section id="continuous-variable" class="slide level2">
+<h2>Continuous Variable</h2>
+<p>Sometimes the most interesting visualizations, are visualizations that give us a sense of the maximum, minimum, and average values. For example, the <em>histogram</em> and <em>beeswarm plot</em> display information on <em>age</em>.</p>
+<div class="figure">
+<img src="variables-and-visualization_files/figure-revealjs/unnamed-chunk-9-1.png" alt="Histogram and Beeswarm Plot" width="768" />
+<p class="caption">
+Histogram and Beeswarm Plot
+</p>
+</div>
+</section><section id="categorical-variable" class="slide level2">
+<h2>Categorical Variable</h2>
+<p>We would use a slightly different visualization, for example, a barchart, when our data are grouped into categories.</p>
+<div class="figure">
+<img src="variables-and-visualization_files/figure-revealjs/unnamed-chunk-10-1.png" alt="Barchart" width="768" />
+<p class="caption">
+Barchart
+</p>
+</div>
+</section></section>
+<section><section id="show-the-relationship-of-two-things.-scroll-down" class="title-slide slide level1"><h1>Show The Relationship Of Two Things. (scroll down ⇩)</h1></section><section id="rationale-1" class="slide level2">
+<h2>Rationale</h2>
+<p>Our task becomes somewhat more complicated when we want to understand the relationship of <em>one thing</em> to <em>another thing.</em></p>
+</section><section id="categorical-by-categorical" class="slide level2">
+<h2>Categorical by Categorical</h2>
+<p>Here, for example, we visualize two <em>categorical</em> variables, <em>neighborhood</em>, by <em>group</em>. In this graph, the height of the bars represents the <em>count</em> of observations.</p>
+<div class="figure">
+<img src="variables-and-visualization_files/figure-revealjs/unnamed-chunk-11-1.png" alt="Barchart" width="768" />
+<p class="caption">
+Barchart
+</p>
+</div>
+</section><section id="continuous-by-continuous" class="slide level2">
+<h2>Continuous by Continuous</h2>
+<p>Here, we visualize two <em>continuous</em> variables, <em>mental health</em>, by <em>age</em>.</p>
+<div class="figure">
+<img src="variables-and-visualization_files/figure-revealjs/unnamed-chunk-12-1.png" alt="Scatterplot" width="768" />
+<p class="caption">
+Scatterplot
+</p>
+</div>
+</section><section id="continuous-by-categorical" class="slide level2">
+<h2>Continuous by Categorical</h2>
+<p>Last, we visualize a <em>continuous</em> variable by a categorical variable, <em>mental health</em>, by <em>group</em>. In this graph, the height of the bars represents the <em>mean score</em>.</p>
+<div class="figure">
+<img src="variables-and-visualization_files/figure-revealjs/unnamed-chunk-13-1.png" alt="BarChart" width="768" />
+<p class="caption">
+BarChart
+</p>
+</div>
+</section></section>
+<section><section id="show-where-something-is.-scroll-down" class="title-slide slide level1"><h1>Show Where Something Is. (scroll down ⇩)</h1></section><section id="rationale-2" class="slide level2">
+<h2>Rationale</h2>
+<p>Sometimes our task is different. We want to visualize information, but add information on spatial location, using a map.</p>
+</section><section id="map" class="slide level2">
+<h2>Map</h2>
+<div class="figure">
+<img src="variables-and-visualization_files/figure-revealjs/unnamed-chunk-15-1.png" alt="Map" width="768" />
+<p class="caption">
+Map
+</p>
+</div>
+</section></section>
+<section><section id="credits-scroll-down" class="title-slide slide level1"><h1>Credits (scroll down ⇩)</h1></section><section id="ggplot2" class="slide level2">
+<h2>ggplot2</h2>
+<p>Graphics made with the <a href="http://ggplot2.org/">ggplot2</a> graphing library created by Hadley Wickham.</p>
+</section><section id="more-information" class="slide level2">
+<h2>More Information</h2>
+<ul>
+<li>A more exhaustive set of graphical possibilities, along with the code to generate them in <a href="https://www.r-project.org/">R</a> and <a href="http://ggplot2.org/">ggplot2</a>, can be found at my tutorial on <a href="www.umich.edu/~agrogan/how_to_choose_a_chart">How To Choose A Chart</a>.</li>
+<li>I have also written an <a href="http://www-personal.umich.edu/~agrogan/R/introduction-to-R.html">Introduction to R</a></li>
+</ul>
+</section><section id="author" class="slide level2">
+<h2>Author</h2>
+<p><em>Variables &amp; Visualization</em> by <a href="https://agroganweb.wordpress.com/">Andrew Grogan-Kaylor</a> is licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. You are welcome to download and use this handout in your own classes, or work, as long as the handout remains properly attributed.</p>
+<p>Last updated: <code>May 21 2019</code> at <code>11:24</code></p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="variables-and-visualization_files/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
+  <script src="variables-and-visualization_files/reveal.js-3.3.0.1/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display a presentation progress bar
+        progress: true,
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        // Vertical centering of slides
+        center: false,
+        // Opens links in an iframe preview overlay
+        previewLinks: true,
+        // Transition style
+        transition: 'convex', // none/fade/slide/convex/concave/zoom
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+
+
+
+        chalkboard: {
+          toggleNotesButton: true,
+          toggleChalkboardButton: true,
+          theme: 'chalkboard',
+        },
+
+        keyboard: {
+          67: function() { RevealChalkboard.toggleNotesCanvas() },    // toggle notes canvas when 'c' is pressed
+          66: function() { RevealChalkboard.toggleChalkboard() }, // toggle chalkboard when 'b' is pressed
+          46: function() { RevealChalkboard.clear() },    // clear chalkboard when 'DEL' is pressed
+           8: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when 'BACKSPACE' is pressed
+          68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'variables-and-visualization_files/reveal.js-3.3.0.1/plugin/zoom-js/zoom.js', async: true },
+          { src: 'variables-and-visualization_files/reveal.js-3.3.0.1/plugin/chalkboard/chalkboard.js', async: true },
+        ]
+      });
+    </script>
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+<script>
+  (function() {
+    if (window.jQuery) {
+      Reveal.addEventListener( 'slidechanged', function(event) {  
+        window.jQuery(event.previousSlide).trigger('hidden');
+        window.jQuery(event.currentSlide).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+
+  </body>
+</html>
