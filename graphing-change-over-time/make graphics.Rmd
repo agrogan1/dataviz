@@ -1,0 +1,26 @@
+---
+title: "make graphics"
+author: "Andy Grogan-Kaylor"
+date: "January 7, 2016"
+output: pdf_document
+---
+
+```{r}
+
+library(pander)
+
+load("graphing change over time.RData")
+
+```
+
+# Data in Long Format
+
+```{r}
+
+plot.new()
+
+pander(mydata,
+       caption="x")
+
+```
+
