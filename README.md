@@ -1,6 +1,6 @@
 ## dataviz
 
-[Graphing Change Over Time]()
+[Graphing Change Over Time](https://agrogan1.github.io/dataviz/graphing-change-over-time/index.html) [[PDF](https://agrogan1.github.io/dataviz/graphing-change-over-time/index.pdf)]
 
 [Introduction to Plotly](https://agrogan1.github.io/dataviz/plotly-intro/)
 
