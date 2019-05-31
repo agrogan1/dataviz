@@ -3,11 +3,11 @@ title: "Graphing Change Over Time"
 author: "Andy Grogan-Kaylor"
 date: '`r format(Sys.Date(), format="%B %d, %Y")`'
 output:
+  tufte::tufte_handout: default
   tufte::tufte_html:
     tufte_features:
     - fonts
     - italics
-  tufte::tufte_handout: default
 ---
 
 ```{r global_options, echo=FALSE, warning=FALSE}
