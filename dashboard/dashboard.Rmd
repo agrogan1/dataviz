@@ -1,0 +1,409 @@
+---
+title: "Dashboard DEMO"
+date: '`r format(Sys.Date(), format="%B %d, %Y")`'
+output:
+  flexdashboard::flex_dashboard:
+    navbar:
+      - { title: "by Andy Grogan-Kaylor", href: "https://agroganweb.wordpress.com/data-visualization-dataviz/", align: left }
+    theme: cerulean
+    vertical_layout: fill
+    orientation: rows
+    social: [ "twitter", "facebook", "menu" ]
+    source_code: embed
+---
+
+
+```{r}
+
+library(knitr) # knitr
+
+library(flexdashboard) # flexdashboard
+
+library(readr) # to read csv
+
+library(DT) # data table
+
+library(formattable) # formatted data table
+
+library(rpivotTable) # pivot table
+
+library(ggplot2) # nice graphs
+
+library(ggthemes) # themes for ggplot2
+
+library(plotly) # interactive graphs
+
+library(dplyr) # data wrangling
+
+library(leaflet) # interactive maps
+
+```
+
+```{r}
+
+simulated_agency_data <- 
+  read_csv("simulated agency data.csv")
+
+simulated_agency_data$gender <- 
+  as.factor(simulated_agency_data$gender)
+
+simulated_agency_data$raceEthnicity <- 
+  as.factor(simulated_agency_data$raceEthnicity)
+
+simulated_agency_data$program <- 
+  as.factor(simulated_agency_data$program)
+
+simulated_agency_data$age <- 
+  as.numeric(simulated_agency_data$age)
+
+```
+
+```{r}
+
+mycolors <- c("blue", "#FFC125", "darkgreen", "darkorange")
+
+```
+
+<span style="color:orange">Interactive DataViz</span>
+=====================================  
+
+Row
+-------------------------------------
+
+### allow agency managers and program managers to get a quick *overview* of client well-being.
+
+```{r}
+
+valueBox(paste("Dashboards"),
+         color = "success")
+
+```
+
+### All data are simulated and randomly generated
+
+```{r}
+
+valueBox(paste("Simulation"),
+         color = "warning")
+
+```
+
+### Clients
+
+```{r}
+
+valueBox(length(simulated_agency_data$ID), 
+         icon = "fa-user")
+
+```
+
+### **Average Mental Health Score**
+
+```{r}
+
+gauge(round(mean(simulated_agency_data$mentalHealthScore), 
+            digits = 2),
+      min = 0,
+      max= 150,
+      gaugeSectors(success = c(100, 150), 
+                   warning = c(90, 100), 
+                   danger = c(0, 90),
+                   colors = c("green", 
+                              "yellow", 
+                              "red")))
+
+```
+
+### Program A
+
+```{r}
+
+valueBox(sum(simulated_agency_data$program == "Program A"),
+         icon = "fa-building-o")
+
+```
+
+### Program B
+
+```{r}
+
+valueBox(sum(simulated_agency_data$program == "Program B"),
+         icon = "fa-building")
+
+```
+
+### Program C
+
+```{r}
+
+valueBox(sum(simulated_agency_data$program == "Program C"),
+         icon = "fa-building-o")
+
+```
+
+### Program D
+
+```{r}
+
+valueBox(sum(simulated_agency_data$program == "Program D"),
+         icon = "fa-home")
+
+```
+
+Row
+-------------------------------------
+
+### Race or Ethnicity
+
+```{r}
+
+p1 <- simulated_agency_data %>%
+  group_by(raceEthnicity) %>%
+  summarize(count = n()) %>% 
+  plot_ly(x = ~raceEthnicity,
+              y = ~count, 
+              color = I("blue"), 
+              type = "bar") %>%
+  layout(xaxis = list(title = 'Race or Ethnicity'),
+         yaxis = list(title = 'Count'))
+
+p1
+
+```
+
+### Gender
+
+```{r}
+
+p4 <- simulated_agency_data %>%
+  group_by(gender) %>%
+  summarize(count = n()) %>% 
+  plot_ly(labels = ~gender, 
+          values = ~count,
+          marker = list(colors = mycolors)) %>%
+  add_pie(hole = 0.4) %>%
+  layout(xaxis = list(zeroline = FALSE, 
+                      showline = FALSE, 
+                      showticklabels = FALSE, 
+                      showgrid = FALSE),
+         yaxis = list(zeroline = FALSE, 
+                      showline = FALSE, 
+                      showticklabels = FALSE, 
+                      showgrid = FALSE))
+
+p4
+
+```
+
+Row
+-------------------------------------
+
+### Mental Health Scores 
+
+```{r}
+
+p0 <- plot_ly(simulated_agency_data, 
+              x = ~rownames(simulated_agency_data),
+              y = ~mentalHealthScore,
+              text = paste("Client ID:", 
+                           simulated_agency_data$ID,
+                           "<br>MH Score:", 
+                           simulated_agency_data$mentalHealthScore),
+              type = "bar") %>%
+  layout(xaxis = list(title = 'Client'),
+         yaxis = list(title = 'Mental Health Score'))
+
+p0
+
+```
+
+### Mental Health Score by Age
+
+```{r}
+
+p2 <- plot_ly(simulated_agency_data, x = ~age) %>% 
+  add_markers(y = ~mentalHealthScore, 
+              text = ~paste("MH Score: ", mentalHealthScore), 
+              showlegend = FALSE) %>%
+  add_lines(y = ~fitted(loess(mentalHealthScore ~ age)),
+            name = "Loess Smoother", 
+            color = I("#FFC125"),
+            showlegend = TRUE, 
+            line = list(width = 5)) %>%
+  layout(xaxis = list(title = 'Age'),
+         yaxis = list(title = 'Mental Health Score'))
+
+p2
+
+```
+
+### Program
+
+```{r}
+
+p3 <- simulated_agency_data %>%
+  group_by(program) %>%
+  summarize(count = n()) %>% 
+  plot_ly(labels = ~program, 
+          values = ~count,
+          marker = list(colors = mycolors)) %>% 
+  add_pie(hole = 0.4) %>% 
+  layout(xaxis = list(zeroline = FALSE, 
+                      showline = FALSE, 
+                      showticklabels = FALSE, 
+                      showgrid = FALSE),
+         yaxis = list(zeroline = FALSE, 
+                      showline = FALSE, 
+                      showticklabels = FALSE, 
+                      showgrid = FALSE))
+
+p3
+
+```
+
+<span style="color:chartreuse">Map</span>
+=====================================  
+
+###  Client Locations (Simulated and Randomly Generated)
+
+```{r}
+
+client_location_data <- simulated_agency_data
+
+N <- length(client_location_data$ID)
+
+client_location_data$mylatitude <- rnorm(N, 42.25, .1)
+
+client_location_data$mylongitude <- rnorm(N, -83.74, .1)
+
+m <- leaflet(data = client_location_data, 
+             height = 500, 
+             width = 1000)  %>% 
+  setView(lng = mean(client_location_data$mylongitude), 
+          lat = mean(client_location_data$mylatitude), 
+          zoom = 10) %>% 
+  addProviderTiles("Stamen.TonerLite", group = "Toner Lite")
+
+m %>% addCircleMarkers(lng = ~mylongitude, 
+                       lat = ~mylatitude,
+                       popup = ~paste("client:  ", ID),
+                       clusterOptions = markerClusterOptions())
+
+```
+
+<span style="color:gold">Data</span>
+=====================================  
+
+```{r}
+
+# define an action rule based upon mental health scores
+
+simulated_agency_data <- 
+  simulated_agency_data %>% 
+  mutate(action_required = ifelse(mentalHealthScore < 90,
+                         TRUE, 
+                         FALSE))
+
+```
+
+```{r}
+
+as.datatable(formattable(simulated_agency_data, 
+                         list(age = color_bar("orange"),
+                              mentalHealthScore = color_bar("cyan"),
+                              action_required = color_tile("green",
+                                                           "red")),
+             caption = "Simulated Data on Clients"))
+
+# datatable(simulated_agency_data,
+#           caption = "Simulated Data on Clients",
+#           rownames = TRUE, 
+#           filter = 'top', 
+#           options = list(pageLength = 10))
+
+```
+
+<span style="color:violet">Pivot Table</span>
+=====================================  
+
+```{r}
+
+rpivotTable(simulated_agency_data, 
+            aggregatorName = "Count",
+            rows = "program",
+            rendererName = "Bar Chart")
+
+```
+
+<span style="color:white">Report</span> {data-orientation=columns}
+=====================================  
+
+Column {data-width=100}
+-------------------------------------
+
+### Clients
+
+```{r}
+
+valueBox(length(simulated_agency_data$ID), 
+         icon = "fa-user")
+
+```
+
+### Average Age
+
+```{r}
+
+valueBox(mean(simulated_agency_data$age), 
+         icon = "fa-area-chart")
+
+```
+
+### Average Mental Health
+
+```{r}
+
+valueBox(round(mean(simulated_agency_data$mentalHealthScore), 
+               digits = 2), 
+         icon = "fa-area-chart")
+
+```
+
+Column
+-------------------------------------
+
+<h3>Auto-Generated Report</h3>
+
+<h4>
+
+* This is a report on `r length(simulated_agency_data$ID)` clients.
+
+* The average age was `r mean(simulated_agency_data$age)`.
+
+* The average mental health score was `r mean(simulated_agency_data$mentalHealthScore)`.
+
+</h4>
+
+<h4 style="color:red">This report was automatically generated on `r format(Sys.Date(), format="%B %d, %Y")`.
+
+</h4>
+
+<span style="color:red">Confidentiality <span>
+=====================================  
+
+<h3>
+
+Think carefully about the confidentiality of your client data, the degree to which the dashboard might identify specific clients, and the audiences with whom the dashboard might be shared:
+
+1. Generally speaking, charts and graphs preserve client confidentiality.  However, if there is a unique or rare combination of data, such a combination may reveal something about an individual client.
+
+2. Generally speaking, tables of individual data, contain a great potential to identify individual clients, and therefore access to such tables must be carefully thought through.
+
+3. With GIS data, it is particularly important to think critically about data access, as the identifiability issues may not be readily apparent. At a high level overview (i.e. a map that is "zoomed out"), GIS data may not pose a great deal of identifiability risk.  However, GIS data can be **highly identifying**, when zoomed in to the street or block level.
+
+</h3>
+
+
+
+
+
