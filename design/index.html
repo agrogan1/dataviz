@@ -32,7 +32,7 @@
   
   
 
-<link rel="next" href="fonts.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -121,24 +121,19 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="1" data-path="color.html"><a href="color.html"><i class="fa fa-check"></i><b>1</b> Color</a><ul>
-<li class="chapter" data-level="1.1" data-path="color.html"><a href="color.html#color-model"><i class="fa fa-check"></i><b>1.1</b> Color Model</a></li>
-<li class="chapter" data-level="1.2" data-path="color.html"><a href="color.html#three-types-of-palettes"><i class="fa fa-check"></i><b>1.2</b> Three Types Of Palettes</a></li>
-<li class="chapter" data-level="1.3" data-path="color.html"><a href="color.html#where-do-the-colors-in-ggplot-come-from"><i class="fa fa-check"></i><b>1.3</b> Where Do The Colors in <code>ggplot</code> Come From?</a></li>
-<li class="chapter" data-level="1.4" data-path="color.html"><a href="color.html#many-many-color-options"><i class="fa fa-check"></i><b>1.4</b> Many Many Color Options</a></li>
+<li class="chapter" data-level="1" data-path=""><a href="#color"><i class="fa fa-check"></i><b>1</b> Color</a><ul>
+<li class="chapter" data-level="1.1" data-path=""><a href="#color-model"><i class="fa fa-check"></i><b>1.1</b> Color Model</a></li>
+<li class="chapter" data-level="1.2" data-path=""><a href="#three-types-of-palettes"><i class="fa fa-check"></i><b>1.2</b> Three Types Of Palettes</a></li>
+<li class="chapter" data-level="1.3" data-path=""><a href="#where-do-the-colors-in-ggplot-come-from"><i class="fa fa-check"></i><b>1.3</b> Where Do The Colors in <code>ggplot</code> Come From?</a></li>
+<li class="chapter" data-level="1.4" data-path=""><a href="#many-many-color-options"><i class="fa fa-check"></i><b>1.4</b> Many Many Color Options</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="fonts.html"><a href="fonts.html"><i class="fa fa-check"></i><b>2</b> Fonts</a><ul>
-<li class="chapter" data-level="2.1" data-path="fonts.html"><a href="fonts.html#three-major-types-of-fonts"><i class="fa fa-check"></i><b>2.1</b> Three Major Types of Fonts</a></li>
-<li class="chapter" data-level="2.2" data-path="fonts.html"><a href="fonts.html#font-rules"><i class="fa fa-check"></i><b>2.2</b> Font Rules</a></li>
+<li class="chapter" data-level="2" data-path=""><a href="#fonts"><i class="fa fa-check"></i><b>2</b> Fonts</a><ul>
+<li class="chapter" data-level="2.1" data-path=""><a href="#three-major-types-of-fonts"><i class="fa fa-check"></i><b>2.1</b> Three Major Types of Fonts</a></li>
+<li class="chapter" data-level="2.2" data-path=""><a href="#font-rules"><i class="fa fa-check"></i><b>2.2</b> Font Rules</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="cognition.html"><a href="cognition.html"><i class="fa fa-check"></i><b>3</b> Cognition</a><ul>
-<li class="chapter" data-level="3.1" data-path="cognition.html"><a href="cognition.html#dimensions-of-data"><i class="fa fa-check"></i><b>3.1</b> Dimensions of Data</a></li>
-<li class="chapter" data-level="3.2" data-path="cognition.html"><a href="cognition.html#some-geometries-are-easier-to-understand-than-others"><i class="fa fa-check"></i><b>3.2</b> Some Geometries Are Easier To Understand Than Others</a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="story-telling.html"><a href="story-telling.html"><i class="fa fa-check"></i><b>4</b> Story-Telling</a><ul>
-<li class="chapter" data-level="4.1" data-path="story-telling.html"><a href="story-telling.html#presenting-problem"><i class="fa fa-check"></i><b>4.1</b> Presenting Problem</a></li>
-<li class="chapter" data-level="4.2" data-path="story-telling.html"><a href="story-telling.html#what-do-the-data-say"><i class="fa fa-check"></i><b>4.2</b> What Do The Data Say?</a></li>
-<li class="chapter" data-level="4.3" data-path="story-telling.html"><a href="story-telling.html#simple-action-steps"><i class="fa fa-check"></i><b>4.3</b> Simple Action Steps</a></li>
+<li class="chapter" data-level="3" data-path=""><a href="#cognition"><i class="fa fa-check"></i><b>3</b> Cognition</a><ul>
+<li class="chapter" data-level="3.1" data-path=""><a href="#dimensions-of-data"><i class="fa fa-check"></i><b>3.1</b> Dimensions of Data</a></li>
+<li class="chapter" data-level="3.2" data-path=""><a href="#some-geometries-are-easier-to-understand-than-others"><i class="fa fa-check"></i><b>3.2</b> Some Geometries Are Easier To Understand Than Others</a></li>
 </ul></li>
 </ul>
 
@@ -199,17 +194,37 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <div id="many-many-color-options" class="section level2">
 <h2><span class="header-section-number">1.4</span> Many Many Color Options</h2>
 <p>e.g. Viridis, which is designed to be <em>perceptually uniform</em>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
-
-<span class="kw">library</span>(viridis)
-
-<span class="kw">ggplot</span>(iris) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">aes</span>(<span class="dt">x =</span> Sepal.Length, 
-      <span class="dt">y =</span> Sepal.Width, 
-      <span class="dt">color =</span> Sepal.Length) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">scale_colour_viridis_c</span>() </code></pre>
 <p><img src="index_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+</div>
+</div>
+<div id="fonts" class="section level1">
+<h1><span class="header-section-number">2</span> Fonts</h1>
+<div id="three-major-types-of-fonts" class="section level2">
+<h2><span class="header-section-number">2.1</span> Three Major Types of Fonts</h2>
+<ul>
+<li><font face="Arial">San Serif</font> e.g. Arial, Helvetica</li>
+<li><font face="Times New Roman">Serif Fonts</font> e.g. <font face="Times New Roman">Times New Roman</font></li>
+<li><code>Monospaced Fonts</code> e.g. <code>Courier</code> (good for code).</li>
+</ul>
+</div>
+<div id="font-rules" class="section level2">
+<h2><span class="header-section-number">2.2</span> Font Rules</h2>
+<p><font face="Comic Sans MS">Don’t</font> have <code>too many</code> <font face="Times New Roman">fonts!</font></p>
+<p><font face="Impact">Interesting Font for Heading</font></p>
+<p>Standard <font face="Arial">San Serif</font> or <font face="Times New Roman">Serif Fonts</font> for text.</p>
+</div>
+</div>
+<div id="cognition" class="section level1">
+<h1><span class="header-section-number">3</span> Cognition</h1>
+<div id="dimensions-of-data" class="section level2">
+<h2><span class="header-section-number">3.1</span> Dimensions of Data</h2>
+<pre><code>## [1] &quot;Sepal.Length&quot; &quot;Sepal.Width&quot;  &quot;Petal.Length&quot; &quot;Petal.Width&quot; 
+## [5] &quot;Species&quot;</code></pre>
+<p><img src="index_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+</div>
+<div id="some-geometries-are-easier-to-understand-than-others" class="section level2">
+<h2><span class="header-section-number">3.2</span> Some Geometries Are Easier To Understand Than Others</h2>
+<p><img src="Rauser-most-important-thing.png" /></p>
 </div>
 </div>
             </section>
@@ -218,7 +233,7 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
         </div>
       </div>
 
-<a href="fonts.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

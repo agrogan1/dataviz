@@ -6,17 +6,19 @@ output:
   bookdown::gitbook:
     highlight: haddock
     css: styles.css
-  slidy_presentation:
-    highlight: haddock
+    split_by: none
   html_document: 
-    highlight: haddock
-    css: styles.css
     code_folding: hide
+    css: styles.css
+    fig_height: 3
+    highlight: haddock
     number_sections: yes
     toc: yes
     toc_float:
       collapsed: no
       smooth_scroll: yes
+  slidy_presentation:
+    highlight: haddock
 ---
 
 ```{r setup, include=FALSE}
@@ -33,7 +35,7 @@ library(cowplot)
 
 ```
 
-# Color
+# Color 
 
 ## Color Model
 
@@ -93,23 +95,22 @@ show_col(hue_pal()(4))
 
 e.g. Viridis, which is designed to be *perceptually uniform*.
 
-```{r}
+```{r, echo=FALSE}
 
 library(ggplot2)
 
-library(viridis)
+x <- seq(1,10) # sequence 1 to 10
 
-ggplot(iris) + 
-  aes(x = Sepal.Length, 
-      y = Sepal.Width, 
-      color = Sepal.Length) + 
-  geom_point() + 
-  scale_colour_viridis_c() 
+ggplot(data = NULL, 
+       aes(x = x,
+           fill = factor(x))) + 
+  geom_bar() + 
+  scale_fill_viridis_d(name = "color")
 
 ```
 
 
-# Fonts
+# Fonts 
 
 ## Three Major Types of Fonts
 
@@ -129,11 +130,19 @@ Standard <font face="Arial">San Serif</font> or <font face="Times New Roman">Ser
 
 ## Dimensions of Data
 
-```{r}
+```{r, fig.height=8, echo=FALSE}
 
 data(iris) # iris data set
 
 names(iris) # dimensions of the data
+
+p0<- ggplot(iris,
+       aes(x = Petal.Length,
+           y = Petal.Width)) +
+  geom_point() + 
+  labs(title = "Minimal Philosophy",
+       subtitle="Every Bit of Extra Ink Matters",
+       caption = "Only two dimensions of data: No use of color.") 
 
 p_minimal <- ggplot(iris,
        aes(x = Petal.Length,
@@ -143,7 +152,7 @@ p_minimal <- ggplot(iris,
   scale_color_viridis_d() + 
   labs(title = "Minimal Philosophy",
        subtitle="Every Bit of Extra Ink Matters",
-       caption = "If we didn't have a 3rd dimension, \nthis would be a grey-scale graph.") 
+       caption = "We only use color because \nwe have 3 dimensions of data.") 
 
 p_maximal <- ggplot(iris,
        aes(x = Petal.Length,
@@ -156,57 +165,11 @@ p_maximal <- ggplot(iris,
        subtitle="Use Ink Liberally for Accessibility and Communication") +
   facet_wrap(~Species)
 
-plot_grid(p_minimal, p_maximal, nrow = 2)
+plot_grid(p0, p_minimal, p_maximal, nrow = 3)
 
 ```
 
 ## Some Geometries Are Easier To Understand Than Others
 
 ![](Rauser-most-important-thing.png)
-
-# Story-Telling
-
-## Presenting Problem
-
-Many Parents Are Concerned About Parenting Well.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/HgxM2xDuCec" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-## What Do The Data Say?
-
-```{r}
-
-library(WDI) # World Bank World Development Indicators
-
-mydata <- WDI(country="all", 
-              indicator=c("SE.ADT.1524.LT.ZS"), # Youth Literacy
-              start = 1980, 
-              end = 2017, 
-              extra = TRUE) 
-```
-
-```{r}
-
-mydata %>%
-  filter(region != "Aggregates") %>%
-  ggplot(aes(x = year,
-             y = SE.ADT.1524.LT.ZS)) +
-  geom_point(aes(color = region)) +
-  geom_smooth() +
-  labs(title = "Literacy Rates Have Improved Around The World",
-       subtitle = "But There Are Still Disparities",
-       y = "Youth Literacy Rates",
-       x = "Year",
-       caption = "World Bank World Development Indicators") +
-  scale_color_viridis_d()
-
-```
-
-
-## Simple Action Steps
-
-* Use your local library to check out books for your children.
-* Read to your children a little bit every day.
-
-
 
