@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Design</title>
+  <meta name="description" content="Design">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Design" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Design" />
+  
+  
+  
+
+<meta name="author" content="Andrew Grogan-Kaylor">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+
+<link rel="next" href="fonts.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; } /* Alert */
+code span.an { color: #008000; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #0000ff; } /* ControlFlow */
+code span.ch { color: #008080; } /* Char */
+code span.cn { } /* Constant */
+code span.co { color: #008000; } /* Comment */
+code span.cv { color: #008000; } /* CommentVar */
+code span.do { color: #008000; } /* Documentation */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.im { } /* Import */
+code span.in { color: #008000; } /* Information */
+code span.kw { color: #0000ff; } /* Keyword */
+code span.op { } /* Operator */
+code span.ot { color: #ff4000; } /* Other */
+code span.pp { color: #ff4000; } /* Preprocessor */
+code span.sc { color: #008080; } /* SpecialChar */
+code span.ss { color: #008080; } /* SpecialString */
+code span.st { color: #008080; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #008080; } /* VerbatimString */
+code span.wa { color: #008000; font-weight: bold; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="color.html"><a href="color.html"><i class="fa fa-check"></i><b>1</b> Color</a><ul>
+<li class="chapter" data-level="1.1" data-path="color.html"><a href="color.html#color-model"><i class="fa fa-check"></i><b>1.1</b> Color Model</a></li>
+<li class="chapter" data-level="1.2" data-path="color.html"><a href="color.html#three-types-of-palettes"><i class="fa fa-check"></i><b>1.2</b> Three Types Of Palettes</a></li>
+<li class="chapter" data-level="1.3" data-path="color.html"><a href="color.html#where-do-the-colors-in-ggplot-come-from"><i class="fa fa-check"></i><b>1.3</b> Where Do The Colors in <code>ggplot</code> Come From?</a></li>
+<li class="chapter" data-level="1.4" data-path="color.html"><a href="color.html#many-many-color-options"><i class="fa fa-check"></i><b>1.4</b> Many Many Color Options</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="fonts.html"><a href="fonts.html"><i class="fa fa-check"></i><b>2</b> Fonts</a><ul>
+<li class="chapter" data-level="2.1" data-path="fonts.html"><a href="fonts.html#three-major-types-of-fonts"><i class="fa fa-check"></i><b>2.1</b> Three Major Types of Fonts</a></li>
+<li class="chapter" data-level="2.2" data-path="fonts.html"><a href="fonts.html#font-rules"><i class="fa fa-check"></i><b>2.2</b> Font Rules</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="cognition.html"><a href="cognition.html"><i class="fa fa-check"></i><b>3</b> Cognition</a><ul>
+<li class="chapter" data-level="3.1" data-path="cognition.html"><a href="cognition.html#dimensions-of-data"><i class="fa fa-check"></i><b>3.1</b> Dimensions of Data</a></li>
+<li class="chapter" data-level="3.2" data-path="cognition.html"><a href="cognition.html#some-geometries-are-easier-to-understand-than-others"><i class="fa fa-check"></i><b>3.2</b> Some Geometries Are Easier To Understand Than Others</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="story-telling.html"><a href="story-telling.html"><i class="fa fa-check"></i><b>4</b> Story-Telling</a><ul>
+<li class="chapter" data-level="4.1" data-path="story-telling.html"><a href="story-telling.html#presenting-problem"><i class="fa fa-check"></i><b>4.1</b> Presenting Problem</a></li>
+<li class="chapter" data-level="4.2" data-path="story-telling.html"><a href="story-telling.html#what-do-the-data-say"><i class="fa fa-check"></i><b>4.2</b> What Do The Data Say?</a></li>
+<li class="chapter" data-level="4.3" data-path="story-telling.html"><a href="story-telling.html#simple-action-steps"><i class="fa fa-check"></i><b>4.3</b> Simple Action Steps</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Design</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Design</h1>
+<p class="author"><em>Andrew Grogan-Kaylor</em></p>
+<p class="date"><em>6/16/2019</em></p>
+</div>
+<div id="color" class="section level1">
+<h1><span class="header-section-number">1</span> Color</h1>
+<div id="color-model" class="section level2">
+<h2><span class="header-section-number">1.1</span> Color Model</h2>
+<p><a href="https://www.nceas.ucsb.edu/~frazier/RSpatialGuides/colorPaletteCheatsheet.pdf">https://www.nceas.ucsb.edu/~frazier/RSpatialGuides/colorPaletteCheatsheet.pdf</a></p>
+<div class="figure">
+<img src="colorwheel.png" alt="color wheel" />
+<p class="caption">color wheel</p>
+</div>
+<blockquote>
+<p>R can use many different color models, but often uses a #<strong>R</strong>ed, <strong>G</strong>reen, <strong>B</strong>lue model with the amount of each color indicated in Hexadecimal, 00 to FF, notation.</p>
+</blockquote>
+</div>
+<div id="three-types-of-palettes" class="section level2">
+<h2><span class="header-section-number">1.2</span> Three Types Of Palettes</h2>
+<p><a href="http://colorbrewer2.org/">http://colorbrewer2.org/</a></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(RColorBrewer)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">display.brewer.pal</span>(<span class="dv">7</span>,<span class="st">&quot;Set1&quot;</span>) <span class="co"># qualitative</span></code></pre>
+<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">display.brewer.pal</span>(<span class="dv">7</span>,<span class="st">&quot;YlOrRd&quot;</span>) <span class="co"># sequential</span></code></pre>
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">display.brewer.pal</span>(<span class="dv">7</span>,<span class="st">&quot;Spectral&quot;</span>) <span class="co"># diverging</span></code></pre>
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">display.brewer.all</span>() <span class="co"># all palettes</span></code></pre>
+<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+<div id="where-do-the-colors-in-ggplot-come-from" class="section level2">
+<h2><span class="header-section-number">1.3</span> Where Do The Colors in <code>ggplot</code> Come From?</h2>
+<p>Equally spaced around the color wheel.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(scales)
+
+<span class="kw">show_col</span>(<span class="kw">hue_pal</span>()(<span class="dv">4</span>))</code></pre>
+<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
+<div id="many-many-color-options" class="section level2">
+<h2><span class="header-section-number">1.4</span> Many Many Color Options</h2>
+<p>e.g. Viridis, which is designed to be <em>perceptually uniform</em>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
+
+<span class="kw">library</span>(viridis)
+
+<span class="kw">ggplot</span>(iris) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">aes</span>(<span class="dt">x =</span> Sepal.Length, 
+      <span class="dt">y =</span> Sepal.Width, 
+      <span class="dt">color =</span> Sepal.Length) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">scale_colour_viridis_c</span>() </code></pre>
+<p><img src="index_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="fonts.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"search": false
+});
+});
+</script>
+
+</body>
+
+</html>

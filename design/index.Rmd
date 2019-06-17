@@ -1,0 +1,212 @@
+---
+title: "Design"
+author: "Andrew Grogan-Kaylor"
+date: "6/16/2019"
+output:
+  bookdown::gitbook:
+    highlight: haddock
+    css: styles.css
+  slidy_presentation:
+    highlight: haddock
+  html_document: 
+    highlight: haddock
+    css: styles.css
+    code_folding: hide
+    number_sections: yes
+    toc: yes
+    toc_float:
+      collapsed: no
+      smooth_scroll: yes
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE)
+
+library(ggplot2)
+
+library(dplyr)
+
+library(cowplot)
+
+```
+
+# Color
+
+## Color Model
+
+[https://www.nceas.ucsb.edu/~frazier/RSpatialGuides/colorPaletteCheatsheet.pdf](https://www.nceas.ucsb.edu/~frazier/RSpatialGuides/colorPaletteCheatsheet.pdf)
+
+![color wheel](colorwheel.png)
+
+> R can use many different color models, but often uses a #**R**ed, **G**reen, **B**lue model with the amount of each color indicated in Hexadecimal, 00 to FF, notation.
+
+## Three Types Of Palettes
+
+[http://colorbrewer2.org/](http://colorbrewer2.org/)
+
+```{r}
+
+library(RColorBrewer)
+
+```
+
+```{r}
+
+display.brewer.pal(7,"Set1") # qualitative
+
+```
+
+```{r}
+
+display.brewer.pal(7,"YlOrRd") # sequential
+
+```
+
+```{r}
+
+display.brewer.pal(7,"Spectral") # diverging
+
+```
+
+```{r}
+
+display.brewer.all() # all palettes
+
+```
+
+## Where Do The Colors in `ggplot` Come From?
+
+Equally spaced around the color wheel.
+
+```{r}
+
+library(scales)
+
+show_col(hue_pal()(4))
+
+```
+
+## Many Many Color Options
+
+e.g. Viridis, which is designed to be *perceptually uniform*.
+
+```{r}
+
+library(ggplot2)
+
+library(viridis)
+
+ggplot(iris) + 
+  aes(x = Sepal.Length, 
+      y = Sepal.Width, 
+      color = Sepal.Length) + 
+  geom_point() + 
+  scale_colour_viridis_c() 
+
+```
+
+
+# Fonts
+
+## Three Major Types of Fonts
+
+* <font face="Arial">San Serif</font> e.g. Arial, Helvetica
+* <font face="Times New Roman">Serif Fonts</font> e.g. <font face="Times New Roman">Times New Roman</font>
+* `Monospaced Fonts` e.g. `Courier` (good for code).
+
+## Font Rules
+
+<font face="Comic Sans MS">Don't</font> have `too many` <font face="Times New Roman">fonts!</font>
+
+<font face="Impact">Interesting Font for Heading</font>
+
+Standard <font face="Arial">San Serif</font> or <font face="Times New Roman">Serif Fonts</font> for text.
+
+# Cognition
+
+## Dimensions of Data
+
+```{r}
+
+data(iris) # iris data set
+
+names(iris) # dimensions of the data
+
+p_minimal <- ggplot(iris,
+       aes(x = Petal.Length,
+           y = Petal.Width,
+           color = Species)) +
+  geom_point() + 
+  scale_color_viridis_d() + 
+  labs(title = "Minimal Philosophy",
+       subtitle="Every Bit of Extra Ink Matters",
+       caption = "If we didn't have a 3rd dimension, \nthis would be a grey-scale graph.") 
+
+p_maximal <- ggplot(iris,
+       aes(x = Petal.Length,
+           y = Petal.Width,
+           color = Species,
+           shape = Species)) +
+  geom_point() + 
+  scale_color_viridis_d() + 
+  labs(title = "Maximal Philosophy",
+       subtitle="Use Ink Liberally for Accessibility and Communication") +
+  facet_wrap(~Species)
+
+plot_grid(p_minimal, p_maximal, nrow = 2)
+
+```
+
+## Some Geometries Are Easier To Understand Than Others
+
+![](Rauser-most-important-thing.png)
+
+# Story-Telling
+
+## Presenting Problem
+
+Many Parents Are Concerned About Parenting Well.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HgxM2xDuCec" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## What Do The Data Say?
+
+```{r}
+
+library(WDI) # World Bank World Development Indicators
+
+mydata <- WDI(country="all", 
+              indicator=c("SE.ADT.1524.LT.ZS"), # Youth Literacy
+              start = 1980, 
+              end = 2017, 
+              extra = TRUE) 
+```
+
+```{r}
+
+mydata %>%
+  filter(region != "Aggregates") %>%
+  ggplot(aes(x = year,
+             y = SE.ADT.1524.LT.ZS)) +
+  geom_point(aes(color = region)) +
+  geom_smooth() +
+  labs(title = "Literacy Rates Have Improved Around The World",
+       subtitle = "But There Are Still Disparities",
+       y = "Youth Literacy Rates",
+       x = "Year",
+       caption = "World Bank World Development Indicators") +
+  scale_color_viridis_d()
+
+```
+
+
+## Simple Action Steps
+
+* Use your local library to check out books for your children.
+* Read to your children a little bit every day.
+
+
+

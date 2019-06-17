@@ -1,0 +1,44 @@
+h1 {
+  color: #375E97;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif; 
+  font-weight: normal;
+}
+h2 {
+  color: black;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif; 
+  font-weight: normal;
+}
+h3 {
+  color: black;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif; 
+  font-weight: normal;
+}
+p {
+  color: black;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+ul {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+ol {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal blockquote {
+    margin: 0 0 .85em;
+    padding: 0 15px;
+    opacity: 1.00;
+    border-left: 10px solid #375E97;
+}
+
+blockquote {
+  background: #FFFFFF;
+  color: #000;
+  border-left: 10px solid #375E97;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+}
+
+blockquote p {
+  display: inline;
+}
