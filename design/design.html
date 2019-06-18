@@ -175,13 +175,14 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <p><a href="http://colorbrewer2.org/">http://colorbrewer2.org/</a></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(RColorBrewer)</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">display.brewer.pal</span>(<span class="dv">7</span>,<span class="st">&quot;Set1&quot;</span>) <span class="co"># qualitative</span></code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="design_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">display.brewer.pal</span>(<span class="dv">7</span>,<span class="st">&quot;YlOrRd&quot;</span>) <span class="co"># sequential</span></code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="design_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">display.brewer.pal</span>(<span class="dv">7</span>,<span class="st">&quot;Spectral&quot;</span>) <span class="co"># diverging</span></code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="design_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">display.brewer.all</span>() <span class="co"># all palettes</span></code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="design_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+
 </div>
 <div id="where-do-the-colors-in-ggplot-come-from" class="section level2">
 <h2><span class="header-section-number">1.3</span> Where Do The Colors in <code>ggplot</code> Come From?</h2>
@@ -189,12 +190,12 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(scales)
 
 <span class="kw">show_col</span>(<span class="kw">hue_pal</span>()(<span class="dv">4</span>))</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="design_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>
 <div id="many-many-color-options" class="section level2">
 <h2><span class="header-section-number">1.4</span> Many Many Color Options</h2>
 <p>e.g. Viridis, which is designed to be <em>perceptually uniform</em>.</p>
-<p><img src="index_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="design_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 </div>
 </div>
 <div id="fonts" class="section level1">
@@ -220,7 +221,7 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <h2><span class="header-section-number">3.1</span> Dimensions of Data</h2>
 <pre><code>## [1] &quot;Sepal.Length&quot; &quot;Sepal.Width&quot;  &quot;Petal.Length&quot; &quot;Petal.Width&quot; 
 ## [5] &quot;Species&quot;</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="design_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 </div>
 <div id="some-geometries-are-easier-to-understand-than-others" class="section level2">
 <h2><span class="header-section-number">3.2</span> Some Geometries Are Easier To Understand Than Others</h2>
@@ -270,7 +271,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["design.pdf", "design.epub"],
 "toc": {
 "collapse": "subsection"
 },
