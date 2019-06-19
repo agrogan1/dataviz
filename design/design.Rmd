@@ -69,8 +69,8 @@ value <- runif(N, 0 , 1) # value
 
 color <- hsv(h = hue, s = saturation, v = value)
 
-plot(hue, value, col=color, pch=19,
-     main = "Draft Color Model Plot")
+# plot(hue, value, col=color, pch=19,
+#      main = "Draft Color Model Plot")
 
 library(rgl) # 3D graphics
 
@@ -83,19 +83,21 @@ plot3d(x = hue,
        z = saturation,
        col = color,
        size = 10,
-       main = "Draft Interactive Color Model")
+       main = "Draft Interactive Color Model",
+       phi = 90 + 45)
+
 
 # library(plotly) # 3D graphics
 # 
 # colordata <- data.frame(hue, saturation, value, color)
 # 
-# plot_ly(colordata, x = ~hue, 
-#         y = ~value, 
-#         # z = ~saturation, 
-#         color = ~color,
-#         showscale=FALSE) %>% 
-#   layout(title = "test") %>% 
-#   hide_colorbar() %>% 
+# plot_ly(colordata, x = ~hue,
+#         y = ~value,
+#         # z = ~saturation,
+#         color = ~color) %>%
+#   add_markers() %>%
+#   layout(title = "Draft Interactive Color Model") %>%
+#   hide_colorbar() %>%
 #   hide_legend()
 
 # ggplot(colordata,
