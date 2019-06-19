@@ -3,10 +3,6 @@ title: "Design"
 author: "Andrew Grogan-Kaylor"
 date: "6/16/2019"
 output:
-  tint::tintPdf:
-    toc: yes
-    number_sections: yes
-  bookdown::epub_book: default  
   bookdown::gitbook:
     highlight: haddock
     css: styles.css
@@ -15,6 +11,13 @@ output:
       download:
       - design.pdf
       - design.epub
+  tint::tintPdf:
+    toc: yes
+    number_sections: yes
+  bookdown::epub_book: default  
+  revealjs::revealjs_presentation: 
+    theme: default
+    fig_height: 3
   html_document: 
     code_folding: hide
     css: styles.css
@@ -51,6 +54,55 @@ library(cowplot)
 [https://www.nceas.ucsb.edu/~frazier/RSpatialGuides/colorPaletteCheatsheet.pdf](https://www.nceas.ucsb.edu/~frazier/RSpatialGuides/colorPaletteCheatsheet.pdf)
 
 ![color wheel](colorwheel.png)
+
+```{r, echo=FALSE, webgl=TRUE}
+
+# HSV Color Model
+
+N <- 500 # number of points
+
+hue <- runif(N, 0 , 1) # hue
+
+saturation <- runif(N, 0 , 1) # saturation
+
+value <- runif(N, 0 , 1) # value
+
+color <- hsv(h = hue, s = saturation, v = value)
+
+plot(hue, value, col=color, pch=19,
+     main = "Draft Color Model Plot")
+
+library(rgl) # 3D graphics
+
+library(knitr) # explicit call to knitr
+
+knit_hooks$set(webgl = hook_webgl) # "webhook"
+
+plot3d(x = hue,
+       y = value,
+       z = saturation,
+       col = color,
+       size = 10,
+       main = "Draft Interactive Color Model")
+
+# library(plotly) # 3D graphics
+# 
+# colordata <- data.frame(hue, saturation, value, color)
+# 
+# plot_ly(colordata, x = ~hue, 
+#         y = ~value, 
+#         # z = ~saturation, 
+#         color = ~color,
+#         showscale=FALSE) %>% 
+#   layout(title = "test") %>% 
+#   hide_colorbar() %>% 
+#   hide_legend()
+
+# ggplot(colordata,
+#        aes(x = hue,
+#            y = value,
+#            color = color)) + geom_point()
+```
 
 > R can use many different color models, but often uses a #**R**ed, **G**reen, **B**lue model with the amount of each color indicated in Hexadecimal, 00 to FF, notation.
 
@@ -170,7 +222,7 @@ p_maximal <- ggplot(iris,
            y = Petal.Width,
            color = Species,
            shape = Species)) +
-  geom_point() + 
+  geom_point(size = 2) + 
   scale_color_viridis_d() + 
   labs(title = "Maximal Philosophy",
        subtitle="Use Ink Liberally for Accessibility and Communication") +
