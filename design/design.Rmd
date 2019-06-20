@@ -59,7 +59,7 @@ library(cowplot)
 
 # HSV Color Model
 
-N <- 500 # number of points
+N <- 1000 # number of points
 
 hue <- runif(N, 0 , 1) # hue
 
@@ -69,8 +69,11 @@ value <- runif(N, 0 , 1) # value
 
 color <- hsv(h = hue, s = saturation, v = value)
 
-# plot(hue, value, col=color, pch=19,
-#      main = "Draft Color Model Plot")
+plot(hue, 
+     value, 
+     col=color, 
+     pch=19,
+     main = "Draft Color Model Plot")
 
 library(rgl) # 3D graphics
 
@@ -79,31 +82,13 @@ library(knitr) # explicit call to knitr
 knit_hooks$set(webgl = hook_webgl) # "webhook"
 
 plot3d(x = hue,
-       y = value,
-       z = saturation,
+       y = saturation,
+       z = value,
        col = color,
        size = 10,
        main = "Draft Interactive Color Model",
        phi = 90 + 45)
 
-
-# library(plotly) # 3D graphics
-# 
-# colordata <- data.frame(hue, saturation, value, color)
-# 
-# plot_ly(colordata, x = ~hue,
-#         y = ~value,
-#         # z = ~saturation,
-#         color = ~color) %>%
-#   add_markers() %>%
-#   layout(title = "Draft Interactive Color Model") %>%
-#   hide_colorbar() %>%
-#   hide_legend()
-
-# ggplot(colordata,
-#        aes(x = hue,
-#            y = value,
-#            color = color)) + geom_point()
 ```
 
 > R can use many different color models, but often uses a #**R**ed, **G**reen, **B**lue model with the amount of each color indicated in Hexadecimal, 00 to FF, notation.
@@ -136,7 +121,7 @@ display.brewer.pal(7,"Spectral") # diverging
 
 ```
 
-```{r, fig.margin = FALSE, fig.height=6}
+```{r, fig.margin = FALSE, fig.height=8}
 
 display.brewer.all() # all palettes
 
@@ -147,6 +132,8 @@ display.brewer.all() # all palettes
 ## Where Do The Colors in `ggplot` Come From?
 
 Equally spaced around the color wheel.
+
+![color wheel](colorwheel.png){ width=20% }
 
 ```{r}
 
@@ -160,17 +147,31 @@ show_col(hue_pal()(4))
 
 e.g. Viridis, which is designed to be *perceptually uniform*.
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, fig.cap="Viridis Palettes"}
 
 library(ggplot2)
 
 x <- seq(1,10) # sequence 1 to 10
 
-ggplot(data = NULL, 
+p0 <- ggplot(data = NULL, 
        aes(x = x,
            fill = factor(x))) + 
-  geom_bar() + 
-  scale_fill_viridis_d(name = "color")
+  geom_bar() +
+  guides(fill = FALSE) +
+  theme_void()
+
+plot_grid(p0 + scale_fill_viridis_d() +
+            labs(title = "Viridis"),
+          p0 + scale_fill_viridis_d(option = "magma") +
+                        labs(title = "Magma"),
+          p0 + scale_fill_viridis_d(option = "plasma") +
+              labs(title = "Plasma"),
+          p0 + scale_fill_viridis_d(option = "inferno") +
+              labs(title = "Inferno"),
+          p0 + scale_fill_viridis_d(option = "cividis") +
+              labs(title = "Cividis"),
+          ncol = 1)
+          
 
 ```
 
@@ -185,35 +186,52 @@ ggplot(data = NULL,
 
 ## Font Rules
 
-<font face="Comic Sans MS">Don't</font> have `too many` <font face="Times New Roman">fonts!</font>
+### <font face="Comic Sans MS">Don't</font> have `too many` <font face="Times New Roman">fonts!</font>
+
+### Interesting Font For Heading; Standard Font For Text
 
 <font face="Impact">Interesting Font for Heading</font>
 
-Standard <font face="Arial">San Serif</font> or <font face="Times New Roman">Serif Fonts</font> for text.
+Standard <font face="Arial">San Serif</font> or <font face="Times New Roman">Serif Fonts</font> for text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 # Cognition
 
 ## Dimensions of Data
 
-```{r, fig.height=8, echo=FALSE}
+> *Dimensions* of the Data, *Columns* of the Data, *Measures*, and *Questions* are all terms essentially pointing at the same concept.
+
+```{r}
 
 data(iris) # iris data set
 
-names(iris) # dimensions of the data
+library(DT) # nicely formatted data tables
+
+datatable(iris) # dimensions of the data
+
+```
+
+Setosa: ![Setosa](Kosaciec_szczecinkowaty_Iris_setosa.jpg){ width=20% } 
+Versicolor: ![Versicolor](Blue_Flag_Ottawa.jpg){ width=20% } Virginica: ![Virginica](Iris_virginica_2.jpg){ width=20% } 
+
+> Iris species images courtesy [Wikipedia](https://www.wikipedia.org/).
+
+```{r, fig.height=8, echo=FALSE}
 
 p0<- ggplot(iris,
        aes(x = Petal.Length,
-           y = Petal.Width)) +
+           y = Sepal.Length)) +
   geom_point() + 
+  geom_smooth() +
   labs(title = "Minimal Philosophy",
        subtitle="Every Bit of Extra Ink Matters",
        caption = "Only two dimensions of data: No use of color.") 
 
 p_minimal <- ggplot(iris,
        aes(x = Petal.Length,
-           y = Petal.Width,
+           y = Sepal.Length,
            color = Species)) +
   geom_point() + 
+  geom_smooth() +
   scale_color_viridis_d() + 
   labs(title = "Minimal Philosophy",
        subtitle="Every Bit of Extra Ink Matters",
@@ -221,10 +239,11 @@ p_minimal <- ggplot(iris,
 
 p_maximal <- ggplot(iris,
        aes(x = Petal.Length,
-           y = Petal.Width,
+           y = Sepal.Length,
            color = Species,
            shape = Species)) +
   geom_point(size = 2) + 
+  geom_smooth() +
   scale_color_viridis_d() + 
   labs(title = "Maximal Philosophy",
        subtitle="Use Ink Liberally for Accessibility and Communication") +
