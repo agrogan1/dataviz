@@ -6,19 +6,8 @@ output:
   revealjs::revealjs_presentation:
     fig_height: 4
     highlight: haddock
-    reveal_options:
-      chalkboard:
-        theme: chalkboard
-        toggleChalkboardButton: yes
-        toggleNotesButton: yes
-      previewLinks: yes
-      progress: yes
-      slideNumber: yes
-    reveal_plugins:
-    - chalkboard
-    - zoom
     self_contained: no
-    theme: night
+    theme: default
     transition: convex
   tufte::tufte_handout:
     fig_height: 2.5

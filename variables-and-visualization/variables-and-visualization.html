@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Andy Grogan-Kaylor" />
-  <meta name="dcterms.date" content="2019-05-22" />
+  <meta name="dcterms.date" content="2019-06-25" />
   <title>Variables &amp; Visualization</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -13,13 +13,8 @@
 
 
 
-<link rel="stylesheet" href="variables-and-visualization_files/reveal.js-3.3.0.1/css/theme/night.css" id="theme">
+<link rel="stylesheet" href="variables-and-visualization_files/reveal.js-3.3.0.1/css/theme/simple.css" id="theme">
 
-<style type="text/css">
-.reveal section img {
-  background: rgba(255, 255, 255, 0.85);
-}
-</style>
 
   <!-- some tweaks to reveal css -->
   <style type="text/css">
@@ -449,8 +444,6 @@ style.innerHTML = style_script;
 document.getElementsByTagName('head')[0].appendChild(style);
 </script>
 
-    <link href="variables-and-visualization_files/font-awesome/css/all.css" rel="stylesheet" />
-    <link href="variables-and-visualization_files/font-awesome/css/v4-shims.css" rel="stylesheet" />
 </head>
 <body>
   <div class="reveal">
@@ -460,7 +453,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
     <h1 class="title">Variables &amp; Visualization</h1>
   <h1 class="subtitle">What Is The Story You Are Trying To Tell?</h1>
     <h2 class="author">Andy Grogan-Kaylor</h2>
-    <h3 class="date">May 22, 2019</h3>
+    <h3 class="date">June 25, 2019</h3>
 </section>
 
 <section><section id="how-to-navigate-this-presentation-scroll-down" class="title-slide slide level1"><h1>How to Navigate This Presentation (scroll down ⇩)</h1></section><section id="navigation" class="slide level2">
@@ -605,34 +598,34 @@ hypothetical questionnaire
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">44.35</td>
-<td style="text-align: center;">108.8</td>
-<td style="text-align: center;">Group B</td>
+<td style="text-align: center;">35.57</td>
+<td style="text-align: center;">94.39</td>
+<td style="text-align: center;">Group A</td>
+<td style="text-align: center;">Neighborhood B</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">28.28</td>
+<td style="text-align: center;">91.86</td>
+<td style="text-align: center;">Group A</td>
 <td style="text-align: center;">Neighborhood A</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;">58.71</td>
-<td style="text-align: center;">57.88</td>
-<td style="text-align: center;">Group A</td>
-<td style="text-align: center;">Neighborhood B</td>
-</tr>
 <tr class="odd">
-<td style="text-align: center;">34.71</td>
-<td style="text-align: center;">88.72</td>
+<td style="text-align: center;">33.27</td>
+<td style="text-align: center;">88.26</td>
 <td style="text-align: center;">Group A</td>
 <td style="text-align: center;">Neighborhood B</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">43.55</td>
-<td style="text-align: center;">113.4</td>
+<td style="text-align: center;">42.95</td>
+<td style="text-align: center;">99.49</td>
 <td style="text-align: center;">Group A</td>
 <td style="text-align: center;">Neighborhood B</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">20.35</td>
-<td style="text-align: center;">129.5</td>
-<td style="text-align: center;">Group A</td>
-<td style="text-align: center;">Neighborhood B</td>
+<td style="text-align: center;">42.33</td>
+<td style="text-align: center;">94.56</td>
+<td style="text-align: center;">Group B</td>
+<td style="text-align: center;">Neighborhood A</td>
 </tr>
 </tbody>
 </table>
@@ -714,7 +707,7 @@ Map
 </section><section id="author" class="slide level2">
 <h2>Author</h2>
 <p><em>Variables &amp; Visualization</em> by <a href="https://agroganweb.wordpress.com/">Andrew Grogan-Kaylor</a> is licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. You are welcome to download and use this handout in your own classes, or work, as long as the handout remains properly attributed.</p>
-<p>Last updated: <code>May 22 2019</code> at <code>15:08</code></p>
+<p>Last updated: <code>June 25 2019</code> at <code>08:25</code></p>
 </section></section>
     </div>
   </div>
@@ -727,16 +720,10 @@ Map
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
-        // Display a presentation progress bar
-        progress: true,
-        // Display the page number of the current slide
-        slideNumber: true,
         // Push each slide change to the browser history
         history: true,
         // Vertical centering of slides
         center: false,
-        // Opens links in an iframe preview overlay
-        previewLinks: true,
         // Transition style
         transition: 'convex', // none/fade/slide/convex/concave/zoom
         // Transition style for full page slide backgrounds
@@ -744,24 +731,8 @@ Map
 
 
 
-        chalkboard: {
-          toggleNotesButton: true,
-          toggleChalkboardButton: true,
-          theme: 'chalkboard',
-        },
-
-        keyboard: {
-          67: function() { RevealChalkboard.toggleNotesCanvas() },    // toggle notes canvas when 'c' is pressed
-          66: function() { RevealChalkboard.toggleChalkboard() }, // toggle chalkboard when 'b' is pressed
-          46: function() { RevealChalkboard.clear() },    // clear chalkboard when 'DEL' is pressed
-           8: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when 'BACKSPACE' is pressed
-          68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
-        },
-
         // Optional reveal.js plugins
         dependencies: [
-          { src: 'variables-and-visualization_files/reveal.js-3.3.0.1/plugin/zoom-js/zoom.js', async: true },
-          { src: 'variables-and-visualization_files/reveal.js-3.3.0.1/plugin/chalkboard/chalkboard.js', async: true },
         ]
       });
     </script>
