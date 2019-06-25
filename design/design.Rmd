@@ -175,6 +175,11 @@ plot_grid(p0 + scale_fill_viridis_d() +
 
 ```
 
+## Other Color and Palette Options
+
+* [https://www.garrickadenbuie.com/project/ggpomological/](https://www.garrickadenbuie.com/project/ggpomological/)
+* [https://bbc.github.io/rcookbook/#how_to_create_bbc_style_graphics](https://bbc.github.io/rcookbook/#how_to_create_bbc_style_graphics)
+* [https://github.com/UI-Research/urbnthemes](https://github.com/UI-Research/urbnthemes)
 
 # Fonts 
 
