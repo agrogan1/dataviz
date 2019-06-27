@@ -3,17 +3,17 @@ title: "Variables & Visualization"
 author: "Andy Grogan-Kaylor"
 date: '`r format(Sys.Date(), format="%B %d, %Y")`'
 output:
+  tufte::tufte_handout:
+    fig_height: 2.5
+    toc: yes
+    number_sections: yes
+    latex_engine: xelatex
   revealjs::revealjs_presentation:
     fig_height: 4
     highlight: haddock
     self_contained: no
     theme: default
     transition: convex
-  tufte::tufte_handout:
-    fig_height: 2.5
-    toc: yes
-    number_sections: yes
-    latex_engine: xelatex
 subtitle: What Is The Story You Are Trying To Tell?
 ---
 
@@ -101,8 +101,6 @@ mydata <- data.frame(age, mental_health, group, neighborhood)
 
 * **o** for outline
 * **f** for full screen
-* **alt-click** for zoom
-* **pen** icons in lower left hand corner can be used for annotations.
 
 # Introduction (scroll down &#8681;) 
 
@@ -115,6 +113,8 @@ img <- readPNG("banner.png")
 grid.raster(img)
 
 ```
+
+\newpage
 
 ## Background
 
@@ -160,7 +160,6 @@ pander(sample_dataset,
 # sample_dataset
 
 ```
-
 
 ## Some Notes on Data
 

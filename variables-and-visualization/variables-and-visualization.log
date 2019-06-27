@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.4.16)  22 MAY 2019 15:06
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.4.16)  27 JUN 2019 10:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1111,38 +1111,35 @@ File: variables-and-visualization_files/figure-latex/unnamed-chunk-2-1.pdf Grap
 hic file (type pdf)
 <use variables-and-visualization_files/figure-latex/unnamed-chunk-2-1.pdf>
 
-Underfull \hbox (badness 10000) in paragraph at lines 109--110
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
 
  []
 
-File: variables-and-visualization_files/figure-latex/unnamed-chunk-3-1.pdf Grap
-hic file (type pdf)
-<use variables-and-visualization_files/figure-latex/unnamed-chunk-3-1.pdf>
-LaTeX Font Info:    Try loading font information for U+msa on input line 134.
-(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 134.
-(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
 *************************************************
 * fontspec warning: "addfontfeatures-ignored"
 * 
-* \addfontfeature(s) ignored on line 134; it cannot be used with a font that
+* \addfontfeature(s) ignored on line 107; it cannot be used with a font that
 * wasn't selected by a fontspec command.
 *  
 *  The current font is "\TU/lmr/m/n/10 ".
 *   The requested feature is "LetterSpace=10". 
 *************************************************
 [2]
-
-LaTeX Warning: Marginpar on page 3 moved.
-
+File: variables-and-visualization_files/figure-latex/unnamed-chunk-3-1.pdf Grap
+hic file (type pdf)
+<use variables-and-visualization_files/figure-latex/unnamed-chunk-3-1.pdf>
+LaTeX Font Info:    Try loading font information for U+msa on input line 131.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 131.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 *************************************************
 * fontspec warning: "addfontfeatures-ignored"
 * 
-* \addfontfeature(s) ignored on line 254; it cannot be used with a font that
+* \addfontfeature(s) ignored on line 236; it cannot be used with a font that
 * wasn't selected by a fontspec command.
 *  
 *  The current font is "\TU/lmr/m/n/10 ".
@@ -1154,26 +1151,26 @@ hic file (type pdf)
 <use variables-and-visualization_files/figure-latex/unnamed-chunk-6-1.pdf>
 Missing character: There is no ⇩ in font [lmroman12-italic]:mapping=tex-text;!
 
-Overfull \hbox (2.05095pt too wide) in paragraph at lines 323--324
+Overfull \hbox (2.05095pt too wide) in paragraph at lines 320--321
  []\TU/lmr/m/n/10 mental_health| 
  []
 
 
-Overfull \hbox (2.05095pt too wide) in paragraph at lines 335--336
+Overfull \hbox (2.05095pt too wide) in paragraph at lines 332--333
  []\TU/lmr/m/n/10 mental_health| 
  []
 
-Missing character: There is no ⇩ in font [lmroman12-italic]:mapping=tex-text;!
 *************************************************
 * fontspec warning: "addfontfeatures-ignored"
 * 
-* \addfontfeature(s) ignored on line 401; it cannot be used with a font that
+* \addfontfeature(s) ignored on line 386; it cannot be used with a font that
 * wasn't selected by a fontspec command.
 *  
 *  The current font is "\TU/lmr/m/n/10 ".
 *   The requested feature is "LetterSpace=10". 
 *************************************************
 [4]
+Missing character: There is no ⇩ in font [lmroman12-italic]:mapping=tex-text;!
 File: variables-and-visualization_files/figure-latex/unnamed-chunk-9-1.pdf Grap
 hic file (type pdf)
 <use variables-and-visualization_files/figure-latex/unnamed-chunk-9-1.pdf>
@@ -1196,17 +1193,10 @@ LaTeX Warning: Marginpar on page 5 moved.
 File: variables-and-visualization_files/figure-latex/unnamed-chunk-13-1.pdf Gra
 phic file (type pdf)
 <use variables-and-visualization_files/figure-latex/unnamed-chunk-13-1.pdf>
-
-LaTeX Warning: Marginpar on page 5 moved.
-
-Missing character: There is no ⇩ in font [lmroman12-italic]:mapping=tex-text;!
-File: variables-and-visualization_files/figure-latex/unnamed-chunk-15-1.pdf Gra
-phic file (type pdf)
-<use variables-and-visualization_files/figure-latex/unnamed-chunk-15-1.pdf>
 *************************************************
 * fontspec warning: "addfontfeatures-ignored"
 * 
-* \addfontfeature(s) ignored on line 480; it cannot be used with a font that
+* \addfontfeature(s) ignored on line 460; it cannot be used with a font that
 * wasn't selected by a fontspec command.
 *  
 *  The current font is "\TU/lmr/m/n/10 ".
@@ -1217,35 +1207,42 @@ phic file (type pdf)
 LaTeX Warning: Marginpar on page 6 moved.
 
 Missing character: There is no ⇩ in font [lmroman12-italic]:mapping=tex-text;!
+File: variables-and-visualization_files/figure-latex/unnamed-chunk-15-1.pdf Gra
+phic file (type pdf)
+<use variables-and-visualization_files/figure-latex/unnamed-chunk-15-1.pdf>
+
+LaTeX Warning: Marginpar on page 6 moved.
+
+Missing character: There is no ⇩ in font [lmroman12-italic]:mapping=tex-text;!
 
 Package bibentry Warning: You have used \nobibliography* 
 (bibentry)                without a following \bibliography.
 (bibentry)                You may not be able to run BibTeX.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 523.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 520.
 *************************************************
 * fontspec warning: "addfontfeatures-ignored"
 * 
-* \addfontfeature(s) ignored on line 523; it cannot be used with a font that
+* \addfontfeature(s) ignored on line 520; it cannot be used with a font that
 * wasn't selected by a fontspec command.
 *  
 *  The current font is "\TU/lmr/m/n/10 ".
 *   The requested feature is "LetterSpace=10". 
 *************************************************
 [6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 523.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 520.
 (./variables-and-visualization.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 523.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 523.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 520.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 520.
 Package rerunfilecheck Info: File `variables-and-visualization.out' has not cha
 nged.
 (rerunfilecheck)             Checksum: 3A50C8AC8B63A1BF27CD42C6BED69B60.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 523.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 520.
  ) 
 Here is how much of TeX's memory you used:
  22579 strings out of 492970
  416828 string characters out of 6133938
- 543373 words of memory out of 5000000
+ 544375 words of memory out of 5000000
  26316 multiletter control sequences out of 15000+600000
  532862 words of font info for 47 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
