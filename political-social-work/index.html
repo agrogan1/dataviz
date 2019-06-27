@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Andy Grogan-Kaylor" />
+  <meta name="dcterms.date" content="2019-06-27" />
+  <title>Data Visualization for Political Social Work</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="index_files/reveal.js-3.3.0.1/css/reveal.css"/>
+
+
+
+<link rel="stylesheet" href="index_files/reveal.js-3.3.0.1/css/theme/simple.css" id="theme">
+
+
+  <!-- some tweaks to reveal css -->
+  <style type="text/css">
+    .reveal h1 { font-size: 2.0em; }
+    .reveal h2 { font-size: 1.5em;  }
+    .reveal h3 { font-size: 1.25em;	}
+    .reveal h4 { font-size: 1em;	}
+
+    .reveal .slides>section,
+    .reveal .slides>section>section {
+      padding: 0px 0px;
+    }
+
+
+
+    .reveal table {
+      border-width: 1px;
+      border-spacing: 2px;
+      border-style: dotted;
+      border-color: gray;
+      border-collapse: collapse;
+      font-size: 0.7em;
+    }
+
+    .reveal table th {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      font-weight: bold;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal table td {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+
+  </style>
+
+    <style type="text/css">code{white-space: pre;}</style>
+
+
+<!-- Printing and PDF exports -->
+<script id="paper-css" type="application/dynamic-css">
+
+/* Default Print Stylesheet Template
+   by Rob Glazebrook of CSSnewbie.com
+   Last Updated: June 4, 2008
+
+   Feel free (nay, compelled) to edit, append, and
+   manipulate this file as you see fit. */
+
+
+@media print {
+
+	/* SECTION 1: Set default width, margin, float, and
+	   background. This prevents elements from extending
+	   beyond the edge of the printed page, and prevents
+	   unnecessary background images from printing */
+	html {
+		background: #fff;
+		width: auto;
+		height: auto;
+		overflow: visible;
+	}
+	body {
+		background: #fff;
+		font-size: 20pt;
+		width: auto;
+		height: auto;
+		border: 0;
+		margin: 0 5%;
+		padding: 0;
+		overflow: visible;
+		float: none !important;
+	}
+
+	/* SECTION 2: Remove any elements not needed in print.
+	   This would include navigation, ads, sidebars, etc. */
+	.nestedarrow,
+	.controls,
+	.fork-reveal,
+	.share-reveal,
+	.state-background,
+	.reveal .progress,
+	.reveal .backgrounds {
+		display: none !important;
+	}
+
+	/* SECTION 3: Set body font face, size, and color.
+	   Consider using a serif font for readability. */
+	body, p, td, li, div {
+		font-size: 20pt!important;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		color: #000;
+	}
+
+	/* SECTION 4: Set heading font face, sizes, and color.
+	   Differentiate your headings from your body text.
+	   Perhaps use a large sans-serif for distinction. */
+	h1,h2,h3,h4,h5,h6 {
+		color: #000!important;
+		height: auto;
+		line-height: normal;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		text-shadow: 0 0 0 #000 !important;
+		text-align: left;
+		letter-spacing: normal;
+	}
+	/* Need to reduce the size of the fonts for printing */
+	h1 { font-size: 28pt !important;  }
+	h2 { font-size: 24pt !important; }
+	h3 { font-size: 22pt !important; }
+	h4 { font-size: 22pt !important; font-variant: small-caps; }
+	h5 { font-size: 21pt !important; }
+	h6 { font-size: 20pt !important; font-style: italic; }
+
+	/* SECTION 5: Make hyperlinks more usable.
+	   Ensure links are underlined, and consider appending
+	   the URL to the end of the link for usability. */
+	a:link,
+	a:visited {
+		color: #000 !important;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	/*
+	.reveal a:link:after,
+	.reveal a:visited:after {
+		content: " (" attr(href) ") ";
+		color: #222 !important;
+		font-size: 90%;
+	}
+	*/
+
+
+	/* SECTION 6: more reveal.js specific additions by @skypanther */
+	ul, ol, div, p {
+		visibility: visible;
+		position: static;
+		width: auto;
+		height: auto;
+		display: block;
+		overflow: visible;
+		margin: 0;
+		text-align: left !important;
+	}
+	.reveal pre,
+	.reveal table {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.reveal pre code {
+		padding: 20px;
+		border: 1px solid #ddd;
+	}
+	.reveal blockquote {
+		margin: 20px 0;
+	}
+	.reveal .slides {
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 0 !important;
+		zoom: 1 !important;
+
+		overflow: visible !important;
+		display: block !important;
+
+		text-align: left !important;
+		-webkit-perspective: none;
+		   -moz-perspective: none;
+		    -ms-perspective: none;
+		        perspective: none;
+
+		-webkit-perspective-origin: 50% 50%;
+		   -moz-perspective-origin: 50% 50%;
+		    -ms-perspective-origin: 50% 50%;
+		        perspective-origin: 50% 50%;
+	}
+	.reveal .slides section {
+		visibility: visible !important;
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+		display: block !important;
+		overflow: visible !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 60px 20px !important;
+		z-index: auto !important;
+
+		opacity: 1 !important;
+
+		page-break-after: always !important;
+
+		-webkit-transform-style: flat !important;
+		   -moz-transform-style: flat !important;
+		    -ms-transform-style: flat !important;
+		        transform-style: flat !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+
+		-webkit-transition: none !important;
+		   -moz-transition: none !important;
+		    -ms-transition: none !important;
+		        transition: none !important;
+	}
+	.reveal .slides section.stack {
+		padding: 0 !important;
+	}
+	.reveal section:last-of-type {
+		page-break-after: avoid !important;
+	}
+	.reveal section .fragment {
+		opacity: 1 !important;
+		visibility: visible !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+	}
+	.reveal section img {
+		display: block;
+		margin: 15px 0px;
+		background: rgba(255,255,255,1);
+		border: 1px solid #666;
+		box-shadow: none;
+	}
+
+	.reveal section small {
+		font-size: 0.8em;
+	}
+
+}  
+</script>
+
+
+<script id="pdf-css" type="application/dynamic-css">
+    
+/**
+ * This stylesheet is used to print reveal.js
+ * presentations to PDF.
+ *
+ * https://github.com/hakimel/reveal.js#pdf-export
+ */
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+
+body {
+	margin: 0 auto !important;
+	border: 0;
+	padding: 0;
+	float: none !important;
+	overflow: visible;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+
+/* Remove any elements not needed in print. */
+.nestedarrow,
+.reveal .controls,
+.reveal .progress,
+.reveal .playback,
+.reveal.overview,
+.fork-reveal,
+.share-reveal,
+.state-background {
+	display: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-shadow: 0 0 0 #000 !important;
+}
+
+.reveal pre code {
+	overflow: hidden !important;
+	font-family: Courier, 'Courier New', monospace !important;
+}
+
+ul, ol, div, p {
+	visibility: visible;
+	position: static;
+	width: auto;
+	height: auto;
+	display: block;
+	overflow: visible;
+	margin: auto;
+}
+.reveal {
+	width: auto !important;
+	height: auto !important;
+	overflow: hidden !important;
+}
+.reveal .slides {
+	position: static;
+	width: 100%;
+	height: auto;
+
+	left: auto;
+	top: auto;
+	margin: 0 !important;
+	padding: 0 !important;
+
+	overflow: visible;
+	display: block;
+
+	-webkit-perspective: none;
+	   -moz-perspective: none;
+	    -ms-perspective: none;
+	        perspective: none;
+
+	-webkit-perspective-origin: 50% 50%; /* there isn't a none/auto value but 50-50 is the default */
+	   -moz-perspective-origin: 50% 50%;
+	    -ms-perspective-origin: 50% 50%;
+	        perspective-origin: 50% 50%;
+}
+
+.reveal .slides section {
+	page-break-after: always !important;
+
+	visibility: visible !important;
+	position: relative !important;
+	display: block !important;
+	position: relative !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+	box-sizing: border-box !important;
+	min-height: 1px;
+
+	opacity: 1 !important;
+
+	-webkit-transform-style: flat !important;
+	   -moz-transform-style: flat !important;
+	    -ms-transform-style: flat !important;
+	        transform-style: flat !important;
+
+	-webkit-transform: none !important;
+	   -moz-transform: none !important;
+	    -ms-transform: none !important;
+	        transform: none !important;
+}
+
+.reveal section.stack {
+	margin: 0 !important;
+	padding: 0 !important;
+	page-break-after: avoid !important;
+	height: auto !important;
+	min-height: auto !important;
+}
+
+.reveal img {
+	box-shadow: none;
+}
+
+.reveal .roll {
+	overflow: visible;
+	line-height: 1em;
+}
+
+/* Slide backgrounds are placed inside of their slide when exporting to PDF */
+.reveal section .slide-background {
+	display: block !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+/* All elements should be above the slide-background */
+.reveal section>* {
+	position: relative;
+	z-index: 1;
+}
+
+/* Display slide speaker notes when 'showNotes' is enabled */
+.reveal .speaker-notes-pdf {
+	display: block;
+	width: 100%;
+	max-height: none;
+	left: auto;
+	top: auto;
+	z-index: 100;
+}
+
+/* Display slide numbers when 'slideNumber' is enabled */
+.reveal .slide-number-pdf {
+	display: block;
+	position: absolute;
+	font-size: 14px;
+}
+
+</script>
+
+
+<script>
+var style = document.createElement( 'style' );
+style.type = 'text/css';
+var style_script_id = window.location.search.match( /print-pdf/gi ) ? 'pdf-css' : 'paper-css';
+var style_script = document.getElementById(style_script_id).text;
+style.innerHTML = style_script;
+document.getElementsByTagName('head')[0].appendChild(style);
+</script>
+
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">Data Visualization for Political Social Work</h1>
+    <h2 class="author">Andy Grogan-Kaylor</h2>
+    <h3 class="date">June 27, 2019</h3>
+</section>
+
+<section id="data-visualization-for-political-social-work" class="title-slide slide level1" data-background="colored-pencils.png"><h1><mark>Data Visualization for Political Social Work</mark></h1></section>
+<section><section id="how-to-navigate-this-presentation-scroll-down" class="title-slide slide level1"><h1>How to Navigate This Presentation (scroll down ⇩)</h1></section><section id="navigation" class="slide level2">
+<h2>Navigation</h2>
+<ul>
+<li><strong>o</strong> for outline</li>
+<li><strong>f</strong> for full screen</li>
+<li><strong>alt-click</strong> for zoom</li>
+</ul>
+</section></section>
+<section><section id="basic-considerations-scroll-down" class="title-slide slide level1"><h1>Basic Considerations (scroll down ⇩)</h1></section><section id="the-nature-of-your-variables-determines-the-nature-of-your-dataviz" class="slide level2">
+<h2>The Nature of Your Variables Determines the Nature of Your DataViz</h2>
+<ul>
+<li>Deciding upon the right data visualization to represent your data can be a daunting process.</li>
+<li>I believe that a <em>starting point</em> for this thinking is some basic statistical thinking about the <em>type</em> of variables that you have.</li>
+<li>At the broadest level, variables may be conceptualized as <em>categorical</em> variables, or <em>continuous</em> variables.</li>
+</ul>
+</section><section id="variable-types" class="slide level2">
+<h2>Variable Types</h2>
+<ul>
+<li><em>categorical variables</em> represent unordered categories like <em>neighborhood</em>, or <em>religious affiliation</em>, or <em>place of residence</em>.</li>
+<li><em>continuous variables</em> represent a continuous scale like a <em>mental health scale</em>, or a <em>measure of life expectancy</em>.</li>
+</ul>
+</section><section id="visualization-possibilities" class="slide level2">
+<h2>Visualization Possibilities</h2>
+<p><a href="http://www-personal.umich.edu/~agrogan/how_to_choose_a_chart/how_to_choose_a_chart_a_visual_guide.pdf">How To Choose A Chart</a></p>
+<p><img data-src="how-to-choose-a-chart-a-visual-guide.png" style="width:50.0%" /></p>
+</section></section>
+<section><section id="story-telling-scroll-down" class="title-slide slide level1"><h1>Story-Telling (scroll down ⇩)</h1></section><section id="your-graph-should-be-a-self-contained-story" class="slide level2">
+<h2>Your Graph Should Be A Self-Contained Story</h2>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-2-1.png" width="768" /></p>
+</section><section id="your-graph-should-be-embedded-in-a-story" class="slide level2">
+<h2>Your Graph Should Be Embedded In A Story</h2>
+<p><img data-src="presenting-problem.png" style="width:25.0%" /> <img data-src="what-does-the-data-say.png" style="width:25.0%" /> <img data-src="action-steps.png" style="width:25.0%" /></p>
+</section></section>
+<section><section id="color-scroll-down" class="title-slide slide level1"><h1>Color (scroll down ⇩)</h1></section><section id="greyscale-graph" class="slide level2">
+<h2>Greyscale Graph</h2>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-4-1.png" width="768" /></p>
+</section><section id="color-is-organizational-identity" class="slide level2">
+<h2>Color is Organizational Identity</h2>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-5-1.png" width="768" /></p>
+</section><section id="color-is-information" class="slide level2">
+<h2>Color Is Information</h2>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-6-1.png" width="768" /></p>
+</section><section id="color-is-accessibility" class="slide level2">
+<h2>Color Is Accessibility</h2>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-7-1.png" width="768" /></p>
+</section><section id="color-is-emphasis" class="slide level2">
+<h2><mark>Color Is Emphasis</mark></h2>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-8-1.png" width="768" /></p>
+</section></section>
+<section><section id="cognition-scroll-down" class="title-slide slide level1"><h1>Cognition (scroll down ⇩)</h1></section><section id="graphical-perception" class="slide level2">
+<h2>“Graphical Perception”</h2>
+<p>“Ordering elementary tasks by accuracy <span class="citation" data-cites="Cleveland1985">(Cleveland and McGill 1985)</span>:”</p>
+<ol type="1">
+<li>Position along a common scale</li>
+<li>Position on identical but nonaligned scales</li>
+<li>Length</li>
+<li>Angle &amp; Slope</li>
+<li>Area</li>
+<li>Volume, Density, Color Saturation</li>
+<li>Color Hue</li>
+</ol>
+</section><section id="example-position-along-a-common-scale" class="slide level2">
+<h2>Example (Position Along A Common Scale)</h2>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-10-1.png" width="768" /></p>
+</section><section id="example-length" class="slide level2">
+<h2>Example (Length)</h2>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-11-1.png" width="768" /></p>
+</section><section id="example-angle" class="slide level2">
+<h2>Example (Angle)</h2>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-12-1.png" width="768" /></p>
+</section></section>
+<section><section id="questions-scroll-down" class="title-slide slide level1"><h1>Questions? (scroll down ⇩)</h1></section><section id="please-contact" class="slide level2">
+<h2>Please Contact</h2>
+<p><a href="agrogan@umich.edu">agrogan@umich.edu</a></p>
+<p><a href="www.umich.edu/~agrogan">www.umich.edu/~agrogan</a></p>
+<p><a href="agrogan1.github.io">agrogan1.github.io</a></p>
+</section><section id="references" class="slide level2 unnumbered">
+<h2>References</h2>
+<div id="refs" class="references">
+<div id="ref-Cleveland1985">
+<p>Cleveland, William S, and Robert McGill. 1985. “Graphical Perception and Graphical Methods for Analyzing Scientific Data.” <em>Science</em> 229 (4716). American Association for the Advancement of Science: 828–33. <a href="http://www.jstor.org/stable/1695272">http://www.jstor.org/stable/1695272</a>.</p>
+</div>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script src="index_files/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
+  <script src="index_files/reveal.js-3.3.0.1/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // Vertical centering of slides
+        center: false,
+        // Transition style
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+
+
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'index_files/reveal.js-3.3.0.1/plugin/zoom-js/zoom.js', async: true },
+        ]
+      });
+    </script>
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+<script>
+  (function() {
+    if (window.jQuery) {
+      Reveal.addEventListener( 'slidechanged', function(event) {  
+        window.jQuery(event.previousSlide).trigger('hidden');
+        window.jQuery(event.currentSlide).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+
+  </body>
+</html>
