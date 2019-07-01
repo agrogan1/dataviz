@@ -42,7 +42,11 @@ library(cowplot)
 
 ```
 
-# <mark>Data Visualization for Political Social Work</mark> {data-background="colored-pencils.png"}
+## <mark>Data Visualization for Political Social Work</mark> {data-background="colored-pencils.png"}
+
+<mark>Andy Grogan-Kaylor</mark>
+
+<mark>University of Michigan</mark>
 
 # How to Navigate This Presentation (scroll down &#8681;) 
 
@@ -214,7 +218,9 @@ p1 <- ggplot(gapminder,
        subtitle = "by Continent",
        y = "Life Expectancy")
 
-p1A <- p1 + stat_summary(fun.y = mean, geom="point")
+p1A <- p1 + stat_summary(fun.y = mean, 
+                         geom="point",
+                         size = 10)
 
 p1B <- p1 + stat_summary(fun.y = mean, geom="bar")
 
