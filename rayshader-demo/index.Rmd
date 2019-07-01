@@ -1,0 +1,81 @@
+---
+title: "Rayshader Demo"
+author: "Andy Grogan-Kaylor"
+date: '`r format(Sys.Date(), format="%B %d, %Y")`'
+output: 
+  html_document: 
+    highlight: haddock
+    number_sections: yes
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+# Libraries
+
+```{r}
+
+library(gapminder) # Gapminder data
+
+library(ggplot2) # beautiful graphs
+
+library(rayshader) # WOW
+
+library(rgl) # 3D graphics
+
+knit_hooks$set(rgl = hook_rgl)
+
+```
+
+# Data
+
+```{r}
+
+data(gapminder)
+
+```
+
+
+# ggplot
+
+```{r}
+
+p0 <- ggplot(gapminder, 
+            aes(gdpPercap, 
+                lifeExp)) +
+  stat_density_2d(aes(fill = stat(nlevel)), 
+                  geom = "polygon",
+                  n = 100, 
+                  bins = 10, 
+                  contour = TRUE) +
+  labs(title = "Life Expectancy by GDP",
+       x = "GDP",
+       y = "Life Expectancy") +
+  scale_fill_viridis_c()
+
+p0
+
+```
+
+# rayshader
+
+```{r, webgl=TRUE}
+
+plot_gg(p0, 
+        multicore = TRUE, 
+        width = 5, 
+        height = 5, 
+        scale = 250)
+
+```
+
+
+
+
+
+
+
