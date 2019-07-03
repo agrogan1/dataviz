@@ -1,26 +1,35 @@
 ---
-title: "Telling Stories With Data: Showing Disparities in a Continuous Risk Factor"
+title: 'Telling Stories With Data: Showing Disparities in a Continuous Risk Factor'
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
-output: 
-  html_document: 
+output:
+  pdf_document: 
     fig_height: 3
     highlight: haddock
-    css: styles.css
+    latex_engine: xelatex
+    number_sections: yes
+    toc: yes
+  html_document:
     code_folding: hide
+    css: styles.css
+    fig_height: 3
+    highlight: haddock
     number_sections: yes
     toc: yes
     toc_float:
       collapsed: no
       smooth_scroll: yes
-  tint::tintPdf:
-    number_sections: yes
-    toc: no
-    highlight: haddock
   tint::tintHtml:
+    highlight: haddock
     number_sections: yes
     toc: no
+  tint::tintPdf:
     highlight: haddock
+    number_sections: yes
+    toc: no
+geometry: margin=1.0in
+mainfont: Tw Cen MT
+fontsize: 12pt
 ---
 
 ```{r setup, include=FALSE}
@@ -102,8 +111,8 @@ myplot1 <- ggplot(data = mydata,
            y = risk)) + # y is risk
   stat_summary(fun.y = mean, geom = "bar") +
   labs(title = "Risk by Group") + # labels
-  scale_color_viridis_d() + # discrete viridis colors
-  scale_fill_viridis_d() + # discrete viridis fills
+  scale_color_viridis_d(option = "cividis") + # discrete viridis colors
+  scale_fill_viridis_d(option = "cividis") + # discrete viridis fills
   theme(legend.position = "none")
 
 plot_grid(myplot0, myplot1)
@@ -132,8 +141,8 @@ myplot <- ggplot(data = mydata,
            color = group, # color is the group
            y = risk)) + # y is risk
   labs(title = "Risk by Group") + # labels
-  scale_color_viridis_d() + # discrete viridis colors
-  scale_fill_viridis_d() # discrete viridis fills
+  scale_color_viridis_d(option = "cividis") + # discrete viridis colors
+  scale_fill_viridis_d(option = "cividis") # discrete viridis fills
 
 ```
 
@@ -161,7 +170,8 @@ Instead of bars indicating mean risk, we could use points at the mean risk value
 
 ```{r}
 
-myplot + stat_summary(fun.y = mean, geom = "point", size = 10) +
+myplot + 
+  stat_summary(fun.y = mean, geom = "point", size = 10) +
   ylim(0,150) + 
   labs(title = "Mean Risk By Group")
 
@@ -170,7 +180,7 @@ myplot + stat_summary(fun.y = mean, geom = "point", size = 10) +
 
 ## Points at Mean Values Connected by Line
 
-Perhaps we connect the points with a line.
+Perhaps we connect the points with a line. Connecting the points with a line in this way may be confusing, as it may imply some kind of trend that we do not wish to imply.
 
 ```{r, fig.cap="Points at Mean Values"}
 
@@ -207,7 +217,7 @@ mydata %>%
                    yend = mean_risk),
                size = 2) +
   ylim(0,160) + 
-  scale_color_viridis_d() +
+  scale_color_viridis_d(option = "cividis") +
   labs(title = "Mean Risk By Group")
 
 ```
@@ -222,19 +232,19 @@ Additionally, points give us a better idea of the exact nature of how risk is di
 
 ```{r, fig.cap="Points"}
 
-myplot + geom_point() # simple points
+myplot + geom_point(size = 3) # simple points
 
 ```
 
 ```{r, fig.cap="Jittered Points"}
 
-myplot +  geom_jitter() # jittered points
+myplot +  geom_jitter(size = 3) # jittered points
 
 ```
 
 ```{r, fig.cap="Beeswarm"}
 
-myplot + geom_beeswarm() # beeswarm geometry
+myplot + geom_beeswarm(size = 3) # beeswarm geometry
 
 ```
 
@@ -248,7 +258,7 @@ There are some alternative, less commonly employed geometries. I've seen boxplot
 
 ```{r, fig.cap="Boxplot"}
 
-myplot + geom_boxplot(fill = "white") # boxplot
+myplot + geom_boxplot(color = "black") # boxplot
 
 ```
 
@@ -258,7 +268,7 @@ An even more rarely used geometry is the *violin plot*. It has the advantage of 
 
 ```{r, fig.cap="Violin Plot"}
 
-myplot + geom_violin() # violin plot
+myplot + geom_violin(color = "black") # violin plot
 
 ```
 
@@ -296,7 +306,76 @@ myplot + stat_summary(fun.y = mean, geom = "bar") +
   scale_fill_manual(breaks = c("Group A", 
                                "Group B", 
                                "Group C"),
-                    values = c("grey", "red", "grey"))
+                    values = c("grey", "red", "grey")) +
+  theme(plot.title = element_text(color = "red"))
+
+```
+
+# Add A Big Number
+
+We can add a big number as a data label and for emphasis.
+
+```{r}
+
+library(dplyr) # data wrangling
+
+mydata %>% 
+  group_by(group) %>% # group by group
+  # summarize by group
+  summarise(mean_risk = round(mean(risk), 
+                              digits = 1)) %>% 
+  ggplot(aes(x = group,
+             y = mean_risk,
+             fill = group,
+             label = mean_risk)) +
+  geom_bar(stat = "identity") + # y is actual bar height
+  geom_text(aes(y = mean_risk - 10), # placement
+            vjust = 1, # vertical justification
+            size = 10) + 
+  ylim(0,160) + 
+  scale_color_manual(values = c("grey", "red", "grey")) +
+  scale_fill_manual(breaks = c("Group A", 
+                               "Group B", 
+                               "Group C"),
+                    values = c("grey", "red", "grey")) + 
+  labs(title = "Group B Is At Highest Risk",
+       y = "Mean Risk") +
+    theme(plot.title = element_text(color = "red"))
+
+```
+
+# Rotate The Bar Chart
+
+Lastly, we can think about rotating the bar chart to improve readability.
+
+```{r}
+
+library(dplyr) # data wrangling
+
+mydata %>% 
+  group_by(group) %>% # group by group
+  # summarize by group
+  summarise(mean_risk = round(mean(risk), 
+                              digits = 1)) %>% 
+  ggplot(aes(x = group,
+             y = mean_risk,
+             fill = group,
+             label = mean_risk)) +
+  geom_bar(stat = "identity") + # y is actual bar height
+  geom_text(aes(y = mean_risk - 10), # placement
+            vjust = .5, # vertical justification
+            hjust = 1, # horizontal justification
+            size = 10) + 
+  ylim(0,160) + 
+  scale_color_manual(values = c("grey", "red", "grey")) +
+  scale_fill_manual(breaks = c("Group A", 
+                               "Group B", 
+                               "Group C"),
+                    values = c("grey", "red", "grey")) + 
+  labs(title = "Group B Is At Highest Risk",
+       y = "Mean Risk") +
+  theme(plot.title = element_text(color = "red")) +
+  coord_flip()
 
 ```
 
@@ -308,7 +387,7 @@ We need to think initially about a *grammar of graphics* and how we are going to
 
 We then need to try out various *geometries* to see which geometries make our stories the most clear.
 
-We should also think about whether careful attention to manual manipulation of choice of color, and making our titles and labels more clear would help to tell our story.
+We should consider devoting some attention to manual manipulation of choice of color. Making our titles and labels more clear may also help us to better tell our story.
 
 
 
