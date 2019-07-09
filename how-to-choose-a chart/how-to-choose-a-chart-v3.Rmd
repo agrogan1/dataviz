@@ -1,0 +1,1054 @@
+---
+title: "How to Choose a Chart"
+author: "Andy Grogan-Kaylor"
+date: '`r format(Sys.Date(), format="%B %d, %Y")`'
+output:
+  html_document:
+    code_folding: hide
+    highlight: haddock
+    toc: no
+  pdf_document:
+    highlight: haddock
+    keep_tex: no
+    latex_engine: xelatex
+always_allow_html: yes
+mainfont: Tw Cen MT
+geometry: margin=0.75in
+subtitle: A Statistically Motivated Guide
+fontsize: 12pt
+---
+
+```{r global_options, echo=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE, 
+                      warning = FALSE, 
+                      message = FALSE, 
+                      fig.height = 2.0)
+
+# NOTES: For HTML, echo=TRUE; for PDF, echo=FALSE
+
+# Update:  As of 5-26-2017, the below is no longer necessary.
+
+# Also, go through and change headers depending on format.
+# \newpage just before "A Simulated Dataset"
+#     Remove for HTML
+#     Keep for PDF
+
+```
+
+```{r, call_libraries}
+
+library(ggplot2) # beautiful graphs
+
+library(ggthemes) # nice themes for ggplot2
+
+library(ggbeeswarm) # helpful 'beeswarm' geometry
+
+library(cowplot) # arrrange graphs
+
+library(pander) # nice tables
+
+```
+
+```{r, eval=TRUE, echo=FALSE}
+
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+
+```
+
+```{r, eval = TRUE, echo = FALSE, fig.width = 7, fig.height = 2}
+
+library(png)
+
+library(grid)
+
+banner <- readPNG("banner.png")
+
+grid.raster(banner)
+
+```
+
+# How to Choose a Chart
+
+Choosing the right chart to represent your data can be a daunting process. I believe that a *starting point* for this thinking is some basic statistical thinking about the *type* of variables that you have.  At the broadest level, variables may be conceptualized as *categorical* variables, or *continuous* variables.
+
+* *categorical variables* represent unordered categories like *gender*, or *religious affiliation*.
+* *continuous variables* represent a continuous scale like a *mental health scale*, or a *measure of neighborhood quality*.
+
+Once we have discerned the type of variable that have, there are two followup questions we may ask before deciding upon a chart strategy:
+
+* Is our graph about **one thing at a time**?
+     + How much of *x* is there? 
+     + What is the distribution of *x*?
+* Is our graph about **two things at a time**?
+     + What is the relationship of *x* and *y*?
+     + How are *x* and *y* associated?
+
+# A Few Notes
+
+## A Note About Graph Labels
+
+Graphs should have clear titles and labels.
+
+```{r, echo=FALSE}
+
+library(ggbeeswarm) # beeswarm plots
+
+x <- rnorm(100, 100, 10)
+
+ggplot(data = NULL,
+       aes(x = x,
+           y = 1,
+           color = x)) +
+  geom_beeswarm(groupOnX = FALSE) +
+  geom_label(aes(x = 115, 
+                 y = 1, 
+                 label = "possibly \ninformative \nkey takeaway"),
+             size = 2, 
+             color = "red") +
+  scale_colour_gradientn(colours=rainbow(7),
+                         name = "some other \npiece of \ninformation") +
+  ylab(" ") +
+  xlab("informative label goes here") +
+  labs(title = "Informative Title",
+       subtitle = "Maybe The Title Is Even Your Main Takeaway",
+       caption = "Words should be spelled out.  \nEvery extra 'dimension' (axes, color, shape) should convey information.") +
+  theme_minimal() +
+  theme(axis.text.x = element_blank(), 
+        axis.ticks.x = element_blank(),
+        legend.title = element_text(size = 5),
+        legend.text = element_text(size = 5))
+
+
+```
+
+<a id="software"></a>
+
+## A Note About Software
+
+The principles of graphing discussed in this document transcend any particular software package, and could be implemented in many different software packages, such as SPSS, SAS, Stata, or R.
+
+The graphs in these particular examples use [ggplot2](http://ggplot2.org/), a graphing library in R.  ggplot2 graph syntax can be formidably complex, with a somewhat steep learning curve.  More information about ggplot can be found [here](http://www-personal.umich.edu/~agrogan/quick-intro-ggplot2/ggplot-in-3-easy-steps-maybe-2-easy-steps.html).
+
+```{r, eval=FALSE}
+
+# Note that ggplot2 can be MUCH simpler 
+# than these examples make it look.
+#
+# For example,
+
+  ggplot(mydata, aes(x = x)) + geom_histogram()
+
+# will produce a perfectly serviceable histogram.
+# 
+# Much of the complication of the code in this document is simply
+# the result of formatting tweaks to get the graphs EXACTLY
+# the way I wanted them.
+
+```
+
+```{r, eval = FALSE}
+
+# Note also, that for layout purposes, 
+# I am reading each ggplot call 
+# into an object, e.g.
+
+p1 <- ggplot(mydata, aes(x = x)) + geom_histogram()
+
+# so that I can later use plot_grid to lay out the graphs.
+
+# In your own work, you do not need to do this, 
+# and it may be simpler to simply say:
+
+ggplot(...) + ...
+
+```
+
+<a id="colors"></a>
+
+## A Note About Graph Colors
+
+This document uses colors based upon official University of Michigan colors.  Using colors that match the design scheme of your organization may be helpful.
+
+```{r michigan_colors}
+
+# michigan colors
+
+michigan_colors=c("#00274c", # blue
+                  "#ffcb05", # maize
+                  "#a4270b", # tappan red
+                  "#e96300", # ross school orange
+                  "#beb300", # wave field green
+                  "#21c1bc", # taubman teal
+                  "#2878ba", # arboretum blue
+                  "#7207a5") # ann arbor amethyst
+
+# name individual colors
+
+michigan_blue <- "#00274c"
+
+michigan_maize <- "#ffcb05"
+
+tappan_red <- "#a4270b"
+
+ross_school_orange <- "#e96300"
+
+wave_field_green <- "#beb300"
+
+taubman_teal <- "#21c1bc"
+
+arboretum_blue <- "#2878ba"
+
+ann_arbor_amethyst <- "#7207a5"
+
+```
+
+# A Simulated Data File of Continuous and Categorical Data
+
+```{r simulate_data, echo = FALSE}
+
+# simulated data
+
+N <- 1000 # set sample size 
+
+# categorical variables
+
+# u <- rbinom(n = N, size = 1, prob = .75) 
+
+u <- c(rep(0, N * .1),
+       rep(1, N * .2),
+       rep(0, N * .4),
+       rep(1, N * .3)) # mixture of 0's and 1's
+
+# v <- rbinom(n = N, size = 1, prob = .75)
+
+v <- c(rep(0, N * .1),
+       rep(1, N * .3),
+       rep(0, N * .4),
+       rep(1, N * .2)) # mixture of 0's and 1's
+
+w <- rbinom(n = N, size = 1, prob = .25) 
+
+# continuous variables
+
+x <- rnorm(n = N, mean = 100, sd = 25) * (w + 1) # n, mean, sd
+
+y <- rnorm(n = N, mean = 100, sd = 25) * (w + 1) # n, mean, sd
+
+z <- rnorm(n = N, mean = 100, sd = 25) # n, mean, sd
+
+# turn categorical data int factors
+
+u <- factor(u, 
+            levels = c(0, 1), 
+            labels = c("Group A", "Group B"))
+
+v <- factor(v, 
+            levels = c(0, 1), 
+            labels = c("Group A", "Group B"))
+
+w <- factor(w, 
+            levels = c(0, 1), 
+            labels = c("Group A", "Group B"))
+
+# new multinomial variable
+
+s <- sample(c(1:4), 
+            N,
+            replace=TRUE, 
+            prob=c(0.1, 0.5, 0.35, 0.05)) 
+
+# new continuous variable
+
+q <- x + 10 * s
+
+# make s a factor
+
+s <- factor(s,
+            levels = c(1, 2, 3, 4),
+            labels = c("Group 1", 
+                       "Group 2", 
+                       "Group 3", 
+                       "Group 4"))
+
+# read into data set
+
+mydata <- data.frame(x, y, z, u, v, w, s, q)
+
+# mydata
+
+# save data to file
+
+save(mydata, 
+     file="how to choose a chart v3.RData")
+
+```
+
+A few randomly selected observations...
+
+```{r, echo = FALSE}
+
+mysample <- mydata[sample(1:nrow(mydata), 10, replace=FALSE),]
+
+pander(mysample) # nice table
+
+```
+
+# One Thing At A Time \hspace{\stretch{1}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Two Things At A Time
+
+# Continuous \hspace{\stretch{1}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Continuous By Categorical
+
+```{r, eval=FALSE, echo=FALSE}
+
+# Update 5-26-2017: Since HTML ignores Latex, and Latex ignores HTML
+# the 2 syntaxes below can be combined, and this .Rmd file does not
+# need to be modified based upon output type.
+
+# HTML
+
+# One Thing At A Time &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Two Things At A Time
+
+# Continuous &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Continuous By Categorical
+
+# PDF
+
+# One Thing At A Time \hspace{\stretch{1}} Two Things At A Time
+
+# Continuous \hspace{\stretch{1}} Continuous By Categorical
+
+# 5-26-2017:  Another potential solution MIGHT be something like:
+
+# | One Thing At A Time |Two Things At A Time |
+# |:------|-----:|
+
+
+```
+
+<a id="histogram"></a>
+
+```{r}
+
+my_histogram <- ggplot(mydata, aes(x = x)) + 
+  geom_histogram(fill = arboretum_blue) + 
+  ggtitle("histogram") +
+  xlab("continuous") + ylab("count") + 
+  theme_minimal()
+
+my_facet_histogram <- ggplot(mydata, aes(x = x)) + 
+  geom_histogram(fill = arboretum_blue) + 
+  facet_wrap(~w, nrow = 2) + 
+  ggtitle("histogram by group") + 
+  xlab("continuous") + ylab("count") + 
+  theme_minimal() +
+  theme(axis.text = element_text(size = 5)) # small font size for axis
+
+plot_grid(my_histogram, my_facet_histogram, ncol=2)
+
+```
+
+<a id="density"></a>
+
+```{r}
+
+my_density <- ggplot(mydata, aes(x = y)) + 
+  geom_density(fill = michigan_maize) + 
+  ggtitle("density") +
+  xlab("continuous") + ylab("density") + 
+  theme_minimal()
+
+my_facet_density <- ggplot(mydata, aes(x = y)) + 
+  geom_density(fill = michigan_maize) + 
+  facet_wrap(~w, nrow = 2) +
+  ggtitle("density by group") +
+  xlab("continuous") + ylab("density") + 
+  theme_minimal() +
+  theme(axis.text = element_text(size = 5)) # small font size for axis
+
+plot_grid(my_density, my_facet_density, ncol = 2)
+
+```
+
+<a id="barchart_of_mean"></a>
+
+```{r}
+
+my_m_barchart <- ggplot(mydata, 
+                        aes(x = 1, 
+                            y = q, 
+                            fill = factor(1))) + 
+  stat_summary(fun.y = mean, geom = "bar") +
+  scale_fill_manual(values = c(arboretum_blue)) + 
+  ggtitle("barchart of mean") + 
+  guides(fill=FALSE) +
+  xlab(" ") + 
+  ylab("mean of continuous") + 
+  theme_minimal() +
+  theme(axis.text.x = element_blank()) +
+  theme(axis.ticks.x = element_blank())
+
+my_facet_m_barchart <- ggplot(mydata, 
+                              aes(x = factor(s), 
+                                  y = q, 
+                                  fill = s)) + 
+  stat_summary(fun.y = mean, geom = "bar") + 
+  scale_fill_manual(values = c(arboretum_blue, 
+                               taubman_teal, 
+                               michigan_blue,
+                               michigan_maize)) + 
+  ggtitle("barchart of mean \nby group") + 
+  guides(fill=FALSE) +
+  xlab("categorical") + ylab("mean of continuous") + 
+  theme_minimal()
+
+plot_grid(my_m_barchart, 
+          my_facet_m_barchart, 
+          ncol = 2)
+
+```
+
+```{r}
+
+my_horiz_m_barchart <- ggplot(mydata, 
+                              aes(x = 1, 
+                                  y = q, 
+                                  fill = factor(1))) + 
+  stat_summary(fun.y = mean, 
+               geom = "bar") +
+  coord_flip() +
+  scale_fill_manual(values = c(arboretum_blue)) + 
+  ggtitle("horizontal barchart of mean") + 
+  guides(fill=FALSE) +
+  xlab(" ") + 
+  ylab("mean of continuous") + 
+  theme_minimal() +
+  theme(axis.text.y = element_blank()) +
+  theme(axis.ticks.y = element_blank())
+
+my_facet_horiz_m_barchart <- ggplot(mydata, 
+                                    aes(x = factor(s), 
+                                        y = q, 
+                                        fill = s)) + 
+  stat_summary(fun.y = mean, 
+               geom = "bar") +
+  coord_flip() +
+  scale_fill_manual(values = c(arboretum_blue, 
+                               taubman_teal, 
+                               michigan_blue,
+                               michigan_maize)) +   
+  ggtitle("horizontal barchart of mean \nby group") + 
+  guides(fill=FALSE) +
+  xlab(" ") + ylab("mean of continuous") + 
+  theme_minimal() +
+  theme(axis.text.y = element_blank()) +
+  theme(axis.ticks.y = element_blank())
+
+plot_grid(my_horiz_m_barchart,
+          my_facet_horiz_m_barchart)
+
+```
+
+<a id="dotchart_of_mean"></a>
+
+```{r}
+
+my_horiz_m_dotchart <- ggplot(mydata, 
+                              aes(x = 1, 
+                                  y = q, 
+                                  fill = factor(1))) + 
+  stat_summary(fun.y = mean, 
+               geom = "point", size = 5) +
+  coord_flip() +
+  scale_color_manual(values = c(arboretum_blue)) + 
+  ggtitle("horizontal dotchart of mean") + 
+  guides(fill = FALSE) +
+  xlab(" ") + 
+  ylab("mean of continuous") + 
+  theme_minimal() +
+  theme(axis.text.y = element_blank(),
+        axis.ticks.y = element_blank()) 
+
+my_facet_horiz_m_dotchart <- ggplot(mydata, 
+                                    aes(x = factor(s), 
+                                        y = q, 
+                                        color = s)) + 
+  stat_summary(fun.y = mean, 
+               geom = "point", 
+               size = 5) +
+  coord_flip() +
+  scale_color_manual(name = "group",
+                     values = c(arboretum_blue, 
+                                taubman_teal, 
+                                michigan_blue,
+                                michigan_maize)) +   
+  ggtitle("horizontal dotchart of mean \nby group") + 
+  guides(fill=FALSE) +
+  xlab(" ") + 
+  ylab("mean of continuous") + 
+  theme_minimal() +
+  theme(axis.title.y = element_blank(),
+        axis.ticks = element_blank())
+
+plot_grid(my_horiz_m_dotchart,
+          my_facet_horiz_m_dotchart)
+
+```
+
+<a id="lollipop_chart_of_mean"></a>
+
+```{r}
+
+my_horiz_m_lollipop_chart <- ggplot(mydata, 
+                                    aes(x = 1, 
+                                        y = q, 
+                                        fill = factor(1))) + 
+  stat_summary(fun.y = mean, 
+               geom = "point", 
+               size = 5) +
+  geom_segment(aes(x = 1,
+                   xend = 1,
+                   y = 0,
+                   yend = mean(q))) +
+  coord_flip() +
+  scale_color_manual(values = c(arboretum_blue)) + 
+  ggtitle("horizontal lollipop chart of mean") + 
+  guides(fill = FALSE) +
+  xlab(" ") + ylab("mean of continuous") + 
+  theme_minimal() +
+  theme(axis.text.y = element_blank(),
+        axis.ticks.y = element_blank()) 
+
+my_facet_horiz_m_lollipop_chart <- ggplot(mydata, 
+                                    aes(x = factor(s), 
+                                        y = q, 
+                                        color = s)) + 
+  stat_summary(fun.y = mean, 
+               geom = "point", 
+               size = 5) +
+  geom_segment(aes(x = factor(s),
+                   xend = factor(s),
+                   y = 0,
+                   yend = mean(q))) +
+  coord_flip() +
+  scale_color_manual(name = "group",
+                     values = c(arboretum_blue, 
+                                taubman_teal, 
+                                michigan_blue,
+                                michigan_maize)) +   
+  ggtitle("horizontal lollipop chart of mean \nby group") + 
+  guides(fill=FALSE) +
+  xlab(" ") + 
+  ylab("mean of continuous") + 
+  theme_minimal() +
+  theme(axis.title.y = element_blank(),
+        axis.ticks = element_blank())
+
+plot_grid(my_horiz_m_lollipop_chart,
+          my_facet_horiz_m_lollipop_chart)
+
+```
+
+
+<a id="linechart_of_mean"></a>
+
+```{r}
+
+my_m_linechart <- ggplot(mydata, 
+                         aes(x = factor(s), 
+                             y = mean(q), 
+                             group = 1)) + 
+  stat_summary(fun.y = mean, 
+               geom = "line", 
+               size = 2, 
+               color = arboretum_blue) +
+  geom_blank() +
+  ggtitle("linechart of mean") +
+  xlab(" ") + 
+  ylab("mean of continuous") + 
+  theme_minimal() +
+  theme(axis.text.x = element_blank()) +
+  theme(axis.ticks.x = element_blank())
+
+my_facet_m_linechart <- ggplot(mydata, 
+                               aes(x = factor(s), 
+                                   y = q, 
+                                   group = 1)) + 
+  stat_summary(fun.y = mean, 
+               geom = "line", 
+               size = 2, 
+               color = arboretum_blue) +
+  ggtitle("linechart of mean \nby group") + 
+  xlab(" ") + 
+  ylab("mean of continuous") + 
+  theme_minimal() 
+
+plot_grid(my_m_linechart, my_facet_m_linechart)
+       
+```
+
+<a id="violin_plot"></a>
+
+```{r}
+
+my_violin <- ggplot(mydata, 
+                    aes(x = 1, 
+                        y = y)) + 
+  geom_violin(fill = ross_school_orange) + 
+  ggtitle("violin plot") + 
+  xlab(" ") + 
+  ylab("continuous") + 
+  theme_minimal()  +
+  theme(axis.text.x = element_blank()) +
+  theme(axis.ticks.x = element_blank())
+
+my_facet_violin <- ggplot(mydata, 
+                          aes(x = 1, 
+                              y = y)) + 
+  geom_violin(fill = ross_school_orange) + 
+  facet_wrap(~w, 
+             ncol = 2) + 
+  ggtitle("violin plot \nby group") + 
+  xlab("categorical") + 
+  ylab("continuous") + 
+  theme_minimal() +
+  theme(axis.text.x = element_blank()) +
+  theme(axis.ticks.x = element_blank())
+
+plot_grid(my_violin, my_facet_violin, ncol = 2)
+
+```
+
+<a id="boxplot"></a>
+
+```{r}
+
+my_boxplot <- ggplot(mydata, 
+                     aes(x = 2, 
+                         y = y)) + 
+  geom_boxplot(colour=tappan_red) + 
+  scale_x_discrete(limit = c(0,1,2)) +
+  ggtitle("boxplot") + 
+  xlab(" ") + 
+  ylab("continuous") + 
+  theme_minimal() +
+  theme(axis.text.x = element_blank()) +
+  theme(axis.ticks.x = element_blank())
+
+my_conditional_boxplot <- ggplot(mydata, 
+                                 aes(x = w, 
+                                     y = y)) + 
+  geom_boxplot(colour=tappan_red, width = .5) + 
+  ggtitle("boxplot \nby group") + 
+  xlab("categorical") + 
+  ylab("continuous") + 
+  theme_minimal()
+
+plot_grid(my_boxplot, my_conditional_boxplot, ncol = 2)
+
+```
+
+<a id="beeswarm"></a>
+
+```{r}
+
+my_beeswarm <- ggplot(mydata, 
+                      aes(x = y, 
+                          y = 1)) + 
+  geom_beeswarm(colour = ann_arbor_amethyst, 
+                groupOnX = FALSE) + 
+  ggtitle("beeswarm plot") + 
+  xlab("continuous") + 
+  ylab("") + 
+  theme_minimal() +
+  theme(axis.text=element_text(size = 5), 
+        axis.text.y = element_blank()) 
+
+my_facet_beeswarm <- ggplot(mydata, 
+                            aes(x = y, 
+                                y = 1)) + 
+  geom_beeswarm(colour = ann_arbor_amethyst, 
+                groupOnX = FALSE) + 
+  facet_wrap(~w, nrow = 2) +
+  ggtitle("beeswarm plot \nby group") + 
+  xlab("continuous") + 
+  ylab("") + 
+  theme_minimal() +
+  theme(axis.text.x = element_text(size = 5),
+        axis.text.y = element_blank()) 
+
+plot_grid(my_beeswarm, my_facet_beeswarm)
+
+```
+
+```{r}
+
+my_dotplot <- ggplot(mydata, 
+                     aes(x = y)) + 
+  geom_dotplot(colour=wave_field_green, 
+               binwidth = 3.0) + 
+  ggtitle("dotplot") + 
+  xlab("continuous") + 
+  ylab("density") + 
+  theme_minimal()
+
+my_facet_dotplot <- ggplot(mydata, 
+                           aes(x = y)) + 
+  geom_dotplot(colour=wave_field_green, 
+               binwidth = 1.5) + 
+  facet_wrap(~w, nrow = 2) + 
+  ggtitle("dotplot \nby group") + 
+  xlab("continuous") + 
+  ylab("density") + 
+  theme_minimal() +
+  theme(axis.text = element_text(size = 5)) # small font size for axis
+
+plot_grid(my_dotplot, 
+          my_facet_dotplot, 
+          ncol = 2)
+
+```
+
+# One Thing At A Time \hspace{\stretch{1}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Two Things At A Time
+
+# Categorical \hspace{\stretch{1}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Categorical By Categorical
+
+```{r, eval=FALSE, echo=FALSE}
+
+#HTML
+
+# One Thing At A Time &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Two Things At A Time
+
+# Categorical &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Categorical By Categorical
+
+# PDF
+
+# One Thing At A Time \hspace{\stretch{1}} Two Things At A Time
+
+# Categorical \hspace{\stretch{1}} Categorical By Categorical
+
+```
+
+```{r}
+
+my_barchart <- ggplot(mydata, 
+                      aes(s, 
+                          fill = s)) + 
+  geom_bar(width = 1.0) + 
+  scale_fill_manual(values = c(arboretum_blue, 
+                               taubman_teal,
+                               michigan_blue,
+                               michigan_maize)) + 
+  ggtitle("bar chart") + 
+  guides(fill=FALSE) +
+  xlab("categorical") + 
+  ylab("count") + 
+  theme_minimal() 
+
+my_facet_barchart <- ggplot(mydata, 
+                            aes(s, 
+                                fill = s)) + 
+  geom_bar(width = 1.0) + 
+  facet_wrap(~u, ncol = 2) + 
+  scale_fill_manual(values = c(arboretum_blue, 
+                               taubman_teal, 
+                               michigan_blue,
+                               michigan_maize)) + 
+  ggtitle("bar chart \nby group") + 
+  guides(fill=FALSE) +
+  xlab("categorical") + ylab("count") + 
+  theme_minimal() +
+  theme(axis.text.x = element_text(size = rel(.6)))
+
+plot_grid(my_barchart, my_facet_barchart, ncol = 2)
+
+```
+
+
+```{r}
+
+my_horiz_barchat <- ggplot(mydata, aes(s, fill = s)) + 
+  geom_bar(width = 1.0) + 
+  coord_flip() +
+  scale_fill_manual(values = c(arboretum_blue, 
+                               taubman_teal, 
+                               michigan_blue,
+                               michigan_maize)) + 
+  ggtitle("horizontal bar chart") + 
+  guides(fill=FALSE) +
+  xlab("categorical") + 
+  ylab("count") + 
+  theme_minimal() 
+
+my_horiz_facet_barchart <- ggplot(mydata, aes(s, fill = s)) + 
+  geom_bar(width = 1.0) + 
+  facet_wrap(~u, ncol = 1) +
+  coord_flip() +
+  scale_fill_manual(values = c(arboretum_blue, 
+                               taubman_teal, 
+                               michigan_blue,
+                               michigan_maize)) + 
+  ggtitle("horizontal bar chart \nby group") + 
+  guides(fill=FALSE) +
+  xlab("categorical") + 
+  ylab("count") + 
+  theme_minimal() +
+  theme(axis.text.y = element_text(size = rel(.5)))
+
+plot_grid(my_horiz_barchat, my_horiz_facet_barchart, ncol = 2)
+
+```
+
+
+```{r}
+
+my_pie <- ggplot(mydata, aes(x = factor(1), fill = v)) + 
+  geom_bar(width = 1) + 
+  coord_polar(theta="y") + 
+  scale_fill_manual(values = michigan_colors) + 
+  ggtitle("pie chart") + guides(fill=FALSE) +
+  xlab(" ") + 
+  ylab("categorical") + 
+  theme_minimal() +
+  theme(axis.text.x = element_blank()) +
+  theme(axis.text.y = element_blank()) + 
+  theme(axis.ticks = element_blank())
+
+my_facet_pie <- ggplot(mydata, aes(x = factor(1), fill = v)) + 
+  geom_bar(width = 1, position = "fill") + 
+  coord_polar(theta="y") + 
+  facet_wrap(~u, ncol = 2) + 
+  scale_fill_manual(values = michigan_colors) + 
+  ggtitle("pie chart \nby group") + 
+  guides(fill=FALSE) +
+  xlab(" ") + 
+  ylab("categorical") + 
+  theme_minimal() +
+  theme(axis.text.x = element_blank()) +
+  theme(axis.text.y = element_blank())  + 
+  theme(axis.ticks = element_blank())
+
+plot_grid(my_pie, my_facet_pie, ncol = 2)
+
+```
+
+
+```{r}
+
+my_doughnut <- ggplot(mydata, aes(x = factor(1), fill = v)) + 
+  geom_bar(width = .5) + 
+  coord_polar(theta="y") + 
+  scale_fill_manual(values = michigan_colors) + 
+  ggtitle("doughnut chart") + 
+  guides(fill=FALSE) +
+  xlab(" ") + 
+  ylab("categorical") + 
+  theme_minimal() +
+  theme(axis.text.x = element_blank()) +
+  theme(axis.text.y = element_blank()) + 
+  theme(axis.ticks = element_blank())
+
+my_facet_doughnut <- ggplot(mydata, aes(x = factor(1), fill = v)) + 
+  geom_bar(width = .5, position = "fill") + 
+  coord_polar(theta="y") + 
+  facet_wrap(~u, ncol = 2) + 
+  scale_fill_manual(values = michigan_colors) + 
+  ggtitle("doughnut chart \nby group") + 
+  guides(fill=FALSE) +
+  xlab(" ") + 
+  ylab("categorical") + 
+  theme_minimal() +
+  theme(axis.text.x = element_blank()) +
+  theme(axis.text.y = element_blank())  + 
+  theme(axis.ticks = element_blank())
+
+plot_grid(my_doughnut, my_facet_doughnut, ncol = 2)
+
+```
+
+# Continuous by Continuous
+
+```{r}
+
+my_scatterplot <- ggplot(mydata, aes(x=x, y=y)) + 
+  geom_point(colour = ann_arbor_amethyst) + 
+  ggtitle("scatterplot") + 
+  xlab("continuous") + 
+  ylab("continuous") + 
+  theme_minimal() +
+  theme(axis.text.x = element_blank()) +
+  theme(axis.text.y = element_blank())  + 
+  theme(axis.ticks = element_blank())
+  
+my_scatterplot_smoother <- ggplot(mydata, aes(x=x, y=y)) + 
+  geom_point(colour = ann_arbor_amethyst) + 
+  geom_smooth(method = lm, color = michigan_maize, size = 2) + 
+  ggtitle("scatterplot with fit line") + 
+  xlab("continuous") + 
+  ylab("continuous") + 
+  theme_minimal() +
+  theme(axis.text.x = element_blank()) +
+  theme(axis.text.y = element_blank())  + 
+  theme(axis.ticks = element_blank())
+
+plot_grid(my_scatterplot, my_scatterplot_smoother)
+
+```
+
+```{r}
+
+my_hexagon <- ggplot(mydata, aes(x=x, y=y)) + 
+  geom_hex() + 
+  ggtitle("hexagon plot") + 
+  xlab("continuous") + 
+  ylab("continuous") + 
+  theme_minimal() + 
+  theme(legend.text = element_text(size=4), 
+        legend.key.size = unit(.25, "cm")) + 
+  theme(axis.text.x = element_blank()) +
+  theme(axis.text.y = element_blank())  + 
+  theme(axis.ticks = element_blank())  + 
+  scale_fill_gradient(low = taubman_teal,
+                      high = arboretum_blue) 
+
+my_smoother <- ggplot(mydata, aes(x=x, y=y)) + 
+  geom_point(colour = ann_arbor_amethyst) + 
+  geom_smooth(se=TRUE, color=michigan_maize, size=2) + 
+  ggtitle("scatterplot with smoother") + 
+  xlab("continuous") + 
+  ylab("continuous") + 
+  theme_minimal() +
+  theme(axis.text.x = element_blank()) +
+  theme(axis.text.y = element_blank())  + 
+  theme(axis.ticks = element_blank())
+
+plot_grid(my_hexagon, my_smoother)
+
+```
+
+
+```{r}
+
+my_area <- ggplot(mydata, aes(x=x, y=y)) + 
+  geom_area(position = "stack", fill = ross_school_orange) +
+  ggtitle("area plot") + 
+  xlab("continuous") + 
+  ylab("continuous") + 
+  theme_minimal() + 
+  theme(axis.text.x = element_blank()) +
+  theme(axis.text.y = element_blank())  + 
+  theme(axis.ticks = element_blank())
+
+my_contour <- ggplot(mydata, aes(x=x, y=y)) + 
+  stat_density_2d(aes(fill = ..level..), 
+                  geom = "polygon") + 
+  ggtitle("contour plot") + 
+  xlab("continuous") + 
+  ylab("continuous") + 
+  theme_minimal() + 
+  theme(axis.text.x = element_blank()) +
+  theme(axis.text.y = element_blank())  + 
+  theme(axis.ticks = element_blank()) + 
+  scale_fill_gradient(low = taubman_teal,
+                      high = arboretum_blue) 
+
+plot_grid(my_area, my_contour)
+
+```
+
+```{r, eval=TRUE, echo=FALSE}
+
+chartgrid <- plot_grid(my_histogram + 
+                         theme(title=element_text(size = 20)), 
+                       my_facet_histogram + 
+                         theme(title=element_text(size = 20)), 
+                       my_barchart + 
+                         theme(title=element_text(size = 20)), 
+                       my_facet_barchart + 
+                         theme(title=element_text(size = 20)), 
+                       my_scatterplot + 
+                         theme(title=element_text(size = 20)),
+                       my_density + 
+                         theme(title=element_text(size = 20)),
+                       my_facet_density + 
+                         theme(title=element_text(size = 20)), 
+                       my_horiz_barchat + 
+                         theme(title=element_text(size = 20)),
+                       my_horiz_facet_barchart + 
+                         theme(title=element_text(size = 20)), 
+                       my_scatterplot_smoother + 
+                         theme(title=element_text(size = 20)), 
+                       my_m_barchart + 
+                         theme(title=element_text(size = 20)),
+                       my_facet_m_barchart + 
+                         theme(title=element_text(size = 20)), 
+                       my_pie + 
+                         theme(title=element_text(size = 20)), 
+                       my_facet_pie + 
+                         theme(title=element_text(size = 20)), 
+                       my_contour + 
+                         theme(title=element_text(size = 20)), 
+                       my_beeswarm + 
+                         theme(title=element_text(size = 20)), 
+                       my_facet_beeswarm + 
+                         theme(title=element_text(size = 20)), 
+                       my_doughnut + 
+                         theme(title=element_text(size = 20)),
+                       my_facet_doughnut + 
+                         theme(title=element_text(size = 20)), 
+                       my_smoother + 
+                         theme(title=element_text(size = 20)), 
+                       ncol = 5) 
+
+save_plot("chartgrid.png", 
+          chartgrid,
+          ncol = 5, 
+          nrow = 4, 
+          base_aspect_ratio = 1.25)
+
+# Banner
+
+banner <- plot_grid(my_histogram + 
+                      theme(title=element_text(size = 20)), 
+                    my_density + 
+                      theme(title=element_text(size = 20)), 
+                    my_pie + 
+                      theme(title=element_text(size = 20)), 
+                    my_scatterplot_smoother + 
+                      theme(title=element_text(size = 20)), 
+                    my_beeswarm + 
+                      theme(title=element_text(size = 20)), 
+                    nrow = 1)
+
+save_plot("banner.png", banner,
+          ncol = 5,
+          nrow = 1)
+
+save_plot("h.png",
+          my_histogram + 
+            theme(title = element_text(size = 20)),
+          base_height = 4)
+
+save_plot("b.png",
+          my_barchart + 
+            theme(title = element_text(size = 20)),
+          base_height = 4)
+
+save_plot("s.png",
+          my_scatterplot_smoother + 
+            theme(title = element_text(size = 20)),
+          base_height = 4)
+
+
+
+```
+
+
+Graphics made with the [ggplot2](http://ggplot2.org/) graphing library created by Hadley Wickham.
+
+Available online at [https://agrogan1.github.io/](https://agrogan1.github.io/)
+
+*How to Choose a Chart* by Andrew Grogan-Kaylor is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).  You are welcome to download and use this handout in your own classes, or work, as long as the handout remains properly attributed.
+
+Last updated: ```r format(Sys.Date(),"%B %d %Y")```  at ```r format(Sys.time(),"%H:%M")```
+
+
+
