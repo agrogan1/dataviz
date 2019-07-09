@@ -1,9 +1,11 @@
 # dataviz
 
-[Graphing Change Over Time](https://agrogan1.github.io/dataviz/graphing-change-over-time/index.html) [[PDF](https://agrogan1.github.io/dataviz/graphing-change-over-time/index.pdf)]
+[How To Choose A Chart: A Visual Guide](./how-to-choose-a chart/how-to-choose-a-chart-a-visual-guide.pdf) [[Extended Version](./how-to-choose-a chart/how-to-choose-a-chart-v3.html)]
 
-[Introduction to Plotly](https://agrogan1.github.io/dataviz/plotly-intro/)
+[Graphing Change Over Time](./graphing-change-over-time/index.html) [[PDF](./graphing-change-over-time/index.pdf)]
 
-[Variables and Visualization](https://agrogan1.github.io/dataviz/variables-and-visualization/variables-and-visualization.html#/)
+[Introduction to Plotly](./plotly-intro/)
 
-[Dashboard Demo](https://agrogan1.github.io/dataviz/dashboard/dashboard.html)
+[Variables and Visualization](./variables-and-visualization/variables-and-visualization.html#/)
+
+[Dashboard Demo](./dashboard/dashboard.html)
