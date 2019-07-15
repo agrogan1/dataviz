@@ -62,8 +62,10 @@ library(cowplot)
 
 ## Our Discussion Today
 
-* Purpose: Focus on the "conceptual language" of data viz.
+* Purpose: Focus on the *conceptual language* of data viz.
+* **Not** a deep dive into the technical tools for doing dataviz.
 * Whatever tool you are using (Paper and Pencil, Markers on Whiteboard, Excel, Google Sheets, R), what are some conceptual considerations in making a data visualization?
+* Considerations for being part of a *team* conversation about visualizing data.
 * More specific technical resources at end.
 
 # Basic Considerations (scroll down &#8681;)
