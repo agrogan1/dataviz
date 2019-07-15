@@ -3,17 +3,17 @@ title: "Data Visualization for Political Social Work"
 author: "Andy Grogan-Kaylor"
 date: '`r format(Sys.Date(), format="%B %d, %Y")`'
 output: 
-  revealjs::revealjs_presentation:
-    theme: default
-    highlight: haddock
-    reveal_plugins: ["zoom"]
-    self_contained: false
   pdf_document:
     number_sections: yes
     toc: yes    
     fig_height: 2.5
     highlight: haddock
     latex_engine: xelatex
+  revealjs::revealjs_presentation:
+    theme: default
+    highlight: haddock
+    reveal_plugins: ["zoom"]
+    self_contained: false
 mainfont: Arial
 fontsize: 11pt
 bibliography: bibliography.bib
@@ -113,7 +113,7 @@ ggplot(data = NULL,
 
 ## Your Graph Should Be Embedded In A Story
 
-![](presenting-problem.png){ width=25% } ![](what-does-the-data-say.png){ width=25% } ![](action-steps.png){ width=25% }
+![](presenting-problem.png){ width=25% } ![](what-do-the-data-say.png){ width=25% } ![](action-steps.png){ width=25% }
 
 # Color (scroll down &#8681;)
 
