@@ -3,17 +3,18 @@ title: "Data Visualization for Political Social Work"
 author: "Andy Grogan-Kaylor"
 date: '`r format(Sys.Date(), format="%B %d, %Y")`'
 output: 
+  revealjs::revealjs_presentation:
+    theme: default
+    highlight: haddock
+    css: styles.css
+    reveal_plugins: ["zoom"]
+    self_contained: false
   pdf_document:
     number_sections: yes
     toc: yes    
     fig_height: 2.5
     highlight: haddock
     latex_engine: xelatex
-  revealjs::revealjs_presentation:
-    theme: default
-    highlight: haddock
-    reveal_plugins: ["zoom"]
-    self_contained: false
 mainfont: Arial
 fontsize: 11pt
 bibliography: bibliography.bib
@@ -49,13 +50,21 @@ library(cowplot)
 
 ```
 
-# How to Navigate This Presentation (scroll down &#8681;) 
+# How to Navigate This Presentation (scroll down &#8681;)
 
 ## Navigation
 
 * **o** for outline
 * **f** for full screen
 * **alt-click** for zoom
+
+# Outline of Conversation 
+
+## Our Discussion Today
+
+* Purpose: Focus on the "conceptual language" of data viz.
+* Whatever tool you are using (Paper and Pencil, Markers on Whiteboard, Excel, Google Sheets, R), what are some conceptual considerations in making a data visualization?
+* More specific technical resources at end.
 
 # Basic Considerations (scroll down &#8681;)
 
@@ -76,7 +85,7 @@ library(cowplot)
 
 ![](how-to-choose-a-chart-a-visual-guide.png){ width=50% } 
 
-# Story-Telling (scroll down &#8681;)
+# Story-Telling (scroll down &#8681;) 
 
 ## Your Graph Should Be A Self-Contained Story
 
@@ -140,7 +149,6 @@ p0 + stat_summary(fun.y = mean, geom="bar")
 
 ```
 
-
 ## Color is Organizational Identity
 
 ```{r}
@@ -151,7 +159,6 @@ p0 + stat_summary(fun.y = mean,
 
 ```
 
-
 ## Color Is Information
 
 ```{r}
@@ -161,7 +168,6 @@ p0 + stat_summary(aes(fill = continent),
                   geom="bar")
 
 ```
-
 
 ## Color Is Accessibility
 
@@ -191,7 +197,7 @@ p0 +
 ```
 
 
-# Cognition (scroll down &#8681;)
+# Cognition (scroll down &#8681;) 
 
 ## "Graphical Perception"
 
@@ -259,6 +265,20 @@ p2
 
 ```
 
+# Resources for Further Learning
+
+## Resources 
+
+* [How to Choose a Chart: A Visual Guide](https://agrogan1.github.io/dataviz/how-to-choose-a-chart/how-to-choose-a-chart-a-visual-guide.pdf). [[Extended Version](https://agrogan1.github.io/dataviz/how-to-choose-a-chart/how-to-choose-a-chart-v3.html)]
+* *Introduction to R*: 
+     + [HTML Web Book](https://agrogan1.github.io/R/introduction-to-R/background.html) 
+* *Introduction to ggplot2*: 
+     + [HTML Web Book](https://agrogan1.github.io/R/introduction-to-ggplot2/background.html) 
+* *Two Page R*: 
+     + [PDF](https://agrogan1.github.io/R/two-page-R/two-page-R.pdf)
+* *Two Page ggplot2*: 
+     + [PDF](https://agrogan1.github.io/R/two-page-ggplot2/two-page-ggplot2.pdf)
+     
 # Questions? (scroll down &#8681;)
 
 ## Please Contact
