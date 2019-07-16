@@ -445,6 +445,8 @@ style.innerHTML = style_script;
 document.getElementsByTagName('head')[0].appendChild(style);
 </script>
 
+    <link href="index_files/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+    <link href="index_files/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 </head>
 <body>
   <div class="reveal">
@@ -473,6 +475,9 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li>Considerations for being part of a <em>team</em> conversation about visualizing data.</li>
 <li>More specific technical resources at end.</li>
 </ul>
+</section><section id="our-data" class="slide level2">
+<h2>Our Data</h2>
+<p>The data that we are using come from the <strong>W</strong>orld <strong>D</strong>evelopment <strong>I</strong>ndicators <a href="http://data.worldbank.org/data-catalog/world-development-indicators">(WDI)</a> which are country level statistical information from around the world, collected by the <a href="http://www.worldbank.org/">World Bank</a>.</p>
 </section></section>
 <section><section id="basic-considerations-scroll-down" class="title-slide slide level1"><h1>Basic Considerations (scroll down ⇩)</h1></section><section id="the-nature-of-your-variables-determines-the-nature-of-your-dataviz" class="slide level2">
 <h2>The Nature of Your Variables Determines the Nature of Your DataViz</h2>
@@ -594,9 +599,21 @@ document.getElementsByTagName('head')[0].appendChild(style);
 
 
 
+        chalkboard: {
+        },
+
+        keyboard: {
+          67: function() { RevealChalkboard.toggleNotesCanvas() },    // toggle notes canvas when 'c' is pressed
+          66: function() { RevealChalkboard.toggleChalkboard() }, // toggle chalkboard when 'b' is pressed
+          46: function() { RevealChalkboard.clear() },    // clear chalkboard when 'DEL' is pressed
+           8: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when 'BACKSPACE' is pressed
+          68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
+        },
+
         // Optional reveal.js plugins
         dependencies: [
           { src: 'index_files/reveal.js-3.3.0.1/plugin/zoom-js/zoom.js', async: true },
+          { src: 'index_files/reveal.js-3.3.0.1/plugin/chalkboard/chalkboard.js', async: true },
         ]
       });
     </script>
