@@ -165,9 +165,11 @@ p0 + stat_summary(fun.y = mean,
 
 ```{r}
 
-p0 + stat_summary(aes(fill = continent),
+p0 + 
+  stat_summary(aes(fill = continent),
                   fun.y = mean, 
-                  geom="bar")
+                  geom = "bar") +
+  scale_fill_viridis_d()
 
 ```
 
