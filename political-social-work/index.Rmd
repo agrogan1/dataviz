@@ -3,18 +3,18 @@ title: "Data Visualization for Political Social Work"
 author: "Andy Grogan-Kaylor"
 date: '`r format(Sys.Date(), format="%B %d, %Y")`'
 output: 
-  pdf_document:
-    number_sections: yes
-    toc: yes    
-    fig_height: 2.5
-    highlight: haddock
-    latex_engine: xelatex
   revealjs::revealjs_presentation:
     theme: default
     highlight: haddock
     css: styles.css
     reveal_plugins: ["zoom", "chalkboard"]
     self_contained: false
+  pdf_document:
+    number_sections: yes
+    toc: yes    
+    fig_height: 2.5
+    highlight: haddock
+    latex_engine: xelatex
 mainfont: Arial
 fontsize: 11pt
 bibliography: bibliography.bib
