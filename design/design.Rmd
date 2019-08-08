@@ -3,6 +3,9 @@ title: "Design"
 author: "Andrew Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
+  tint::tintPdf:
+    toc: yes
+    number_sections: yes
   bookdown::gitbook:
     highlight: haddock
     css: styles.css
@@ -11,9 +14,6 @@ output:
       download:
       - design.pdf
       - design.epub
-  tint::tintPdf:
-    toc: yes
-    number_sections: yes
   bookdown::epub_book: default  
   revealjs::revealjs_presentation: 
     theme: default
@@ -30,6 +30,8 @@ output:
       smooth_scroll: yes
   slidy_presentation:
     highlight: haddock
+bibliography: bibliography.bib
+always_allow_html: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -203,6 +205,8 @@ Standard <font face="Arial">San Serif</font> or <font face="Times New Roman">Ser
 
 ## Dimensions of Data
 
+### Basic Idea / Definition
+
 > *Dimensions* of the Data, *Columns* of the Data, *Measures*, and *Questions* are all terms essentially pointing at the same concept.
 
 ```{r}
@@ -215,14 +219,20 @@ datatable(iris) # dimensions of the data
 
 ```
 
+The `iris` data set has 5 dimensions `r names(iris)`.
+
+### Species of Iris
+
 Setosa: ![Setosa](Kosaciec_szczecinkowaty_Iris_setosa.jpg){ width=20% } 
 Versicolor: ![Versicolor](Blue_Flag_Ottawa.jpg){ width=20% } Virginica: ![Virginica](Iris_virginica_2.jpg){ width=20% } 
 
 > Iris species images courtesy [Wikipedia](https://www.wikipedia.org/).
 
+### Philosophies
+
 ```{r, fig.height=8, echo=FALSE}
 
-p0<- ggplot(iris,
+p0 <- ggplot(iris,
        aes(x = Petal.Length,
            y = Sepal.Length)) +
   geom_point() + 
@@ -259,6 +269,16 @@ plot_grid(p0, p_minimal, p_maximal, nrow = 3)
 ```
 
 ## Some Geometries Are Easier To Understand Than Others
+
+"Ordering elementary tasks by accuracy [@Cleveland1985]:"
+
+1. Position along a common scale
+2. Position on identical but nonaligned scales
+3. Length
+4. Angle & Slope
+5. Area
+6. Volume, Density, Color Saturation
+7. Color Hue
 
 ![](Rauser-most-important-thing.png)
 
