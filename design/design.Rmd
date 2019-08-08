@@ -3,6 +3,7 @@ title: "Design"
 author: "Andrew Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
+  bookdown::epub_book: default  
   tint::tintPdf:
     toc: yes
     number_sections: yes
@@ -14,7 +15,12 @@ output:
       download:
       - design.pdf
       - design.epub
-  bookdown::epub_book: default  
+  pdf_document:
+    number_sections: yes
+    toc: yes    
+    fig_height: 2.5
+    highlight: haddock
+    latex_engine: xelatex
   revealjs::revealjs_presentation: 
     theme: default
     fig_height: 3
@@ -32,6 +38,7 @@ output:
     highlight: haddock
 bibliography: bibliography.bib
 always_allow_html: yes
+mainfont: Helvetica
 ---
 
 ```{r setup, include=FALSE}

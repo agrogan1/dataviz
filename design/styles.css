@@ -19,7 +19,7 @@ p {
   font-size: 110%;
 }
 ul {
-  font-family: "Helvetica", "Arial", sans-serif; 
+    font-family: "Helvetica", "Arial", sans-serif; 
 }
 ol {
   font-family: "Helvetica", "Arial", sans-serif; 
@@ -33,17 +33,23 @@ ol {
     margin: 0 0 .85em;
     padding: 0 15px;
     opacity: 1.00;
-    border-left: 10px solid #375E97;
+    border-left: 10px solid red;
 }
 
 blockquote {
   background: #FFFFFF;
   color: #000;
-  border-left: 10px solid #375E97;
+  border-left: 10px solid red;
   margin: 1.5em 10px;
   padding: 0.5em 10px;
 }
 
 blockquote p {
   display: inline;
+}
+.book .book-summary ul.summary {
+  background-color: black;
+}
+.book .book-summary ul.summary li a{
+  color: white;
 }

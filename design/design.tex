@@ -1,259 +1,136 @@
-\documentclass[]{tufte-handout}
-
-% ams
+\documentclass[]{article}
+\usepackage{lmodern}
 \usepackage{amssymb,amsmath}
-
 \usepackage{ifxetex,ifluatex}
 \usepackage{fixltx2e} % provides \textsubscript
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
 \else % if luatex or xelatex
-  \makeatletter
-  \@ifpackageloaded{fontspec}{}{\usepackage{fontspec}}
-  \makeatother
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
   \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
-  \makeatletter
-  \@ifpackageloaded{soul}{
-     \renewcommand\allcapsspacing[1]{{\addfontfeature{LetterSpace=15}#1}}
-     \renewcommand\smallcapsspacing[1]{{\addfontfeature{LetterSpace=10}#1}}
-   }{}
-  \makeatother
+    \setmainfont[]{Helvetica}
 \fi
-
-% graphix
-\usepackage{graphicx}
-\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
-
-% booktabs
-\usepackage{booktabs}
-
-% url
-\usepackage{url}
-
-% hyperref
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
-
-% units.
-\usepackage{units}
-
-
-\setcounter{secnumdepth}{2}
-
-% citations
-\usepackage{natbib}
-\bibliographystyle{plainnat}
-
-% pandoc syntax highlighting
+\hypersetup{unicode=true,
+            pdftitle={Design},
+            pdfauthor={Andrew Grogan-Kaylor},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
 \newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
 \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
 % Add ',fontsize=\small' for more characters per line
-\usepackage{framed}
-\definecolor{shadecolor}{RGB}{248,248,248}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\AttributeTok}[1]{#1}
+\newcommand{\BaseNTok}[1]{#1}
 \newcommand{\BuiltInTok}[1]{#1}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\ConstantTok}[1]{#1}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.00,1.00}{#1}}
+\newcommand{\DataTypeTok}[1]{#1}
+\newcommand{\DecValTok}[1]{#1}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
 \newcommand{\ExtensionTok}[1]{#1}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\FloatTok}[1]{#1}
+\newcommand{\FunctionTok}[1]{#1}
 \newcommand{\ImportTok}[1]{#1}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.00,1.00}{#1}}
 \newcommand{\NormalTok}[1]{#1}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\OperatorTok}[1]{#1}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{1.00,0.25,0.00}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{1.00,0.25,0.00}{#1}}
 \newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-
-% longtable
-
-% multiplecol
-\usepackage{multicol}
-
-% strikeout
-\usepackage[normalem]{ulem}
-
-% morefloats
-\usepackage{morefloats}
-
-
-% tightlist macro required by pandoc >= 1.14
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
+\newcommand{\VariableTok}[1]{#1}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{\textbf{#1}}}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
 
-% title / author / date
-\title{Design}
-\author{Andrew Grogan-Kaylor}
-\date{2019-08-08}
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
 
-%% -- tint overrides
-%% fonts, using roboto (condensed) as default
-\usepackage[sfdefault,condensed]{roboto}
-%% also nice: \usepackage[default]{lato}
+%%% Change title format to be more compact
+\usepackage{titling}
 
-%% colored links, setting 'borrowed' from RJournal.sty with 'Thanks, Achim!'
-\RequirePackage{color}
-\definecolor{link}{rgb}{0.1,0.1,0.8} %% blue with some grey
-\hypersetup{
-  colorlinks,%
-  citecolor=link,%
-  filecolor=link,%
-  linkcolor=link,%
-  urlcolor=link
+% Create subtitle command for use in maketitle
+\providecommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
 }
 
-%% macros
-\makeatletter
+\setlength{\droptitle}{-2em}
 
-%% -- tint does not use italics or allcaps in title
-\renewcommand{\maketitle}{%     
-  \newpage
-  \global\@topnum\z@% prevent floats from being placed at the top of the page
-  \begingroup
-    \setlength{\parindent}{0pt}%
-    \setlength{\parskip}{4pt}%
-    \let\@@title\@empty
-    \let\@@author\@empty
-    \let\@@date\@empty
-    \ifthenelse{\boolean{@tufte@sfsidenotes}}{%
-      %\gdef\@@title{\sffamily\LARGE\allcaps{\@title}\par}%
-      %\gdef\@@author{\sffamily\Large\allcaps{\@author}\par}%
-      %\gdef\@@date{\sffamily\Large\allcaps{\@date}\par}%
-      \gdef\@@title{\begingroup\fontseries{b}\selectfont\LARGE{\@title}\par}%
-      \gdef\@@author{\begingroup\fontseries{l}\selectfont\Large{\@author}\par}%
-      \gdef\@@date{\begingroup\fontseries{l}\selectfont\Large{\@date}\par}%
-    }{%
-      %\gdef\@@title{\LARGE\itshape\@title\par}%
-      %\gdef\@@author{\Large\itshape\@author\par}%
-      %\gdef\@@date{\Large\itshape\@date\par}%
-      \gdef\@@title{\begingroup\fontseries{b}\selectfont\LARGE\@title\par\endgroup}%
-      \gdef\@@author{\begingroup\fontseries{l}\selectfont\Large\@author\par\endgroup}%
-      \gdef\@@date{\begingroup\fontseries{l}\selectfont\Large\@date\par\endgroup}%
-    }%
-    \@@title
-    \@@author
-    \@@date
-  \endgroup
-  \thispagestyle{plain}% suppress the running head
-  \tuftebreak% add some space before the text begins
-  \@afterindentfalse\@afterheading% suppress indentation of the next paragraph
-}
-
-%% -- tint does not use italics or allcaps in section/subsection/paragraph
-\titleformat{\section}%
-  [hang]% shape
-  %{\normalfont\Large\itshape}% format applied to label+text
-  {\fontseries{b}\selectfont\Large}% format applied to label+text
-  {\thesection}% label
-  {1em}% horizontal separation between label and title body
-  {}% before the title body
-  []% after the title body
-
-\titleformat{\subsection}%
-  [hang]% shape
-  %{\normalfont\large\itshape}% format applied to label+text
-  {\fontseries{m}\selectfont\large}% format applied to label+text
-  {\thesubsection}% label
-  {1em}% horizontal separation between label and title body
-  {}% before the title body
-  []% after the title body
-
-\titleformat{\paragraph}%
-  [runin]% shape
-  %{\normalfont\itshape}% format applied to label+text
-  {\fontseries{l}\selectfont}% format applied to label+text
-  {\theparagraph}% label
-  {1em}% horizontal separation between label and title body
-  {}% before the title body
-  []% after the title body
-
-%% -- tint does not use italics here either
-% Formatting for main TOC (printed in front matter)
-% {section} [left] {above} {before w/label} {before w/o label} {filler + page} [after]
-\ifthenelse{\boolean{@tufte@toc}}{%
-  \titlecontents{part}% FIXME
-    [0em] % distance from left margin
-    %{\vspace{1.5\baselineskip}\begin{fullwidth}\LARGE\rmfamily\itshape} % above (global formatting of entry)
-    {\vspace{1.5\baselineskip}\begin{fullwidth}\fontseries{m}\selectfont\LARGE} % above (global formatting of entry)
-    {\contentslabel{2em}} % before w/label (label = ``II'')
-    {} % before w/o label
-    {\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
-    [\end{fullwidth}] % after
-  \titlecontents{chapter}%
-    [0em] % distance from left margin
-    %{\vspace{1.5\baselineskip}\begin{fullwidth}\LARGE\rmfamily\itshape} % above (global formatting of entry)
-    {\vspace{1.5\baselineskip}\begin{fullwidth}\fontseries{m}\selectfont\LARGE} % above (global formatting of entry)
-    {\hspace*{0em}\contentslabel{2em}} % before w/label (label = ``2'')
-    {\hspace*{0em}} % before w/o label
-    %{\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
-    {\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
-    [\end{fullwidth}] % after
-  \titlecontents{section}% FIXME
-    [0em] % distance from left margin
-    %{\vspace{0\baselineskip}\begin{fullwidth}\Large\rmfamily\itshape} % above (global formatting of entry)
-    {\vspace{0\baselineskip}\begin{fullwidth}\fontseries{m}\selectfont\Large} % above (global formatting of entry)
-    {\hspace*{2em}\contentslabel{2em}} % before w/label (label = ``2.6'')
-    {\hspace*{2em}} % before w/o label
-    %{\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
-    {\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
-    [\end{fullwidth}] % after
-  \titlecontents{subsection}% FIXME
-    [0em] % distance from left margin
-    %{\vspace{0\baselineskip}\begin{fullwidth}\large\rmfamily\itshape} % above (global formatting of entry)
-    {\vspace{0\baselineskip}\begin{fullwidth}\fontseries{m}\selectfont\large} % above (global formatting of entry)
-    {\hspace*{4em}\contentslabel{4em}} % before w/label (label = ``2.6.1'')
-    {\hspace*{4em}} % before w/o label
-    %{\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
-    {\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
-    [\end{fullwidth}] % after
-  \titlecontents{paragraph}% FIXME
-    [0em] % distance from left margin
-    %{\vspace{0\baselineskip}\begin{fullwidth}\normalsize\rmfamily\itshape} % above (global formatting of entry)
-    {\vspace{0\baselineskip}\begin{fullwidth}\fontseries{m}\selectfont\normalsize\rmfamily} % above (global formatting of entry)
-    {\hspace*{6em}\contentslabel{2em}} % before w/label (label = ``2.6.0.0.1'')
-    {\hspace*{6em}} % before w/o label
-    %{\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
-    {\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
-    [\end{fullwidth}] % after
-}{}
-
-  
-\makeatother
-
+  \title{Design}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Andrew Grogan-Kaylor}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{2019-08-08}
 
 
 \begin{document}
-
 \maketitle
-
-
 
 {
 \setcounter{tocdepth}{2}
 \tableofcontents
 }
-
 \hypertarget{color}{%
 \section{Color}\label{color}}
 
@@ -268,8 +145,7 @@
 \caption{color wheel}
 \end{figure}
 
-\begin{marginfigure}
-\includegraphics{design_files/figure-latex/unnamed-chunk-1-1} \end{marginfigure}
+\includegraphics{design_files/figure-latex/unnamed-chunk-1-1.pdf}
 
 \hypertarget{unnamed_chunk_1div}{}
 
@@ -294,38 +170,35 @@ indicated in Hexadecimal, 00 to FF, notation.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{display.brewer.pal}\NormalTok{(}\DecValTok{7}\NormalTok{, }\StringTok{"Set1"}\NormalTok{)  }\CommentTok{# qualitative}
+\KeywordTok{display.brewer.pal}\NormalTok{(}\DecValTok{7}\NormalTok{,}\StringTok{"Set1"}\NormalTok{) }\CommentTok{# qualitative}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{marginfigure}
-\includegraphics{design_files/figure-latex/unnamed-chunk-3-1} \end{marginfigure}
+\includegraphics{design_files/figure-latex/unnamed-chunk-3-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{display.brewer.pal}\NormalTok{(}\DecValTok{7}\NormalTok{, }\StringTok{"YlOrRd"}\NormalTok{)  }\CommentTok{# sequential}
+\KeywordTok{display.brewer.pal}\NormalTok{(}\DecValTok{7}\NormalTok{,}\StringTok{"YlOrRd"}\NormalTok{) }\CommentTok{# sequential}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{marginfigure}
-\includegraphics{design_files/figure-latex/unnamed-chunk-4-1} \end{marginfigure}
+\includegraphics{design_files/figure-latex/unnamed-chunk-4-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{display.brewer.pal}\NormalTok{(}\DecValTok{7}\NormalTok{, }\StringTok{"Spectral"}\NormalTok{)  }\CommentTok{# diverging}
+\KeywordTok{display.brewer.pal}\NormalTok{(}\DecValTok{7}\NormalTok{,}\StringTok{"Spectral"}\NormalTok{) }\CommentTok{# diverging}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{marginfigure}
-\includegraphics{design_files/figure-latex/unnamed-chunk-5-1} \end{marginfigure}
+\includegraphics{design_files/figure-latex/unnamed-chunk-5-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{display.brewer.all}\NormalTok{()  }\CommentTok{# all palettes}
+\KeywordTok{display.brewer.all}\NormalTok{() }\CommentTok{# all palettes}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{design_files/figure-latex/unnamed-chunk-6-1}
+\includegraphics{design_files/figure-latex/unnamed-chunk-6-1.pdf}
 
 \newpage
 
@@ -349,17 +222,18 @@ Equally spaced around the color wheel.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{marginfigure}
-\includegraphics{design_files/figure-latex/unnamed-chunk-7-1} \end{marginfigure}
+\includegraphics{design_files/figure-latex/unnamed-chunk-7-1.pdf}
 
 \hypertarget{many-many-color-options}{%
 \subsection{Many Many Color Options}\label{many-many-color-options}}
 
 e.g.~Viridis, which is designed to be \emph{perceptually uniform}.
 
-\begin{marginfigure}
-\includegraphics{design_files/figure-latex/unnamed-chunk-8-1} \caption[Viridis Palettes]{Viridis Palettes}\label{fig:unnamed-chunk-8}
-\end{marginfigure}
+\begin{figure}
+\centering
+\includegraphics{design_files/figure-latex/unnamed-chunk-8-1.pdf}
+\caption{Viridis Palettes}
+\end{figure}
 
 \hypertarget{other-color-and-palette-options}{%
 \subsection{Other Color and Palette
@@ -387,9 +261,9 @@ Fonts}\label{three-major-types-of-fonts}}
 \item
   San Serif e.g.~Arial, Helvetica
 \item
-  Serif Fonts e.g. Times New Roman
+  Serif Fonts e.g.~Times New Roman
 \item
-  \texttt{Monospaced\ Fonts} e.g. \texttt{Courier} (good for code).
+  \texttt{Monospaced\ Fonts} e.g.~\texttt{Courier} (good for code).
 \end{itemize}
 
 \hypertarget{font-rules}{%
@@ -430,15 +304,15 @@ at the same concept.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{data}\NormalTok{(iris)  }\CommentTok{# iris data set}
+\KeywordTok{data}\NormalTok{(iris) }\CommentTok{# iris data set}
 
-\KeywordTok{library}\NormalTok{(DT)  }\CommentTok{# nicely formatted data tables}
+\KeywordTok{library}\NormalTok{(DT) }\CommentTok{# nicely formatted data tables}
 
-\KeywordTok{datatable}\NormalTok{(iris)  }\CommentTok{# dimensions of the data}
+\KeywordTok{datatable}\NormalTok{(iris) }\CommentTok{# dimensions of the data}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{htmlwidget-0cd13bcaceee80741eed}{}
+\hypertarget{htmlwidget-4a967c2ea0ca6487f53f}{}
 
 The \texttt{iris} data set has 5 dimensions Sepal.Length, Sepal.Width,
 Petal.Length, Petal.Width, Species.
@@ -461,14 +335,13 @@ Iris species images courtesy
 \hypertarget{philosophies}{%
 \subsubsection{Philosophies}\label{philosophies}}
 
-\begin{marginfigure}
-\includegraphics{design_files/figure-latex/unnamed-chunk-10-1} \end{marginfigure}
+\includegraphics{design_files/figure-latex/unnamed-chunk-10-1.pdf}
 
 \hypertarget{some-geometries-are-easier-to-understand-than-others}{%
 \subsection{Some Geometries Are Easier To Understand Than
 Others}\label{some-geometries-are-easier-to-understand-than-others}}
 
-``Ordering elementary tasks by accuracy \citep{Cleveland1985}:''
+``Ordering elementary tasks by accuracy (Cleveland and McGill 1985):''
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -491,8 +364,11 @@ Others}\label{some-geometries-are-easier-to-understand-than-others}}
 
 \includegraphics{Rauser-most-important-thing.png}
 
-\bibliography{bibliography.bib}
-
+\hypertarget{refs}{}
+\leavevmode\hypertarget{ref-Cleveland1985}{}%
+Cleveland, William S, and Robert McGill. 1985. ``Graphical Perception
+and Graphical Methods for Analyzing Scientific Data.'' \emph{Science}
+229 (4716): 828--33. \url{http://www.jstor.org/stable/1695272}.
 
 
 \end{document}
