@@ -3,10 +3,6 @@ title: "Design"
 author: "Andrew Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
-  bookdown::epub_book: default  
-  tint::tintPdf:
-    toc: yes
-    number_sections: yes
   bookdown::gitbook:
     highlight: haddock
     css: styles.css
@@ -15,6 +11,10 @@ output:
       download:
       - design.pdf
       - design.epub
+  tint::tintPdf:
+    toc: yes
+    number_sections: yes
+  bookdown::epub_book: default  
   pdf_document:
     number_sections: yes
     toc: yes    
@@ -289,3 +289,4 @@ plot_grid(p0, p_minimal, p_maximal, nrow = 3)
 
 ![](Rauser-most-important-thing.png)
 
+# References
