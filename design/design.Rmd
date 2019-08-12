@@ -7,35 +7,6 @@ output:
     highlight: haddock
     css: styles.css
     split_by: none
-    config:
-      download:
-      - design.pdf
-      - design.epub
-  tint::tintPdf:
-    toc: yes
-    number_sections: yes
-  bookdown::epub_book: default  
-  pdf_document:
-    number_sections: yes
-    toc: yes    
-    fig_height: 2.5
-    highlight: haddock
-    latex_engine: xelatex
-  revealjs::revealjs_presentation: 
-    theme: default
-    fig_height: 3
-  html_document: 
-    code_folding: hide
-    css: styles.css
-    fig_height: 3
-    highlight: haddock
-    number_sections: yes
-    toc: yes
-    toc_float:
-      collapsed: no
-      smooth_scroll: yes
-  slidy_presentation:
-    highlight: haddock
 bibliography: bibliography.bib
 always_allow_html: yes
 mainfont: Helvetica

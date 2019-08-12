@@ -1,0 +1,89 @@
+---
+title: "Data Driven Report Demo"
+author: "Andrew Grogan-Kaylor"
+date: "`r Sys.Date()`"
+output:
+  html_document: 
+    fig_height: 3
+    highlight: haddock
+    number_sections: yes
+    toc: yes
+  word_document: 
+    fig_height: 3
+    toc: yes
+    reference_docx: "word-styles-reference-01.docx"
+  pdf_document: 
+    fig_height: 3
+    highlight: haddock
+    number_sections: yes
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE,
+                      warning = FALSE,
+                      message = FALSE)
+
+```
+
+```{r}
+
+library(gapminder)
+
+library(ggplot2)
+
+library(knitr)
+
+```
+
+# Background
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+```{r}
+
+ggplot(gapminder,
+       aes(x = lifeExp, 
+           fill = continent)) +
+  geom_histogram() + 
+  labs(title = "Distribution of Life Expectancy",
+       x = "Life Expectancy") + 
+  theme_minimal() +
+  scale_fill_viridis_d() 
+
+```
+
+# Methods
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+```{r}
+
+ggplot(gapminder,
+       aes(x = gdpPercap,
+           y = lifeExp,
+           color = continent)) +
+  geom_point() +
+  geom_smooth() +
+  labs(title = "Life Expectancy by GDP",
+       x = "GDP Per Capita",
+       y = "Life Expectancy",
+       caption = "Gapminder Data") +
+  scale_color_viridis_d() +
+  theme_minimal()
+
+```
+
+# Results
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+# Discussion
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+
