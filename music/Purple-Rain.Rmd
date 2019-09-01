@@ -1,0 +1,51 @@
+---
+title: "Purple Rain"
+author: "Andy Grogan-Kaylor"
+date: "9/1/2019"
+output:
+  html_document: 
+    fig_height: 4
+    highlight: haddock
+  pdf_document:
+    fig_height: 4
+    highlight: haddock
+    latex_engine: xelatex
+    number_sections: yes
+mainfont: Helvetica
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+```{r}
+
+library(ggplot2) # beautiful graphs
+
+library(patchwork) # stitch graphs together
+
+whatIwantedtosee <- c("laughing", "something else", "laughing", "something else")
+
+where <- c("in the purple rain", "in the purple rain", "somewhere else", "somewhere else")
+
+count <- c(100, 0, 0, 0)
+
+mydata <- tibble::tibble(whatIwantedtosee, where, count)
+
+```
+
+```{r}
+
+ggplot(mydata, 
+       aes(x = whatIwantedtosee, y = where, size = count, color = count)) +
+  geom_point() +
+  labs(title = "I only wanted to see you ...", x = "what I wanted to see", y = "where") +
+  scale_color_viridis_c(guide = "legend", direction = -1) +
+  scale_size_continuous(range = c(0, 30)) +
+  theme(legend.position = "bottom")
+
+```
+
+

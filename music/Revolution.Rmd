@@ -1,0 +1,70 @@
+---
+title: "Revolution"
+author: "Andy Grogan-Kaylor"
+date: "9/1/2019"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+```{r}
+
+library(ggplot2) # beautiful graphs
+
+library(patchwork) # stitch graphs together
+
+yousay <- c("you want a revolution",
+            "something else")
+
+count1 <-c(100,0)
+
+whatwewant <-c("to change the world",
+               "something else")
+
+count2 <- c(100, 0)
+
+mydata <- tibble::tibble(yousay, count1, whatwewant, count2)
+
+mydata # play back
+
+```
+
+```{r}
+p1 <- ggplot(mydata, 
+             aes(x = yousay,
+                 y = count1,
+                 fill = yousay)) +
+  geom_bar(stat="identity") +
+  labs(title = "You say ...",
+       x = "you say", 
+       y = "percentage") +
+  theme(axis.text.x = element_blank(),
+        axis.ticks.x = element_blank()) +
+  scale_fill_viridis_d(name = "what you say",
+                       direction = -1,
+                       option = "plasma")
+
+p2 <- ggplot(mydata,
+             aes(x = 1,
+                 y = count2,
+                 fill = whatwewant)) +
+  geom_bar(stat = "identity") +
+  coord_polar() +
+  labs(title = "Well...",
+       x = "what we want", 
+       y = "") +
+  theme(axis.text.x = element_blank(),
+        axis.ticks = element_blank()) +
+  scale_fill_viridis_d(name = "what we want",
+                       direction = 1,
+                       option = "plasma")
+
+p1 + p2
+
+```
+
+
