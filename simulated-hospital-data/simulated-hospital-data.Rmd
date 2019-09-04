@@ -1,0 +1,125 @@
+---
+title: "Simulated Hospital Data"
+author: "Andy Grogan-Kaylor (agrogan@umich.edu)"
+date: "`r Sys.Date()`"
+output: 
+  revealjs::revealjs_presentation:
+    highlight: haddock
+    fig_height: 4
+---
+
+## Imagine the following simulated data
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE,
+                      warning = FALSE,
+                      message = FALSE,
+                      fig.margin = TRUE)
+
+```
+
+```{r}
+
+library(ggplot2) # beautiful graphs
+
+library(ggmosaic) # mosaic plots
+
+library(tibble) # better data frames
+
+library(pander) # nice tables
+
+library(dplyr) # data wrangling
+
+library(tidyr) # data wrangling
+
+```
+
+```{r}
+
+hospital <- c(rep("better", 4),
+              rep("normal", 4))
+
+severity <- c(rep("less severe", 2),
+              rep("more severe", 2),
+              rep("less severe", 2),
+              rep("more severe", 2))
+
+outcome <- rep(c("success", "failure"), 4)
+
+count <- c(18,2,
+             32,48,
+             64,16,
+             4,16)
+
+hospitaldata <- tibble::tibble(hospital, 
+                               severity, 
+                               outcome, 
+                               count)
+
+hospitaldatalong <- uncount(hospitaldata,
+                                weights = count)
+
+# hospitaldatalong # replay
+
+```
+
+```{r}
+
+table(hospitaldatalong$outcome, 
+      hospitaldatalong$hospital)
+
+```
+
+It appears that one is better off going to the *normal* hospital because there is a 68% success rate.
+
+## Note that so far, we have a *simple* story.
+
+We are only measuring the *outcome* of *failure* or *success* and the *type of hospital*.
+
+```{r}
+
+ggplot(hospitaldatalong) + 
+  geom_mosaic(aes(x = product(outcome,
+                              hospital), 
+                  fill = outcome), na.rm=TRUE) +
+  labs(title = "Outcome by Type of Hospital",
+       x = "type of hospital",
+       y = "outcome")
+
+```
+
+## Let's add something to the story.
+
+We now consider *severity of case*.
+
+```{r}
+
+table(hospitaldatalong$outcome, 
+      hospitaldatalong$hospital, 
+      hospitaldatalong$severity)
+
+```
+
+Considering severity of case, the rate of success is always better in the *better* hospital.
+
+## Visualize it.
+
+The disparity arises because more of the *more severe* cases go to the better hospital. Once we account for this disparity, we see the the *better* hospital performs better for both *levels of severity*.
+
+```{r}
+
+ggplot(hospitaldatalong) + 
+  geom_mosaic(aes(x = product(outcome,
+                              hospital), 
+                  fill = outcome), na.rm=TRUE) +
+  facet_wrap(~severity, scales = "free") +
+  labs(title = "Outcome by Type of Hospital",
+       subtitle = "AND Severity of Case",
+       x = "type of hospital",
+       y = "outcome")
+
+```
+
+
+
