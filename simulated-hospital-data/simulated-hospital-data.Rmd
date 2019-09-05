@@ -91,7 +91,7 @@ ggplot(hospitaldatalong) +
 
 ## Let's add something to the story.
 
-We now consider *severity of case*.
+We now consider *severity of case*, in addition to *type of hospital* and *outcome*.
 
 ```{r}
 
@@ -105,7 +105,7 @@ Considering severity of case, the rate of success is always better in the *bette
 
 ## Visualize it.
 
-The disparity arises because more of the *more severe* cases go to the better hospital. Once we account for this disparity, we see the the *better* hospital performs better for both *levels of severity*.
+The disparity arises because more of the *more severe* cases go to the better hospital. <mark>Once we account for this disparity, we see the the *better* hospital performs better for both *levels of severity*.</mark>
 
 ```{r}
 
