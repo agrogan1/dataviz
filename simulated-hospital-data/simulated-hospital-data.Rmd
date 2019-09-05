@@ -87,9 +87,11 @@ We are only measuring the *outcome* of *failure* or *success* and the *type of h
 ```{r}
 
 p1 <- ggplot(hospitaldatalong) + 
-  geom_mosaic(aes(x = product(outcome,
-                              hospital), 
-                  fill = outcome), na.rm=TRUE) +
+  # geom_mosaic(aes(x = product(outcome,
+  #                             hospital), 
+  #                 fill = outcome), na.rm=TRUE) +
+  geom_bar(aes(x = hospital, 
+               fill = outcome)) +
   labs(title = "Outcome by Type of Hospital",
        x = "type of hospital",
        y = "outcome")
@@ -119,12 +121,13 @@ The disparity arises because more of the *more severe* cases go to the better ho
 ```{r}
 
 p2 <- ggplot(hospitaldatalong) + 
-  geom_mosaic(aes(x = product(outcome,
-                              hospital), 
-                  fill = outcome), na.rm=TRUE) +
+  # geom_mosaic(aes(x = product(outcome,
+  #                             hospital), 
+  #                 fill = outcome), na.rm=TRUE) +
+  geom_bar(aes(x = hospital, 
+               fill = outcome)) +
   facet_wrap(~severity, scales = "free") +
-  labs(title = "Outcome by Type of Hospital",
-       subtitle = "AND Severity of Case",
+  labs(title = "Outcome by Type of Hospital AND Severity of Case",
        x = "type of hospital",
        y = "outcome")
 
