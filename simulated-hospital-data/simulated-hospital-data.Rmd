@@ -8,6 +8,11 @@ output:
     fig_height: 4
 ---
 
+## Navigation
+
+* **o** for outline
+* **f** for full screen
+
 ## Imagine the following simulated data
 
 ```{r setup, include=FALSE}
@@ -24,6 +29,8 @@ knitr::opts_chunk$set(echo = FALSE,
 library(ggplot2) # beautiful graphs
 
 library(ggmosaic) # mosaic plots
+
+library(plotly) # animated graphs
 
 library(tibble) # better data frames
 
@@ -79,13 +86,15 @@ We are only measuring the *outcome* of *failure* or *success* and the *type of h
 
 ```{r}
 
-ggplot(hospitaldatalong) + 
+p1 <- ggplot(hospitaldatalong) + 
   geom_mosaic(aes(x = product(outcome,
                               hospital), 
                   fill = outcome), na.rm=TRUE) +
   labs(title = "Outcome by Type of Hospital",
        x = "type of hospital",
        y = "outcome")
+
+ggplotly(p1)
 
 ```
 
@@ -109,7 +118,7 @@ The disparity arises because more of the *more severe* cases go to the better ho
 
 ```{r}
 
-ggplot(hospitaldatalong) + 
+p2 <- ggplot(hospitaldatalong) + 
   geom_mosaic(aes(x = product(outcome,
                               hospital), 
                   fill = outcome), na.rm=TRUE) +
@@ -118,6 +127,8 @@ ggplot(hospitaldatalong) +
        subtitle = "AND Severity of Case",
        x = "type of hospital",
        y = "outcome")
+
+ggplotly(p2)
 
 ```
 
