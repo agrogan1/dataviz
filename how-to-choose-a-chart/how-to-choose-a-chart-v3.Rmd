@@ -986,9 +986,9 @@ chartgrid <- plot_grid(my_histogram +
                          theme(title=element_text(size = 20)), 
                        my_contour + 
                          theme(title=element_text(size = 20)), 
-                       my_beeswarm + 
+                       my_dotplot + 
                          theme(title=element_text(size = 20)), 
-                       my_facet_beeswarm + 
+                       my_facet_dotplot + 
                          theme(title=element_text(size = 20)), 
                        my_doughnut + 
                          theme(title=element_text(size = 20)),
@@ -1014,7 +1014,7 @@ banner <- plot_grid(my_histogram +
                       theme(title=element_text(size = 20)), 
                     my_scatterplot_smoother + 
                       theme(title=element_text(size = 20)), 
-                    my_beeswarm + 
+                    my_dotplot + 
                       theme(title=element_text(size = 20)), 
                     nrow = 1)
 
