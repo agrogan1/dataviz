@@ -25,7 +25,7 @@ knitr::include_graphics("images/banner.png")
 
 # Course description
 
-In an era of evidence based practice, community workers, advocates, and evaluators will likely find that they need to interpret and visualize data from a wide variety of sources. Understanding, interpreting and visualizing data (including some basic coding) can make the difference in successfully or unsuccessfully advocating for communities, clients or programs, and for understanding the impact of programs on clients. Increasingly, data relevant to community, participant and client well-being are available from a broad range of sources, whether those be databases of volunteers and donors, the Census, the World Bank, in addition to many others. This course will be focused on the acquisition of concrete applicable skills and strategies for interpreting and visualizing community data, including learning in R, Tableau and QGIS.
+In an era of evidence based practice, community workers, advocates, and evaluators will likely find that they need to interpret and visualize data from a wide variety of sources. Understanding, interpreting and visualizing data (including some basic coding) can make the difference in successfully or unsuccessfully advocating for communities, clients or programs, and for understanding the impact of programs on clients. Increasingly, data relevant to community, participant and client well-being are available from a broad range of sources, whether those be databases of volunteers and donors, the Census, the World Bank, in addition to many others. <mark>This course will be focused on the acquisition of concrete applicable skills and strategies for interpreting and visualizing community data, including learning in R, Tableau and QGIS.</mark>
 
 <aside>
 ```{r, fig.cap="Image Created By Royal Statistical Society"}
@@ -34,6 +34,8 @@ knitr::include_graphics("images/RSS.jpg")
 
 ```
 </aside>
+
+> <mark>Some learning of basic coding in R will be involved in this course.</mark>
 
 # Course content
 

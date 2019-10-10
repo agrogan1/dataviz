@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6670 64-bit) (preloaded format=xelatex 2018.5.3)  9 JUL 2019 11:16
+This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6670 64-bit) (preloaded format=xelatex 2018.5.3)  8 OCT 2019 15:41
 entering extended mode
 **./how-to-choose-a-chart-v3.tex
 (how-to-choose-a-chart-v3.tex
@@ -1107,7 +1107,7 @@ d.
 Here is how much of TeX's memory you used:
  22106 strings out of 427836
  413056 string characters out of 3152480
- 548081 words of memory out of 3000000
+ 548087 words of memory out of 3000000
  25858 multiletter control sequences out of 15000+200000
  543036 words of font info for 57 fonts, out of 3000000 for 9000
  1328 hyphenation exceptions out of 8191
