@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
-```{r, layout="l-screen"}
+```{r}
 
 knitr::include_graphics("images/banner.png")
 
