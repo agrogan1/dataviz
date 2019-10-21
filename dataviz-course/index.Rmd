@@ -48,13 +48,19 @@ knitr::include_graphics("images/RSS.jpg")
 5. Students will be able to produce various types maps and visualizations of spatial data.
 
 <aside>
-```{r, fig.cap="Chart Ideas"}
+```{r, fig.cap="Dataviz Examples"}
+
+knitr::include_graphics("images/banner-vv.png")
+
+```
+
+```{r, eval=FALSE, fig.cap="Chart Ideas"}
 
 knitr::include_graphics("images/chartgrid.png")
 
 ```
 
-```{r, fig.cap="Global Bans on Corporal Punishment"}
+```{r, fig.cap="Mapping Example"}
 
 knitr::include_graphics("images/cpbans.png")
 

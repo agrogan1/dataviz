@@ -215,8 +215,8 @@ ggplot(data = NULL,
              size = 2, 
              color = "red") +
   scale_color_gradient(name = "some other \npiece of \ninformation",
-                       low = "#375E97",
-                       high = "#FFBB00") +
+                       low = "gold",
+                       high = "darkblue") +
   ylab("possibly another dimension of the data") +
   xlab("one dimension of the data") +
   labs(title = "Informative Title",
@@ -270,7 +270,7 @@ p1 <- ggplot(mydata,
   theme_minimal()
   
 p1a <- p1 + 
-  geom_histogram(fill = "#375E97") 
+  geom_histogram(fill = "darkblue") 
 
 # p1a
 
@@ -278,7 +278,7 @@ p1b <- p1 +
   geom_beeswarm(aes(y = 1), 
                 groupOnX = FALSE,
                 cex = 2.0,
-                color = "#375E97") +
+                color = "darkblue") +
   ylab("") +
   theme_minimal() +
   theme(axis.title.y = element_blank(),
@@ -305,9 +305,9 @@ p2 <- ggplot(mydata,
                  fill = neighborhood)) +
   geom_bar() + 
   labs(title = "Neighborhood") +
-  # scale_fill_viridis(discrete = TRUE,
-  #                    option = "plasma") +
-  scale_fill_canva(palette = "Primary colors with a vibrant twist") +
+  scale_fill_manual(values = c("darkblue", 
+                               "gold", 
+                               "darkgreen")) +
   theme_minimal()
 
 p2
@@ -334,9 +334,9 @@ p3 <- ggplot(mydata,
   coord_flip() + 
   labs(title = "Neighborhood",
        subtitle = "by Group") +
-  # scale_fill_viridis(discrete = TRUE,
-  #                    option = "plasma") +
-  scale_fill_canva(palette = "Primary colors with a vibrant twist") +
+    scale_fill_manual(values = c("darkblue", 
+                               "gold", 
+                               "darkgreen")) +
   theme_minimal() +
   theme(strip.text = element_text(size = 8))
 
@@ -352,8 +352,8 @@ Here, we visualize two *continuous* variables, *mental health*, by *age*.
 
 p4 <- ggplot(mydata,
              aes(x = age, y = mental_health)) + 
-  geom_point(color = "#375E97") +
-  geom_smooth(color = "#FB6542") +
+  geom_point(color = "darkblue") +
+  geom_smooth(color = "red") +
   labs(title = "Mental Health by Age") +
   ylab("mental health")  +
   theme_minimal()
@@ -372,14 +372,13 @@ p5 <- ggplot(mydata,
              aes(x = group,
                  y = mental_health,
                  fill = group)) +
-    stat_summary(fun.y = mean, 
-                 geom = "bar") + 
+  stat_summary(fun.y = mean, 
+               geom = "bar") + 
   coord_flip() +
   labs(title = "Mental Health by Group") + 
   ylab("mental health") +
-  # scale_fill_viridis(discrete = TRUE,
-  #                    option = "plasma") +
-  scale_fill_canva(palette = "Primary colors with a vibrant twist") +
+  scale_fill_manual(values = c("darkblue", 
+                               "gold")) +
   theme_minimal()
 
 p5
@@ -419,9 +418,8 @@ mymap <- ggplot() +
                                  fill = myfill),
                color = "grey") + 
   labs(title = "Location of Agency Clients") +
-  # scale_fill_viridis(discrete = TRUE,
-  #                    option = "plasma") +
-  scale_fill_canva(palette = "Primary colors with a vibrant twist") +
+  scale_fill_manual(values = c("gold",
+                               "darkblue")) +
   theme_minimal()  + 
   coord_fixed(1.3) 
 
