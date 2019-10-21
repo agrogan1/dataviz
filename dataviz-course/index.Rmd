@@ -17,11 +17,13 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
-```{r}
+```{r, layout="l-screen"}
 
 knitr::include_graphics("images/banner.png")
 
 ```
+
+# <mark>Social Work 670 - Winter 2020</mark>
 
 # Course Description
 
@@ -45,17 +47,38 @@ knitr::include_graphics("images/RSS.jpg")
 4. Students will be able to produce various forms of standard graphs and data visualizations.
 5. Students will be able to produce various types maps and visualizations of spatial data.
 
+<aside>
+```{r, fig.cap="Chart Ideas"}
+
+knitr::include_graphics("images/chartgrid.png")
+
+```
+
+```{r, fig.cap="Global Bans on Corporal Punishment"}
+
+knitr::include_graphics("images/cpbans.png")
+
+```
+</aside>
+
 # Course Design
 
 Students will learn some of the major analytic and quantitative tools used by practitioners in assessing or evaluating human service programs or systems, which include a range of specific programs. The theme of this course is how to increase the rationality of the planning, analysis, and evaluation process, particularly of programs intended to serve the underprivileged or oppressed populations. Students will learn that human service organizations include a wide variety of programs of diverse size and complexity, with respect to their activities and goals. This course will impart skills which can be applied at various levels of analysis in different contexts.
 
+
+```{r, eval=FALSE, echo=FALSE}
+
 # Course Relationship to P.O.D.S.
 
-This course integrates PODS content and skills with a special emphasis on the identification of theories, practice and/or policies that promote social justice, illuminate injustices and are consistent with scientific and professional knowledge. Through the use of a variety of instructional methods, this course will support students developing a vision of social justice, learn to recognize and reduce mechanisms that support oppression and injustice, work toward social justice processes, apply intersectionality and intercultural frameworks and strengthen critical consciousness, self-knowledge and self-awareness to facilitate PODS learning.
+# This course integrates PODS content and skills with a special emphasis on the identification of theories, practice and/or policies that promote social justice, illuminate injustices and are consistent with scientific and professional knowledge. Through the use of a variety of instructional methods, this course will support students developing a vision of social justice, learn to recognize and reduce mechanisms that support oppression and injustice, work toward social justice processes, apply intersectionality and intercultural frameworks and strengthen critical consciousness, self-knowledge and self-awareness to facilitate PODS learning.
 
 # Ideas for Shared / Standard Assignments
 
-Data Visualization portfolio shared online
+# Data Visualization portfolio shared online
+
+
+```
+
 
 
 
