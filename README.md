@@ -12,4 +12,4 @@
 
 [Dashboard Demo](./dashboard/dashboard.html)
 
-[Andy Grogan-Kaylor](https://agrogan1.github.io/)
+Created by [Andy Grogan-Kaylor](https://agrogan1.github.io/)
