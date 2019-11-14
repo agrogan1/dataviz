@@ -6,6 +6,8 @@
 
 [Graphing Change Over Time](./graphing-change-over-time/index.html) [[PDF](./graphing-change-over-time/index.pdf)]
 
+[Data Driven Report Demo](./data-driven-report-demo/data-driven-report-demo.html)
+
 [Introduction to Plotly](./plotly-intro/)
 
 [Variables and Visualization](./variables-and-visualization/variables-and-visualization.html#/)
