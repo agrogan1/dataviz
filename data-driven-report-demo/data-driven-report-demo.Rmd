@@ -9,15 +9,16 @@ output:
     number_sections: yes
     toc: yes
     code_download: true
+  bookdown::epub_book: default  
+  word_document: 
+    fig_height: 3
+    toc: yes
+    reference_docx: "word-styles-reference-01.docx"
   pdf_document: 
     fig_height: 3
     highlight: haddock
     number_sections: yes
     toc: yes
-  word_document: 
-    fig_height: 3
-    toc: yes
-    reference_docx: "word-styles-reference-01.docx"
 ---
 
 ```{r setup, include=FALSE}
