@@ -3,11 +3,26 @@ title: "Graphing Change Over Time"
 author: "Andy Grogan-Kaylor"
 date: '`r format(Sys.Date(), format="%B %d, %Y")`'
 output:
-  tufte::tufte_handout: default
+  tint::tintPdf:
+    highlight: haddock
+    number_sections: yes
+    toc: no
   tufte::tufte_html:
     tufte_features:
     - fonts
     - italics
+    css: mycss.css
+  tufte::tufte_handout: default
+  html_document:
+    fig_height: 2
+    highlight: haddock
+    keep_md: no
+    number_sections: yes
+    theme: default
+    toc: yes
+    toc_float:
+      collapsed: yes
+      smooth_scroll: yes
 ---
 
 ```{r global_options, echo=FALSE, warning=FALSE}
@@ -90,25 +105,31 @@ cool_michigan_colors <- c(michigan_blue,
 
 t <- rep(seq(1:5), 5)
 
+# id number
+
 id <- c(rep(1,5),
         rep(2,5),
         rep(3,5),
         rep(4,5),
-        rep(5,5)) # id number
+        rep(5,5)) 
 
 id <- factor(id)
+
+# individual trajectories
 
 outcome <-  c(seq(1,5), 
         seq(5,1, by= -1),
         rep(2,5),
         3, 3, 4, 2, 1,
-        seq(0,4, by = 1)) # individual trajectories
+        seq(0,4, by = 1)) 
+
+# group membership over time
 
 group <- c(rep("A", 5),
            rep("B", 5),
            rep("A", 2), rep("C", 3),
            rep("B", 3), rep("A", 2),
-           rep("C", 1), rep("A", 4)) # group membership over time
+           rep("C", 1), rep("A", 4)) 
 
 mydata <- data.frame(id, t, outcome)
 
@@ -136,7 +157,7 @@ p <- ggplot(data = mydata,
                 color = id,
                 linetype = id)) + # basic plot structure 
   xlab("time") + ylab("outcome") + 
-  theme_tufte() + 
+  theme_minimal() + 
   scale_color_viridis_d() +
   scale_fill_viridis_d() 
 
@@ -210,7 +231,7 @@ myslopegraph <- ggplot(data = newdata,
   ylab("outcome") +
   scale_y_continuous(breaks=c(0, 1, 2, 3, 4, 5)) + 
   scale_x_continuous(breaks=c(1,5)) + 
-  theme_tufte() + 
+  theme_minimal() + 
   scale_color_viridis_d() +
   scale_fill_viridis_d()
 
@@ -314,14 +335,7 @@ Data can be *reshaped* from *wide* to *long* format, and *vice versa*.  Two stra
 *****
 \footnotesize
 
-Graphics made with ggplot2[^ggplot2] created by Hadley Wickham.
-
-Designed using the Tufte-\LaTeX\ [^tufte_latex] variant of [RMarkdown](http://rmarkdown.rstudio.com/tufte_handout_format.html)
-which is inspired by the works of Edward Tufte[^books_be]. 
-
-[^ggplot2]: http://ggplot2.org/
-[^tufte_latex]: https://code.google.com/p/tufte-latex/
-[^books_be]: http://www.edwardtufte.com/tufte/books_be
+Graphics made with [ggplot2](http://ggplot2.org/)created by Hadley Wickham.
 
 [*Graphing Change Over Time*](https://agroganweb.wordpress.com/data-visualization-dataviz/) by Andrew Grogan-Kaylor is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
 
