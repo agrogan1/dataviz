@@ -3,11 +3,11 @@ title: "Graphing Change Over Time"
 author: "Andy Grogan-Kaylor"
 date: '`r format(Sys.Date(), format="%B %d, %Y")`'
 output:
+  tufte::tufte_handout: default
   tufte::tufte_html:
     tufte_features:
     - fonts
     - italics
-  tufte::tufte_handout: default
 ---
 
 ```{r global_options, echo=FALSE, warning=FALSE}
@@ -137,8 +137,8 @@ p <- ggplot(data = mydata,
                 linetype = id)) + # basic plot structure 
   xlab("time") + ylab("outcome") + 
   theme_tufte() + 
-  scale_color_viridis(discrete = TRUE) +
-  scale_fill_viridis(discrete = TRUE) 
+  scale_color_viridis_d() +
+  scale_fill_viridis_d() 
 
 myscatterplot <- p + 
   geom_point(size = mypointsize) +
@@ -152,7 +152,8 @@ myspaghettiplot <- p +
   geom_smooth(method = lm, 
               size = mylinewidth, 
               se=FALSE) + 
-  geom_smooth(aes(x = t, y = outcome), 
+  geom_smooth(aes(x = t, 
+                  y = outcome), 
               size = 2, 
               linetype = "dashed", 
               color = "black", 
@@ -210,8 +211,8 @@ myslopegraph <- ggplot(data = newdata,
   scale_y_continuous(breaks=c(0, 1, 2, 3, 4, 5)) + 
   scale_x_continuous(breaks=c(1,5)) + 
   theme_tufte() + 
-  scale_color_viridis(discrete = TRUE) +
-  scale_fill_viridis(discrete = TRUE)
+  scale_color_viridis_d() +
+  scale_fill_viridis_d()
 
 
 ```
