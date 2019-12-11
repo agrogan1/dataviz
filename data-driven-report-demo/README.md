@@ -6,7 +6,7 @@ An example data driven document can be found here:
 
 * [Rmarkdown file](data-driven-report-demo.Rmd)
 * [HTML file](data-driven-report-demo.html)
-* [GitBook](./_book/background.html)
+* [GitBook](./book/background.html)
 * [PDF](data-driven-report-demo.pdf)
 * [Word](data-driven-report-demo.docx)
 * [epub](data-driven-report-demo.epub)
