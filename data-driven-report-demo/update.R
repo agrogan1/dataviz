@@ -11,6 +11,7 @@ render("data-driven-report-demo.Rmd",
 
 
 bookdown::render_book("data-driven-report-demo.Rmd", 
-                      "bookdown::gitbook")
+                      "bookdown::gitbook",
+                      output_dir = "book")
 
 
