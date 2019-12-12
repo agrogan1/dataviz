@@ -9,10 +9,10 @@ library(bookdown) # for epub
 render("data-driven-report-demo.Rmd",
        output_format = "all")
 
-
-bookdown::render_book("data-driven-report-demo.Rmd", 
-                      "bookdown::gitbook",
-                      # output_dir = "book"
-                      )
-
+# 
+# bookdown::render_book("data-driven-report-demo.Rmd", 
+#                       "bookdown::gitbook",
+#                       # output_dir = "book"
+#                       )
+# 
 
