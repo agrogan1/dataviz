@@ -6,7 +6,7 @@ RMarkdown is an almost *magical* system that allows you to create documents in m
 
 An example data driven document can be found here:
 
-* [Rmarkdown file](data-driven-report-demo.Rmd)
+* [Rmarkdown file](https://github.com/agrogan1/dataviz/blob/master/data-driven-report-demo/data-driven-report-demo.Rmd)
 * [HTML file](data-driven-report-demo.html)
 * [PDF](data-driven-report-demo.pdf)
 * [Word](data-driven-report-demo.docx)
