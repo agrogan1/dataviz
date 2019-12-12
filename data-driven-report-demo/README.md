@@ -16,7 +16,7 @@ An example data driven document can be found here.
 * [Word](data-driven-report-demo.docx)
 * [epub](data-driven-report-demo.epub)
 
-### Rmarkdown Source Code: 
+### Rmarkdown Source Code
 
 * [Rmarkdown file](https://github.com/agrogan1/dataviz/blob/master/data-driven-report-demo/data-driven-report-demo.Rmd)
 
