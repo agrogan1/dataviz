@@ -18,9 +18,10 @@ render("data-driven-report-demo.Rmd",
 #                       )
 # 
 
-# render("data-driven-report-demo.Rmd",
-#        output_format = revealjs_presentation(),
-#        output_file = "data-driven-report-demo-revealjs.html")
+render("data-driven-report-demo.Rmd",
+       output_format = revealjs_presentation(css = "revealjs.css",
+                                             fig_height = 3),
+       output_file = "data-driven-report-demo-revealjs.html")
 
 render("data-driven-report-demo.Rmd",
        output_format = slidy_presentation(),

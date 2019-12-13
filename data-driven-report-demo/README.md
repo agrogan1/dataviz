@@ -12,6 +12,7 @@ An example data driven document can be found here.
 
 * [HTML file](data-driven-report-demo.html)
 * [Slidy HTML Slide Show](data-driven-report-demo-slidy.html)
+* [Reveal.js HTML Slide Show](data-driven-report-demo-revealjs.html) (may not work well with all screen sizes and screen resolutions)
 * [PDF](data-driven-report-demo.pdf)
 * [Word](data-driven-report-demo.docx)
 * [epub](data-driven-report-demo.epub)
