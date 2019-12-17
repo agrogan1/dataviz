@@ -43,6 +43,10 @@ library(ggplot2) # beautiful graphs
 
 library(pander) # beautiful tables
 
+library(formattable)
+
+library(kableExtra)
+
 library(knitr) # knitting RMarkdown
 
 ```
@@ -93,8 +97,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ```{r}
 
-pander(table(gapminder$continent),
-       caption = "Data Points by Continent")
+# pander(table(gapminder$continent),
+#        caption = "Data Points by Continent")
 
 pander(summary(gapminder$lifeExp),
        caption = "Life Expectancy")
