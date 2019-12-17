@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Andy Grogan-Kaylor" />
-  <meta name="dcterms.date" content="2019-10-21" />
+  <meta name="dcterms.date" content="2019-12-17" />
   <title>Variables &amp; Visualization</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -453,7 +453,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
     <h1 class="title">Variables &amp; Visualization</h1>
   <h1 class="subtitle">What Is The Story You Are Trying To Tell?</h1>
     <h2 class="author">Andy Grogan-Kaylor</h2>
-    <h3 class="date">October 21, 2019</h3>
+    <h3 class="date">December 17, 2019</h3>
 </section>
 
 <section><section id="how-to-navigate-this-presentation-scroll-down" class="title-slide slide level1"><h1>How to Navigate This Presentation (scroll down ⇩)</h1></section><section id="navigation" class="slide level2">
@@ -471,7 +471,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 possible visualizations
 </p>
 </div>
-
+<p></p>
 </section><section id="background" class="slide level2">
 <h2>Background</h2>
 <ul>
@@ -492,7 +492,7 @@ hypothetical questionnaire
 <p>A data set is nothing more than a series of rows and columns that contain answers to responses to a survey.</p>
 <ul>
 <li>Rows are usually used for individuals, while columns indicate the questionnaire answers, or measures, from those people.</li>
-<li>Answers to questions are often given numerical responses (e.g. “no” is frequently coded as “0” and “yes” is frequently coded as “1”)</li>
+<li>Answers to questions are often given numerical responses (e.g. “no” is frequently coded as “0” and “yes” is frequently coded as “1”)</li>
 </ul>
 <table style="width:35%;">
 <caption>Hypothetical Data</caption>
@@ -535,14 +535,14 @@ hypothetical questionnaire
 <h2>Some Notes on Data</h2>
 <ul>
 <li>In working through our research questions, we’ll constantly be going back and forth between the actual data (to see the pattern of responses) and the documentation, to figure out the actual question asked as well as how the different responses are coded.</li>
-<li>Often in a spreadsheet, you’ll see the full text of a question written out (e.g. “What is your gender identity”?)</li>
-<li>Most programs that work with data are going to want abbreviations (e.g. “Q1” or “gender”&quot;) for the questions. These abbreviations should usually have no spaces and be 8 characters or less.</li>
+<li>Often in a spreadsheet, you’ll see the full text of a question written out (e.g. “What is your gender identity”?)</li>
+<li>Most programs that work with data are going to want abbreviations (e.g. “Q1” or “gender”") for the questions. These abbreviations should usually have no spaces and be 8 characters or less.</li>
 </ul>
 </section><section id="missing-data" class="slide level2">
 <h2>Missing Data</h2>
 <ul>
 <li>One cell of the sample data set has a negative number.</li>
-<li>Frequently negative numbers are used to indicate what are called “missing values”. A missing value is a response like “don’t know”&quot; or “refused to answer” or “did not answer”.</li>
+<li>Frequently negative numbers are used to indicate what are called “missing values”. A missing value is a response like “don’t know”" or “refused to answer” or “did not answer”.</li>
 <li>Before we start doing calculations with our data, we’ll want to change negative numbers to true missing values (usually symbolized by a “.” or “NA”, so that they don’t goof up our calculations.)</li>
 </ul>
 </section><section id="what-are-variables" class="slide level2">
@@ -597,34 +597,34 @@ hypothetical questionnaire
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">57.21</td>
-<td style="text-align: center;">107.1</td>
+<td style="text-align: center;">55.7</td>
+<td style="text-align: center;">99.33</td>
+<td style="text-align: center;">Group A</td>
+<td style="text-align: center;">Neighborhood B</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">50.44</td>
+<td style="text-align: center;">111.7</td>
+<td style="text-align: center;">Group B</td>
+<td style="text-align: center;">Neighborhood A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">26.29</td>
+<td style="text-align: center;">108.3</td>
 <td style="text-align: center;">Group A</td>
 <td style="text-align: center;">Neighborhood C</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">43.03</td>
-<td style="text-align: center;">114.6</td>
+<td style="text-align: center;">46.33</td>
+<td style="text-align: center;">115.4</td>
 <td style="text-align: center;">Group A</td>
 <td style="text-align: center;">Neighborhood B</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">64</td>
-<td style="text-align: center;">125.8</td>
-<td style="text-align: center;">Group A</td>
-<td style="text-align: center;">Neighborhood A</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">35.25</td>
-<td style="text-align: center;">119.7</td>
+<td style="text-align: center;">43.84</td>
+<td style="text-align: center;">93.04</td>
 <td style="text-align: center;">Group A</td>
 <td style="text-align: center;">Neighborhood B</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">45.75</td>
-<td style="text-align: center;">84.44</td>
-<td style="text-align: center;">Group A</td>
-<td style="text-align: center;">Neighborhood A</td>
 </tr>
 </tbody>
 </table>
@@ -706,7 +706,7 @@ Map
 </section><section id="author" class="slide level2">
 <h2>Author</h2>
 <p><em>Variables &amp; Visualization</em> by <a href="https://agroganweb.wordpress.com/">Andrew Grogan-Kaylor</a> is licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. You are welcome to download and use this handout in your own classes, or work, as long as the handout remains properly attributed.</p>
-<p>Last updated: <code>October 21 2019</code> at <code>16:36</code></p>
+<p>Last updated: <code>December 17 2019</code> at <code>11:08</code></p>
 </section></section>
     </div>
   </div>
