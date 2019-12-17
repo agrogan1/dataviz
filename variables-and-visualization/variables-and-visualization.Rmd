@@ -9,10 +9,16 @@ output:
     self_contained: no
     theme: default
     transition: convex
+    reveal_plugins: ["zoom"]
   tufte::tufte_handout:
     fig_height: 2.5
     toc: yes
     number_sections: yes
+    latex_engine: xelatex
+  tint::tintPdf:
+    highlight: haddock
+    number_sections: yes
+    toc: yes
     latex_engine: xelatex
 subtitle: What Is The Story You Are Trying To Tell?
 ---
@@ -101,6 +107,8 @@ mydata <- data.frame(age, mental_health, group, neighborhood)
 
 * **o** for outline
 * **f** for full screen
+* **Alt-Click** to zoom
+* Scroll &#8681; to the bottom of each column of slides; then &#8680;
 
 # Introduction (scroll down &#8681;) 
 
@@ -113,8 +121,6 @@ img <- readPNG("banner.png")
 grid.raster(img)
 
 ```
-
-\newpage
 
 ## Background
 
