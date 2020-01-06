@@ -123,6 +123,13 @@ show_col(hue_pal()(4))
 
 ```
 
+## Color is...
+
+> What is the purpose for which you are using color?
+
+[See these notes](../political-social-work/index.html#/color-scroll-down
+) from my video lecture on Data Visualization in Political Social Work.
+
 ## Many Many Color Options
 
 e.g. Viridis, which is designed to be *perceptually uniform*.
@@ -175,9 +182,9 @@ plot_grid(p0 + scale_fill_viridis_d() +
 
 ### Interesting Font For Heading; Standard Font For Text
 
-<font face="Impact">Interesting Font for Heading</font>
+> <font face="Impact">Interesting Font for Heading</font>
 
-Standard <font face="Arial">San Serif</font> or <font face="Times New Roman">Serif Fonts</font> for text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+> Standard <font face="Arial">San Serif</font> or <font face="Times New Roman">Serif Fonts</font> for text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 # Cognition
 
