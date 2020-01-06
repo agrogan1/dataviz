@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6670 64-bit) (preloaded format=pdflatex 2018.5.1)  9 DEC 2019 13:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6670 64-bit) (preloaded format=pdflatex 2018.5.1)  6 JAN 2020 12:06
 entering extended mode
 **./index.tex
 (index.tex
@@ -1314,7 +1314,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 397.
 Here is how much of TeX's memory you used:
  14009 strings out of 493305
  199092 string characters out of 3138869
- 298140 words of memory out of 3000000
+ 298339 words of memory out of 3000000
  17266 multiletter control sequences out of 15000+200000
  80973 words of font info for 61 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1327,7 +1327,7 @@ fonts/type1/google/roboto/RobotoCondensed-Bold.pfb><C:/Program Files/MiKTeX 2.9
 2.9/fonts/type1/google/roboto/RobotoCondensed-Light.pfb><C:/Program Files/MiKTe
 X 2.9/fonts/type1/google/roboto/RobotoCondensed-Regular.pfb><C:/Program Files/M
 iKTeX 2.9/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on index.pdf (2 pages, 155384 bytes).
+Output written on index.pdf (2 pages, 155590 bytes).
 PDF statistics:
  107 PDF objects out of 1000 (max. 8388607)
  8 named destinations out of 1000 (max. 500000)
