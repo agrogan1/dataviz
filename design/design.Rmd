@@ -27,6 +27,10 @@ library(cowplot)
 
 ```
 
+# Intro
+
+This document consists of some *rough draft* ideas about things that I am learning about design.
+
 # Color 
 
 ## Color Model
@@ -83,25 +87,25 @@ library(RColorBrewer)
 
 ```
 
-```{r}
+```{r, fig.cap="Qualitative"}
 
 display.brewer.pal(7,"Set1") # qualitative
 
 ```
 
-```{r}
+```{r, fig.cap="Sequential"}
 
 display.brewer.pal(7,"YlOrRd") # sequential
 
 ```
 
-```{r}
+```{r, fig.cap="Spectral"}
 
 display.brewer.pal(7,"Spectral") # diverging
 
 ```
 
-```{r, fig.margin = FALSE, fig.height=8}
+```{r, fig.cap="All Palettes", fig.margin = FALSE, fig.height=8}
 
 display.brewer.all() # all palettes
 
@@ -204,7 +208,7 @@ datatable(iris) # dimensions of the data
 
 ```
 
-The `iris` data set has 5 dimensions `r names(iris)`.
+> The `iris` data set has 5 dimensions `r names(iris)`.
 
 ### Species of Iris
 
@@ -215,7 +219,7 @@ Versicolor: ![Versicolor](Blue_Flag_Ottawa.jpg){ width=20% } Virginica: ![Virgin
 
 ### Philosophies
 
-```{r, fig.height=8, echo=FALSE}
+```{r, echo=FALSE}
 
 p0 <- ggplot(iris,
        aes(x = Petal.Length,
@@ -224,7 +228,7 @@ p0 <- ggplot(iris,
   geom_smooth() +
   labs(title = "Minimal Philosophy",
        subtitle="Every Bit of Extra Ink Matters",
-       caption = "Only two dimensions of data: No use of color.") 
+       caption = "Only two dimensions of data: No explicit use of color.") 
 
 p_minimal <- ggplot(iris,
        aes(x = Petal.Length,
@@ -235,7 +239,7 @@ p_minimal <- ggplot(iris,
   scale_color_viridis_d() + 
   labs(title = "Minimal Philosophy",
        subtitle="Every Bit of Extra Ink Matters",
-       caption = "We only use color because \nwe have 3 dimensions of data.") 
+       caption = "We explicitly use color because \nwe have 3 dimensions of data.") 
 
 p_maximal <- ggplot(iris,
        aes(x = Petal.Length,
@@ -249,9 +253,26 @@ p_maximal <- ggplot(iris,
        subtitle="Use Ink Liberally for Accessibility and Communication") +
   facet_wrap(~Species)
 
-plot_grid(p0, p_minimal, p_maximal, nrow = 3)
+```
+
+```{r, fig.cap="Minimal Philosophy With 2 Data Dimensions", echo=FALSE}
+
+p0
 
 ```
+
+```{r, fig.cap="Minimal Philosophy With 3 Data Dimensions", echo=FALSE}
+
+p_minimal
+
+```
+
+```{r, fig.cap="Maximal Philosophy", echo=FALSE}
+
+p_maximal
+
+```
+
 
 ## Some Geometries Are Easier To Understand Than Others
 
