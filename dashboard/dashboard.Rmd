@@ -4,7 +4,7 @@ date: '`r format(Sys.Date(), format="%B %d, %Y")`'
 output:
   flexdashboard::flex_dashboard:
     navbar:
-      - { title: "by Andy Grogan-Kaylor", href: "https://agroganweb.wordpress.com/data-visualization-dataviz/", align: left }
+      - { title: "by Andy Grogan-Kaylor", href: "https://www.umich.edu/~agrogan", align: left }
     theme: cerulean
     vertical_layout: fill
     orientation: rows
@@ -264,7 +264,7 @@ p3
 <span style="color:chartreuse">Map</span>
 =====================================  
 
-###  Client Locations (Simulated and Randomly Generated)
+###  Client Locations (<span style = "background-color:yellow">Simulated and Randomly Generated</span>)
 
 ```{r}
 
@@ -380,7 +380,7 @@ Column
 
 * The average age was `r mean(simulated_agency_data$age)`.
 
-* The average mental health score was `r mean(simulated_agency_data$mentalHealthScore)`.
+* The average mental health score was `r round(mean(simulated_agency_data$mentalHealthScore), digits=2)`.
 
 </h4>
 
