@@ -3,7 +3,9 @@ title: "Introduction to Plotly"
 author: "Andy Grogan-Kaylor"
 date: '`r format(Sys.Date(), format="%B %d, %Y")`'
 output:
-  slidy_presentation:
+  slidy_presentation: 
+    css: slidy.css
+    fig_caption: yes
     fig_height: 3
     highlight: haddock
   html_document:
@@ -23,7 +25,7 @@ knitr::opts_chunk$set(echo = TRUE,
                       message = FALSE,
                       warning = FALSE)
 
-library(anicon)
+# library(anicon)
 
 ```
 
@@ -57,9 +59,29 @@ load("WorldBankData.RData") # load the data
 
 ```
 
-## Construct a ggplot
+## Construct a Simple ggplot
 
 <mark>Remember [all ggplots start simple](http://www-personal.umich.edu/~agrogan/quick-intro-ggplot2/a-simple-quick-example.html), and then are tweaked...</mark>
+
+```{r}
+
+# NB, I am mapping the plot into an object
+# this is a tremendously useful idea, and will come in handy...
+
+p0 <- ggplot(mydata, # the data I am using
+            aes(x = GDP, # how I am graphing it
+                y = life_expectancy, # NB I'm 'doubling up'
+                color = life_expectancy)) + # on dimensions 
+  geom_point() + # the geometries I want to use to graph
+  geom_smooth()
+
+# this graph needs better labels and titles
+
+p0 # I am replaying the object, i.e. the plot
+
+```
+
+## Construct a More Complicated ggplot
 
 ```{r}
 
@@ -81,7 +103,7 @@ p1 # I am replaying the object, i.e. the plot
 
 ```
 
-## Plotly-etize it
+## `plotly`-etize it
 
 *Mouse over* the plot to see the interactivity.
 
@@ -252,9 +274,9 @@ myglobe
 
 ```
 
-## Questions?
+## Questions? {#majorsection}
 
-## Explore!!!
+## Explore!!! {#majorsection}
 
 https://plot.ly/r/ 
 
