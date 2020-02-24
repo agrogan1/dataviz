@@ -27,7 +27,7 @@ library(rayshader) # WOW
 
 library(rgl) # 3D graphics
 
-knit_hooks$set(rgl = hook_rgl)
+# knit_hooks$set(rgl = hook_rgl)
 
 ```
 
