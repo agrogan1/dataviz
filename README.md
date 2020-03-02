@@ -1,5 +1,7 @@
 # dataviz
 
+[Dataviz Course](https://agrogan1.github.io/dataviz/dataviz-course/)
+
 ## materials on data visualization
 
 [How To Choose A Chart: A Visual Guide](./how-to-choose-a-chart/how-to-choose-a-chart-a-visual-guide.pdf) [[Extended Version](./how-to-choose-a-chart/how-to-choose-a-chart-v3.html)]

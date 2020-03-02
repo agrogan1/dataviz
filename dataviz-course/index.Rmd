@@ -1,7 +1,7 @@
 ---
 title: "Data Vizualization (Dataviz) Course"
 description: |
-  A course on data visualization.
+  <mark>SW 672 Fall 2020</mark>
 author:
   - name: Andy Grogan-Kaylor
     url: https://www.umich.edu/~agrogan
