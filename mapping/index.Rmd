@@ -25,13 +25,26 @@ knitr::opts_chunk$set(echo = TRUE,
 
 # Set Up The Map
 
-> This part is admittedly a little complicated. It's not necessary to understand the code here. But I learned a lot from: [https://plotly.com/r/#maps](https://plotly.com/r/#maps).
+> This part is admittedly a little complicated, mostly because I added options to get the map to look exactly the way that I wanted. 
+
+> It's not necessary to understand the code here. But I learned a lot from: [https://plotly.com/r/#maps](https://plotly.com/r/#maps).
 
 ```{r}
 
 library(plotly)
 
 ```
+
+```{r, echo=TRUE, eval=FALSE}
+
+# a very basic map could be created with: 
+
+library(plotly)
+
+plot_geo()
+
+```
+
 
 ```{r}
 
