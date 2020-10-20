@@ -73,7 +73,7 @@ library(choroplethrMaps) # map data
 ```{css, echo=FALSE}
 
 .slide-background:first-child {
-  background-image: url('dataviz-splash.png');
+  background-color: darkblue;
 }
 
 ```
