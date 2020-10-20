@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Andy Grogan-Kaylor" />
-  <meta name="dcterms.date" content="2019-12-17" />
+  <meta name="dcterms.date" content="2020-10-20" />
   <title>Variables &amp; Visualization</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -450,13 +450,22 @@ document.getElementsByTagName('head')[0].appendChild(style);
     <div class="slides">
 
 <section>
-    <h1 class="title">Variables &amp; Visualization</h1>
-  <h1 class="subtitle">What Is The Story You Are Trying To Tell?</h1>
-    <h2 class="author">Andy Grogan-Kaylor</h2>
-    <h3 class="date">December 17, 2019</h3>
+    <h1 class="title"><mark>Variables &amp; Visualization</mark></h1>
+  <h1 class="subtitle"><mark>What Is The Story You Are Trying To Tell?</mark></h1>
+    <h2 class="author"><mark>Andy Grogan-Kaylor</mark></h2>
+    <h3 class="date"><mark>October 20, 2020</mark></h3>
 </section>
 
-<section><section id="how-to-navigate-this-presentation-scroll-down" class="title-slide slide level1"><h1>How to Navigate This Presentation (scroll down ⇩)</h1></section><section id="navigation" class="slide level2">
+<style type="text/css">
+
+.slide-background:first-child {
+  background-image: url('dataviz-splash.png');
+}
+
+</style>
+
+
+<section><section id="how-to-navigate-this-presentation-scroll-down" class="title-slide slide level1"><h1><mark>How to Navigate This Presentation (scroll down ⇩)</mark></h1></section><section id="navigation" class="slide level2">
 <h2>Navigation</h2>
 <ul>
 <li><strong>o</strong> for outline</li>
@@ -465,10 +474,10 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li>Scroll ⇩ to the bottom of each column of slides; then ⇨</li>
 </ul>
 </section></section>
-<section><section id="introduction-scroll-down" class="title-slide slide level1"><h1>Introduction (scroll down ⇩)</h1></section><section id="possibilities" class="slide level2">
+<section><section id="introduction-scroll-down" class="title-slide slide level1"><h1><mark>Introduction (scroll down ⇩)</mark></h1></section><section id="possibilities" class="slide level2">
 <h2>Possibilities</h2>
 <div class="figure">
-<img src="variables-and-visualization_files/figure-revealjs/unnamed-chunk-2-1.png" alt="possible visualizations" width="768" />
+<img src="variables-and-visualization_files/figure-revealjs/unnamed-chunk-3-1.png" alt="possible visualizations" width="768" />
 <p class="caption">
 possible visualizations
 </p>
@@ -483,7 +492,7 @@ possible visualizations
 </section><section id="data-often-come-from-a-survey-questionnaire." class="slide level2">
 <h2>Data Often Come From A Survey Questionnaire.</h2>
 <div class="figure">
-<img src="variables-and-visualization_files/figure-revealjs/unnamed-chunk-3-1.png" alt="hypothetical questionnaire" width="768" />
+<img src="variables-and-visualization_files/figure-revealjs/unnamed-chunk-4-1.png" alt="hypothetical questionnaire" width="768" />
 <p class="caption">
 hypothetical questionnaire
 </p>
@@ -575,9 +584,9 @@ hypothetical questionnaire
 </ul>
 </section><section id="more-on-strategy" class="slide level2">
 <h2>More On Strategy</h2>
-<p><img src="variables-and-visualization_files/figure-revealjs/unnamed-chunk-6-1.png" width="768" /></p>
+<p><img src="variables-and-visualization_files/figure-revealjs/unnamed-chunk-7-1.png" width="768" /></p>
 </section></section>
-<section><section id="simulated-data-scroll-down" class="title-slide slide level1"><h1>Simulated Data (scroll down ⇩)</h1></section><section id="background-1" class="slide level2">
+<section><section id="simulated-data-scroll-down" class="title-slide slide level1"><h1><mark>Simulated Data (scroll down ⇩)</mark></h1></section><section id="background-1" class="slide level2">
 <h2>Background</h2>
 <p>This example uses simulated data on social work clients, of the kind that a social service agency might collect.</p>
 <table style="width:71%;">
@@ -598,46 +607,46 @@ hypothetical questionnaire
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">63.44</td>
-<td style="text-align: center;">93.26</td>
-<td style="text-align: center;">Group B</td>
-<td style="text-align: center;">Neighborhood A</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">48.55</td>
-<td style="text-align: center;">103.6</td>
-<td style="text-align: center;">Group B</td>
-<td style="text-align: center;">Neighborhood A</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">45.06</td>
-<td style="text-align: center;">106.6</td>
+<td style="text-align: center;">33.71</td>
+<td style="text-align: center;">91.39</td>
 <td style="text-align: center;">Group A</td>
 <td style="text-align: center;">Neighborhood A</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">43.78</td>
-<td style="text-align: center;">86.89</td>
+<td style="text-align: center;">44.72</td>
+<td style="text-align: center;">102.3</td>
+<td style="text-align: center;">Group A</td>
+<td style="text-align: center;">Neighborhood C</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">41.5</td>
+<td style="text-align: center;">101.6</td>
+<td style="text-align: center;">Group A</td>
+<td style="text-align: center;">Neighborhood B</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">33.22</td>
+<td style="text-align: center;">118.1</td>
 <td style="text-align: center;">Group A</td>
 <td style="text-align: center;">Neighborhood B</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">37.4</td>
-<td style="text-align: center;">100.4</td>
+<td style="text-align: center;">47.99</td>
+<td style="text-align: center;">74.52</td>
 <td style="text-align: center;">Group A</td>
-<td style="text-align: center;">Neighborhood B</td>
+<td style="text-align: center;">Neighborhood A</td>
 </tr>
 </tbody>
 </table>
 </section></section>
-<section><section id="show-one-thing-at-a-time.-scroll-down" class="title-slide slide level1"><h1>Show One Thing At A Time. (scroll down ⇩)</h1></section><section id="rationale" class="slide level2">
+<section><section id="show-one-thing-at-a-time.-scroll-down" class="title-slide slide level1"><h1><mark>Show One Thing At A Time. (scroll down ⇩)</mark></h1></section><section id="rationale" class="slide level2">
 <h2>Rationale</h2>
 <p>We start by visualizing one indicator at a time.</p>
 </section><section id="continuous-variable" class="slide level2">
 <h2>Continuous Variable</h2>
 <p>Sometimes the most interesting visualizations, are visualizations that give us a sense of the maximum, minimum, and average values. For example, the <em>histogram</em> and <em>beeswarm plot</em> display information on <em>age</em>.</p>
 <div class="figure">
-<img src="variables-and-visualization_files/figure-revealjs/unnamed-chunk-9-1.png" alt="Histogram and Beeswarm Plot" width="768" />
+<img src="variables-and-visualization_files/figure-revealjs/unnamed-chunk-10-1.png" alt="Histogram and Beeswarm Plot" width="768" />
 <p class="caption">
 Histogram and Beeswarm Plot
 </p>
@@ -646,20 +655,20 @@ Histogram and Beeswarm Plot
 <h2>Categorical Variable</h2>
 <p>We would use a slightly different visualization, for example, a barchart, when our data are grouped into categories.</p>
 <div class="figure">
-<img src="variables-and-visualization_files/figure-revealjs/unnamed-chunk-10-1.png" alt="Barchart" width="768" />
+<img src="variables-and-visualization_files/figure-revealjs/unnamed-chunk-11-1.png" alt="Barchart" width="768" />
 <p class="caption">
 Barchart
 </p>
 </div>
 </section></section>
-<section><section id="show-the-relationship-of-two-things.-scroll-down" class="title-slide slide level1"><h1>Show The Relationship Of Two Things. (scroll down ⇩)</h1></section><section id="rationale-1" class="slide level2">
+<section><section id="show-the-relationship-of-two-things.-scroll-down" class="title-slide slide level1"><h1><mark>Show The Relationship Of Two Things. (scroll down ⇩)</mark></h1></section><section id="rationale-1" class="slide level2">
 <h2>Rationale</h2>
 <p>Our task becomes somewhat more complicated when we want to understand the relationship of <em>one thing</em> to <em>another thing.</em></p>
 </section><section id="categorical-by-categorical" class="slide level2">
 <h2>Categorical by Categorical</h2>
 <p>Here, for example, we visualize two <em>categorical</em> variables, <em>neighborhood</em>, by <em>group</em>. In this graph, the height of the bars represents the <em>count</em> of observations.</p>
 <div class="figure">
-<img src="variables-and-visualization_files/figure-revealjs/unnamed-chunk-11-1.png" alt="Barchart" width="768" />
+<img src="variables-and-visualization_files/figure-revealjs/unnamed-chunk-12-1.png" alt="Barchart" width="768" />
 <p class="caption">
 Barchart
 </p>
@@ -668,7 +677,7 @@ Barchart
 <h2>Continuous by Continuous</h2>
 <p>Here, we visualize two <em>continuous</em> variables, <em>mental health</em>, by <em>age</em>.</p>
 <div class="figure">
-<img src="variables-and-visualization_files/figure-revealjs/unnamed-chunk-12-1.png" alt="Scatterplot" width="768" />
+<img src="variables-and-visualization_files/figure-revealjs/unnamed-chunk-13-1.png" alt="Scatterplot" width="768" />
 <p class="caption">
 Scatterplot
 </p>
@@ -677,25 +686,25 @@ Scatterplot
 <h2>Continuous by Categorical</h2>
 <p>Last, we visualize a <em>continuous</em> variable by a categorical variable, <em>mental health</em>, by <em>group</em>. In this graph, the height of the bars represents the <em>mean score</em>.</p>
 <div class="figure">
-<img src="variables-and-visualization_files/figure-revealjs/unnamed-chunk-13-1.png" alt="BarChart" width="768" />
+<img src="variables-and-visualization_files/figure-revealjs/unnamed-chunk-14-1.png" alt="BarChart" width="768" />
 <p class="caption">
 BarChart
 </p>
 </div>
 </section></section>
-<section><section id="show-where-something-is.-scroll-down" class="title-slide slide level1"><h1>Show Where Something Is. (scroll down ⇩)</h1></section><section id="rationale-2" class="slide level2">
+<section><section id="show-where-something-is.-scroll-down" class="title-slide slide level1"><h1><mark>Show Where Something Is. (scroll down ⇩)</mark></h1></section><section id="rationale-2" class="slide level2">
 <h2>Rationale</h2>
 <p>Sometimes our task is different. We want to visualize information, but add information on spatial location, using a map.</p>
 </section><section id="map" class="slide level2">
 <h2>Map</h2>
 <div class="figure">
-<img src="variables-and-visualization_files/figure-revealjs/unnamed-chunk-15-1.png" alt="Map" width="768" />
+<img src="variables-and-visualization_files/figure-revealjs/unnamed-chunk-16-1.png" alt="Map" width="768" />
 <p class="caption">
 Map
 </p>
 </div>
 </section></section>
-<section><section id="credits-scroll-down" class="title-slide slide level1"><h1>Credits (scroll down ⇩)</h1></section><section id="ggplot2" class="slide level2">
+<section><section id="credits-scroll-down" class="title-slide slide level1"><h1><mark>Credits (scroll down ⇩)</mark></h1></section><section id="ggplot2" class="slide level2">
 <h2>ggplot2</h2>
 <p>Graphics made with the <a href="http://ggplot2.org/">ggplot2</a> graphing library created by Hadley Wickham.</p>
 </section><section id="more-information" class="slide level2">
@@ -707,7 +716,7 @@ Map
 </section><section id="author" class="slide level2">
 <h2>Author</h2>
 <p><em>Variables &amp; Visualization</em> by <a href="https://agroganweb.wordpress.com/">Andrew Grogan-Kaylor</a> is licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. You are welcome to download and use this handout in your own classes, or work, as long as the handout remains properly attributed.</p>
-<p>Last updated: <code>December 17 2019</code> at <code>13:46</code></p>
+<p>Last updated: <code>October 20 2020</code> at <code>13:09</code></p>
 </section></section>
     </div>
   </div>

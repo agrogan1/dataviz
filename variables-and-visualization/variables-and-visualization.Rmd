@@ -1,7 +1,7 @@
 ---
-title: "Variables & Visualization"
-author: "Andy Grogan-Kaylor"
-date: '`r format(Sys.Date(), format="%B %d, %Y")`'
+title: "<mark>Variables & Visualization</mark>"
+author: "<mark>Andy Grogan-Kaylor</mark>"
+date: '<mark>`r format(Sys.Date(), format="%B %d, %Y")`</mark>'
 output:
   revealjs::revealjs_presentation:
     fig_height: 4
@@ -20,7 +20,7 @@ output:
     number_sections: yes
     toc: yes
     latex_engine: xelatex
-subtitle: What Is The Story You Are Trying To Tell?
+subtitle: <mark>What Is The Story You Are Trying To Tell?</mark>
 ---
 
 ```{r setup, include=FALSE}
@@ -54,9 +54,7 @@ library(ggthemes)
 
 library(viridis)
 
-library(ggpomological)
-
-library(ggmap) # maps
+# library(ggmap) # maps
 
 library(cowplot)
 
@@ -72,17 +70,25 @@ library(choroplethrMaps) # map data
 
 ```
 
+```{css, echo=FALSE}
+
+.slide-background:first-child {
+  background-image: url('dataviz-splash.png');
+}
+
+```
+
 ```{r}
 
 N <- 100
 
 age <- rnorm(N, 40, 10)
 
-mental_health <- rnorm(N, 100, 15)
-
 income <- rlnorm(N, 0, 1) * 10000 + 10000
 
 group <- rbinom(N, 1, .2)
+
+mental_health <- rnorm(N, 100, 15) + group * 3
 
 group <- factor(group,
                 levels = c(0,1),
@@ -101,7 +107,7 @@ mydata <- data.frame(age, mental_health, group, neighborhood)
 
 ```
 
-# How to Navigate This Presentation (scroll down &#8681;) 
+# <mark>How to Navigate This Presentation (scroll down &#8681;)</mark> 
 
 ## Navigation
 
@@ -110,7 +116,7 @@ mydata <- data.frame(age, mental_health, group, neighborhood)
 * **Alt-Click** to zoom
 * Scroll &#8681; to the bottom of each column of slides; then &#8680;
 
-# Introduction (scroll down &#8681;) 
+# <mark>Introduction (scroll down &#8681;)</mark>
 
 ## Possibilities
 
@@ -234,7 +240,7 @@ ggplot(data = NULL,
 
 ```
 
-# Simulated Data (scroll down &#8681;)
+# <mark>Simulated Data (scroll down &#8681;)</mark>
 
 ## Background
 
@@ -258,7 +264,7 @@ pander(head(mydata, 5),
 
 ```
 
-# Show One Thing At A Time. (scroll down &#8681;)
+# <mark>Show One Thing At A Time. (scroll down &#8681;)</mark>
 
 ## Rationale
 
@@ -320,7 +326,7 @@ p2
 
 ```
 
-# Show The Relationship Of Two Things. (scroll down &#8681;)
+# <mark>Show The Relationship Of Two Things. (scroll down &#8681;)</mark>
 
 ## Rationale
 
@@ -397,7 +403,7 @@ p5
 
 ```
 
-# Show Where Something Is. (scroll down &#8681;)
+# <mark>Show Where Something Is. (scroll down &#8681;)</mark>
 
 ## Rationale
 
@@ -433,7 +439,7 @@ mymap
 
 ```
 
-# Credits (scroll down &#8681;)
+# <mark>Credits (scroll down &#8681;)</mark>
 
 ## ggplot2
 
