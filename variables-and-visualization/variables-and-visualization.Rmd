@@ -73,7 +73,7 @@ library(choroplethrMaps) # map data
 ```{css, echo=FALSE}
 
 .slide-background:first-child {
-  background-color: darkblue;
+  background-color: grey;
 }
 
 ```
