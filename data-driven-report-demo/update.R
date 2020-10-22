@@ -6,6 +6,10 @@ library(bookdown) # for epub
 
 library(revealjs) # reveal.js
 
+library(tint) # tint is not tufte
+
+library(tufte) # tufte handouts
+
 # render home page
 
 render("data-driven-report-demo.Rmd",
@@ -26,3 +30,15 @@ render("data-driven-report-demo.Rmd",
 render("data-driven-report-demo.Rmd",
        output_format = slidy_presentation(),
        output_file = "data-driven-report-demo-slidy.html")
+
+render("data-driven-report-demo.Rmd",
+       output_format = tufte_handout(),
+       output_file = "data-driven-report-demo-tufte.pdf")
+
+render("data-driven-report-demo.Rmd",
+       output_format = tintPdf(),
+       output_file = "data-driven-report-demo-tint.pdf")
+
+
+
+
