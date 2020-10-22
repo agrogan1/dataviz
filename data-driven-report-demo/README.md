@@ -6,7 +6,9 @@ RMarkdown is an almost *magical* system that allows you to create documents in m
 
 These different document formats will be *knit* using the most up to date data from the data source, meaning that documents can in some sense be *self-updating*.
 
-The RMarkdown system allows rapid updating of timely content into multiple output formats.
+The RMarkdown system allows rapid updating of timely content into multiple output formats. 
+
+> NB: In order to not distract from the overall idea, these examples use the *lorem ipsum* placeholder text that can be found all around the typography and typesetting worlds.
 
 An example data driven document can be found here.
 
@@ -25,6 +27,11 @@ An example data driven document can be found here.
 
 * [Slidy HTML Slide Show](data-driven-report-demo-slidy.html)
 * [Reveal.js HTML Slide Show](data-driven-report-demo-revealjs.html) 
+
+### Alternative PDF formats
+
+* [Tufte](data-driven-report-demo-tufte.pdf) (Inspired by the work of Edward Tufte)
+* [TINT](data-driven-report-demo-tint.pdf) (Alternative "Tufte-like" format)
 
 ## Rmarkdown Source Code
 
