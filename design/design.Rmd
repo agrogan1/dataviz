@@ -5,8 +5,24 @@ date: "`r Sys.Date()`"
 output:
   bookdown::gitbook:
     highlight: haddock
-    css: styles.css
+    css: UM.css
     split_by: none
+  tint::tintPdf:
+    highlight: haddock
+    latex_engine: xelatex
+    number_sections: yes
+    toc: yes
+  tufte::tufte_handout:
+    highlight: haddock
+    number_sections: yes
+    toc: yes
+  pdf_document: 
+    fig_height: 2
+    highlight: haddock
+    latex_engine: xelatex
+    number_sections: yes
+    toc: yes
+    toc_depth: 2
 bibliography: bibliography.bib
 always_allow_html: yes
 mainfont: Helvetica
@@ -39,7 +55,7 @@ This document consists of some *rough draft* ideas about things that I am learni
 
 ![color wheel](colorwheel.png)
 
-```{r, echo=FALSE, webgl=TRUE}
+```{r, echo=FALSE}
 
 # HSV Color Model
 
@@ -58,6 +74,10 @@ plot(hue,
      col=color, 
      pch=19,
      main = "Draft Color Model Plot")
+
+```
+
+```{r, eval=FALSE, echo=FALSE}
 
 library(rgl) # 3D graphics
 
