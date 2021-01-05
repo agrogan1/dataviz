@@ -3,11 +3,8 @@ title: 'Telling Stories With Data: Graphing Change Over Time'
 author: "Andy Grogan-Kaylor"
 date: "`r format(Sys.Date(), format='%B %d, %Y')`"
 output:
-  tufte::tufte_html:
-    css: mycss.css
-    tufte_features:
-    - fonts
-    - italics
+  tufte::tufte_handout: 
+    latex_engine: xelatex
   html_document:
     fig_height: 2
     highlight: haddock
@@ -22,8 +19,11 @@ output:
     latex_engine: xelatex
     number_sections: yes
     toc: yes
-  tufte::tufte_handout: 
-    latex_engine: xelatex
+  tufte::tufte_html:
+    css: mycss.css
+    tufte_features:
+    - fonts
+    - italics
   tint::tintPdf:
     highlight: haddock
     number_sections: yes
