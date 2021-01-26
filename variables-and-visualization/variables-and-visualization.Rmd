@@ -3,6 +3,10 @@ title: "<mark>Variables & Visualization</mark>"
 author: "<mark>Andy Grogan-Kaylor</mark>"
 date: '<mark>`r format(Sys.Date(), format="%B %d, %Y")`</mark>'
 output:
+  slidy_presentation: 
+    fig_caption: yes
+    fig_height: 4
+    highlight: haddock
   revealjs::revealjs_presentation:
     fig_height: 4
     highlight: haddock
