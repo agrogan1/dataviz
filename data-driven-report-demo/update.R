@@ -10,6 +10,8 @@ library(tint) # tint is not tufte
 
 library(tufte) # tufte handouts
 
+# library(pagedreport) # paged reports
+
 # render home page
 
 render("data-driven-report-demo.Rmd",
@@ -38,6 +40,8 @@ render("data-driven-report-demo.Rmd",
 render("data-driven-report-demo.Rmd",
        output_format = tintPdf(),
        output_file = "data-driven-report-demo-tint.pdf")
+
+
 
 
 
