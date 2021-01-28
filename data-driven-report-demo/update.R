@@ -33,6 +33,13 @@ render("data-driven-report-demo.Rmd",
        output_format = slidy_presentation(),
        output_file = "data-driven-report-demo-slidy.html")
 
+# render("data-driven-report-demo.Rmd",
+#        output_format = ioslides_presentation(slide_level = 2,
+#                                              widescreen = TRUE,
+#                                              smaller = TRUE,
+#                                              fig_height = 3),
+#        output_file = "data-driven-report-demo-ioslides.html")
+
 render("data-driven-report-demo.Rmd",
        output_format = tufte_handout(),
        output_file = "data-driven-report-demo-tufte.pdf")

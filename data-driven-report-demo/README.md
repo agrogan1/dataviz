@@ -2,7 +2,7 @@
 
 ## RMarkdown
 
-RMarkdown is an almost *magical* system that allows you to create documents in multiple formats. These documents may be driven by data, or contain no data whatsoever. With the click of a button, the same content can be written out (*knit*) to multiple formats: HTML web pages; Gitbook web books; PDF documents; ebub ebooks.  
+RMarkdown is an almost *magical* system that allows you to create documents in multiple formats. These documents may be driven by data, or contain no data whatsoever. With the click of a button, the same content can be written out (*knit*) to multiple formats: HTML web pages; Gitbook web books; PDF documents; epub ebooks.  
 
 These different document formats will be *knit* using the most up to date data from the data source, meaning that documents can in some sense be *self-updating*.
 
@@ -26,7 +26,6 @@ An example data driven document can be found here.
 > Slide show formats can be beautiful and effective for presentations. However, slide show formats may not work equally well with all screen resolutions and sizes. Slide shows may have varying performance on mobile devices.
 
 * [Slidy HTML Slide Show](data-driven-report-demo-slidy.html)
-* [Reveal.js HTML Slide Show](data-driven-report-demo-revealjs.html) 
 
 ### Alternative PDF formats
 
