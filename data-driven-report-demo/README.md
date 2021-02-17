@@ -8,8 +8,6 @@ These different document formats will be *knit* using the most up to date data f
 
 The RMarkdown system allows rapid updating of timely content into multiple output formats. 
 
-> NB: In order to not distract from the overall idea, these examples use the *lorem ipsum* placeholder text that can be found all around the typography and typesetting worlds.
-
 An example data driven document can be found here.
 
 ## Output Examples
@@ -31,6 +29,10 @@ An example data driven document can be found here.
 
 * [Tufte](data-driven-report-demo-tufte.pdf) (Inspired by the work of Edward Tufte)
 * [TINT](data-driven-report-demo-tint.pdf) (Alternative "Tufte-like" format)
+
+### GitBook Format
+
+The [GitBook format](./book/background.html) is designed as an online HTML book format and may be most suitable for longer more complicated documents. Note the links to various social media in the navigation bar.
 
 ## Rmarkdown Source Code
 
