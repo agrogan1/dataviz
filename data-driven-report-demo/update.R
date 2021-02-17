@@ -48,7 +48,9 @@ render("data-driven-report-demo.Rmd",
        output_format = tintPdf(),
        output_file = "data-driven-report-demo-tint.pdf")
 
-
+render_book("data-driven-report-demo.Rmd",
+            output_format = gitbook(),
+            output_dir = "./book")
 
 
 

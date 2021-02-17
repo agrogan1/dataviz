@@ -3,17 +3,6 @@ title: "Data Driven Report Demo"
 author: "Andrew Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
-  bookdown::epub_book: default  
-  word_document: 
-    fig_height: 3
-    toc: yes
-    reference_docx: "markstat.docx"
-  pdf_document: 
-    fig_height: 2.0
-    highlight: haddock
-    latex_engine: xelatex
-    number_sections: yes
-    toc: yes
   html_document: 
     code_download: yes
     fig_height: 3
@@ -24,6 +13,17 @@ output:
     toc_float:
       collapsed: yes
       smooth_scroll: yes
+  word_document: 
+    fig_height: 3
+    toc: yes
+    reference_docx: "markstat.docx"
+  pdf_document: 
+    fig_height: 2.0
+    highlight: haddock
+    latex_engine: xelatex
+    number_sections: yes
+    toc: yes
+  bookdown::epub_book: default  
 mainfont: Tw Cen MT
 fontsize: 12pt
 ---
@@ -32,7 +32,8 @@ fontsize: 12pt
 
 knitr::opts_chunk$set(echo = FALSE,
                       warning = FALSE,
-                      message = FALSE)
+                      message = FALSE,
+                      fig.margin = TRUE)
 
 ```
 
@@ -75,6 +76,11 @@ ggplot(gapminder,
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
+# Results
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
 ```{r}
 
 ggplot(gapminder,
@@ -91,10 +97,6 @@ ggplot(gapminder,
   theme_minimal()
 
 ```
-
-# Results
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ```{r}
 
