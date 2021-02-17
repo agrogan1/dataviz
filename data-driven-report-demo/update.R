@@ -30,7 +30,7 @@ render("data-driven-report-demo.Rmd",
 #        output_file = "data-driven-report-demo-revealjs.html")
 
 render("data-driven-report-demo.Rmd",
-       output_format = slidy_presentation(),
+       output_format = slidy_presentation(css = "UMslidy.css"),
        output_file = "data-driven-report-demo-slidy.html")
 
 # render("data-driven-report-demo.Rmd",
