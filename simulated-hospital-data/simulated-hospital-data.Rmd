@@ -3,15 +3,12 @@ title: "Simulated Hospital Data"
 author: "Andy Grogan-Kaylor (agrogan@umich.edu)"
 date: "`r Sys.Date()`"
 output: 
+  slidy_presentation: 
+    highlight: haddock
   revealjs::revealjs_presentation:
     highlight: haddock
     fig_height: 4
 ---
-
-## Navigation
-
-* **o** for outline
-* **f** for full screen
 
 ## Imagine the following simulated data
 
