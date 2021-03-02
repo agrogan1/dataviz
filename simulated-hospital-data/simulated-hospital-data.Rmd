@@ -5,9 +5,6 @@ date: "`r Sys.Date()`"
 output: 
   slidy_presentation: 
     highlight: haddock
-  revealjs::revealjs_presentation:
-    highlight: haddock
-    fig_height: 4
 ---
 
 ## Imagine the following simulated data
