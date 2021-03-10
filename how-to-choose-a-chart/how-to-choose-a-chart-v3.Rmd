@@ -3,14 +3,14 @@ title: "How to Choose a Chart"
 author: "Andy Grogan-Kaylor"
 date: '`r format(Sys.Date(), format="%B %d, %Y")`'
 output:
-  pdf_document:
-    highlight: haddock
-    keep_tex: no
-    latex_engine: xelatex
   html_document:
     code_folding: hide
     highlight: haddock
     toc: no
+  pdf_document:
+    highlight: haddock
+    keep_tex: no
+    latex_engine: xelatex
 always_allow_html: yes
 mainfont: Tw Cen MT
 geometry: margin=0.75in
@@ -376,7 +376,7 @@ my_m_barchart <- ggplot(mydata,
                         aes(x = 1, 
                             y = q, 
                             fill = factor(1))) + 
-  stat_summary(fun.y = mean, geom = "bar") +
+  stat_summary(fun = mean, geom = "bar") +
   scale_fill_manual(values = c(arboretum_blue)) + 
   ggtitle("barchart of mean") + 
   guides(fill=FALSE) +
@@ -390,7 +390,7 @@ my_facet_m_barchart <- ggplot(mydata,
                               aes(x = factor(s), 
                                   y = q, 
                                   fill = s)) + 
-  stat_summary(fun.y = mean, geom = "bar") + 
+  stat_summary(fun = mean, geom = "bar") + 
   scale_fill_manual(values = c(arboretum_blue, 
                                taubman_teal, 
                                michigan_blue,
@@ -412,7 +412,7 @@ my_horiz_m_barchart <- ggplot(mydata,
                               aes(x = 1, 
                                   y = q, 
                                   fill = factor(1))) + 
-  stat_summary(fun.y = mean, 
+  stat_summary(fun = mean, 
                geom = "bar") +
   coord_flip() +
   scale_fill_manual(values = c(arboretum_blue)) + 
@@ -428,7 +428,7 @@ my_facet_horiz_m_barchart <- ggplot(mydata,
                                     aes(x = factor(s), 
                                         y = q, 
                                         fill = s)) + 
-  stat_summary(fun.y = mean, 
+  stat_summary(fun = mean, 
                geom = "bar") +
   coord_flip() +
   scale_fill_manual(values = c(arboretum_blue, 
@@ -455,7 +455,7 @@ my_horiz_m_dotchart <- ggplot(mydata,
                               aes(x = 1, 
                                   y = q, 
                                   fill = factor(1))) + 
-  stat_summary(fun.y = mean, 
+  stat_summary(fun = mean, 
                geom = "point", size = 5) +
   coord_flip() +
   scale_color_manual(values = c(arboretum_blue)) + 
@@ -471,7 +471,7 @@ my_facet_horiz_m_dotchart <- ggplot(mydata,
                                     aes(x = factor(s), 
                                         y = q, 
                                         color = s)) + 
-  stat_summary(fun.y = mean, 
+  stat_summary(fun = mean, 
                geom = "point", 
                size = 5) +
   coord_flip() +
@@ -501,7 +501,7 @@ my_horiz_m_lollipop_chart <- ggplot(mydata,
                                     aes(x = 1, 
                                         y = q, 
                                         fill = factor(1))) + 
-  stat_summary(fun.y = mean, 
+  stat_summary(fun = mean, 
                geom = "point", 
                size = 5) +
   geom_segment(aes(x = 1,
@@ -521,7 +521,7 @@ my_facet_horiz_m_lollipop_chart <- ggplot(mydata,
                                     aes(x = factor(s), 
                                         y = q, 
                                         color = s)) + 
-  stat_summary(fun.y = mean, 
+  stat_summary(fun = mean, 
                geom = "point", 
                size = 5) +
   geom_segment(aes(x = factor(s),
@@ -556,7 +556,7 @@ my_m_linechart <- ggplot(mydata,
                          aes(x = factor(s), 
                              y = mean(q), 
                              group = 1)) + 
-  stat_summary(fun.y = mean, 
+  stat_summary(fun = mean, 
                geom = "line", 
                size = 2, 
                color = arboretum_blue) +
@@ -572,7 +572,7 @@ my_facet_m_linechart <- ggplot(mydata,
                                aes(x = factor(s), 
                                    y = q, 
                                    group = 1)) + 
-  stat_summary(fun.y = mean, 
+  stat_summary(fun = mean, 
                geom = "line", 
                size = 2, 
                color = arboretum_blue) +
