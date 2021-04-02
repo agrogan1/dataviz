@@ -1,30 +1,21 @@
 ---
 title: "<mark>Variables & Visualization</mark>"
 author: "<mark>Andy Grogan-Kaylor</mark>"
-date: '<mark>`r format(Sys.Date(), format="%B %d, %Y")`</mark>'
+date: '<mark>`r Sys.Date()`</mark>'
 output:
-  slidy_presentation: 
+  slidy_presentation:
     fig_caption: yes
     fig_height: 4
     highlight: haddock
-  revealjs::revealjs_presentation:
-    fig_height: 4
+    slide_level: 2
+  pdf_document:
+    fig_height: 3
     highlight: haddock
-    self_contained: no
-    theme: default
-    transition: convex
-    reveal_plugins: ["zoom"]
-  tufte::tufte_handout:
-    fig_height: 2.5
-    toc: yes
-    number_sections: yes
     latex_engine: xelatex
-  tint::tintPdf:
-    highlight: haddock
     number_sections: yes
     toc: yes
-    latex_engine: xelatex
 subtitle: <mark>What Is The Story You Are Trying To Tell?</mark>
+mainfont: Arial
 ---
 
 ```{r setup, include=FALSE}
@@ -53,6 +44,8 @@ library(grid)
 library(ggplot2)
 
 library(ggbeeswarm)
+
+library(ggdist)
 
 library(ggthemes)
 
@@ -103,28 +96,21 @@ mydata <- data.frame(age, mental_health, group, neighborhood)
 
 ```
 
-# <mark>How to Navigate This Presentation (scroll down &#8681;)</mark> 
-
 
 ```{css, echo=FALSE}
 
-.slide-background:first-child {
-  background-color: cyan;
+.slide.titlepage {
+  font-size: 100%;
+  font-weight: bold;
+  background-color: #00274C; 
+  background-image: url("iceland-1500x844.png");
+  background-size: cover;
 }
 
 ```
 
 
-## Navigation
-
-* **o** for outline
-* **f** for full screen
-* **Alt-Click** to zoom
-* Scroll &#8681; to the bottom of each column of slides; then &#8680;
-
-# <mark>Introduction (scroll down &#8681;)</mark>
-
-## Possibilities
+# Possibilities
 
 ```{r, eval = TRUE, fig.margin=FALSE, fig.cap="possible visualizations"}
 
@@ -134,13 +120,13 @@ grid.raster(img)
 
 ```
 
-## Background
+# Background
 
 * Deciding upon the right data visualization to represent your data can be a daunting process.
 * I believe that a *starting point* for this thinking is some basic statistical thinking about the *type* of variables that you have. 
 * At the broadest level, variables may be conceptualized as *categorical* variables, or *continuous* variables.
 
-## Data Often Come From A Survey Questionnaire.
+# Data Often Come From A Survey Questionnaire.
 
 ```{r, eval = TRUE, fig.margin=TRUE, fig.height=3, fig.cap="hypothetical questionnaire"}
 
@@ -150,7 +136,7 @@ grid.raster(img)
 
 ```
 
-## What is Data? 
+# What is Data? 
 
 A data set is nothing more than a series of rows and columns that contain
 answers to responses to a survey.
@@ -179,6 +165,8 @@ pander(sample_dataset,
 
 ```
 
+\newpage
+
 ## Some Notes on Data
 
 * In working through our research questions, we'll constantly be going back and forth between the actual data (to see the pattern of responses) and the documentation, to figure out the actual question asked as well as how the different responses are coded.
@@ -191,7 +179,7 @@ pander(sample_dataset,
 * Frequently negative numbers are used to indicate what are called "missing values". A missing value is a response like "don't know"" or "refused to answer" or "did not answer". 
 * Before we start doing calculations with our data, we'll want to change negative numbers to true missing values (usually symbolized by a "." or "NA", so that they don't goof up our calculations.)
 
-## What are Variables?
+# What are Variables?
 
 * By variables, I simply mean the columns of data that you have.
 * For our purposes, you may think of variables as synonymous with questionnaire items, or columns of data.
@@ -201,7 +189,7 @@ pander(sample_dataset,
 * *categorical variables* represent unordered categories like *neighborhood*, or *religious affiliation*, or *place of residence*.
 * *continuous variables* represent a continuous scale like a *mental health scale*, or a *measure of life expectancy*.
 
-## A Data Visualization Strategy
+# A Data Visualization Strategy
 
 Once we have discerned the type of variable that have, there are two followup questions we may ask before deciding upon a chart strategy:
 
@@ -232,9 +220,7 @@ ggplot(data = NULL,
                  label = "possibly \ninformative \nkey takeaway"),
              size = 2, 
              color = "red") +
-  scale_color_gradient(name = "some other \npiece of \ninformation",
-                       low = "gold",
-                       high = "darkblue") +
+  scale_color_viridis_c(name = "some other \npiece of \ninformation") +
   ylab("possibly another dimension of the data") +
   xlab("one dimension of the data") +
   labs(title = "Informative Title",
@@ -246,9 +232,7 @@ ggplot(data = NULL,
 
 ```
 
-# <mark>Simulated Data (scroll down &#8681;)</mark>
-
-## Background
+# Simulated Data
 
 This example uses simulated data on social work clients, of the kind that a social service agency might collect.
 
@@ -270,17 +254,15 @@ pander(head(mydata, 5),
 
 ```
 
-# <mark>Show One Thing At A Time. (scroll down &#8681;)</mark>
-
-## Rationale
+# Show One Thing At A Time
 
 We start by visualizing one indicator at a time.
 
 ## Continuous Variable
 
-Sometimes the most interesting visualizations, are visualizations that give us a sense of the maximum, minimum, and average values.  For example, the *histogram* and *beeswarm plot* display information on *age*.
+Sometimes the most interesting visualizations, are visualizations that give us a sense of the maximum, minimum, and average values.  For example, the *histogram* and *dotplot* display information on *age*.
 
-```{r, fig.cap="Histogram and Beeswarm Plot"}
+```{r, fig.cap="Histogram and Dotplot"}
 
 p1 <- ggplot(mydata, 
              aes(x = age)) +
@@ -293,10 +275,7 @@ p1a <- p1 +
 # p1a
 
 p1b <- p1 + 
-  geom_beeswarm(aes(y = 1), 
-                groupOnX = FALSE,
-                cex = 2.0,
-                color = "darkblue") +
+  stat_dots(fill = "darkblue") +
   ylab("") +
   theme_minimal() +
   theme(axis.title.y = element_blank(),
@@ -332,9 +311,7 @@ p2
 
 ```
 
-# <mark>Show The Relationship Of Two Things. (scroll down &#8681;)</mark>
-
-## Rationale
+# Show The Relationship Of Two Things
 
 Our task becomes somewhat more complicated when we want to understand the relationship of *one thing* to *another thing.*
 
@@ -390,7 +367,7 @@ p5 <- ggplot(mydata,
              aes(x = group,
                  y = mental_health,
                  fill = group)) +
-  stat_summary(fun.y = mean, 
+  stat_summary(fun = mean, 
                geom = "bar") + 
   coord_flip() +
   labs(title = "Mental Health by Group") + 
@@ -409,9 +386,7 @@ p5
 
 ```
 
-# <mark>Show Where Something Is. (scroll down &#8681;)</mark>
-
-## Rationale
+# Show Where Something Is
 
 Sometimes our task is different. We want to visualize information, but add information on spatial location, using a map.
 
@@ -445,22 +420,15 @@ mymap
 
 ```
 
-# <mark>Credits (scroll down &#8681;)</mark>
-
-## ggplot2
+# Credits 
 
 Graphics made with the [ggplot2](http://ggplot2.org/) graphing library created by Hadley Wickham.
 
-## More Information
+# More Information
 
 * A more exhaustive set of graphical possibilities, along with the code to generate them in [R](https://www.r-project.org/) and [ggplot2](http://ggplot2.org/), can be found at my tutorial on [How To Choose A Chart](www.umich.edu/~agrogan/how_to_choose_a_chart).
 * I have also written an [Introduction to R](http://www-personal.umich.edu/~agrogan/R/introduction-to-R.html) 
 
-## Author
-
-*Variables & Visualization* by [Andrew Grogan-Kaylor](https://agroganweb.wordpress.com/) is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).  You are welcome to download and use this handout in your own classes, or work, as long as the handout remains properly attributed.
-
-Last updated: ```r format(Sys.Date(),"%B %d %Y")```  at ```r format(Sys.time(),"%H:%M")```
 
 ```{r make_banner}
 
