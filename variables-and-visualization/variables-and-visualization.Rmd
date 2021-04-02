@@ -120,6 +120,8 @@ grid.raster(img)
 
 ```
 
+> As you move forward through this presentation you can press `b` to make text bigger, or `s` to make text smaller.
+
 # Background
 
 * Deciding upon the right data visualization to represent your data can be a daunting process.
