@@ -106,6 +106,20 @@ mydata <- data.frame(age, mental_health, group, neighborhood)
   background-image: url("iceland-1500x844.png");
   background-size: cover;
 }
+blockquote {
+  background: #FFFFFF;
+  color: #000;
+  border-left: 5px solid #ffcb05;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+}
+#majorsection {
+   color: white;
+   background-position: center;
+   background-color: #00274C;
+   text-align: center;
+   font-size: 200%;
+}
 
 ```
 
@@ -228,7 +242,7 @@ ggplot(data = NULL,
   labs(title = "Informative Title",
        subtitle = "Maybe The Title Is Even Your Main Takeaway",
        caption = "Every extra 'dimension' (x axis, y axis, color, shape) 
-       should convey information.
+       can convey an extra piece of information.
        \n Words should be spelled out.") + 
   theme_minimal()
 
@@ -256,7 +270,7 @@ pander(head(mydata, 5),
 
 ```
 
-# Show One Thing At A Time
+# Show One Thing At A Time {#majorsection}
 
 We start by visualizing one indicator at a time.
 
@@ -313,7 +327,7 @@ p2
 
 ```
 
-# Show The Relationship Of Two Things
+# Show The Relationship Of Two Things {#majorsection}
 
 Our task becomes somewhat more complicated when we want to understand the relationship of *one thing* to *another thing.*
 
@@ -388,7 +402,7 @@ p5
 
 ```
 
-# Show Where Something Is
+# Show Where Something Is {#majorsection}
 
 Sometimes our task is different. We want to visualize information, but add information on spatial location, using a map.
 
@@ -425,11 +439,6 @@ mymap
 # Credits 
 
 Graphics made with the [ggplot2](http://ggplot2.org/) graphing library created by Hadley Wickham.
-
-# More Information
-
-* A more exhaustive set of graphical possibilities, along with the code to generate them in [R](https://www.r-project.org/) and [ggplot2](http://ggplot2.org/), can be found at my tutorial on [How To Choose A Chart](www.umich.edu/~agrogan/how_to_choose_a_chart).
-* I have also written an [Introduction to R](http://www-personal.umich.edu/~agrogan/R/introduction-to-R.html) 
 
 
 ```{r make_banner}
