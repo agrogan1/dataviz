@@ -235,11 +235,7 @@ z <- factor(z,
 ggplot(data = NULL,
        aes(x = x)) +
   stat_dots(aes(fill = z), position = "dodge", alpha = 1.0) +
-  geom_label(aes(x = 130, 
-                 y = .05, 
-                 label = "possibly \ninformative \nkey takeaway"),
-             size = 2, 
-             color = "red") +
+  geom_label(aes(x=125, y=.2), label="Key \nTakeaway") +
   scale_fill_manual(name = "some other \npiece of \ninformation", 
                     values = c("darkblue", "gold")) +
   ylab("possibly another dimension of the data") +
