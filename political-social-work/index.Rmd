@@ -1,25 +1,20 @@
 ---
-title: "Data Visualization for Political Social Work"
-author: "Andy Grogan-Kaylor"
-date: '`r format(Sys.Date(), format="%B %d, %Y")`'
+title: "<mark>Data Visualization for Political Social Work</mark>"
+author: "<mark>Andy Grogan-Kaylor</mark>"
+date: '<mark>`r Sys.Date()`</mark>'
 output: 
-  slidy_presentation: 
-    fig_caption: yes
-    highlight: haddock
   pdf_document:
     number_sections: yes
     toc: yes    
     fig_height: 2.5
     highlight: haddock
     latex_engine: xelatex
-  revealjs::revealjs_presentation:
-    theme: default
+  slidy_presentation: 
+    fig_caption: yes
+    incremental: true
     highlight: haddock
-    css: styles.css
-    reveal_plugins: ["zoom", "chalkboard"]
-    self_contained: false
-mainfont: Tw Cen MT
-fontsize: 12pt
+    slide_level: 2
+mainfont: Arial
 bibliography: bibliography.bib
 ---
 
@@ -53,13 +48,36 @@ library(cowplot)
 
 ```
 
-# How to Navigate This Presentation (scroll down &#8681;)
+```{css, echo=FALSE}
 
-## Navigation
+.slide.titlepage {
+  font-size: 100%;
+  font-weight: bold;
+  background-color: #00274C; 
+  background-image: url("colored-pencils.png");
+  background-size: cover;
+}
+blockquote {
+  background: #FFFFFF;
+  color: #000;
+  border-left: 5px solid #ffcb05;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+}
+#majorsection {
+   color: white;
+   background-position: center;
+   background-color: #00274C;
+   text-align: center;
+   font-size: 200%;
+}
 
-* **o** for outline
-* **f** for full screen
-* **alt-click** for zoom
+```
+
+
+# How to Navigate This Presentation
+
+> As you move forward through this presentation you can press `b` to make text bigger, or `s` to make text smaller.
 
 # Outline of Conversation 
 
@@ -75,7 +93,7 @@ library(cowplot)
 
 The data that we are using come from the **W**orld **D**evelopment **I**ndicators [(WDI)](http://data.worldbank.org/data-catalog/world-development-indicators) which are country level statistical information from around the world, collected by the [World Bank](http://www.worldbank.org/).
 
-# Basic Considerations (scroll down &#8681;)
+# Basic Considerations 
 
 ## The Nature of Your Variables Determines the Nature of Your DataViz
 
@@ -94,7 +112,7 @@ The data that we are using come from the **W**orld **D**evelopment **I**ndicator
 
 ![](how-to-choose-a-chart-a-visual-guide.png){ width=50% } 
 
-# Story-Telling (scroll down &#8681;) 
+# Story-Telling
 
 ## Your Graph Should Be A Self-Contained Story
 
@@ -122,7 +140,7 @@ ggplot(data = NULL,
   labs(title = "Informative Title",
        subtitle = "Maybe The Title Is Even Your Main Takeaway",
        caption = "Every extra 'dimension' (x axis, y axis, color, shape) 
-       should convey information.
+       can convey information.
        \n Words should be spelled out.") + 
   theme_minimal()
 
@@ -133,7 +151,7 @@ ggplot(data = NULL,
 
 ![](presenting-problem.png){ width=25% } ![](what-do-the-data-say.png){ width=25% } ![](action-steps.png){ width=25% }
 
-# Color (scroll down &#8681;)
+# Color 
 
 ```{r}
 
@@ -154,7 +172,7 @@ p0 <- ggplot(gapminder,
 
 ```{r}
 
-p0 + stat_summary(fun.y = mean, geom="bar")
+p0 + stat_summary(fun = mean, geom="bar")
 
 ```
 
@@ -162,7 +180,7 @@ p0 + stat_summary(fun.y = mean, geom="bar")
 
 ```{r}
 
-p0 + stat_summary(fun.y = mean, 
+p0 + stat_summary(fun = mean, 
                   geom="bar", 
                   fill = "lightblue")
 
@@ -174,7 +192,7 @@ p0 + stat_summary(fun.y = mean,
 
 p0 + 
   stat_summary(aes(fill = continent),
-                  fun.y = mean, 
+                  fun = mean, 
                   geom = "bar") +
   scale_fill_viridis_d()
 
@@ -186,7 +204,7 @@ p0 +
 
 p0 + 
   stat_summary(aes(fill = continent),
-               fun.y = mean, 
+               fun = mean, 
                geom="bar") +
   scale_fill_colorblind()
 
@@ -198,7 +216,7 @@ p0 +
 
 p0 + 
   stat_summary(aes(fill = continent == "Africa"),
-               fun.y = mean, 
+               fun = mean, 
                geom="bar") +
   scale_fill_manual(name = "Continent",
                      values = c("grey", "red"),
@@ -208,7 +226,7 @@ p0 +
 ```
 
 
-# Cognition (scroll down &#8681;) 
+# Cognition  
 
 ## "Graphical Perception"
 
@@ -236,11 +254,11 @@ p1 <- ggplot(gapminder,
        subtitle = "by Continent",
        y = "Life Expectancy")
 
-p1A <- p1 + stat_summary(fun.y = mean, 
+p1A <- p1 + stat_summary(fun = mean, 
                          geom="point",
                          size = 10)
 
-p1B <- p1 + stat_summary(fun.y = mean, geom="bar")
+p1B <- p1 + stat_summary(fun = mean, geom="bar")
 
 p2 <- ggplot(gapminder,
               aes(x = gdpPercap,
@@ -282,23 +300,21 @@ p2
 
 * [How to Choose a Chart: A Visual Guide](https://agrogan1.github.io/dataviz/how-to-choose-a-chart/how-to-choose-a-chart-a-visual-guide.pdf). [[Extended Version](https://agrogan1.github.io/dataviz/how-to-choose-a-chart/how-to-choose-a-chart-v3.html)]
 * *Introduction to R*: 
-     + [HTML Web Book](https://agrogan1.github.io/R/introduction-to-R/background.html) 
+     + [HTML Web Book](https://agrogan1.github.io/R/introduction-to-R/introduction-to-R.html) 
 * *Introduction to ggplot2*: 
-     + [HTML Web Book](https://agrogan1.github.io/R/introduction-to-ggplot2/background.html) 
+     + [HTML Web Book](https://agrogan1.github.io/R/introduction-to-ggplot2/introduction-to-ggplot2.html) 
 * *Two Page R*: 
      + [PDF](https://agrogan1.github.io/R/two-page-R/two-page-R.pdf)
 * *Two Page ggplot2*: 
      + [PDF](https://agrogan1.github.io/R/two-page-ggplot2/two-page-ggplot2.pdf)
      
-# Questions? (scroll down &#8681;)
+# Questions? 
 
 ## Please Contact
 
 [agrogan@umich.edu](agrogan@umich.edu)
 
 [www.umich.edu/~agrogan](www.umich.edu/~agrogan)
-
-[agrogan1.github.io](agrogan1.github.io)
 
 ## References
 
