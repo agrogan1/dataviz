@@ -38,7 +38,7 @@ knitr::include_graphics("images/banner-vv.png")
 ```
 </aside>
 
-> <mark>Some learning of basic coding in R will be involved in this course.</mark>
+> <mark>This will be a challenging class. Some learning of basic coding in R will be involved in this course.</mark>
 
 # Course Objectives
 
@@ -46,7 +46,7 @@ knitr::include_graphics("images/banner-vv.png")
 2. Students will learn how distinctions between categorical and continuous variables drive data visualization decisions.
 3. Students will be able to understand and implement a *grammar of graphics* to create various forms of data visualization.
 4. Students will be able to produce various forms of standard graphs and data visualizations.
-5. Students will be able to produce various types maps and visualizations of spatial data.
+5. Students will be able to produce various types of maps and visualizations of spatial data.
 
 <aside>
 ```{r, eval=TRUE, fig.cap="Chart Ideas"}
