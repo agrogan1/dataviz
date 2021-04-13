@@ -27,6 +27,8 @@ library(rayshader) # WOW
 
 library(rgl) # 3D graphics
 
+library(knitr)
+
 # knit_hooks$set(rgl = hook_rgl)
 
 ```
@@ -55,6 +57,7 @@ p0 <- ggplot(gapminder,
   labs(title = "Life Expectancy by GDP",
        x = "GDP",
        y = "Life Expectancy") +
+  theme_minimal() +
   scale_fill_viridis_c()
 
 p0
@@ -63,13 +66,19 @@ p0
 
 # rayshader
 
-```{r, webgl=TRUE}
+```{r}
+
+# knit_hooks$set(rgl = hook_rgl)
+
+# rgl::rgl.close()
 
 plot_gg(p0, 
         multicore = TRUE, 
         width = 5, 
         height = 5, 
         scale = 250)
+
+rgl::rglwidget()
 
 ```
 
