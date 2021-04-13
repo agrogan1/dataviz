@@ -7,10 +7,11 @@ output:
     code_folding: hide
     highlight: haddock
     toc: no
-  pdf_document:
+    fig_height: 3
+  pdf_document: 
     highlight: haddock
-    keep_tex: no
     latex_engine: xelatex
+    fig_height: 2
 always_allow_html: yes
 mainfont: Tw Cen MT
 geometry: margin=0.75in
@@ -20,19 +21,21 @@ fontsize: 12pt
 
 ```{r global_options, echo=FALSE}
 
-knitr::opts_chunk$set(echo = TRUE, 
-                      warning = FALSE, 
-                      message = FALSE, 
-                      fig.height = 2.0)
+if(knitr::opts_knit$get("rmarkdown.pandoc.to") == "html") { 
+  
+  knitr::opts_chunk$set(echo = TRUE, 
+                        warning = FALSE, 
+                        message = FALSE)
+  
+}
 
-# NOTES: For HTML, echo=TRUE; for PDF, echo=FALSE
+if(knitr::opts_knit$get("rmarkdown.pandoc.to") == "latex") { 
 
-# Update:  As of 5-26-2017, the below is no longer necessary.
+  knitr::opts_chunk$set(echo = FALSE, 
+                        warning = FALSE, 
+                        message = FALSE)
 
-# Also, go through and change headers depending on format.
-# \newpage just before "A Simulated Dataset"
-#     Remove for HTML
-#     Keep for PDF
+}
 
 ```
 
@@ -44,7 +47,9 @@ library(ggthemes) # nice themes for ggplot2
 
 library(ggbeeswarm) # helpful 'beeswarm' geometry
 
-library(cowplot) # arrrange graphs
+library(ggdist) # 'distribution' geometries
+
+library(cowplot) # arrange graphs
 
 library(pander) # nice tables
 
@@ -650,6 +655,8 @@ plot_grid(my_boxplot, my_conditional_boxplot, ncol = 2)
 
 ```{r}
 
+library(ggbeeswarm) # beeswarm geometry
+
 my_beeswarm <- ggplot(mydata, 
                       aes(x = y, 
                           y = 1)) + 
@@ -679,12 +686,15 @@ plot_grid(my_beeswarm, my_facet_beeswarm)
 
 ```
 
+<a id="dotplot"></a>
+
 ```{r}
+
+library(ggdist) # 'distribution' geometries
 
 my_dotplot <- ggplot(mydata, 
                      aes(x = y)) + 
-  geom_dotplot(colour=wave_field_green, 
-               binwidth = 3.0) + 
+  stat_dots(colour=wave_field_green) +
   ggtitle("dotplot") + 
   xlab("continuous") + 
   ylab("density") + 
@@ -692,8 +702,7 @@ my_dotplot <- ggplot(mydata,
 
 my_facet_dotplot <- ggplot(mydata, 
                            aes(x = y)) + 
-  geom_dotplot(colour=wave_field_green, 
-               binwidth = 1.5) + 
+  stat_dots(colour=wave_field_green) +
   facet_wrap(~w, nrow = 2) + 
   ggtitle("dotplot \nby group") + 
   xlab("continuous") + 
@@ -701,9 +710,7 @@ my_facet_dotplot <- ggplot(mydata,
   theme_minimal() +
   theme(axis.text = element_text(size = 5)) # small font size for axis
 
-plot_grid(my_dotplot, 
-          my_facet_dotplot, 
-          ncol = 2)
+plot_grid(my_dotplot, my_facet_dotplot, ncol = 2)
 
 ```
 
@@ -726,6 +733,8 @@ plot_grid(my_dotplot,
 # Categorical \hspace{\stretch{1}} Categorical By Categorical
 
 ```
+
+<a id="barchart"></a>
 
 ```{r}
 
