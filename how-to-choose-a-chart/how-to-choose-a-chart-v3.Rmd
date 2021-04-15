@@ -809,19 +809,19 @@ plot_grid(my_horiz_barchat, my_horiz_facet_barchart, ncol = 2)
 
 ```{r}
 
-my_pie <- ggplot(mydata, aes(x = factor(1), fill = v)) + 
+my_pie <- ggplot(mydata, aes(x = 1, fill = v)) + 
   geom_bar(width = 1) + 
   coord_polar(theta="y") + 
   scale_fill_manual(values = michigan_colors) + 
   ggtitle("pie chart") + guides(fill=FALSE) +
   xlab(" ") + 
   ylab("categorical") + 
-  theme_minimal() +
+  theme_void() +
   theme(axis.text.x = element_blank()) +
   theme(axis.text.y = element_blank()) + 
   theme(axis.ticks = element_blank())
 
-my_facet_pie <- ggplot(mydata, aes(x = factor(1), fill = v)) + 
+my_facet_pie <- ggplot(mydata, aes(x = 1, fill = v)) + 
   geom_bar(width = 1, position = "fill") + 
   coord_polar(theta="y") + 
   facet_wrap(~u, ncol = 2) + 
@@ -830,7 +830,7 @@ my_facet_pie <- ggplot(mydata, aes(x = factor(1), fill = v)) +
   guides(fill=FALSE) +
   xlab(" ") + 
   ylab("categorical") + 
-  theme_minimal() +
+  theme_void() +
   theme(axis.text.x = element_blank()) +
   theme(axis.text.y = element_blank())  + 
   theme(axis.ticks = element_blank())
@@ -842,21 +842,22 @@ plot_grid(my_pie, my_facet_pie, ncol = 2)
 
 ```{r}
 
-my_doughnut <- ggplot(mydata, aes(x = factor(1), fill = v)) + 
-  geom_bar(width = .5) + 
+my_doughnut <- ggplot(mydata, aes(x = 2, fill = v)) + 
+  geom_bar() + 
   coord_polar(theta="y") + 
   scale_fill_manual(values = michigan_colors) + 
   ggtitle("doughnut chart") + 
   guides(fill=FALSE) +
   xlab(" ") + 
   ylab("categorical") + 
-  theme_minimal() +
+  xlim(.5, 2.5) +
+  theme_void() +
   theme(axis.text.x = element_blank()) +
   theme(axis.text.y = element_blank()) + 
   theme(axis.ticks = element_blank())
 
-my_facet_doughnut <- ggplot(mydata, aes(x = factor(1), fill = v)) + 
-  geom_bar(width = .5, position = "fill") + 
+my_facet_doughnut <- ggplot(mydata, aes(x = 2, fill = v)) + 
+  geom_bar(position = "fill") + 
   coord_polar(theta="y") + 
   facet_wrap(~u, ncol = 2) + 
   scale_fill_manual(values = michigan_colors) + 
@@ -864,7 +865,8 @@ my_facet_doughnut <- ggplot(mydata, aes(x = factor(1), fill = v)) +
   guides(fill=FALSE) +
   xlab(" ") + 
   ylab("categorical") + 
-  theme_minimal() +
+  xlim(.5, 2.5) +
+  theme_void() +
   theme(axis.text.x = element_blank()) +
   theme(axis.text.y = element_blank())  + 
   theme(axis.ticks = element_blank())
