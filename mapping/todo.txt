@@ -2,11 +2,11 @@
 
 projections
 shape files
+joining data to shapefiles
 library(maps) base layers
 background layers
 maps with ggplot
-maps with plotly
-maps with leaflet
+maps with plotly; maps with leaflet
 CRS
 mapping latitude and longitude
 KML?
