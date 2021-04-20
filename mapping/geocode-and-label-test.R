@@ -16,17 +16,17 @@ library(ggrepel) # repelling labels
 
 # Get Data
 
-Final_Geocode_PEG_QGIS <- read_excel("Final Geocode PEG QGIS.xlsx")
+Final_Geocode_PEG_QGIS <- read_excel("mydata.xlsx")
 
 # Concatenate Addresses
 
-Final_Geocode_PEG_QGIS$addr <- paste(Final_Geocode_PEG_QGIS$Address,
+Final_Geocode_PEG_QGIS$addr <- paste(mydata$Address,
                                      ", ",
-                                     Final_Geocode_PEG_QGIS$City,
+                                     mydata$City,
                                      ", ",
-                                     Final_Geocode_PEG_QGIS$State,
+                                     mydata$State,
                                      " ",
-                                     Final_Geocode_PEG_QGIS$Zipcode)
+                                     mydata$Zipcode)
 
 # Geocode
 
