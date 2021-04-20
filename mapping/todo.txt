@@ -1,0 +1,12 @@
+# To Do's
+
+projections
+shape files
+library(maps) base layers
+background layers
+maps with ggplot
+maps with plotly
+maps with leaflet
+CRS
+mapping latitude and longitude
+KML?
