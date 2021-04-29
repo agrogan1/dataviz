@@ -19,7 +19,7 @@ An example data driven document can be found here.
 * [Word](data-driven-report-demo.docx)
 * [epub](data-driven-report-demo.epub)
 
-### Alternative PDF formats
+### Alternative HTML Formats
 
 * [Distill](data-driven-report-demo-distill.html) (The Distill format for scientific publishing)
 

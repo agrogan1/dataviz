@@ -6,7 +6,7 @@ output:
   distill::distill_article:
     highlight: haddock
     toc: yes
-    code_folding: hide
+    code_folding: true
 ---
 
 
@@ -22,7 +22,7 @@ The Viridis color palettes are designed to have a number of advantages.
 
 1. Aesthetically pleasing
 2. Perceptually uniform
-3. Color-blindness friendly
+3. Color-blind friendly
 
 More details can be found at [https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html)
 

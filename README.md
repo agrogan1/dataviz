@@ -16,4 +16,6 @@
 
 [Dashboard Demo](./dashboard/dashboard.html)
 
+[A Quick Page on The Viridis Color Palettes](./viridis/viridis.html)
+
 Created by [Andy Grogan-Kaylor](https://agrogan1.github.io/)
