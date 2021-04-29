@@ -19,6 +19,10 @@ An example data driven document can be found here.
 * [Word](data-driven-report-demo.docx)
 * [epub](data-driven-report-demo.epub)
 
+### Alternative PDF formats
+
+* [Distill](data-driven-report-demo-distill.html) (The Distill format for scientific publishing)
+
 ### Slide Show Formats
 
 > Slide show formats can be beautiful and effective for presentations. However, slide show formats may not work equally well with all screen resolutions and sizes. Slide shows may have varying performance on mobile devices.
@@ -28,7 +32,6 @@ An example data driven document can be found here.
 ### Alternative PDF formats
 
 * [Tufte](data-driven-report-demo-tufte.pdf) (Inspired by the work of Edward Tufte)
-* [TINT](data-driven-report-demo-tint.pdf) (Alternative "Tufte-like" format)
 
 ### GitBook Format
 

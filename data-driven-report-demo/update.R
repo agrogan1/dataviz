@@ -10,6 +10,8 @@ library(tint) # tint is not tufte
 
 library(tufte) # tufte handouts
 
+library(distill) # distill
+
 # library(pagedreport) # paged reports
 
 # render home page
@@ -28,6 +30,10 @@ render("data-driven-report-demo.Rmd",
 #        output_format = revealjs_presentation(css = "revealjs.css",
 #                                              fig_height = 3),
 #        output_file = "data-driven-report-demo-revealjs.html")
+
+render("data-driven-report-demo.Rmd",
+       output_format = distill_article(toc = TRUE),
+       output_file = "data-driven-report-demo-distill.html")
 
 render("data-driven-report-demo.Rmd",
        output_format = slidy_presentation(css = "UMslidy.css"),
@@ -51,6 +57,7 @@ render("data-driven-report-demo.Rmd",
 render_book("data-driven-report-demo.Rmd",
             output_format = gitbook(),
             output_dir = "./book")
+
 
 
 
