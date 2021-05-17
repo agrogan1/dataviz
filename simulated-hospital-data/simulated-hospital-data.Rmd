@@ -1,10 +1,12 @@
 ---
 title: "Simulated Hospital Data"
-author: "Andy Grogan-Kaylor (agrogan@umich.edu)"
+author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output: 
   slidy_presentation: 
     highlight: haddock
+    fig_caption: yes
+    css: ../UMslidy.css
 ---
 
 ## Imagine the following simulated data
@@ -88,7 +90,8 @@ p1 <- ggplot(hospitaldatalong) +
                fill = outcome)) +
   labs(title = "Outcome by Type of Hospital",
        x = "type of hospital",
-       y = "outcome")
+       y = "outcome") +
+  theme_minimal()
 
 ggplotly(p1)
 
@@ -123,7 +126,8 @@ p2 <- ggplot(hospitaldatalong) +
   facet_wrap(~severity, scales = "free") +
   labs(title = "Outcome by Type of Hospital AND Severity of Case",
        x = "type of hospital",
-       y = "outcome")
+       y = "outcome") +
+  theme_minimal()
 
 ggplotly(p2)
 
