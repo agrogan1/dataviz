@@ -38,7 +38,7 @@ knitr::include_graphics("images/banner-vv.png")
 ```
 </aside>
 
-> <mark>This will be a challenging class. Some learning of basic coding in R will be involved in this course.</mark>
+> <span style="background-color: #00FFFF">This will be a challenging class. Some learning of basic in R will be involved in this course.</span>
 
 # Course Objectives
 
