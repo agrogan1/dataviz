@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Should Everything Be A Bar Graph?</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Andy Grogan-Kaylor" />
+    <meta name="date" content="2021-08-05" />
+    <script src="libs/header-attrs-2.8/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/hygge.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/ninjutsu.css" rel="stylesheet" />
+    <link href="libs/tile-view-0.2.3/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view-0.2.3/tile-view.js"></script>
+    <script src="libs/tone-13.8.34/Tone.js"></script>
+    <script src="libs/slide-tone-0.2.3/slide-tone.js"></script>
+    <script src="libs/clipboard-2.0.6/clipboard.min.js"></script>
+    <link href="libs/shareon-1.4.1/shareon.min.css" rel="stylesheet" />
+    <script src="libs/shareon-1.4.1/shareon.min.js"></script>
+    <link href="libs/xaringanExtra-shareagain-0.2.3/shareagain.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-shareagain-0.2.3/shareagain.js"></script>
+    <link rel="stylesheet" href="animate.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Should Everything Be A Bar Graph?
+## Use <span style="font-size:50px">⇦</span> and <span style="font-size:50px">⇨</span> to navigate.
+### Andy Grogan-Kaylor
+### 2021-08-05
+
+---
+
+
+&lt;style type="text/css"&gt;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap');
+.title-slide { 
+  color: #ffcb05;
+  background-color: #00274C; 
+}
+.title-slide h1 {
+    color: #ffcb05;
+}
+pre {
+  white-space: pre-wrap;
+}
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+body { 
+    font-family: 'Montserrat', sans-serif;
+}
+.author, .date {
+  font-family: 'Montserrat', sans-serif;
+}
+
+&lt;/style&gt;
+
+
+
+# Introduction
+
+There are many different kinds of data visualization. In the language of the `ggplot` package for R, there are many different kinds of `geom`etries that we can apply to data.
+
+&lt;div class="figure"&gt;
+&lt;img src="banner.png" alt="Multiple Geometries for Data Visualization" width="4002" /&gt;
+&lt;p class="caption"&gt;Multiple Geometries for Data Visualization&lt;/p&gt;
+&lt;/div&gt;
+
+However, after a number of years of working on data visualization, I have started to think about the advantages of bar graphs. While *not every visualization needs to be a bar graph*, it sometimes seems as though many data visualizations *would work well as a bar graph*.
+
+In this slide deck, I use the `ggplot` package to develop bar graphs with `geom_col`, one of the bar graph `geom`etries. After building a basic bar graph, I apply many formatting ideas, most of which I have learned from the blog of Cedric Scherer ([https://www.cedricscherer.com/](https://www.cedricscherer.com/)).
+
+---
+class: animated, slideInRight
+# Simulate Some Data
+
+
+```r
+group &lt;- c("A", "B", "C") # group variable
+
+mycount &lt;- c(10, 20, 50) # count in each group
+
+mydata &lt;- data.frame(group, mycount) # make a data frame
+
+mydata # replay
+```
+
+```
+  group mycount
+1     A      10
+2     B      20
+3     C      50
+```
+
+---
+class: animated, slideInRight
+# Call The Library
+
+
+```r
+library(ggplot2) # call the library
+```
+
+---
+class: animated, slideInRight
+# Set Up The "Logic" Of The Plot
+
+
+```r
+p0 &lt;- ggplot(mydata, # the data I am using
+       aes(x = group, # x is the group
+           y = mycount)) # y is the count in each group
+```
+
+---
+class: animated, slideInRight
+# Basic Column Plot
+
+
+```r
+p0 + # basic plot
+  geom_col() # columns
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-6-1.png" width="432" /&gt;
+
+---
+class: animated, slideInRight
+# Column Plot With Tweaks...
+
+
+
+---
+
+
+
+count: false
+ 
+
+.panel1-graph2-auto[
+
+```r
+*p0   # basic plot
+```
+]
+ 
+.panel2-graph2-auto[
+&lt;img src="index_files/figure-html/graph2_auto_01_output-1.png" width="432" /&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-graph2-auto[
+
+```r
+p0 +  # basic plot
+* geom_col(aes(fill = group))   # columns w/ color fill for group
+```
+]
+ 
+.panel2-graph2-auto[
+&lt;img src="index_files/figure-html/graph2_auto_02_output-1.png" width="432" /&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-graph2-auto[
+
+```r
+p0 +  # basic plot
+  geom_col(aes(fill = group)) +  # columns w/ color fill for group
+* coord_flip()   # flip the plot
+```
+]
+ 
+.panel2-graph2-auto[
+&lt;img src="index_files/figure-html/graph2_auto_03_output-1.png" width="432" /&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-graph2-auto[
+
+```r
+p0 +  # basic plot
+  geom_col(aes(fill = group)) +  # columns w/ color fill for group
+  coord_flip() +  # flip the plot
+* labs(title = "Group C Has The Most People",  # informative title
+*      x = "Group",  # better axis labels
+*      y = "Count")
+```
+]
+ 
+.panel2-graph2-auto[
+&lt;img src="index_files/figure-html/graph2_auto_04_output-1.png" width="432" /&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-graph2-auto[
+
+```r
+p0 +  # basic plot
+  geom_col(aes(fill = group)) +  # columns w/ color fill for group
+  coord_flip() +  # flip the plot
+  labs(title = "Group C Has The Most People",  # informative title
+       x = "Group",  # better axis labels
+       y = "Count") +
+* scale_fill_viridis_d()   # better color fill scale
+```
+]
+ 
+.panel2-graph2-auto[
+&lt;img src="index_files/figure-html/graph2_auto_05_output-1.png" width="432" /&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-graph2-auto[
+
+```r
+p0 +  # basic plot
+  geom_col(aes(fill = group)) +  # columns w/ color fill for group
+  coord_flip() +  # flip the plot
+  labs(title = "Group C Has The Most People",  # informative title
+       x = "Group",  # better axis labels
+       y = "Count") +
+  scale_fill_viridis_d() +  # better color fill scale
+* theme_minimal()   # better theme
+```
+]
+ 
+.panel2-graph2-auto[
+&lt;img src="index_files/figure-html/graph2_auto_06_output-1.png" width="432" /&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-graph2-auto[
+
+```r
+p0 +  # basic plot
+  geom_col(aes(fill = group)) +  # columns w/ color fill for group
+  coord_flip() +  # flip the plot
+  labs(title = "Group C Has The Most People",  # informative title
+       x = "Group",  # better axis labels
+       y = "Count") +
+  scale_fill_viridis_d() +  # better color fill scale
+  theme_minimal() +  # better theme
+* geom_label(aes(label = group,  # label the bars
+*                y = 5),  # position the labels
+*            size = 10)
+```
+]
+ 
+.panel2-graph2-auto[
+&lt;img src="index_files/figure-html/graph2_auto_07_output-1.png" width="432" /&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-graph2-auto[
+
+```r
+p0 +  # basic plot
+  geom_col(aes(fill = group)) +  # columns w/ color fill for group
+  coord_flip() +  # flip the plot
+  labs(title = "Group C Has The Most People",  # informative title
+       x = "Group",  # better axis labels
+       y = "Count") +
+  scale_fill_viridis_d() +  # better color fill scale
+  theme_minimal() +  # better theme
+  geom_label(aes(label = group,  # label the bars
+                 y = 5),  # position the labels
+             size = 10) +
+* theme(legend.position = "none")   # turn off legend
+```
+]
+ 
+.panel2-graph2-auto[
+&lt;img src="index_files/figure-html/graph2_auto_08_output-1.png" width="432" /&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-graph2-auto[
+
+```r
+p0 +  # basic plot
+  geom_col(aes(fill = group)) +  # columns w/ color fill for group
+  coord_flip() +  # flip the plot
+  labs(title = "Group C Has The Most People",  # informative title
+       x = "Group",  # better axis labels
+       y = "Count") +
+  scale_fill_viridis_d() +  # better color fill scale
+  theme_minimal() +  # better theme
+  geom_label(aes(label = group,  # label the bars
+                 y = 5),  # position the labels
+             size = 10) +
+  theme(legend.position = "none") +  # turn off legend
+* theme(title = element_text(size = rel(2)))   # bigger title text
+```
+]
+ 
+.panel2-graph2-auto[
+&lt;img src="index_files/figure-html/graph2_auto_09_output-1.png" width="432" /&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-graph2-auto[
+
+```r
+p0 +  # basic plot
+  geom_col(aes(fill = group)) +  # columns w/ color fill for group
+  coord_flip() +  # flip the plot
+  labs(title = "Group C Has The Most People",  # informative title
+       x = "Group",  # better axis labels
+       y = "Count") +
+  scale_fill_viridis_d() +  # better color fill scale
+  theme_minimal() +  # better theme
+  geom_label(aes(label = group,  # label the bars
+                 y = 5),  # position the labels
+             size = 10) +
+  theme(legend.position = "none") +  # turn off legend
+  theme(title = element_text(size = rel(2))) +  # bigger title text
+* theme(axis.text = element_text(size = rel(2)))  # bigger axis text
+```
+]
+ 
+.panel2-graph2-auto[
+&lt;img src="index_files/figure-html/graph2_auto_10_output-1.png" width="432" /&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-graph2-auto[
+
+```r
+p0 +  # basic plot
+  geom_col(aes(fill = group)) +  # columns w/ color fill for group
+  coord_flip() +  # flip the plot
+  labs(title = "Group C Has The Most People",  # informative title
+       x = "Group",  # better axis labels
+       y = "Count") +
+  scale_fill_viridis_d() +  # better color fill scale
+  theme_minimal() +  # better theme
+  geom_label(aes(label = group,  # label the bars
+                 y = 5),  # position the labels
+             size = 10) +
+  theme(legend.position = "none") +  # turn off legend
+  theme(title = element_text(size = rel(2))) +  # bigger title text
+  theme(axis.text = element_text(size = rel(2)))  # bigger axis text
+```
+]
+ 
+.panel2-graph2-auto[
+&lt;img src="index_files/figure-html/graph2_auto_11_output-1.png" width="432" /&gt;
+]
+
+&lt;style&gt;
+.panel1-graph2-auto {
+  color: black;
+  width: 65.3333333333333%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-graph2-auto {
+  color: black;
+  width: 32.6666666666667%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-graph2-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+
+
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:10",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
