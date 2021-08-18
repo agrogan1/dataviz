@@ -4,7 +4,7 @@
     <title>Should Everything Be A Bar Graph?</title>
     <meta charset="utf-8" />
     <meta name="author" content="Andy Grogan-Kaylor" />
-    <meta name="date" content="2021-08-05" />
+    <meta name="date" content="2021-08-18" />
     <script src="libs/header-attrs-2.8/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/hygge.css" rel="stylesheet" />
@@ -27,7 +27,7 @@ class: center, middle, inverse, title-slide
 # Should Everything Be A Bar Graph?
 ## Use <span style="font-size:50px">⇦</span> and <span style="font-size:50px">⇨</span> to navigate.
 ### Andy Grogan-Kaylor
-### 2021-08-05
+### 2021-08-18
 
 ---
 
@@ -78,20 +78,122 @@ class: animated, slideInRight
 
 
 ```r
-group &lt;- c("A", "B", "C") # group variable
+N = 30
 
-mycount &lt;- c(10, 20, 50) # count in each group
+group &lt;- c(rep("A", N), 
+           rep("B", N), 
+           rep("C", N)) # group variable
 
-mydata &lt;- data.frame(group, mycount) # make a data frame
+# mycount &lt;- c(10, 20, 50) # count in each group
 
-mydata # replay
+outcome &lt;- c(rep(rnorm(N, 10, 1)),
+            rep(rnorm(N, 20, 1)),
+            rep(rnorm(N, 15, 1)))
+
+mydata &lt;- data.frame(group, outcome) # make a data frame
+```
+
+---
+class: animated, slideInRight
+# Replay The Data
+
+
+```r
+mydata # replay the data
 ```
 
 ```
-  group mycount
-1     A      10
-2     B      20
-3     C      50
+   group   outcome
+1      A  8.637613
+2      A 11.305320
+3      A 10.617467
+4      A 10.366292
+5      A  9.342590
+6      A  9.919286
+7      A 10.988395
+8      A 11.389549
+9      A 11.298066
+10     A 12.229669
+11     A  9.745447
+12     A 10.116098
+13     A 10.102708
+14     A  9.554140
+15     A 10.109188
+16     A  8.766052
+17     A  8.544527
+18     A 12.511806
+19     A  9.824613
+20     A  9.799880
+21     A 10.207310
+22     A  9.955990
+23     A  9.707786
+24     A  9.143584
+25     A  9.749226
+26     A 10.675753
+27     A 10.320079
+28     A 10.999867
+29     A 10.700788
+30     A  8.857220
+31     B 19.005195
+32     B 20.054569
+33     B 21.228881
+34     B 22.502657
+35     B 19.597288
+36     B 18.312598
+37     B 19.022777
+38     B 19.533241
+39     B 20.767741
+40     B 20.039164
+41     B 20.789540
+42     B 20.087196
+43     B 19.138534
+44     B 19.469609
+45     B 18.934680
+46     B 20.155245
+47     B 19.664832
+48     B 19.936430
+49     B 21.062712
+50     B 19.774642
+51     B 20.076328
+52     B 20.699581
+53     B 17.208367
+54     B 19.713663
+55     B 19.529218
+56     B 21.355399
+57     B 19.614109
+58     B 20.185342
+59     B 20.714411
+60     B 20.547772
+61     C 14.418595
+62     C 14.940115
+63     C 16.249859
+64     C 15.827082
+65     C 13.766820
+66     C 16.884704
+67     C 14.663912
+68     C 15.093309
+69     C 14.203026
+70     C 14.894420
+71     C 13.881257
+72     C 14.780262
+73     C 14.378603
+74     C 15.951064
+75     C 14.715933
+76     C 16.456282
+77     C 15.260037
+78     C 15.598165
+79     C 13.383653
+80     C 14.684049
+81     C 13.974506
+82     C 14.267340
+83     C 15.101928
+84     C 14.536066
+85     C 13.821164
+86     C 16.572451
+87     C 15.002071
+88     C 14.793696
+89     C 15.265238
+90     C 13.461664
 ```
 
 ---
@@ -111,24 +213,24 @@ class: animated, slideInRight
 ```r
 p0 &lt;- ggplot(mydata, # the data I am using
        aes(x = group, # x is the group
-           y = mycount)) # y is the count in each group
+           y = outcome)) # y is the count in each group
 ```
 
 ---
 class: animated, slideInRight
-# Basic Column Plot
+# Basic Bar Graph
 
 
 ```r
 p0 + # basic plot
-  geom_col() # columns
+  geom_bar(stat = "summary", fun.y = "mean") # bars with group means
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-6-1.png" width="432" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-7-1.png" width="432" /&gt;
 
 ---
 class: animated, slideInRight
-# Column Plot With Tweaks...
+# Bar Graph With Tweaks...
 
 
 
@@ -158,7 +260,8 @@ count: false
 
 ```r
 p0 +  # basic plot
-* geom_col(aes(fill = group))   # columns w/ color fill for group
+*   geom_bar(aes(fill = group),  # bars w/ color fill for group
+*            stat = "summary", fun.y = "mean")   # bars with group means
 ```
 ]
  
@@ -174,7 +277,8 @@ count: false
 
 ```r
 p0 +  # basic plot
-  geom_col(aes(fill = group)) +  # columns w/ color fill for group
+    geom_bar(aes(fill = group),  # bars w/ color fill for group
+             stat = "summary", fun.y = "mean") +  # bars with group means
 * coord_flip()   # flip the plot
 ```
 ]
@@ -191,11 +295,12 @@ count: false
 
 ```r
 p0 +  # basic plot
-  geom_col(aes(fill = group)) +  # columns w/ color fill for group
+    geom_bar(aes(fill = group),  # bars w/ color fill for group
+             stat = "summary", fun.y = "mean") +  # bars with group means
   coord_flip() +  # flip the plot
-* labs(title = "Group C Has The Most People",  # informative title
+* labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
 *      x = "Group",  # better axis labels
-*      y = "Count")
+*      y = "Outcome")
 ```
 ]
  
@@ -211,12 +316,13 @@ count: false
 
 ```r
 p0 +  # basic plot
-  geom_col(aes(fill = group)) +  # columns w/ color fill for group
+    geom_bar(aes(fill = group),  # bars w/ color fill for group
+             stat = "summary", fun.y = "mean") +  # bars with group means
   coord_flip() +  # flip the plot
-  labs(title = "Group C Has The Most People",  # informative title
+  labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
        x = "Group",  # better axis labels
-       y = "Count") +
-* scale_fill_viridis_d()   # better color fill scale
+       y = "Outcome") +
+* scale_fill_brewer(palette = "Set2")   # better color fill scale
 ```
 ]
  
@@ -232,12 +338,13 @@ count: false
 
 ```r
 p0 +  # basic plot
-  geom_col(aes(fill = group)) +  # columns w/ color fill for group
+    geom_bar(aes(fill = group),  # bars w/ color fill for group
+             stat = "summary", fun.y = "mean") +  # bars with group means
   coord_flip() +  # flip the plot
-  labs(title = "Group C Has The Most People",  # informative title
+  labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
        x = "Group",  # better axis labels
-       y = "Count") +
-  scale_fill_viridis_d() +  # better color fill scale
+       y = "Outcome") +
+  scale_fill_brewer(palette = "Set2") +  # better color fill scale
 * theme_minimal()   # better theme
 ```
 ]
@@ -254,12 +361,13 @@ count: false
 
 ```r
 p0 +  # basic plot
-  geom_col(aes(fill = group)) +  # columns w/ color fill for group
+    geom_bar(aes(fill = group),  # bars w/ color fill for group
+             stat = "summary", fun.y = "mean") +  # bars with group means
   coord_flip() +  # flip the plot
-  labs(title = "Group C Has The Most People",  # informative title
+  labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
        x = "Group",  # better axis labels
-       y = "Count") +
-  scale_fill_viridis_d() +  # better color fill scale
+       y = "Outcome") +
+  scale_fill_brewer(palette = "Set2") +  # better color fill scale
   theme_minimal() +  # better theme
 * geom_label(aes(label = group,  # label the bars
 *                y = 5),  # position the labels
@@ -279,12 +387,13 @@ count: false
 
 ```r
 p0 +  # basic plot
-  geom_col(aes(fill = group)) +  # columns w/ color fill for group
+    geom_bar(aes(fill = group),  # bars w/ color fill for group
+             stat = "summary", fun.y = "mean") +  # bars with group means
   coord_flip() +  # flip the plot
-  labs(title = "Group C Has The Most People",  # informative title
+  labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
        x = "Group",  # better axis labels
-       y = "Count") +
-  scale_fill_viridis_d() +  # better color fill scale
+       y = "Outcome") +
+  scale_fill_brewer(palette = "Set2") +  # better color fill scale
   theme_minimal() +  # better theme
   geom_label(aes(label = group,  # label the bars
                  y = 5),  # position the labels
@@ -305,12 +414,13 @@ count: false
 
 ```r
 p0 +  # basic plot
-  geom_col(aes(fill = group)) +  # columns w/ color fill for group
+    geom_bar(aes(fill = group),  # bars w/ color fill for group
+             stat = "summary", fun.y = "mean") +  # bars with group means
   coord_flip() +  # flip the plot
-  labs(title = "Group C Has The Most People",  # informative title
+  labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
        x = "Group",  # better axis labels
-       y = "Count") +
-  scale_fill_viridis_d() +  # better color fill scale
+       y = "Outcome") +
+  scale_fill_brewer(palette = "Set2") +  # better color fill scale
   theme_minimal() +  # better theme
   geom_label(aes(label = group,  # label the bars
                  y = 5),  # position the labels
@@ -332,12 +442,13 @@ count: false
 
 ```r
 p0 +  # basic plot
-  geom_col(aes(fill = group)) +  # columns w/ color fill for group
+    geom_bar(aes(fill = group),  # bars w/ color fill for group
+             stat = "summary", fun.y = "mean") +  # bars with group means
   coord_flip() +  # flip the plot
-  labs(title = "Group C Has The Most People",  # informative title
+  labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
        x = "Group",  # better axis labels
-       y = "Count") +
-  scale_fill_viridis_d() +  # better color fill scale
+       y = "Outcome") +
+  scale_fill_brewer(palette = "Set2") +  # better color fill scale
   theme_minimal() +  # better theme
   geom_label(aes(label = group,  # label the bars
                  y = 5),  # position the labels
@@ -360,12 +471,13 @@ count: false
 
 ```r
 p0 +  # basic plot
-  geom_col(aes(fill = group)) +  # columns w/ color fill for group
+    geom_bar(aes(fill = group),  # bars w/ color fill for group
+             stat = "summary", fun.y = "mean") +  # bars with group means
   coord_flip() +  # flip the plot
-  labs(title = "Group C Has The Most People",  # informative title
+  labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
        x = "Group",  # better axis labels
-       y = "Count") +
-  scale_fill_viridis_d() +  # better color fill scale
+       y = "Outcome") +
+  scale_fill_brewer(palette = "Set2") +  # better color fill scale
   theme_minimal() +  # better theme
   geom_label(aes(label = group,  # label the bars
                  y = 5),  # position the labels
@@ -383,7 +495,7 @@ p0 +  # basic plot
 &lt;style&gt;
 .panel1-graph2-auto {
   color: black;
-  width: 65.3333333333333%;
+  width: 78.4%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -391,7 +503,7 @@ p0 +  # basic plot
 }
 .panel2-graph2-auto {
   color: black;
-  width: 32.6666666666667%;
+  width: 19.6%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -407,6 +519,403 @@ p0 +  # basic plot
 }
 &lt;/style&gt;
 
+
+
+---
+class: animated, slideInRight
+
+# A Last Tweak: Show The Distribution
+
+Calculate the *mean*, *minimum* and *maximum* outcomes by group.
+
+
+```r
+library(dplyr) # data wrangling
+
+mynewdata &lt;- mydata %&gt;% 
+  group_by(group) %&gt;%
+  mutate(meanoutcome = mean(outcome)) %&gt;% # mean outcome by group
+  mutate(minoutcome = min(outcome)) %&gt;% # minimum outcome by group
+  mutate(maxoutcome = max(outcome)) # max outcome by group
+```
+
+---
+class: animated, slideInRight
+# Make The Graph
+
+
+
+---
+
+
+
+count: false
+ 
+
+.panel1-graph3-auto[
+
+```r
+*ggplot(mynewdata,  # the data I am using
+*      aes(x = group,  # x is the group
+*          y = outcome))   # y is the count in each group
+```
+]
+ 
+.panel2-graph3-auto[
+&lt;img src="index_files/figure-html/graph3_auto_01_output-1.png" width="432" /&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-graph3-auto[
+
+```r
+ggplot(mynewdata,  # the data I am using
+       aes(x = group,  # x is the group
+           y = outcome)) +  # y is the count in each group
+* geom_point(aes(color = group),  # points w/ color for group
+*            size = 5,  # size
+*            alpha = .5)   # transparency
+```
+]
+ 
+.panel2-graph3-auto[
+&lt;img src="index_files/figure-html/graph3_auto_02_output-1.png" width="432" /&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-graph3-auto[
+
+```r
+ggplot(mynewdata,  # the data I am using
+       aes(x = group,  # x is the group
+           y = outcome)) +  # y is the count in each group
+  geom_point(aes(color = group),  # points w/ color for group
+             size = 5,  # size
+             alpha = .5) +  # transparency
+* geom_point(aes(color = group,  # points w/ color for group
+*                y = meanoutcome),  # mean outcome
+*            size = 20)   # size
+```
+]
+ 
+.panel2-graph3-auto[
+&lt;img src="index_files/figure-html/graph3_auto_03_output-1.png" width="432" /&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-graph3-auto[
+
+```r
+ggplot(mynewdata,  # the data I am using
+       aes(x = group,  # x is the group
+           y = outcome)) +  # y is the count in each group
+  geom_point(aes(color = group),  # points w/ color for group
+             size = 5,  # size
+             alpha = .5) +  # transparency
+  geom_point(aes(color = group,  # points w/ color for group
+                 y = meanoutcome),  # mean outcome
+             size = 20) +  # size
+* coord_flip()   # flip the plot
+```
+]
+ 
+.panel2-graph3-auto[
+&lt;img src="index_files/figure-html/graph3_auto_04_output-1.png" width="432" /&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-graph3-auto[
+
+```r
+ggplot(mynewdata,  # the data I am using
+       aes(x = group,  # x is the group
+           y = outcome)) +  # y is the count in each group
+  geom_point(aes(color = group),  # points w/ color for group
+             size = 5,  # size
+             alpha = .5) +  # transparency
+  geom_point(aes(color = group,  # points w/ color for group
+                 y = meanoutcome),  # mean outcome
+             size = 20) +  # size
+  coord_flip() +  # flip the plot
+* labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
+*      x = "Group",  # better axis labels
+*      y = "Outcome")
+```
+]
+ 
+.panel2-graph3-auto[
+&lt;img src="index_files/figure-html/graph3_auto_05_output-1.png" width="432" /&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-graph3-auto[
+
+```r
+ggplot(mynewdata,  # the data I am using
+       aes(x = group,  # x is the group
+           y = outcome)) +  # y is the count in each group
+  geom_point(aes(color = group),  # points w/ color for group
+             size = 5,  # size
+             alpha = .5) +  # transparency
+  geom_point(aes(color = group,  # points w/ color for group
+                 y = meanoutcome),  # mean outcome
+             size = 20) +  # size
+  coord_flip() +  # flip the plot
+  labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
+       x = "Group",  # better axis labels
+       y = "Outcome") +
+* scale_color_brewer(palette = "Set2")   # better color scale
+```
+]
+ 
+.panel2-graph3-auto[
+&lt;img src="index_files/figure-html/graph3_auto_06_output-1.png" width="432" /&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-graph3-auto[
+
+```r
+ggplot(mynewdata,  # the data I am using
+       aes(x = group,  # x is the group
+           y = outcome)) +  # y is the count in each group
+  geom_point(aes(color = group),  # points w/ color for group
+             size = 5,  # size
+             alpha = .5) +  # transparency
+  geom_point(aes(color = group,  # points w/ color for group
+                 y = meanoutcome),  # mean outcome
+             size = 20) +  # size
+  coord_flip() +  # flip the plot
+  labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
+       x = "Group",  # better axis labels
+       y = "Outcome") +
+  scale_color_brewer(palette = "Set2") +  # better color scale
+* theme_minimal()   # better theme
+```
+]
+ 
+.panel2-graph3-auto[
+&lt;img src="index_files/figure-html/graph3_auto_07_output-1.png" width="432" /&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-graph3-auto[
+
+```r
+ggplot(mynewdata,  # the data I am using
+       aes(x = group,  # x is the group
+           y = outcome)) +  # y is the count in each group
+  geom_point(aes(color = group),  # points w/ color for group
+             size = 5,  # size
+             alpha = .5) +  # transparency
+  geom_point(aes(color = group,  # points w/ color for group
+                 y = meanoutcome),  # mean outcome
+             size = 20) +  # size
+  coord_flip() +  # flip the plot
+  labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
+       x = "Group",  # better axis labels
+       y = "Outcome") +
+  scale_color_brewer(palette = "Set2") +  # better color scale
+  theme_minimal() +  # better theme
+* geom_text(aes(label = group,  # label the groups
+*               color = group,  # color labels by group
+*                y = minoutcome - 1),  # position the labels
+*            size = 10)
+```
+]
+ 
+.panel2-graph3-auto[
+&lt;img src="index_files/figure-html/graph3_auto_08_output-1.png" width="432" /&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-graph3-auto[
+
+```r
+ggplot(mynewdata,  # the data I am using
+       aes(x = group,  # x is the group
+           y = outcome)) +  # y is the count in each group
+  geom_point(aes(color = group),  # points w/ color for group
+             size = 5,  # size
+             alpha = .5) +  # transparency
+  geom_point(aes(color = group,  # points w/ color for group
+                 y = meanoutcome),  # mean outcome
+             size = 20) +  # size
+  coord_flip() +  # flip the plot
+  labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
+       x = "Group",  # better axis labels
+       y = "Outcome") +
+  scale_color_brewer(palette = "Set2") +  # better color scale
+  theme_minimal() +  # better theme
+  geom_text(aes(label = group,  # label the groups
+                color = group,  # color labels by group
+                 y = minoutcome - 1),  # position the labels
+             size = 10) +
+* theme(legend.position = "none")   # turn off legend
+```
+]
+ 
+.panel2-graph3-auto[
+&lt;img src="index_files/figure-html/graph3_auto_09_output-1.png" width="432" /&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-graph3-auto[
+
+```r
+ggplot(mynewdata,  # the data I am using
+       aes(x = group,  # x is the group
+           y = outcome)) +  # y is the count in each group
+  geom_point(aes(color = group),  # points w/ color for group
+             size = 5,  # size
+             alpha = .5) +  # transparency
+  geom_point(aes(color = group,  # points w/ color for group
+                 y = meanoutcome),  # mean outcome
+             size = 20) +  # size
+  coord_flip() +  # flip the plot
+  labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
+       x = "Group",  # better axis labels
+       y = "Outcome") +
+  scale_color_brewer(palette = "Set2") +  # better color scale
+  theme_minimal() +  # better theme
+  geom_text(aes(label = group,  # label the groups
+                color = group,  # color labels by group
+                 y = minoutcome - 1),  # position the labels
+             size = 10) +
+  theme(legend.position = "none") +  # turn off legend
+* theme(title = element_text(size = rel(2)))   # bigger title text
+```
+]
+ 
+.panel2-graph3-auto[
+&lt;img src="index_files/figure-html/graph3_auto_10_output-1.png" width="432" /&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-graph3-auto[
+
+```r
+ggplot(mynewdata,  # the data I am using
+       aes(x = group,  # x is the group
+           y = outcome)) +  # y is the count in each group
+  geom_point(aes(color = group),  # points w/ color for group
+             size = 5,  # size
+             alpha = .5) +  # transparency
+  geom_point(aes(color = group,  # points w/ color for group
+                 y = meanoutcome),  # mean outcome
+             size = 20) +  # size
+  coord_flip() +  # flip the plot
+  labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
+       x = "Group",  # better axis labels
+       y = "Outcome") +
+  scale_color_brewer(palette = "Set2") +  # better color scale
+  theme_minimal() +  # better theme
+  geom_text(aes(label = group,  # label the groups
+                color = group,  # color labels by group
+                 y = minoutcome - 1),  # position the labels
+             size = 10) +
+  theme(legend.position = "none") +  # turn off legend
+  theme(title = element_text(size = rel(2))) +  # bigger title text
+* theme(axis.text = element_text(size = rel(2)))  # bigger axis text
+```
+]
+ 
+.panel2-graph3-auto[
+&lt;img src="index_files/figure-html/graph3_auto_11_output-1.png" width="432" /&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-graph3-auto[
+
+```r
+ggplot(mynewdata,  # the data I am using
+       aes(x = group,  # x is the group
+           y = outcome)) +  # y is the count in each group
+  geom_point(aes(color = group),  # points w/ color for group
+             size = 5,  # size
+             alpha = .5) +  # transparency
+  geom_point(aes(color = group,  # points w/ color for group
+                 y = meanoutcome),  # mean outcome
+             size = 20) +  # size
+  coord_flip() +  # flip the plot
+  labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
+       x = "Group",  # better axis labels
+       y = "Outcome") +
+  scale_color_brewer(palette = "Set2") +  # better color scale
+  theme_minimal() +  # better theme
+  geom_text(aes(label = group,  # label the groups
+                color = group,  # color labels by group
+                 y = minoutcome - 1),  # position the labels
+             size = 10) +
+  theme(legend.position = "none") +  # turn off legend
+  theme(title = element_text(size = rel(2))) +  # bigger title text
+  theme(axis.text = element_text(size = rel(2)))  # bigger axis text
+```
+]
+ 
+.panel2-graph3-auto[
+&lt;img src="index_files/figure-html/graph3_auto_12_output-1.png" width="432" /&gt;
+]
+
+&lt;style&gt;
+.panel1-graph3-auto {
+  color: black;
+  width: 78.4%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-graph3-auto {
+  color: black;
+  width: 19.6%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-graph3-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
 
 
 

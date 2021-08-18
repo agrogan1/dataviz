@@ -86,13 +86,29 @@ class: animated, slideInRight
 
 ```{r}
 
-group <- c("A", "B", "C") # group variable
+N = 30
 
-mycount <- c(10, 20, 50) # count in each group
+group <- c(rep("A", N), 
+           rep("B", N), 
+           rep("C", N)) # group variable
 
-mydata <- data.frame(group, mycount) # make a data frame
+# mycount <- c(10, 20, 50) # count in each group
 
-mydata # replay
+outcome <- c(rep(rnorm(N, 10, 1)),
+            rep(rnorm(N, 20, 1)),
+            rep(rnorm(N, 15, 1)))
+
+mydata <- data.frame(group, outcome) # make a data frame
+
+```
+
+---
+class: animated, slideInRight
+# Replay The Data
+
+```{r}
+
+mydata # replay the data
 
 ```
 
@@ -114,33 +130,34 @@ class: animated, slideInRight
 
 p0 <- ggplot(mydata, # the data I am using
        aes(x = group, # x is the group
-           y = mycount)) # y is the count in each group
+           y = outcome)) # y is the count in each group
 ```
 
 ---
 class: animated, slideInRight
-# Basic Column Plot
+# Basic Bar Graph
 
 ```{r, fig.height=4}
 
 p0 + # basic plot
-  geom_col() # columns
+  geom_bar(stat = "summary", fun.y = "mean") # bars with group means
 
 ```
 
 ---
 class: animated, slideInRight
-# Column Plot With Tweaks...
+# Bar Graph With Tweaks...
 
 ```{r graph2, include = FALSE, fig.height=4}
 
 p0 + # basic plot
-  geom_col(aes(fill = group)) + # columns w/ color fill for group
+    geom_bar(aes(fill = group), # bars w/ color fill for group
+             stat = "summary", fun.y = "mean") + # bars with group means
   coord_flip() + # flip the plot
-  labs(title = "Group C Has The Most People", # informative title
+  labs(title = "Group B Has The Highest \nMean Outcome", # informative title
        x = "Group", # better axis labels
-       y = "Count") + 
-  scale_fill_viridis_d() + # better color fill scale
+       y = "Outcome") + 
+  scale_fill_brewer(palette = "Set2") + # better color fill scale
   theme_minimal() + # better theme
   geom_label(aes(label = group, # label the bars
                  y = 5), # position the labels
@@ -157,8 +174,65 @@ p0 + # basic plot
 ```{r, code = knitr::knit_code$get("graph2"), eval = FALSE, echo = FALSE}
 ```
 
-`r chunk_reveal("graph2", break_type = "auto", widths = c(4,2))`
+`r chunk_reveal("graph2", break_type = "auto", widths = c(4,1))`
 
+---
+class: animated, slideInRight
+
+# A Last Tweak: Show The Distribution
+
+Calculate the *mean*, *minimum* and *maximum* outcomes by group.
+
+```{r}
+
+library(dplyr) # data wrangling
+
+mynewdata <- mydata %>% 
+  group_by(group) %>%
+  mutate(meanoutcome = mean(outcome)) %>% # mean outcome by group
+  mutate(minoutcome = min(outcome)) %>% # minimum outcome by group
+  mutate(maxoutcome = max(outcome)) # max outcome by group
+  
+```
+
+---
+class: animated, slideInRight
+# Make The Graph
+
+```{r graph3, include = FALSE, fig.height=4}
+
+ggplot(mynewdata, # the data I am using
+       aes(x = group, # x is the group
+           y = outcome)) + # y is the count in each group
+  geom_point(aes(color = group), # points w/ color for group
+             size = 5, # size
+             alpha = .5) + # transparency
+  geom_point(aes(color = group, # points w/ color for group
+                 y = meanoutcome), # mean outcome
+             size = 20) + # size
+  coord_flip() + # flip the plot
+  labs(title = "Group B Has The Highest \nMean Outcome", # informative title
+       x = "Group", # better axis labels
+       y = "Outcome") + 
+  scale_color_brewer(palette = "Set2") + # better color scale
+  theme_minimal() + # better theme
+  geom_text(aes(label = group, # label the groups
+                color = group, # color labels by group
+                 y = minoutcome - 1), # position the labels
+             size = 10) + 
+  theme(legend.position = "none") + # turn off legend
+  theme(title = element_text(size = rel(2))) + # bigger title text
+  theme(axis.text = element_text(size = rel(2))) # bigger axis text
+
+
+```
+
+---
+
+```{r, code = knitr::knit_code$get("graph3"), eval = FALSE, echo = FALSE}
+```
+
+`r chunk_reveal("graph3", break_type = "auto", widths = c(4,1))`
 
 
 
