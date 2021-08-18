@@ -104,112 +104,26 @@ class: animated, slideInRight
 
 
 ```r
-mydata # replay the data
+head(mydata) # show the top of the data
 ```
 
 ```
-   group   outcome
-1      A 10.368166
-2      A 10.638039
-3      A  9.497456
-4      A  9.315399
-5      A 10.359395
-6      A  8.258222
-7      A  9.297398
-8      A 10.742539
-9      A  9.668928
-10     A  8.701514
-11     A  8.825627
-12     A  9.845127
-13     A 10.417968
-14     A  9.324845
-15     A 10.928648
-16     A 11.703997
-17     A 11.177093
-18     A 11.310872
-19     A 10.095859
-20     A 10.719616
-21     A 11.975253
-22     A  8.911060
-23     A  9.814547
-24     A  8.402204
-25     A  7.840637
-26     A  9.685939
-27     A 11.727535
-28     A 10.560096
-29     A  8.344584
-30     A  8.583634
-31     B 20.606867
-32     B 19.300721
-33     B 19.405374
-34     B 19.617028
-35     B 19.872313
-36     B 20.453606
-37     B 20.318921
-38     B 20.421696
-39     B 21.340244
-40     B 20.456316
-41     B 20.713240
-42     B 19.873310
-43     B 20.315546
-44     B 20.472563
-45     B 21.199206
-46     B 20.727152
-47     B 21.646218
-48     B 21.201677
-49     B 21.964313
-50     B 19.677124
-51     B 18.985593
-52     B 21.965732
-53     B 22.188708
-54     B 18.747396
-55     B 20.262610
-56     B 19.850286
-57     B 19.615434
-58     B 18.129059
-59     B 20.293859
-60     B 19.940604
-61     C 15.009461
-62     C 15.783030
-63     C 16.737282
-64     C 14.151174
-65     C 15.830986
-66     C 14.765447
-67     C 12.307223
-68     C 15.719947
-69     C 15.244964
-70     C 12.412051
-71     C 14.558918
-72     C 14.258914
-73     C 14.303818
-74     C 16.243460
-75     C 16.431879
-76     C 14.744116
-77     C 14.546912
-78     C 15.649078
-79     C 14.243836
-80     C 15.031927
-81     C 13.796508
-82     C 14.545769
-83     C 17.276964
-84     C 13.943635
-85     C 14.623937
-86     C 13.414341
-87     C 15.740846
-88     C 16.611896
-89     C 15.044869
-90     C 16.349646
+  group   outcome
+1     A 11.221835
+2     A  8.746314
+3     A 10.311156
+4     A 11.530645
+5     A 12.365583
+6     A 10.572382
 ```
 
 ---
 class: animated, slideInRight
-# Call The Libraries
+# Call The Library
 
 
 ```r
 library(ggplot2) # call the library
-
-library(ggsci) # science based color palettes
 ```
 
 ---
@@ -316,6 +230,36 @@ p0 +
 
 
 ---
+class: animated, slideInRight, inverse
+# Some Tweaks
+
+---
+class: animated, slideInRight
+# Call Library For Better Colors
+
+
+```r
+library(ggsci) # science based color palettes
+```
+
+
+---
+class: animated, slideInRight
+
+# Calculate the *Mean*, *Minimum* and *Maximum* outcomes by group.
+
+
+```r
+library(dplyr) # data wrangling
+
+mynewdata &lt;- mydata %&gt;% 
+  group_by(group) %&gt;%
+  mutate(meanoutcome = mean(outcome)) %&gt;% # mean outcome by group
+  mutate(minoutcome = min(outcome)) %&gt;% # minimum outcome by group
+  mutate(maxoutcome = max(outcome)) # max outcome by group
+```
+
+---
 class: animated, slideInRight
 # Bar Graph With Tweaks...
 
@@ -331,7 +275,9 @@ count: false
 .panel1-graph2-auto[
 
 ```r
-*p0   # basic plot
+*ggplot(mynewdata,  # the data I am using
+*      aes(x = group,  # x is the group
+*          y = outcome))   # y is the outcome in each group
 ```
 ]
  
@@ -346,9 +292,12 @@ count: false
 .panel1-graph2-auto[
 
 ```r
-p0 +  # basic plot
-*   geom_bar(aes(fill = group),  # bars w/ color fill for group
-*            stat = "summary", fun = "mean")   # bars with group means
+ggplot(mynewdata,  # the data I am using
+       aes(x = group,  # x is the group
+           y = outcome)) +  # y is the outcome in each group
+* geom_bar(aes(fill = group),  # bars w/ color fill for group
+*            stat = "summary",
+*          fun = "mean")   # bars with group means
 ```
 ]
  
@@ -363,9 +312,12 @@ count: false
 .panel1-graph2-auto[
 
 ```r
-p0 +  # basic plot
-    geom_bar(aes(fill = group),  # bars w/ color fill for group
-             stat = "summary", fun = "mean") +  # bars with group means
+ggplot(mynewdata,  # the data I am using
+       aes(x = group,  # x is the group
+           y = outcome)) +  # y is the outcome in each group
+  geom_bar(aes(fill = group),  # bars w/ color fill for group
+             stat = "summary",
+           fun = "mean") +  # bars with group means
 * coord_flip()   # flip the plot
 ```
 ]
@@ -381,9 +333,12 @@ count: false
 .panel1-graph2-auto[
 
 ```r
-p0 +  # basic plot
-    geom_bar(aes(fill = group),  # bars w/ color fill for group
-             stat = "summary", fun = "mean") +  # bars with group means
+ggplot(mynewdata,  # the data I am using
+       aes(x = group,  # x is the group
+           y = outcome)) +  # y is the outcome in each group
+  geom_bar(aes(fill = group),  # bars w/ color fill for group
+             stat = "summary",
+           fun = "mean") +  # bars with group means
   coord_flip() +  # flip the plot
 * labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
 *      x = "Group",  # better axis labels
@@ -402,9 +357,12 @@ count: false
 .panel1-graph2-auto[
 
 ```r
-p0 +  # basic plot
-    geom_bar(aes(fill = group),  # bars w/ color fill for group
-             stat = "summary", fun = "mean") +  # bars with group means
+ggplot(mynewdata,  # the data I am using
+       aes(x = group,  # x is the group
+           y = outcome)) +  # y is the outcome in each group
+  geom_bar(aes(fill = group),  # bars w/ color fill for group
+             stat = "summary",
+           fun = "mean") +  # bars with group means
   coord_flip() +  # flip the plot
   labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
        x = "Group",  # better axis labels
@@ -424,9 +382,12 @@ count: false
 .panel1-graph2-auto[
 
 ```r
-p0 +  # basic plot
-    geom_bar(aes(fill = group),  # bars w/ color fill for group
-             stat = "summary", fun = "mean") +  # bars with group means
+ggplot(mynewdata,  # the data I am using
+       aes(x = group,  # x is the group
+           y = outcome)) +  # y is the outcome in each group
+  geom_bar(aes(fill = group),  # bars w/ color fill for group
+             stat = "summary",
+           fun = "mean") +  # bars with group means
   coord_flip() +  # flip the plot
   labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
        x = "Group",  # better axis labels
@@ -447,17 +408,20 @@ count: false
 .panel1-graph2-auto[
 
 ```r
-p0 +  # basic plot
-    geom_bar(aes(fill = group),  # bars w/ color fill for group
-             stat = "summary", fun = "mean") +  # bars with group means
+ggplot(mynewdata,  # the data I am using
+       aes(x = group,  # x is the group
+           y = outcome)) +  # y is the outcome in each group
+  geom_bar(aes(fill = group),  # bars w/ color fill for group
+             stat = "summary",
+           fun = "mean") +  # bars with group means
   coord_flip() +  # flip the plot
   labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
        x = "Group",  # better axis labels
        y = "Outcome") +
   scale_fill_aaas() +  # better color fill scale
   theme_minimal() +  # better theme
-* geom_label(aes(label = group,  # label the bars
-*                y = 5),  # position the labels
+* geom_text(aes(label = group,  # label the bars
+*               y = maxoutcome + 1),  # position the labels
 *            size = 10)
 ```
 ]
@@ -473,17 +437,20 @@ count: false
 .panel1-graph2-auto[
 
 ```r
-p0 +  # basic plot
-    geom_bar(aes(fill = group),  # bars w/ color fill for group
-             stat = "summary", fun = "mean") +  # bars with group means
+ggplot(mynewdata,  # the data I am using
+       aes(x = group,  # x is the group
+           y = outcome)) +  # y is the outcome in each group
+  geom_bar(aes(fill = group),  # bars w/ color fill for group
+             stat = "summary",
+           fun = "mean") +  # bars with group means
   coord_flip() +  # flip the plot
   labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
        x = "Group",  # better axis labels
        y = "Outcome") +
   scale_fill_aaas() +  # better color fill scale
   theme_minimal() +  # better theme
-  geom_label(aes(label = group,  # label the bars
-                 y = 5),  # position the labels
+  geom_text(aes(label = group,  # label the bars
+                y = maxoutcome + 1),  # position the labels
              size = 10) +
 * theme(legend.position = "none")   # turn off legend
 ```
@@ -500,17 +467,20 @@ count: false
 .panel1-graph2-auto[
 
 ```r
-p0 +  # basic plot
-    geom_bar(aes(fill = group),  # bars w/ color fill for group
-             stat = "summary", fun = "mean") +  # bars with group means
+ggplot(mynewdata,  # the data I am using
+       aes(x = group,  # x is the group
+           y = outcome)) +  # y is the outcome in each group
+  geom_bar(aes(fill = group),  # bars w/ color fill for group
+             stat = "summary",
+           fun = "mean") +  # bars with group means
   coord_flip() +  # flip the plot
   labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
        x = "Group",  # better axis labels
        y = "Outcome") +
   scale_fill_aaas() +  # better color fill scale
   theme_minimal() +  # better theme
-  geom_label(aes(label = group,  # label the bars
-                 y = 5),  # position the labels
+  geom_text(aes(label = group,  # label the bars
+                y = maxoutcome + 1),  # position the labels
              size = 10) +
   theme(legend.position = "none") +  # turn off legend
 * theme(title = element_text(size = rel(2)))   # bigger title text
@@ -528,17 +498,20 @@ count: false
 .panel1-graph2-auto[
 
 ```r
-p0 +  # basic plot
-    geom_bar(aes(fill = group),  # bars w/ color fill for group
-             stat = "summary", fun = "mean") +  # bars with group means
+ggplot(mynewdata,  # the data I am using
+       aes(x = group,  # x is the group
+           y = outcome)) +  # y is the outcome in each group
+  geom_bar(aes(fill = group),  # bars w/ color fill for group
+             stat = "summary",
+           fun = "mean") +  # bars with group means
   coord_flip() +  # flip the plot
   labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
        x = "Group",  # better axis labels
        y = "Outcome") +
   scale_fill_aaas() +  # better color fill scale
   theme_minimal() +  # better theme
-  geom_label(aes(label = group,  # label the bars
-                 y = 5),  # position the labels
+  geom_text(aes(label = group,  # label the bars
+                y = maxoutcome + 1),  # position the labels
              size = 10) +
   theme(legend.position = "none") +  # turn off legend
   theme(title = element_text(size = rel(2))) +  # bigger title text
@@ -557,17 +530,20 @@ count: false
 .panel1-graph2-auto[
 
 ```r
-p0 +  # basic plot
-    geom_bar(aes(fill = group),  # bars w/ color fill for group
-             stat = "summary", fun = "mean") +  # bars with group means
+ggplot(mynewdata,  # the data I am using
+       aes(x = group,  # x is the group
+           y = outcome)) +  # y is the outcome in each group
+  geom_bar(aes(fill = group),  # bars w/ color fill for group
+             stat = "summary",
+           fun = "mean") +  # bars with group means
   coord_flip() +  # flip the plot
   labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
        x = "Group",  # better axis labels
        y = "Outcome") +
   scale_fill_aaas() +  # better color fill scale
   theme_minimal() +  # better theme
-  geom_label(aes(label = group,  # label the bars
-                 y = 5),  # position the labels
+  geom_text(aes(label = group,  # label the bars
+                y = maxoutcome + 1),  # position the labels
              size = 10) +
   theme(legend.position = "none") +  # turn off legend
   theme(title = element_text(size = rel(2))) +  # bigger title text
@@ -610,25 +586,7 @@ p0 +  # basic plot
 
 ---
 class: animated, slideInRight
-
 # A Last Tweak: Show The Distribution
-
-Calculate the *mean*, *minimum* and *maximum* outcomes by group.
-
-
-```r
-library(dplyr) # data wrangling
-
-mynewdata &lt;- mydata %&gt;% 
-  group_by(group) %&gt;%
-  mutate(meanoutcome = mean(outcome)) %&gt;% # mean outcome by group
-  mutate(minoutcome = min(outcome)) %&gt;% # minimum outcome by group
-  mutate(maxoutcome = max(outcome)) # max outcome by group
-```
-
----
-class: animated, slideInRight
-# Make The Graph
 
 
 
@@ -644,7 +602,7 @@ count: false
 ```r
 *ggplot(mynewdata,  # the data I am using
 *      aes(x = group,  # x is the group
-*          y = outcome))   # y is the count in each group
+*          y = outcome))   # y is the outcome in each group
 ```
 ]
  
@@ -661,7 +619,7 @@ count: false
 ```r
 ggplot(mynewdata,  # the data I am using
        aes(x = group,  # x is the group
-           y = outcome)) +  # y is the count in each group
+           y = outcome)) +  # y is the outcome in each group
 * geom_point(aes(color = group),  # points w/ color for group
 *            size = 5,  # size
 *            alpha = .5)   # transparency
@@ -681,7 +639,7 @@ count: false
 ```r
 ggplot(mynewdata,  # the data I am using
        aes(x = group,  # x is the group
-           y = outcome)) +  # y is the count in each group
+           y = outcome)) +  # y is the outcome in each group
   geom_point(aes(color = group),  # points w/ color for group
              size = 5,  # size
              alpha = .5) +  # transparency
@@ -704,7 +662,7 @@ count: false
 ```r
 ggplot(mynewdata,  # the data I am using
        aes(x = group,  # x is the group
-           y = outcome)) +  # y is the count in each group
+           y = outcome)) +  # y is the outcome in each group
   geom_point(aes(color = group),  # points w/ color for group
              size = 5,  # size
              alpha = .5) +  # transparency
@@ -728,7 +686,7 @@ count: false
 ```r
 ggplot(mynewdata,  # the data I am using
        aes(x = group,  # x is the group
-           y = outcome)) +  # y is the count in each group
+           y = outcome)) +  # y is the outcome in each group
   geom_point(aes(color = group),  # points w/ color for group
              size = 5,  # size
              alpha = .5) +  # transparency
@@ -755,7 +713,7 @@ count: false
 ```r
 ggplot(mynewdata,  # the data I am using
        aes(x = group,  # x is the group
-           y = outcome)) +  # y is the count in each group
+           y = outcome)) +  # y is the outcome in each group
   geom_point(aes(color = group),  # points w/ color for group
              size = 5,  # size
              alpha = .5) +  # transparency
@@ -783,7 +741,7 @@ count: false
 ```r
 ggplot(mynewdata,  # the data I am using
        aes(x = group,  # x is the group
-           y = outcome)) +  # y is the count in each group
+           y = outcome)) +  # y is the outcome in each group
   geom_point(aes(color = group),  # points w/ color for group
              size = 5,  # size
              alpha = .5) +  # transparency
@@ -812,7 +770,7 @@ count: false
 ```r
 ggplot(mynewdata,  # the data I am using
        aes(x = group,  # x is the group
-           y = outcome)) +  # y is the count in each group
+           y = outcome)) +  # y is the outcome in each group
   geom_point(aes(color = group),  # points w/ color for group
              size = 5,  # size
              alpha = .5) +  # transparency
@@ -845,7 +803,7 @@ count: false
 ```r
 ggplot(mynewdata,  # the data I am using
        aes(x = group,  # x is the group
-           y = outcome)) +  # y is the count in each group
+           y = outcome)) +  # y is the outcome in each group
   geom_point(aes(color = group),  # points w/ color for group
              size = 5,  # size
              alpha = .5) +  # transparency
@@ -879,7 +837,7 @@ count: false
 ```r
 ggplot(mynewdata,  # the data I am using
        aes(x = group,  # x is the group
-           y = outcome)) +  # y is the count in each group
+           y = outcome)) +  # y is the outcome in each group
   geom_point(aes(color = group),  # points w/ color for group
              size = 5,  # size
              alpha = .5) +  # transparency
@@ -914,7 +872,7 @@ count: false
 ```r
 ggplot(mynewdata,  # the data I am using
        aes(x = group,  # x is the group
-           y = outcome)) +  # y is the count in each group
+           y = outcome)) +  # y is the outcome in each group
   geom_point(aes(color = group),  # points w/ color for group
              size = 5,  # size
              alpha = .5) +  # transparency
@@ -950,7 +908,7 @@ count: false
 ```r
 ggplot(mynewdata,  # the data I am using
        aes(x = group,  # x is the group
-           y = outcome)) +  # y is the count in each group
+           y = outcome)) +  # y is the outcome in each group
   geom_point(aes(color = group),  # points w/ color for group
              size = 5,  # size
              alpha = .5) +  # transparency

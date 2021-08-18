@@ -113,19 +113,17 @@ class: animated, slideInRight
 
 ```{r}
 
-mydata # replay the data
+head(mydata) # show the top of the data
 
 ```
 
 ---
 class: animated, slideInRight
-# Call The Libraries
+# Call The Library
 
 ```{r}
 
 library(ggplot2) # call the library
-
-library(ggsci) # science based color palettes
 
 ```
 
@@ -176,43 +174,24 @@ p0 +
 `r chunk_reveal("graph1", break_type = "non_seq", widths = c(4,1))`
 
 ---
-class: animated, slideInRight
-# Bar Graph With Tweaks...
-
-```{r graph2, include = FALSE, fig.height=4}
-
-p0 + # basic plot
-    geom_bar(aes(fill = group), # bars w/ color fill for group
-             stat = "summary", fun = "mean") + # bars with group means
-  coord_flip() + # flip the plot
-  labs(title = "Group B Has The Highest \nMean Outcome", # informative title
-       x = "Group", # better axis labels
-       y = "Outcome") + 
-  scale_fill_aaas() + # better color fill scale
-  theme_minimal() + # better theme
-  geom_label(aes(label = group, # label the bars
-                 y = 5), # position the labels
-             size = 10) + 
-  theme(legend.position = "none") + # turn off legend
-  theme(title = element_text(size = rel(2))) + # bigger title text
-  theme(axis.text = element_text(size = rel(2))) # bigger axis text
-
-
-```
+class: animated, slideInRight, inverse
+# Some Tweaks
 
 ---
+class: animated, slideInRight
+# Call Library For Better Colors
 
-```{r, code = knitr::knit_code$get("graph2"), eval = FALSE, echo = FALSE}
+```{r}
+
+library(ggsci) # science based color palettes
+
 ```
 
-`r chunk_reveal("graph2", break_type = "auto", widths = c(4,1))`
 
 ---
 class: animated, slideInRight
 
-# A Last Tweak: Show The Distribution
-
-Calculate the *mean*, *minimum* and *maximum* outcomes by group.
+# Calculate the *Mean*, *Minimum* and *Maximum* outcomes by group.
 
 ```{r}
 
@@ -228,13 +207,47 @@ mynewdata <- mydata %>%
 
 ---
 class: animated, slideInRight
-# Make The Graph
+# Bar Graph With Tweaks...
+
+```{r graph2, include = FALSE, fig.height=4}
+
+ggplot(mynewdata, # the data I am using
+       aes(x = group, # x is the group
+           y = outcome)) + # y is the outcome in each group    
+  geom_bar(aes(fill = group), # bars w/ color fill for group
+             stat = "summary", 
+           fun = "mean") + # bars with group means
+  coord_flip() + # flip the plot
+  labs(title = "Group B Has The Highest \nMean Outcome", # informative title
+       x = "Group", # better axis labels
+       y = "Outcome") + 
+  scale_fill_aaas() + # better color fill scale
+  theme_minimal() + # better theme
+  geom_text(aes(label = group, # label the bars
+                y = maxoutcome + 1), # position the labels
+             size = 10) + 
+  theme(legend.position = "none") + # turn off legend
+  theme(title = element_text(size = rel(2))) + # bigger title text
+  theme(axis.text = element_text(size = rel(2))) # bigger axis text
+
+```
+
+---
+
+```{r, code = knitr::knit_code$get("graph2"), eval = FALSE, echo = FALSE}
+```
+
+`r chunk_reveal("graph2", break_type = "auto", widths = c(4,1))`
+
+---
+class: animated, slideInRight
+# A Last Tweak: Show The Distribution
 
 ```{r graph3, include = FALSE, fig.height=4}
 
 ggplot(mynewdata, # the data I am using
        aes(x = group, # x is the group
-           y = outcome)) + # y is the count in each group
+           y = outcome)) + # y is the outcome in each group
   geom_point(aes(color = group), # points w/ color for group
              size = 5, # size
              alpha = .5) + # transparency
