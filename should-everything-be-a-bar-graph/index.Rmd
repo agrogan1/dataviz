@@ -78,7 +78,12 @@ knitr::include_graphics("banner.png")
 
 However, after a number of years of working on data visualization, I have started to think about the advantages of bar graphs. While *not every visualization needs to be a bar graph*, it sometimes seems as though many data visualizations *would work well as a bar graph*.
 
-In this slide deck, I use the `ggplot` package to develop bar graphs with `geom_col`, one of the bar graph `geom`etries. After building a basic bar graph, I apply many formatting ideas, most of which I have learned from the blog of Cedric Scherer ([https://www.cedricscherer.com/](https://www.cedricscherer.com/)).
+---
+class: animated, slideInRight
+
+# These Slides
+
+In this slide deck, I use the `ggplot` package to develop bar graphs with `geom_bar`, one of the bar graph `geom`etries. After building a basic bar graph, I apply many formatting ideas, most of which I have learned from the blog of Cedric Scherer ([https://www.cedricscherer.com/](https://www.cedricscherer.com/)).
 
 ---
 class: animated, slideInRight
@@ -130,7 +135,7 @@ class: animated, slideInRight
 
 p0 <- ggplot(mydata, # the data I am using
        aes(x = group, # x is the group
-           y = outcome)) # y is the count in each group
+           y = outcome)) # y is the mean outcome in each group
 ```
 
 ---
@@ -140,9 +145,34 @@ class: animated, slideInRight
 ```{r, fig.height=4}
 
 p0 + # basic plot
-  geom_bar(stat = "summary", fun.y = "mean") # bars with group means
+  geom_bar(stat = "summary", 
+           fun.y = "mean") # bars with group means
 
 ```
+
+---
+class: animated, slideInRight
+# Bar Graph With Color Fill
+
+```{r graph1, include = FALSE, fig.height=4}
+
+ggplot(mydata, # data
+       aes(
+         x = group, 
+         y = outcome,
+         fill = group #BREAK2
+       )) + 
+  geom_bar(stat = "summary", 
+           fun.y = "mean") # bars with group means  
+
+```
+
+---
+
+```{r, code = knitr::knit_code$get("graph1"), eval = FALSE, echo = FALSE}
+```
+
+`r chunk_reveal("graph1", break_type = "non_seq", widths = c(4,1))`
 
 ---
 class: animated, slideInRight

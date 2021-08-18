@@ -70,7 +70,12 @@ There are many different kinds of data visualization. In the language of the `gg
 
 However, after a number of years of working on data visualization, I have started to think about the advantages of bar graphs. While *not every visualization needs to be a bar graph*, it sometimes seems as though many data visualizations *would work well as a bar graph*.
 
-In this slide deck, I use the `ggplot` package to develop bar graphs with `geom_col`, one of the bar graph `geom`etries. After building a basic bar graph, I apply many formatting ideas, most of which I have learned from the blog of Cedric Scherer ([https://www.cedricscherer.com/](https://www.cedricscherer.com/)).
+---
+class: animated, slideInRight
+
+# These Slides
+
+In this slide deck, I use the `ggplot` package to develop bar graphs with `geom_bar`, one of the bar graph `geom`etries. After building a basic bar graph, I apply many formatting ideas, most of which I have learned from the blog of Cedric Scherer ([https://www.cedricscherer.com/](https://www.cedricscherer.com/)).
 
 ---
 class: animated, slideInRight
@@ -104,96 +109,96 @@ mydata # replay the data
 
 ```
    group   outcome
-1      A  8.637613
-2      A 11.305320
-3      A 10.617467
-4      A 10.366292
-5      A  9.342590
-6      A  9.919286
-7      A 10.988395
-8      A 11.389549
-9      A 11.298066
-10     A 12.229669
-11     A  9.745447
-12     A 10.116098
-13     A 10.102708
-14     A  9.554140
-15     A 10.109188
-16     A  8.766052
-17     A  8.544527
-18     A 12.511806
-19     A  9.824613
-20     A  9.799880
-21     A 10.207310
-22     A  9.955990
-23     A  9.707786
-24     A  9.143584
-25     A  9.749226
-26     A 10.675753
-27     A 10.320079
-28     A 10.999867
-29     A 10.700788
-30     A  8.857220
-31     B 19.005195
-32     B 20.054569
-33     B 21.228881
-34     B 22.502657
-35     B 19.597288
-36     B 18.312598
-37     B 19.022777
-38     B 19.533241
-39     B 20.767741
-40     B 20.039164
-41     B 20.789540
-42     B 20.087196
-43     B 19.138534
-44     B 19.469609
-45     B 18.934680
-46     B 20.155245
-47     B 19.664832
-48     B 19.936430
-49     B 21.062712
-50     B 19.774642
-51     B 20.076328
-52     B 20.699581
-53     B 17.208367
-54     B 19.713663
-55     B 19.529218
-56     B 21.355399
-57     B 19.614109
-58     B 20.185342
-59     B 20.714411
-60     B 20.547772
-61     C 14.418595
-62     C 14.940115
-63     C 16.249859
-64     C 15.827082
-65     C 13.766820
-66     C 16.884704
-67     C 14.663912
-68     C 15.093309
-69     C 14.203026
-70     C 14.894420
-71     C 13.881257
-72     C 14.780262
-73     C 14.378603
-74     C 15.951064
-75     C 14.715933
-76     C 16.456282
-77     C 15.260037
-78     C 15.598165
-79     C 13.383653
-80     C 14.684049
-81     C 13.974506
-82     C 14.267340
-83     C 15.101928
-84     C 14.536066
-85     C 13.821164
-86     C 16.572451
-87     C 15.002071
-88     C 14.793696
-89     C 15.265238
-90     C 13.461664
+1      A 10.823978
+2      A  9.379462
+3      A 10.445685
+4      A 10.171896
+5      A  8.545905
+6      A  8.567015
+7      A  8.221754
+8      A  8.455794
+9      A 10.342182
+10     A  9.191616
+11     A  8.963720
+12     A 10.539928
+13     A 10.561649
+14     A  9.650857
+15     A  8.591307
+16     A 11.065110
+17     A 10.357632
+18     A  8.541592
+19     A 10.844291
+20     A  8.359326
+21     A 10.037744
+22     A  8.876888
+23     A  7.977418
+24     A  9.697583
+25     A 12.337994
+26     A  9.817357
+27     A 10.003478
+28     A  9.942374
+29     A  9.355189
+30     A  9.022552
+31     B 19.096509
+32     B 20.787101
+33     B 19.031992
+34     B 19.069310
+35     B 20.725759
+36     B 19.626638
+37     B 21.204910
+38     B 18.193492
+39     B 20.369788
+40     B 21.864037
+41     B 20.166525
+42     B 19.550021
+43     B 20.500284
+44     B 20.589079
+45     B 18.822443
+46     B 20.815415
+47     B 20.075480
+48     B 20.976853
+49     B 20.126483
+50     B 21.421006
+51     B 20.821977
+52     B 19.540434
+53     B 19.970141
+54     B 17.568287
+55     B 19.267265
+56     B 18.176490
+57     B 20.289078
+58     B 18.775594
+59     B 21.029437
+60     B 19.091610
+61     C 13.944606
+62     C 16.177082
+63     C 14.765806
+64     C 15.522577
+65     C 13.502907
+66     C 14.720897
+67     C 14.739895
+68     C 15.502351
+69     C 16.154291
+70     C 15.696665
+71     C 16.001971
+72     C 16.727969
+73     C 13.548563
+74     C 14.722972
+75     C 13.198657
+76     C 15.101209
+77     C 13.683140
+78     C 15.086733
+79     C 14.952657
+80     C 17.981224
+81     C 14.386615
+82     C 15.239181
+83     C 14.156711
+84     C 15.507152
+85     C 15.739583
+86     C 13.214428
+87     C 15.167744
+88     C 14.664306
+89     C 14.839526
+90     C 14.865770
 ```
 
 ---
@@ -213,7 +218,7 @@ class: animated, slideInRight
 ```r
 p0 &lt;- ggplot(mydata, # the data I am using
        aes(x = group, # x is the group
-           y = outcome)) # y is the count in each group
+           y = outcome)) # y is the mean outcome in each group
 ```
 
 ---
@@ -223,10 +228,92 @@ class: animated, slideInRight
 
 ```r
 p0 + # basic plot
-  geom_bar(stat = "summary", fun.y = "mean") # bars with group means
+  geom_bar(stat = "summary", 
+           fun.y = "mean") # bars with group means
 ```
 
 &lt;img src="index_files/figure-html/unnamed-chunk-7-1.png" width="432" /&gt;
+
+---
+class: animated, slideInRight
+# Bar Graph With Color Fill
+
+
+
+---
+
+
+
+count: false
+ 
+
+.panel1-graph1-non_seq[
+
+```r
+ggplot(mydata,  # data
+       aes(
+         x = group,
+         y = outcome,
+       )) +
+  geom_bar(stat = "summary",
+           fun.y = "mean")  # bars with group means
+```
+]
+ 
+.panel2-graph1-non_seq[
+&lt;img src="index_files/figure-html/graph1_non_seq_01_output-1.png" width="432" /&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-graph1-non_seq[
+
+```r
+ggplot(mydata,  # data
+       aes(
+         x = group,
+         y = outcome,
+*        fill = group
+       )) +
+  geom_bar(stat = "summary",
+           fun.y = "mean")  # bars with group means
+```
+]
+ 
+.panel2-graph1-non_seq[
+&lt;img src="index_files/figure-html/graph1_non_seq_02_output-1.png" width="432" /&gt;
+]
+
+&lt;style&gt;
+.panel1-graph1-non_seq {
+  color: black;
+  width: 78.4%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-graph1-non_seq {
+  color: black;
+  width: 19.6%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-graph1-non_seq {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
 
 ---
 class: animated, slideInRight
