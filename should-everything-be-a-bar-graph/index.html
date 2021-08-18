@@ -109,105 +109,107 @@ mydata # replay the data
 
 ```
    group   outcome
-1      A 10.823978
-2      A  9.379462
-3      A 10.445685
-4      A 10.171896
-5      A  8.545905
-6      A  8.567015
-7      A  8.221754
-8      A  8.455794
-9      A 10.342182
-10     A  9.191616
-11     A  8.963720
-12     A 10.539928
-13     A 10.561649
-14     A  9.650857
-15     A  8.591307
-16     A 11.065110
-17     A 10.357632
-18     A  8.541592
-19     A 10.844291
-20     A  8.359326
-21     A 10.037744
-22     A  8.876888
-23     A  7.977418
-24     A  9.697583
-25     A 12.337994
-26     A  9.817357
-27     A 10.003478
-28     A  9.942374
-29     A  9.355189
-30     A  9.022552
-31     B 19.096509
-32     B 20.787101
-33     B 19.031992
-34     B 19.069310
-35     B 20.725759
-36     B 19.626638
-37     B 21.204910
-38     B 18.193492
-39     B 20.369788
-40     B 21.864037
-41     B 20.166525
-42     B 19.550021
-43     B 20.500284
-44     B 20.589079
-45     B 18.822443
-46     B 20.815415
-47     B 20.075480
-48     B 20.976853
-49     B 20.126483
-50     B 21.421006
-51     B 20.821977
-52     B 19.540434
-53     B 19.970141
-54     B 17.568287
-55     B 19.267265
-56     B 18.176490
-57     B 20.289078
-58     B 18.775594
-59     B 21.029437
-60     B 19.091610
-61     C 13.944606
-62     C 16.177082
-63     C 14.765806
-64     C 15.522577
-65     C 13.502907
-66     C 14.720897
-67     C 14.739895
-68     C 15.502351
-69     C 16.154291
-70     C 15.696665
-71     C 16.001971
-72     C 16.727969
-73     C 13.548563
-74     C 14.722972
-75     C 13.198657
-76     C 15.101209
-77     C 13.683140
-78     C 15.086733
-79     C 14.952657
-80     C 17.981224
-81     C 14.386615
-82     C 15.239181
-83     C 14.156711
-84     C 15.507152
-85     C 15.739583
-86     C 13.214428
-87     C 15.167744
-88     C 14.664306
-89     C 14.839526
-90     C 14.865770
+1      A 10.368166
+2      A 10.638039
+3      A  9.497456
+4      A  9.315399
+5      A 10.359395
+6      A  8.258222
+7      A  9.297398
+8      A 10.742539
+9      A  9.668928
+10     A  8.701514
+11     A  8.825627
+12     A  9.845127
+13     A 10.417968
+14     A  9.324845
+15     A 10.928648
+16     A 11.703997
+17     A 11.177093
+18     A 11.310872
+19     A 10.095859
+20     A 10.719616
+21     A 11.975253
+22     A  8.911060
+23     A  9.814547
+24     A  8.402204
+25     A  7.840637
+26     A  9.685939
+27     A 11.727535
+28     A 10.560096
+29     A  8.344584
+30     A  8.583634
+31     B 20.606867
+32     B 19.300721
+33     B 19.405374
+34     B 19.617028
+35     B 19.872313
+36     B 20.453606
+37     B 20.318921
+38     B 20.421696
+39     B 21.340244
+40     B 20.456316
+41     B 20.713240
+42     B 19.873310
+43     B 20.315546
+44     B 20.472563
+45     B 21.199206
+46     B 20.727152
+47     B 21.646218
+48     B 21.201677
+49     B 21.964313
+50     B 19.677124
+51     B 18.985593
+52     B 21.965732
+53     B 22.188708
+54     B 18.747396
+55     B 20.262610
+56     B 19.850286
+57     B 19.615434
+58     B 18.129059
+59     B 20.293859
+60     B 19.940604
+61     C 15.009461
+62     C 15.783030
+63     C 16.737282
+64     C 14.151174
+65     C 15.830986
+66     C 14.765447
+67     C 12.307223
+68     C 15.719947
+69     C 15.244964
+70     C 12.412051
+71     C 14.558918
+72     C 14.258914
+73     C 14.303818
+74     C 16.243460
+75     C 16.431879
+76     C 14.744116
+77     C 14.546912
+78     C 15.649078
+79     C 14.243836
+80     C 15.031927
+81     C 13.796508
+82     C 14.545769
+83     C 17.276964
+84     C 13.943635
+85     C 14.623937
+86     C 13.414341
+87     C 15.740846
+88     C 16.611896
+89     C 15.044869
+90     C 16.349646
 ```
 
 ---
 class: animated, slideInRight
-# Call The Library
+# Call The Libraries
 
 
 ```r
 library(ggplot2) # call the library
+
+library(ggsci) # science based color palettes
 ```
 
 ---
@@ -229,7 +231,7 @@ class: animated, slideInRight
 ```r
 p0 + # basic plot
   geom_bar(stat = "summary", 
-           fun.y = "mean") # bars with group means
+           fun = "mean") # bars with group means
 ```
 
 &lt;img src="index_files/figure-html/unnamed-chunk-7-1.png" width="432" /&gt;
@@ -250,13 +252,12 @@ count: false
 .panel1-graph1-non_seq[
 
 ```r
-ggplot(mydata,  # data
-       aes(
-         x = group,
-         y = outcome,
-       )) +
-  geom_bar(stat = "summary",
-           fun.y = "mean")  # bars with group means
+p0 +
+  geom_bar(
+    aes(
+    ),
+    stat = "summary",
+    fun = "mean")  # bars with group means
 ```
 ]
  
@@ -271,14 +272,13 @@ count: false
 .panel1-graph1-non_seq[
 
 ```r
-ggplot(mydata,  # data
-       aes(
-         x = group,
-         y = outcome,
-*        fill = group
-       )) +
-  geom_bar(stat = "summary",
-           fun.y = "mean")  # bars with group means
+p0 +
+  geom_bar(
+    aes(
+*     fill = group
+    ),
+    stat = "summary",
+    fun = "mean")  # bars with group means
 ```
 ]
  
@@ -348,7 +348,7 @@ count: false
 ```r
 p0 +  # basic plot
 *   geom_bar(aes(fill = group),  # bars w/ color fill for group
-*            stat = "summary", fun.y = "mean")   # bars with group means
+*            stat = "summary", fun = "mean")   # bars with group means
 ```
 ]
  
@@ -365,7 +365,7 @@ count: false
 ```r
 p0 +  # basic plot
     geom_bar(aes(fill = group),  # bars w/ color fill for group
-             stat = "summary", fun.y = "mean") +  # bars with group means
+             stat = "summary", fun = "mean") +  # bars with group means
 * coord_flip()   # flip the plot
 ```
 ]
@@ -383,7 +383,7 @@ count: false
 ```r
 p0 +  # basic plot
     geom_bar(aes(fill = group),  # bars w/ color fill for group
-             stat = "summary", fun.y = "mean") +  # bars with group means
+             stat = "summary", fun = "mean") +  # bars with group means
   coord_flip() +  # flip the plot
 * labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
 *      x = "Group",  # better axis labels
@@ -404,12 +404,12 @@ count: false
 ```r
 p0 +  # basic plot
     geom_bar(aes(fill = group),  # bars w/ color fill for group
-             stat = "summary", fun.y = "mean") +  # bars with group means
+             stat = "summary", fun = "mean") +  # bars with group means
   coord_flip() +  # flip the plot
   labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
        x = "Group",  # better axis labels
        y = "Outcome") +
-* scale_fill_brewer(palette = "Set2")   # better color fill scale
+* scale_fill_aaas()   # better color fill scale
 ```
 ]
  
@@ -426,12 +426,12 @@ count: false
 ```r
 p0 +  # basic plot
     geom_bar(aes(fill = group),  # bars w/ color fill for group
-             stat = "summary", fun.y = "mean") +  # bars with group means
+             stat = "summary", fun = "mean") +  # bars with group means
   coord_flip() +  # flip the plot
   labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
        x = "Group",  # better axis labels
        y = "Outcome") +
-  scale_fill_brewer(palette = "Set2") +  # better color fill scale
+  scale_fill_aaas() +  # better color fill scale
 * theme_minimal()   # better theme
 ```
 ]
@@ -449,12 +449,12 @@ count: false
 ```r
 p0 +  # basic plot
     geom_bar(aes(fill = group),  # bars w/ color fill for group
-             stat = "summary", fun.y = "mean") +  # bars with group means
+             stat = "summary", fun = "mean") +  # bars with group means
   coord_flip() +  # flip the plot
   labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
        x = "Group",  # better axis labels
        y = "Outcome") +
-  scale_fill_brewer(palette = "Set2") +  # better color fill scale
+  scale_fill_aaas() +  # better color fill scale
   theme_minimal() +  # better theme
 * geom_label(aes(label = group,  # label the bars
 *                y = 5),  # position the labels
@@ -475,12 +475,12 @@ count: false
 ```r
 p0 +  # basic plot
     geom_bar(aes(fill = group),  # bars w/ color fill for group
-             stat = "summary", fun.y = "mean") +  # bars with group means
+             stat = "summary", fun = "mean") +  # bars with group means
   coord_flip() +  # flip the plot
   labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
        x = "Group",  # better axis labels
        y = "Outcome") +
-  scale_fill_brewer(palette = "Set2") +  # better color fill scale
+  scale_fill_aaas() +  # better color fill scale
   theme_minimal() +  # better theme
   geom_label(aes(label = group,  # label the bars
                  y = 5),  # position the labels
@@ -502,12 +502,12 @@ count: false
 ```r
 p0 +  # basic plot
     geom_bar(aes(fill = group),  # bars w/ color fill for group
-             stat = "summary", fun.y = "mean") +  # bars with group means
+             stat = "summary", fun = "mean") +  # bars with group means
   coord_flip() +  # flip the plot
   labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
        x = "Group",  # better axis labels
        y = "Outcome") +
-  scale_fill_brewer(palette = "Set2") +  # better color fill scale
+  scale_fill_aaas() +  # better color fill scale
   theme_minimal() +  # better theme
   geom_label(aes(label = group,  # label the bars
                  y = 5),  # position the labels
@@ -530,12 +530,12 @@ count: false
 ```r
 p0 +  # basic plot
     geom_bar(aes(fill = group),  # bars w/ color fill for group
-             stat = "summary", fun.y = "mean") +  # bars with group means
+             stat = "summary", fun = "mean") +  # bars with group means
   coord_flip() +  # flip the plot
   labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
        x = "Group",  # better axis labels
        y = "Outcome") +
-  scale_fill_brewer(palette = "Set2") +  # better color fill scale
+  scale_fill_aaas() +  # better color fill scale
   theme_minimal() +  # better theme
   geom_label(aes(label = group,  # label the bars
                  y = 5),  # position the labels
@@ -559,12 +559,12 @@ count: false
 ```r
 p0 +  # basic plot
     geom_bar(aes(fill = group),  # bars w/ color fill for group
-             stat = "summary", fun.y = "mean") +  # bars with group means
+             stat = "summary", fun = "mean") +  # bars with group means
   coord_flip() +  # flip the plot
   labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
        x = "Group",  # better axis labels
        y = "Outcome") +
-  scale_fill_brewer(palette = "Set2") +  # better color fill scale
+  scale_fill_aaas() +  # better color fill scale
   theme_minimal() +  # better theme
   geom_label(aes(label = group,  # label the bars
                  y = 5),  # position the labels
@@ -766,7 +766,7 @@ ggplot(mynewdata,  # the data I am using
   labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
        x = "Group",  # better axis labels
        y = "Outcome") +
-* scale_color_brewer(palette = "Set2")   # better color scale
+* scale_color_aaas()   # better color scale
 ```
 ]
  
@@ -794,7 +794,7 @@ ggplot(mynewdata,  # the data I am using
   labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
        x = "Group",  # better axis labels
        y = "Outcome") +
-  scale_color_brewer(palette = "Set2") +  # better color scale
+  scale_color_aaas() +  # better color scale
 * theme_minimal()   # better theme
 ```
 ]
@@ -823,7 +823,7 @@ ggplot(mynewdata,  # the data I am using
   labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
        x = "Group",  # better axis labels
        y = "Outcome") +
-  scale_color_brewer(palette = "Set2") +  # better color scale
+  scale_color_aaas() +  # better color scale
   theme_minimal() +  # better theme
 * geom_text(aes(label = group,  # label the groups
 *               color = group,  # color labels by group
@@ -856,7 +856,7 @@ ggplot(mynewdata,  # the data I am using
   labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
        x = "Group",  # better axis labels
        y = "Outcome") +
-  scale_color_brewer(palette = "Set2") +  # better color scale
+  scale_color_aaas() +  # better color scale
   theme_minimal() +  # better theme
   geom_text(aes(label = group,  # label the groups
                 color = group,  # color labels by group
@@ -890,7 +890,7 @@ ggplot(mynewdata,  # the data I am using
   labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
        x = "Group",  # better axis labels
        y = "Outcome") +
-  scale_color_brewer(palette = "Set2") +  # better color scale
+  scale_color_aaas() +  # better color scale
   theme_minimal() +  # better theme
   geom_text(aes(label = group,  # label the groups
                 color = group,  # color labels by group
@@ -925,7 +925,7 @@ ggplot(mynewdata,  # the data I am using
   labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
        x = "Group",  # better axis labels
        y = "Outcome") +
-  scale_color_brewer(palette = "Set2") +  # better color scale
+  scale_color_aaas() +  # better color scale
   theme_minimal() +  # better theme
   geom_text(aes(label = group,  # label the groups
                 color = group,  # color labels by group
@@ -961,7 +961,7 @@ ggplot(mynewdata,  # the data I am using
   labs(title = "Group B Has The Highest \nMean Outcome",  # informative title
        x = "Group",  # better axis labels
        y = "Outcome") +
-  scale_color_brewer(palette = "Set2") +  # better color scale
+  scale_color_aaas() +  # better color scale
   theme_minimal() +  # better theme
   geom_text(aes(label = group,  # label the groups
                 color = group,  # color labels by group

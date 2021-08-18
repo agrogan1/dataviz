@@ -119,11 +119,13 @@ mydata # replay the data
 
 ---
 class: animated, slideInRight
-# Call The Library
+# Call The Libraries
 
 ```{r}
 
 library(ggplot2) # call the library
+
+library(ggsci) # science based color palettes
 
 ```
 
@@ -146,7 +148,7 @@ class: animated, slideInRight
 
 p0 + # basic plot
   geom_bar(stat = "summary", 
-           fun.y = "mean") # bars with group means
+           fun = "mean") # bars with group means
 
 ```
 
@@ -156,14 +158,13 @@ class: animated, slideInRight
 
 ```{r graph1, include = FALSE, fig.height=4}
 
-ggplot(mydata, # data
-       aes(
-         x = group, 
-         y = outcome,
-         fill = group #BREAK2
-       )) + 
-  geom_bar(stat = "summary", 
-           fun.y = "mean") # bars with group means  
+p0 + 
+  geom_bar(
+    aes(
+      fill = group #BREAK2
+    ), 
+    stat = "summary", 
+    fun = "mean") # bars with group means  
 
 ```
 
@@ -182,12 +183,12 @@ class: animated, slideInRight
 
 p0 + # basic plot
     geom_bar(aes(fill = group), # bars w/ color fill for group
-             stat = "summary", fun.y = "mean") + # bars with group means
+             stat = "summary", fun = "mean") + # bars with group means
   coord_flip() + # flip the plot
   labs(title = "Group B Has The Highest \nMean Outcome", # informative title
        x = "Group", # better axis labels
        y = "Outcome") + 
-  scale_fill_brewer(palette = "Set2") + # better color fill scale
+  scale_fill_aaas() + # better color fill scale
   theme_minimal() + # better theme
   geom_label(aes(label = group, # label the bars
                  y = 5), # position the labels
@@ -244,7 +245,7 @@ ggplot(mynewdata, # the data I am using
   labs(title = "Group B Has The Highest \nMean Outcome", # informative title
        x = "Group", # better axis labels
        y = "Outcome") + 
-  scale_color_brewer(palette = "Set2") + # better color scale
+  scale_color_aaas() + # better color scale
   theme_minimal() + # better theme
   geom_text(aes(label = group, # label the groups
                 color = group, # color labels by group
