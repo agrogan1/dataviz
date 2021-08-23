@@ -9,14 +9,14 @@ output:
     toc: no
     fig_height: 3
   pdf_document: 
-    highlight: haddock
+    highlight: tango
     latex_engine: xelatex
     fig_height: 2
 always_allow_html: yes
-mainfont: Tw Cen MT
+mainfont: Arial
 geometry: margin=0.75in
 subtitle: A Statistically Motivated Guide
-fontsize: 12pt
+fontsize: 11pt
 ---
 
 ```{r global_options, echo=FALSE}
@@ -31,7 +31,7 @@ if(knitr::opts_knit$get("rmarkdown.pandoc.to") == "html") {
 
 if(knitr::opts_knit$get("rmarkdown.pandoc.to") == "latex") { 
 
-  knitr::opts_chunk$set(echo = FALSE, 
+  knitr::opts_chunk$set(echo = TRUE, 
                         warning = FALSE, 
                         message = FALSE)
 
@@ -133,41 +133,30 @@ ggplot(data = NULL,
 
 The principles of graphing discussed in this document transcend any particular software package, and could be implemented in many different software packages, such as SPSS, SAS, Stata, or R.
 
-The graphs in these particular examples use [ggplot2](http://ggplot2.org/), a graphing library in R.  ggplot2 graph syntax can be formidably complex, with a somewhat steep learning curve.  More information about ggplot can be found [here](http://www-personal.umich.edu/~agrogan/quick-intro-ggplot2/ggplot-in-3-easy-steps-maybe-2-easy-steps.html).
+The graphs in these particular examples use [ggplot2](http://ggplot2.org/), a graphing library in R. `ggplot2` graph syntax can be formidably complex, with a steep learning curve. More information about ggplot can be found [here](https://agrogan1.github.io/R/introduction-to-ggplot2/introduction-to-ggplot2.html).
 
-```{r, eval=FALSE}
+## A Note About The Code In This Document
 
-# Note that ggplot2 can be MUCH simpler 
-# than these examples make it look.
-#
-# For example,
+Note that ggplot2 can be MUCH simpler than these examples make it look.
 
-  ggplot(mydata, aes(x = x)) + geom_histogram()
+For example, 
 
-# will produce a perfectly serviceable histogram.
-# 
-# Much of the complication of the code in this document is simply
-# the result of formatting tweaks to get the graphs EXACTLY
-# the way I wanted them.
+`ggplot(mydata, aes(x = x)) + geom_histogram()`
 
-```
+will produce a perfectly serviceable histogram.
 
-```{r, eval = FALSE}
+Much of the complication of the code in this document is simply the result of formatting tweaks to get the graphs *EXACTLY* the way I wanted them.
 
-# Note also, that for layout purposes, 
-# I am reading each ggplot call 
-# into an object, e.g.
+Observe also, that for layout purposes, I am reading each ggplot call
+into an object, e.g.
 
-p1 <- ggplot(mydata, aes(x = x)) + geom_histogram()
+`p1 <- ggplot(mydata, aes(x = x)) + geom_histogram()`
 
-# so that I can later use plot_grid to lay out the graphs.
+so that I can later use `plot_grid` to lay out the graphs.
 
-# In your own work, you do not need to do this, 
-# and it may be simpler to simply say:
+In your own work, you do not need to do this, and it may be simpler to simply say:
 
-ggplot(...) + ...
-
-```
+`ggplot(...) + ...`
 
 <a id="colors"></a>
 
