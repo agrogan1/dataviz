@@ -1,0 +1,39 @@
+---
+title: "datalegreya test"
+author: "Andy Grogan-Kaylor"
+date: '`r Sys.Date()`'
+output: 
+  html_document: 
+    highlight: haddock
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+```{r}
+
+library(datalegreyar)
+
+values <- 1:50 
+
+fig(datafy(values, 
+           "Andrew Grogan Kaylor",
+           ignore_space=F), 
+    size=50)
+
+```
+
+```{r}
+
+fig(datafy(values, 
+           "Categorical Data Analysis",
+           ignore_space=F), 
+    size=50)
+
+```
+
+
