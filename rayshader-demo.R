@@ -27,4 +27,7 @@ p1
 rayshader::plot_gg(p1, 
                    zoom = .8) 
 
+render_snapshot(clear = TRUE)
+
+
 # rglwidget()
