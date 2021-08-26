@@ -75,12 +75,12 @@ blockquote {
 
 --
 
-* Introduction to the Course: [https://agrogan1.github.io/newstuff/SW672/](https://agrogan1.github.io/newstuff/SW672/)
+* Introduction to the Course: [https://agrogan1.github.io/dataviz/dataviz-course/](https://agrogan1.github.io/dataviz/dataviz-course/)
 
 --
 
     + Why?
-    + [Grading Rubric](https://agrogan1.github.io/newstuff/SW672/grading-rubric.html)
+    + [Grading Rubric](https://agrogan1.github.io/dataviz/SW672/grading-rubric.html)
     + Syllabus
     
 --
