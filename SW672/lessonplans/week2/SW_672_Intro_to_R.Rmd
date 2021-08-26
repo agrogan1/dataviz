@@ -1,0 +1,280 @@
+---
+title: "An Introduction to R"
+author: "Andy Grogan-Kaylor"
+date: "`r format(Sys.Date(), format='%B %d, %Y')`"
+output:
+  html_document:
+    fig_height: 3
+    highlight: haddock
+    number_sections: yes
+    toc: yes
+    toc_float: true
+  word_document:
+    toc: yes
+  pdf_document:
+    fig_height: 3
+    latex_engine: xelatex
+    number_sections: yes
+    toc: yes
+always_allow_html: yes
+---
+
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE)
+
+```
+
+```{r, eval = TRUE, echo=FALSE}
+
+# local file
+
+load("GSS2014.Rdata") # make sure you are in the right directory
+
+GSS2014$health <- factor(GSS2014$health,
+                             levels = c(1,2,3,4),
+                             labels = c("Excellent",
+                                        "Good",
+                                        "Fair",
+                                        "Poor"))
+
+GSS2014$depress <- factor(GSS2014$depress,
+                          levels = c(1,2),
+                          labels = c("Yes Depression",
+                                     "No Depression"))
+```
+
+## Why R?
+
+- Open source
+- World wide community
+- Free
+- Used by organizations like Google, *New York Times*, *Financial Times*
+
+> Let's make sure we understand installing R, and calling libraries.
+
+## Why R? (2)
+
+```{r, echo=FALSE, eval=FALSE}
+
+# load relevant libraries
+
+library(car) 
+library(rgl)
+library(rglwidget)
+
+scatter3d(GSS2014$coninc,
+          GSS2014$health,
+          GSS2014$depress, 
+          xlab = "income",
+          ylab = "health",
+          zlab = "depress")
+
+```
+
+```{r}
+
+library(ggplot2)
+
+library(plotly)
+
+myplot <- ggplot(subset(GSS2014, 
+                        !is.na(health)), # health is not missing
+                 aes(x = health, # x is health
+                     y = coninc, # y is income
+                     color = health)) + # color is health
+  geom_jitter() + # draw jittered points
+  geom_boxplot() + # draw boxplots
+  labs(title = "Health And Income",
+       y = "Income in Constant $",
+       x = "Health")
+
+ggplotly(myplot)
+
+```
+
+
+```{r, echo = FALSE, eval=FALSE, warning=FALSE, message=FALSE}
+
+library(plotly) # this is a helpful comment
+
+p <- plot_ly(GSS2014, # the data I am using
+             x = ~coninc, # income in CONSTANT $
+             y = ~depress, # depression
+             color = ~health, # color by poorhealth
+             z = ~health, # poor health
+             type = "scatter3d", # 3D scatterplot
+             mode = "markers")
+
+```
+
+```{r, fig.height=6, echo = FALSE, eval=FALSE, warning=FALSE, message=FALSE}
+
+htmltools::tagList(list(as_widget(p))) # code provided by plotly.org
+                   
+```
+
+```{r, eval = FALSE, echo = FALSE, warning=FALSE, message=FALSE}
+
+p <- ggplot(GSS2014, # my data
+            aes(x=coninc, y=health)) + # my "aesthetic"
+  geom_smooth() + # the geometry of my graph
+  ggtitle("Poor Health by Income") + 
+  xlab("Income") + ylab("Health")
+
+ggplotly(p)
+
+```
+
+## What are we doing???
+
+- Start R
+- Get some data in it
+- A few descriptive statistics
+- Some graphs
+
+## Using General Social Survey (GSS) for Example
+
+ - General Social Survey:  Nationally representative sample collected annually or biannually from 1972 to 2010.
+
+ - When downloading data, download data from CANVAS to Mac or Windows desktop, then start RStudio to open with R.
+ 
+## Data Are Just Rows and Columns 
+
+We use both the codebook and data set.
+
+```{r, echo = FALSE, fig.height=4}
+
+library(png)
+
+library(grid)
+
+img <- readPNG("what-is-data.png")
+
+grid.raster(img)
+
+```
+
+## Scripting (R Syntax)
+
+```{r, echo = FALSE, fig.height=4}
+
+library(png)
+
+library(grid)
+
+img <- readPNG("why write a script.png")
+
+grid.raster(img)
+
+```
+
+
+```{r archive, echo=FALSE, eval=FALSE}
+
+## The "Thought Ladder of Statistics"
+
+![](thought ladder.png)
+
+## Counting Words in Shakespeare Plays (1)
+
+![](Shakespeare.png)
+
+## Counting Words in Shakespeare Plays (2)
+
+![](Shakespeare2.png)
+
+```
+
+## Get Data (Script)
+
+```{r, eval = FALSE}
+
+# local file
+
+# make sure you are in the right directory
+# Menu: Session | Set Working Directory
+
+load("GSS2014.Rdata") 
+
+```
+
+```{r, echo = FALSE, eval=FALSE}
+
+# from the web
+
+load(url("http://www.umich.edu/~agrogan/SW673labs/GSS2014.RData"))
+
+```
+
+Menu option as well
+
+* Loading your data is sometimes the hardest part.
+* Load is for data that is ALREADY IN R FORMAT!
+* Pay attention to WHERE your data and scripts live.
+* Note that R uses forward slashes:  /
+
+## The R Interface
+
+```{r, echo = FALSE, fig.height=4}
+
+library(png)
+
+library(grid)
+
+img <- readPNG("R interface.png")
+
+grid.raster(img)
+
+```
+
+
+```{r, eval=FALSE, echo=FALSE}
+
+## Measures of Central Tendency
+
+ - We need to make sure to recode missing data appropriately.
+
+mydata$x[mydata$x == -9] <- NA # recode x == -9 to "NA"
+
+```
+
+## Measures of Central Tendency
+
+- What are the mean, median, and mode? Why are they different?
+
+```{r}
+
+summary(GSS2014$coninc)
+
+library(psych) # to load psych
+
+describe(GSS2014$coninc)
+
+```
+
+## We End With a Graph
+
+```{r}
+
+hist(GSS2014$coninc,
+     col = "blue") # histogram of the income variable
+
+```
+
+## And Another
+
+```{r}
+
+pie(table(GSS2014$sex),
+    labels=c("male", "female"),
+    col = c("blue", "gold"))
+
+```
+
+## Questions?
+
+

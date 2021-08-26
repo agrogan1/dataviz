@@ -1,0 +1,2221 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<kml xmlns='http://www.opengis.net/kml/2.2'>
+	<Document>
+		<name>Starbucks in Michigan (2)</name>
+		<description> | Created with http://batchgeo.com</description>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>US Hwy 223 Adrian MI</address>
+				<Point>
+					<coordinates>-84.0593105,41.8876812,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Outer Dr Allen Park MI</address>
+				<Point>
+					<coordinates>-83.2079961,42.2778248,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Fairlane Dr Allen Park MI</address>
+				<Point>
+					<coordinates>-83.2024333,42.2868294,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>N Campus Dr Allendale MI</address>
+				<Point>
+					<coordinates>-85.887727,42.9677364,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Lake Michigan Dr Allendale MI</address>
+				<Point>
+					<coordinates>-85.9506216,42.9722245,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>W Superior St Alma MI</address>
+				<Point>
+					<coordinates>-84.674949,43.379022,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Waters Rd Ann Arbor MI</address>
+				<Point>
+					<coordinates>-83.8560635,42.2411285,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Washtenaw Ave Ann Arbor MI</address>
+				<Point>
+					<coordinates>-83.7068695,42.2587408,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>NA NA NA</address>
+				<Point>
+					<coordinates>-84.72844,42.795951,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Tappan Ave Ann Arbor MI</address>
+				<Point>
+					<coordinates>-83.7379872,42.271978,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>S University Ave Ann Arbor MI</address>
+				<Point>
+					<coordinates>-83.7331142,42.2750237,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>S State St Ann Arbor MI</address>
+				<Point>
+					<coordinates>-83.7395882,42.2519512,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>S Maple Rd Ann Arbor MI</address>
+				<Point>
+					<coordinates>-83.7798384,42.2680183,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Ann Arbor-Saline Rd Ann Arbor MI</address>
+				<Point>
+					<coordinates>-83.7718472,42.2387077,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>S State St Ann Arbor MI</address>
+				<Point>
+					<coordinates>-83.7395882,42.2519512,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>S Zeeb Rd Ann Arbor MI</address>
+				<Point>
+					<coordinates>-83.8374549,42.2431225,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Plymouth Rd Ann Arbor MI</address>
+				<Point>
+					<coordinates>-83.7072395,42.3025229,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Washtenaw Ave Ann Arbor MI</address>
+				<Point>
+					<coordinates>-83.7068695,42.2587408,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>S Main St Ann Arbor MI</address>
+				<Point>
+					<coordinates>-83.7502128,42.2620191,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Sitka Ct Ann Arbor MI</address>
+				<Point>
+					<coordinates>-83.8744236,42.2430099,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Ann Arbor St Ann Arbor MI</address>
+				<Point>
+					<coordinates>-83.7404815,42.2709855,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Baldwin Rd Auburn Hills MI</address>
+				<Point>
+					<coordinates>-83.3068183,42.6993765,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Baldwin Rd Auburn Hills MI</address>
+				<Point>
+					<coordinates>-83.3068183,42.6993765,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Brown Rd Auburn Hills MI</address>
+				<Point>
+					<coordinates>-83.2632538,42.7082394,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Beckley Rd Battle Creek MI</address>
+				<Point>
+					<coordinates>-85.2229825,42.2610673,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Capital Ave SW Battle Creek MI</address>
+				<Point>
+					<coordinates>-85.1990516,42.2827737,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>NA NA NA</address>
+				<Point>
+					<coordinates>-84.72844,42.795951,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Belleville Rd Belleville MI</address>
+				<Point>
+					<coordinates>-83.4922966,42.2125275,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>S State St Big Rapids MI</address>
+				<Point>
+					<coordinates>-85.4799761,43.6113226,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Campus Dr Big Rapids MI</address>
+				<Point>
+					<coordinates>-85.4811814,43.6888019,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Main St Birch Run MI</address>
+				<Point>
+					<coordinates>-83.7894371,43.250146,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>E Maple Rd Birmingham MI</address>
+				<Point>
+					<coordinates>-83.199293,42.5471052,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>S Old Woodward Ave Birmingham MI</address>
+				<Point>
+					<coordinates>-83.2120194,42.5443943,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Bloomfield Dr Bloomfield Hills MI</address>
+				<Point>
+					<coordinates>-83.3192799,42.6085804,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Woodward Ave Bloomfield Hills MI</address>
+				<Point>
+					<coordinates>-83.2412886,42.5792641,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>State Hwy 15 Reese MI</address>
+				<Point>
+					<coordinates>-83.7080766,43.4221864,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Telegraph Rd Bloomfield Hills MI</address>
+				<Point>
+					<coordinates>-83.2835399,42.1118329,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>S Telegraph Rd Bloomfield Hills MI</address>
+				<Point>
+					<coordinates>-83.3070229,42.6127659,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>S Telegraph Rd Bloomfield Hills MI</address>
+				<Point>
+					<coordinates>-83.3070229,42.6127659,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>N Lake St Boyne City MI</address>
+				<Point>
+					<coordinates>-85.0166746,45.2218454,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>W Grand River Ave Brighton MI</address>
+				<Point>
+					<coordinates>-83.7843124,42.5368845,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Challis Rd Brighton MI</address>
+				<Point>
+					<coordinates>-83.7995637,42.5434175,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>W Grand River Ave Brighton MI</address>
+				<Point>
+					<coordinates>-83.7843124,42.5368845,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Brown City Rd Brown City MI</address>
+				<Point>
+					<coordinates>-83.0190638,43.2337062,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>84th St SE Byron Center MI</address>
+				<Point>
+					<coordinates>-85.4872661,42.8121435,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>NA Caledonia MI</address>
+				<Point>
+					<coordinates>-85.5166864,42.7891985,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Cherry Valley Ave SE Caledonia MI</address>
+				<Point>
+					<coordinates>-85.507092,42.8047331,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>NA Caledonia MI</address>
+				<Point>
+					<coordinates>-85.5166864,42.7891985,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>S Canton Center Rd Canton MI</address>
+				<Point>
+					<coordinates>-83.4863174,42.2896088,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Ford Rd Canton MI</address>
+				<Point>
+					<coordinates>-83.4870879,42.321977,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Ford Rd Canton MI</address>
+				<Point>
+					<coordinates>-83.4870879,42.321977,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Michigan Ave Canton MI</address>
+				<Point>
+					<coordinates>-83.4748127,42.2750053,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>NA NA NA</address>
+				<Point>
+					<coordinates>-84.72844,42.795951,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>NA NA NA</address>
+				<Point>
+					<coordinates>-84.72844,42.795951,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Sashabaw Rd Clarkston MI</address>
+				<Point>
+					<coordinates>-83.3728116,42.7978704,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Dixie Hwy Clarkston MI</address>
+				<Point>
+					<coordinates>-83.4287686,42.725067,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>S Gratiot Ave Clinton Township MI</address>
+				<Point>
+					<coordinates>-82.8954362,42.5620537,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Rose Ln Clinton Township MI</address>
+				<Point>
+					<coordinates>-82.9020614,42.6004138,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Hall Rd Clinton Township MI</address>
+				<Point>
+					<coordinates>-82.9167356,42.6290325,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>NA NA NA</address>
+				<Point>
+					<coordinates>-84.72844,42.795951,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Union Lake Rd Commerce MI</address>
+				<Point>
+					<coordinates>-83.4461649,42.5967227,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Davison Rd Davison MI</address>
+				<Point>
+					<coordinates>-83.5279799,43.0345015,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Haigh St Dearborn MI</address>
+				<Point>
+					<coordinates>-83.2550189,42.3027793,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Michigan Ave Dearborn MI</address>
+				<Point>
+					<coordinates>-83.2144607,42.3132701,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Michigan Ave Dearborn MI</address>
+				<Point>
+					<coordinates>-83.2144607,42.3132701,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Ford Rd Dearborn Heights MI</address>
+				<Point>
+					<coordinates>-83.2756288,42.3269961,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Ford Rd Dearborn Heights MI</address>
+				<Point>
+					<coordinates>-83.2756288,42.3269961,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Renaissance Center Detroit MI</address>
+				<Point>
+					<coordinates>-83.0397632,42.3293284,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Renaissance Center Detroit MI</address>
+				<Point>
+					<coordinates>-83.0397632,42.3293284,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Woodward Ave Detroit MI</address>
+				<Point>
+					<coordinates>-83.1606825,42.4912329,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Gullen Mall Detroit MI</address>
+				<Point>
+					<coordinates>-83.0705414,42.3581703,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Detroit St Detroit MI</address>
+				<Point>
+					<coordinates>-82.9251109,42.4011115,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Saint Antoine St Detroit MI</address>
+				<Point>
+					<coordinates>-83.0529053,42.3533412,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Woodward Ave Detroit MI</address>
+				<Point>
+					<coordinates>-83.1606825,42.4912329,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>W 8 Mile Rd Detroit MI</address>
+				<Point>
+					<coordinates>-83.3215962,42.4418337,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Joann St Detroit MI</address>
+				<Point>
+					<coordinates>-82.990045,42.4360172,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Gullen Mall Detroit MI</address>
+				<Point>
+					<coordinates>-83.0705414,42.3581703,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Coe Ave Detroit MI</address>
+				<Point>
+					<coordinates>-82.9974999,42.3562064,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Wealthy St SE Grand Rapids MI</address>
+				<Point>
+					<coordinates>-85.6395441,42.9555257,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Holly Way Lansing MI</address>
+				<Point>
+					<coordinates>-84.5783252,42.7043334,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Center St East Lansing MI</address>
+				<Point>
+					<coordinates>-84.4922362,42.7356879,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>E Grand River Ave East Lansing MI</address>
+				<Point>
+					<coordinates>-84.48142,42.7346019,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>S Grand Ave Lansing MI</address>
+				<Point>
+					<coordinates>-84.5507398,42.7269693,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>W Lake Lansing Rd East Lansing MI</address>
+				<Point>
+					<coordinates>-84.4972514,42.7606868,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Coronet Dr Farmington MI</address>
+				<Point>
+					<coordinates>-83.3653899,42.5100324,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Grand River Ave Farmington MI</address>
+				<Point>
+					<coordinates>-83.3800197,42.4665107,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Orchard Lake Rd Farmington MI</address>
+				<Point>
+					<coordinates>-83.356188,42.456252,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Owen Rd Fenton MI</address>
+				<Point>
+					<coordinates>-83.7367718,42.7897566,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Silver Pkwy Fenton MI</address>
+				<Point>
+					<coordinates>-83.7368107,42.7963964,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>N Leroy St Fenton MI</address>
+				<Point>
+					<coordinates>-83.7073208,42.8081804,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>E Court St Flint MI</address>
+				<Point>
+					<coordinates>-83.6539471,43.0184303,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Miller Rd Flint MI</address>
+				<Point>
+					<coordinates>-83.7393952,42.9905335,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>24th Ave Fort Gratiot MI</address>
+				<Point>
+					<coordinates>-82.4566291,43.0384125,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>24th Ave Fort Gratiot MI</address>
+				<Point>
+					<coordinates>-82.4566291,43.0384125,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>NA Pentwater MI</address>
+				<Point>
+					<coordinates>-86.4331355,43.7816728,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>W Main St Gaylord MI</address>
+				<Point>
+					<coordinates>-84.6896193,45.027439,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>W Main St Gaylord MI</address>
+				<Point>
+					<coordinates>-84.6896193,45.027439,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>S Saginaw St Grand Blanc MI</address>
+				<Point>
+					<coordinates>-83.6235407,42.9222559,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>N Beacon Blvd Grand Haven MI</address>
+				<Point>
+					<coordinates>-86.2198343,43.0680955,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Robbins Rd Grand Haven MI</address>
+				<Point>
+					<coordinates>-86.2003968,43.0448352,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>US Hwy 31 Grand Haven MI</address>
+				<Point>
+					<coordinates>-86.2206282,43.063075,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>28 Ct SE Grand Rapids MI</address>
+				<Point>
+					<coordinates>-85.5345275,42.9168887,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Northland Dr NE Grand Rapids MI</address>
+				<Point>
+					<coordinates>-85.5528521,43.1706456,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Woodland Dr Grand Rapids MI</address>
+				<Point>
+					<coordinates>-85.5914155,42.9156645,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>NA NA NA</address>
+				<Point>
+					<coordinates>-84.72844,42.795951,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Wilson Ave NW Grand Rapids MI</address>
+				<Point>
+					<coordinates>-85.777283,42.9990174,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Old Lake Ct SE Grand Rapids MI</address>
+				<Point>
+					<coordinates>-85.5765622,42.938774,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Michigan St NW Grand Rapids MI</address>
+				<Point>
+					<coordinates>-85.67104,42.9704131,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Fulton St W Grand Rapids MI</address>
+				<Point>
+					<coordinates>-85.6748964,42.9632207,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Wealthy St SE Grand Rapids MI</address>
+				<Point>
+					<coordinates>-85.6395441,42.9555257,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>E Beltline Ave SE Grand Rapids MI</address>
+				<Point>
+					<coordinates>-85.5853939,42.937816,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>44th St SE Grand Rapids MI</address>
+				<Point>
+					<coordinates>-85.6162917,42.8837864,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>28 Ct SE Grand Rapids MI</address>
+				<Point>
+					<coordinates>-85.5345275,42.9168887,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>28 Ct SE Grand Rapids MI</address>
+				<Point>
+					<coordinates>-85.5345275,42.9168887,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>28 Ct SE Grand Rapids MI</address>
+				<Point>
+					<coordinates>-85.5345275,42.9168887,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>NA NA NA</address>
+				<Point>
+					<coordinates>-84.72844,42.795951,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>W State Rd Grand Rapids MI</address>
+				<Point>
+					<coordinates>-85.8142061,43.3365633,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>28 Ct SE Grand Rapids MI</address>
+				<Point>
+					<coordinates>-85.5345275,42.9168887,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>E Beltline Ave NE Grand Rapids MI</address>
+				<Point>
+					<coordinates>-85.5905293,42.9960873,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Monroe Ave NW Grand Rapids MI</address>
+				<Point>
+					<coordinates>-85.6707063,42.9846919,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>E Beltline Ave NE Grand Rapids MI</address>
+				<Point>
+					<coordinates>-85.5905293,42.9960873,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Alpine Ave NW Grand Rapids MI</address>
+				<Point>
+					<coordinates>-85.6885174,43.0024674,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Cascade Pt Grand Rapids MI</address>
+				<Point>
+					<coordinates>-85.5475966,42.9446762,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Riverton Ave SE Grand Rapids MI</address>
+				<Point>
+					<coordinates>-85.4938632,42.9362473,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>NA NA NA</address>
+				<Point>
+					<coordinates>-84.72844,42.795951,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Century Center St SW Grandville MI</address>
+				<Point>
+					<coordinates>-85.7509851,42.8805764,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>44th St SW Grandville MI</address>
+				<Point>
+					<coordinates>-85.756975,42.8846119,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>44th St SW Grandville MI</address>
+				<Point>
+					<coordinates>-85.756975,42.8846119,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Macomb St Grosse Ile MI</address>
+				<Point>
+					<coordinates>-83.148777,42.1303721,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Cadieux Rd Grosse Pointe MI</address>
+				<Point>
+					<coordinates>-82.918308,42.38864,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Kercheval Ave Grosse Pointe MI</address>
+				<Point>
+					<coordinates>-82.9142769,42.3907991,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Mack Ave Grosse Pointe MI</address>
+				<Point>
+					<coordinates>-82.910618,42.418389,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Vernier Rd Harper Woods MI</address>
+				<Point>
+					<coordinates>-82.9257497,42.4478878,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Douglas Ave Holland MI</address>
+				<Point>
+					<coordinates>-86.1228456,42.7980131,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>E 16th St Holland MI</address>
+				<Point>
+					<coordinates>-86.0793634,42.7832007,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>S Washington Rd Holland MI</address>
+				<Point>
+					<coordinates>-86.1157205,42.7469472,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Butternut Dr Holland MI</address>
+				<Point>
+					<coordinates>-86.1614037,42.8506589,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>W Shore Dr Holland MI</address>
+				<Point>
+					<coordinates>-86.0908017,42.8266301,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>W Shore Dr Holland MI</address>
+				<Point>
+					<coordinates>-86.0908017,42.8266301,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>W Shore Dr Holland MI</address>
+				<Point>
+					<coordinates>-86.0908017,42.8266301,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>E Highland Rd Howell MI</address>
+				<Point>
+					<coordinates>-83.9191228,42.6224345,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>28th Ave Hudsonville MI</address>
+				<Point>
+					<coordinates>-85.8515987,42.7857764,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>NA Jackson, MI, US NA</address>
+				<Point>
+					<coordinates>-84.4013462,42.245869,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>NA Jackson, MI, US NA</address>
+				<Point>
+					<coordinates>-84.4013462,42.245869,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Baldwin St Jenison MI</address>
+				<Point>
+					<coordinates>-85.8190988,42.9071531,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Stadium Dr Kalamazoo MI</address>
+				<Point>
+					<coordinates>-85.6314926,42.2716423,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Parkview Ave Kalamazoo MI</address>
+				<Point>
+					<coordinates>-85.6364912,42.2598529,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Parkview Ave Kalamazoo MI</address>
+				<Point>
+					<coordinates>-85.6364912,42.2598529,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>W Main St Kalamazoo MI</address>
+				<Point>
+					<coordinates>-85.6286994,42.2961223,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>W Main St Kalamazoo MI</address>
+				<Point>
+					<coordinates>-85.6286994,42.2961223,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Kalamazoo Ave SE Grand Rapids MI</address>
+				<Point>
+					<coordinates>-85.6313962,42.9175041,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>N Lapeer Rd Lake Orion MI</address>
+				<Point>
+					<coordinates>-83.2459537,42.7898994,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>W Sterns Rd Lambertville MI</address>
+				<Point>
+					<coordinates>-83.6190627,41.7492298,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>W Saginaw Hwy Lansing MI</address>
+				<Point>
+					<coordinates>-84.6523178,42.7410531,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>S Cedar St Lansing MI</address>
+				<Point>
+					<coordinates>-84.5480389,42.6926788,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Demille Rd Lapeer MI</address>
+				<Point>
+					<coordinates>-83.3252852,43.043315,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Southfield Rd Lincoln Park MI</address>
+				<Point>
+					<coordinates>-83.1791711,42.2510003,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>NA NA NA</address>
+				<Point>
+					<coordinates>-84.72844,42.795951,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Middlebelt Rd Livonia MI</address>
+				<Point>
+					<coordinates>-83.3344419,42.3972919,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Mill St Northville MI</address>
+				<Point>
+					<coordinates>-83.4676436,42.4072402,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Middlebelt Rd Livonia MI</address>
+				<Point>
+					<coordinates>-83.3344419,42.3972919,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>NA NA NA</address>
+				<Point>
+					<coordinates>-84.72844,42.795951,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Main St Champion MI</address>
+				<Point>
+					<coordinates>-87.9774035,46.5107485,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>NA NA NA</address>
+				<Point>
+					<coordinates>-84.72844,42.795951,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>NA NA NA</address>
+				<Point>
+					<coordinates>-84.72844,42.795951,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>NA NA NA</address>
+				<Point>
+					<coordinates>-84.72844,42.795951,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>W 12 Mile Rd Madison Heights MI</address>
+				<Point>
+					<coordinates>-83.1048963,42.5047762,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>John R Rd Madison Heights MI</address>
+				<Point>
+					<coordinates>-83.1058164,42.5058286,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>US Hwy 41 S Marquette MI</address>
+				<Point>
+					<coordinates>-87.3983203,46.5382991,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>US Hwy 41 S Marquette MI</address>
+				<Point>
+					<coordinates>-87.3983203,46.5382991,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Presque Isle Ave Marquette MI</address>
+				<Point>
+					<coordinates>-87.3961321,46.5621947,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>W Michigan Ave Marshall MI</address>
+				<Point>
+					<coordinates>-84.9750752,42.2719981,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Range Rd Smiths Creek MI</address>
+				<Point>
+					<coordinates>-82.502047,42.9554995,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Eastman Ave Midland MI</address>
+				<Point>
+					<coordinates>-84.2468831,43.6424572,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>S Main St Milford MI</address>
+				<Point>
+					<coordinates>-83.6001302,42.5817928,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Highland Ave Milford MI</address>
+				<Point>
+					<coordinates>-83.6057419,42.5919564,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>E Preston St Mount Pleasant MI</address>
+				<Point>
+					<coordinates>-84.7623262,43.5899036,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>E Blue Grass Rd Mount Pleasant MI</address>
+				<Point>
+					<coordinates>-84.7576211,43.5753767,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>E Pickard St Mount Pleasant MI</address>
+				<Point>
+					<coordinates>-84.7706366,43.6117818,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Harvey St Muskegon MI</address>
+				<Point>
+					<coordinates>-86.2042578,43.2315065,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>S Harvey St Muskegon MI</address>
+				<Point>
+					<coordinates>-86.2057989,43.1505575,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Center Hudson MI</address>
+				<Point>
+					<coordinates>-84.3570105,41.848595,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>S 11th St Niles MI</address>
+				<Point>
+					<coordinates>-86.2471034,41.8200774,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>N Center St Northville MI</address>
+				<Point>
+					<coordinates>-83.4832847,42.4383892,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Haggerty Rd Northville MI</address>
+				<Point>
+					<coordinates>-83.4456353,42.3745404,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>E Main St Northville MI</address>
+				<Point>
+					<coordinates>-83.4803393,42.4312426,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Novi Rd Novi MI</address>
+				<Point>
+					<coordinates>-83.4756815,42.4830451,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Cabot Dr Novi MI</address>
+				<Point>
+					<coordinates>-83.4435205,42.5079657,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Novi Rd Novi MI</address>
+				<Point>
+					<coordinates>-83.4756815,42.4830451,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Dabate Ct Milford MI</address>
+				<Point>
+					<coordinates>-83.5843217,42.5398299,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Grand River Ave Novi MI</address>
+				<Point>
+					<coordinates>-83.4942387,42.4849669,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Wixom Rd Novi MI</address>
+				<Point>
+					<coordinates>-83.5345598,42.4790358,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Novi Rd Novi MI</address>
+				<Point>
+					<coordinates>-83.4756815,42.4830451,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Novi Rd Northville MI</address>
+				<Point>
+					<coordinates>-83.4743139,42.44181,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>W 14 Mile Rd Novi MI</address>
+				<Point>
+					<coordinates>-83.4538743,42.5267121,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Greenfield Rd Oak Park MI</address>
+				<Point>
+					<coordinates>-83.2014233,42.4666327,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Adams Rd Oakland MI</address>
+				<Point>
+					<coordinates>-83.1970106,42.7432134,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Marsh Rd Okemos MI</address>
+				<Point>
+					<coordinates>-84.4131584,42.7291065,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Meridian Crossings Dr Okemos MI</address>
+				<Point>
+					<coordinates>-84.4339415,42.6839699,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Orchard Crest Dr West Bloomfield MI</address>
+				<Point>
+					<coordinates>-83.3641913,42.5529352,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>NA NA NA</address>
+				<Point>
+					<coordinates>-84.72844,42.795951,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Old US 31 Hwy Petoskey MI</address>
+				<Point>
+					<coordinates>-85.0661072,45.35594,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Pettysville Rd Pinckney MI</address>
+				<Point>
+					<coordinates>-83.8675155,42.4776061,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Anne Dr Pinckney MI</address>
+				<Point>
+					<coordinates>-83.9564512,42.4235726,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>W Ann Arbor Trl Plymouth MI</address>
+				<Point>
+					<coordinates>-83.4737915,42.3704909,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Ann Arbor Rd W Plymouth MI</address>
+				<Point>
+					<coordinates>-83.5788331,42.3379876,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Romence Rd Portage MI</address>
+				<Point>
+					<coordinates>-85.6189972,42.2156179,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>NA NA NA</address>
+				<Point>
+					<coordinates>-84.72844,42.795951,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Telegraph Rd Redford MI</address>
+				<Point>
+					<coordinates>-83.2769121,42.4000625,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Rochester Rd Rochester MI</address>
+				<Point>
+					<coordinates>-83.1499322,42.6583661,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>NA NA NA</address>
+				<Point>
+					<coordinates>-84.72844,42.795951,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Rochester Rd Rochester MI</address>
+				<Point>
+					<coordinates>-83.1499322,42.6583661,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>N Rochester Rd Rochester MI</address>
+				<Point>
+					<coordinates>-83.1345174,42.698274,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>N Rochester Rd Rochester MI</address>
+				<Point>
+					<coordinates>-83.1345174,42.698274,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>NA Rockford, MI, US NA</address>
+				<Point>
+					<coordinates>-85.5600316,43.1200272,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>NA Rockford, MI, US NA</address>
+				<Point>
+					<coordinates>-85.5600316,43.1200272,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>E 13 Mile Rd Roseville MI</address>
+				<Point>
+					<coordinates>-82.9354248,42.5243394,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Gratiot Ave Roseville MI</address>
+				<Point>
+					<coordinates>-82.9286199,42.5098287,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Gratiot Ave Roseville MI</address>
+				<Point>
+					<coordinates>-82.9286199,42.5098287,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Woodward Ave Royal Oak MI</address>
+				<Point>
+					<coordinates>-83.1745414,42.5056217,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Coolidge Hwy Royal Oak MI</address>
+				<Point>
+					<coordinates>-83.1841539,42.5074859,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Woodward Ave Royal Oak MI</address>
+				<Point>
+					<coordinates>-83.1745414,42.5056217,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>S Main St Royal Oak MI</address>
+				<Point>
+					<coordinates>-83.1440438,42.483132,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>W 13 Mile Rd Royal Oak MI</address>
+				<Point>
+					<coordinates>-83.1571348,42.5186687,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Tittabawassee Rd Saginaw MI</address>
+				<Point>
+					<coordinates>-84.0002681,43.4803525,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Bay Rd Saginaw MI</address>
+				<Point>
+					<coordinates>-83.9755859,43.457285,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>W Shelby Rd Shelby MI</address>
+				<Point>
+					<coordinates>-86.3657284,43.6087171,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Melia Dr Utica MI</address>
+				<Point>
+					<coordinates>-83.020268,42.7020398,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Hayes Rd Utica MI</address>
+				<Point>
+					<coordinates>-82.9727274,42.6124667,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Hall Rd Utica MI</address>
+				<Point>
+					<coordinates>-83.0124686,42.6262538,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>10 Mile Rd Northville MI</address>
+				<Point>
+					<coordinates>-83.4873192,42.4662332,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Mill Rd Algonac MI</address>
+				<Point>
+					<coordinates>-82.527122,42.6221821,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Southfield Rd Southfield MI</address>
+				<Point>
+					<coordinates>-83.2217658,42.4856495,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Southfield Freeway Svc Rd Southfield MI</address>
+				<Point>
+					<coordinates>-83.2965927,42.4971826,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Northwestern Hwy Southfield MI</address>
+				<Point>
+					<coordinates>-83.2573633,42.48165,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>NA Southland, MI, US NA</address>
+				<Point>
+					<coordinates>-83.2218731,42.4733688,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>NA NA NA</address>
+				<Point>
+					<coordinates>-84.72844,42.795951,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Metropolitan Pkwy Sterling Heights MI</address>
+				<Point>
+					<coordinates>-83.0290264,42.5653886,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Schoenherr Rd Sterling Heights MI</address>
+				<Point>
+					<coordinates>-82.9911575,42.5807902,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>NA NA NA</address>
+				<Point>
+					<coordinates>-84.72844,42.795951,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Lakeside Cir Sterling Heights MI</address>
+				<Point>
+					<coordinates>-82.986405,42.6200273,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Van Dyke Ave Sterling Heights MI</address>
+				<Point>
+					<coordinates>-83.0304893,42.5813335,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Van Dyke Ave Sterling Heights MI</address>
+				<Point>
+					<coordinates>-83.0304893,42.5813335,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Metropolitan Pkwy Sterling Heights MI</address>
+				<Point>
+					<coordinates>-83.0290264,42.5653886,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Eureka Rd Taylor MI</address>
+				<Point>
+					<coordinates>-83.2780116,42.197285,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+				<name>Starbucks</name>				<ExtendedData>
+									</ExtendedData>
+								<address>Eureka Rd Taylor MI</address>
+				<Point>
+					<coordinates>-83.2780116,42.197285,0</coordinates>
+				</Point>
+			</Placemark>
+		<Style id="0"><IconStyle><scale>1</scale><Icon><href>http://static.batchgeo.com/images/icons/red_shadow_Marker.png</href></Icon><hotSpot x=".3" y=".8" xunits="fraction" yunits="fraction" /></IconStyle><LabelStyle><scale>0</scale></LabelStyle></Style>	</Document>
+</kml>

@@ -1,0 +1,104 @@
+---
+title: "Data Visualization"
+subtitle: "Week 1"
+author: "Andy Grogan-Kaylor"
+institute: "University of Michigan"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+
+options(htmltools.dir.version = FALSE)
+
+xaringanExtra::use_tile_view()
+
+xaringanExtra::use_slide_tone()
+
+```
+
+```{css, echo=FALSE}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+.title-slide { 
+  color: #ffcb05;
+  background-color: #00274C; 
+  background-image: url("M-Zoom-BG1.png");
+  background-size: cover;
+}
+.title-slide h1 {
+    color: #ffcb05;
+    font-weight: bold;
+}
+.title-slide h2, .title-slide h3 {
+    color: #ffcb05;
+    font-weight: bold;
+}
+pre {
+  white-space: pre-wrap;
+}
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+body { 
+    font-family: 'Montserrat', sans-serif;
+}
+blockquote {
+  background: #FFFFFF;
+  color: #000;
+  border-left: 5px solid #ffcb05;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+}
+.author, .date {
+  font-family: 'Montserrat', sans-serif;
+}
+.inverse {
+  background-color: #00274C;
+  color: #ffcb05;
+}
+```
+
+# Lesson Plan
+
+* Attendance (To "take attendance", can we go around the *Zoom Room* and everyone say their name?)
+
+--
+
+* Introduction to Me: [https://agrogan1.github.io/background.html](https://agrogan1.github.io/background.html)
+
+--
+
+* Introduction to the Course: [https://agrogan1.github.io/newstuff/SW672/](https://agrogan1.github.io/newstuff/SW672/)
+
+--
+
+    + Why?
+    + [Grading Rubric](https://agrogan1.github.io/newstuff/SW672/grading-rubric.html)
+    + Syllabus
+    
+--
+
+* <mark>BREAK</mark>
+
+--
+
+* Introduction to You
+    + Name
+    + Where From / What Program?
+    + Something That Motivates You
+    + R / SPSS ?
+
+---
+
+# Questions?
+
+> Please ask / interrupt with questions throughout
+
+

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Grading Rubric</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Andy Grogan-Kaylor" />
+    <meta name="date" content="2021-02-05" />
+    <link href="libs/tile-view-0.2.3/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view-0.2.3/tile-view.js"></script>
+    <script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+    <script src="libs/viz-1.8.2/viz.js"></script>
+    <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+    <script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
+    <link rel="stylesheet" href="animate.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Grading Rubric
+## SW 672
+### Andy Grogan-Kaylor
+### University of Michigan
+### 2021-02-05
+
+---
+
+
+&lt;style type="text/css"&gt;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap');
+.title-slide { 
+  color: white;
+  background-color: black; 
+}
+.title-slide h1 {
+    color: white;
+    font-weight: bold;
+}
+pre {
+  white-space: pre-wrap;
+}
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+body { 
+    font-family: 'Montserrat', sans-serif;
+}
+blockquote {
+  background: #FFFFFF;
+  color: #000;
+  border-left: 5px solid #EC1F27;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+}
+.author, .date {
+  font-family: 'Montserrat', sans-serif;
+}
+.emphasized {
+  background-color: black;
+  color: white;
+  font-size: 200%;
+  text-align: center;
+  text-shadow: 0 0 20px #333;
+}
+
+&lt;/style&gt;
+
+
+
+# Navigation
+
+* Use the &lt;span style="font-size:100px"&gt;&amp;#8678;&lt;/span&gt; and &lt;span style="font-size:100px"&gt;&amp;#8680;&lt;/span&gt; keys to move through the presentation.
+* Press *o* for *panel overview*.
+
+---
+# The Basics
+
+<div id="htmlwidget-dc0cd2f2622fe79d2d87" style="width:288px;height:144px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-dc0cd2f2622fe79d2d87">{"x":{"diagram":"\ndigraph boxes_and_circles {\n\n  # a \"graph\" statement\n  graph [overlap = true, \n  fontsize = 10,\n  rankdir = LR]\n\n  # several \"node\" statements\n  node [shape = circle,\n        fontname = Helvetica]\n  A; B\n\n  # several \"edge\" statements\n  A->B\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+
+--
+
+&lt;img src="grading-rubric_files/figure-html/unnamed-chunk-3-1.png" width="288" /&gt;&lt;img src="grading-rubric_files/figure-html/unnamed-chunk-3-2.png" width="288" /&gt;
+
+
+---
+# A Conceptual Focus 
+## (Grading Rubric 1)
+
+* Disparities or Injustices: How does membership in **A** affect the chances of outcome **B**?
+
+--
+
+* Effect of a Policy or Intervention: Do those who receive treatment or policy **A** have a different outcome **B**?
+
+---
+class: animated, slideInRight
+
+# Think Carefully About Design Elements 
+## (Grading Rubric 2)
+
+1. Geometry: bars; lines; points; etc.
+2. Use of color
+3. Well labeled axes
+4. Good informative title
+
+
+
+&lt;img src="grading-rubric_files/figure-html/unnamed-chunk-5-1.png" width="504" /&gt;
+
+
+---
+# Wrap Your Visual In A Narrative 
+## (Grading Rubric 3)
+
+<div id="htmlwidget-a5c9f0f11de03decf92b" style="width:288px;height:144px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a5c9f0f11de03decf92b">{"x":{"diagram":"\ndigraph boxes_and_circles {\n\n  # a \"graph\" statement\n  graph [overlap = true, \n  fontsize = 10,\n  rankdir = LR]\n\n  # several \"node\" statements\n  node [shape = circle,\n        fontname = Helvetica]\n  A; B\n\n  # several \"edge\" statements\n  A->B\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+
+* Why is *A* important? Is *A* prevalent? Widespread? Serious?
+
+--
+
+and / or ...
+
+* Why is *B* important? Is *B* prevalent? Widespread? Serious?
+
+---
+
+* If *A* is connected to *B*, this means: __________
+
+--
+
+and / or ...
+
+* If *A* is not connected to *B*, this means: __________
+
+--
+
+* These findings suggest the following intervention / treatment / policy / advocacy effort: __________
+
+---
+class: center, emphasized
+
+We have a saying in Chile: criticizing a musician is easy, but it is more difficult "when you have a guitar in your hand."
+
+-César Hidalgo (L’Université Fédérale Toulouse Midi-Pyrénées)
+
+---
+class: animated, slideInRight
+
+# The Difficult Stuff 
+
+(Which I Am Still Figuring Out Best Practices For)
+
+&gt; NOT REQUIRED
+
+* More thoughtful design: Cedric Sherer has an [amazing article on improving the design of a ggplot](https://cedricscherer.netlify.app/2019/05/17/the-evolution-of-a-ggplot-ep.-1/).
+* Causality (Does A *cause* B?) [https://agrogan.shinyapps.io/causality/](https://agrogan.shinyapps.io/causality/)
+* Moderation (Does C *affect the relationship* between A and B?)
+* Simpson's Paradox (When we think about C, does that *reverse* the observed association between A and B?): [https://agrogan.shinyapps.io/simpsonsparadox/](https://agrogan.shinyapps.io/simpsonsparadox/)
+* Bayes Theorem (Does thinking about the prior information affect the conclusions we draw?): [https://agrogan.shinyapps.io/Thinking-Through-Bayes/](https://agrogan.shinyapps.io/Thinking-Through-Bayes/)
+
+
+---
+class: center, emphasized
+
+# Questions?
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

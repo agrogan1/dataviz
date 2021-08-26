@@ -1,0 +1,60 @@
+---
+title: "Social Service Agency Example"
+author: "Andy Grogan-Kaylor"
+date: "`r Sys.Date()`"
+output:
+  pdf_document:
+    toc: yes
+    fig_height: 3
+    number_sections: yes
+  word_document:
+    toc: yes
+  html_document:
+    toc: yes
+    number_sections: yes
+    code_download: true
+---
+
+```{r setup, include=FALSE}
+
+# this is the setup chunk that RStudio includes automatically
+
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+## Social Service Agency
+
+This is an example report using the *simulated* social service agency data.
+
+```{r getdata}
+
+library(readxl)
+
+social_service_agency <- read_excel("social-service-agency.xlsx")
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+
+library(ggplot2)
+
+ggplot(social_service_agency,
+       aes(x = program,
+           y = mental_health_T2,
+           color = program)) +
+  geom_jitter() +
+  labs(title = "Mental Health by Program") +
+  scale_color_viridis_d() + # Viridis "perceptually uniform" colors
+  theme_minimal() # minimal theme
+
+```
+
+> Remember that more ideas for geometries are here: 
+[https://agrogan1.github.io/myposts/comparing-program-outcomes-with-ggplot2.html](https://agrogan1.github.io/myposts/comparing-program-outcomes-with-ggplot2.html)
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

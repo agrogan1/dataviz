@@ -1,0 +1,55 @@
+---
+title: "Wonderful Penguins"
+author: "Andy Grogan-Kaylor"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+
+library(palmerpenguins)
+
+data(penguins)
+
+```
+
+# First Thing I Am Saying About Penguins
+
+The penguins live on multiple islands.
+
+
+```{r}
+
+table(penguins$island)
+
+```
+
+# Second Thing And This Is Going To Be A Graph
+
+```{r}
+
+library(ggplot2)
+
+ggplot(penguins,
+       aes(x = island,
+           fill = island)) +
+  geom_bar() +
+  labs(title="Pneguins Live on Multiple Islands") +
+  scale_fill_viridis_d()
+
+```
+
+
+
+
+
+
+
+
+
+
+

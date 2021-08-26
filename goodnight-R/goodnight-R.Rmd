@@ -1,0 +1,153 @@
+---
+title: "Goodnight R"
+author: "Andy Grogan-Kaylor"
+date: '`r Sys.Date()`'
+output: 
+  slidy_presentation: 
+    fig_caption: yes
+    fig_height: 4
+    css: goodnight-R.css
+    footer: Andrew Grogan-Kaylor
+    highlight: haddock
+    theme: default
+    incremental: yes
+subtitle: "(with thanks to @olgarithmic)"
+---
+
+# Goodnight R
+
+* In the great green room 
+* There was someone coding alone 
+* And a red balloon `r emo::ji("balloon")`
+* And a picture of the cow `r emo::ji("cow")`jumping over the moon `r emo::ji("moon")`.
+* And there were three little bears `r emo::ji("bear")` `r emo::ji("bear")` `r emo::ji("bear")` sitting on chairs
+* And two little kittens `r emo::ji("cat")`  `r emo::ji("cat")` and a pair of mittens  `r emo::ji("gloves")`.
+* And a little toy house `r emo::ji("house")` and a young mouse  `r emo::ji("mouse")`.
+* And a comb and a brush
+* And a bowl full of mush `r emo::ji("bowl with spoon")`
+* And the person who was coding was whispering, "Hush." `r emo::ji("shushing face")`
+
+# Goodnight columns, goodnight rows, {data-background=#559955}
+
+```{r setup, include=FALSE}
+
+# invalidate cache when the tufte version changes
+
+knitr::opts_chunk$set(tidy = FALSE, 
+                      echo = FALSE,
+                      message = FALSE,
+                      warning = FALSE,
+                      fig.margin = TRUE,
+                      cache.extra = packageVersion('tufte'))
+
+options(htmltools.dir.version = FALSE)
+
+options(scipen = 999)
+
+library(emo)
+
+library(pander)
+
+```
+
+```{css, echo=FALSE}
+
+.slide-background:first-child {
+  background-color: #559955;
+}
+
+```
+
+```{r}
+
+x <- round(runif(5, 1, 10), digits = 0)
+
+y <- round(runif(5, 1, 10), digits = 0)
+
+mydata <- data.frame(x,y)
+
+mydata # columns
+
+pander(x) # row
+
+```
+
+`r emo::ji("rabbit")`
+
+# Goodnight kind strangers on Stack Overflow, {data-background=#559955}
+
+`r emo::ji("smiley")` `r emo::ji("smiley")` `r emo::ji("smiley")`
+
+```{r, fig.cap="Stack Overflow Logo"}
+
+knitr::include_graphics("stack-overflow-icon.png")
+
+```
+
+# Goodnight factors, goodnight strings, {data-background=#559955}
+
+```{r, echo=TRUE}
+
+x <-c("two little kittens", 
+      "And a pair of mittens", 
+      "And a little toy house", 
+      "And a young mouse", 
+      "And a comb and a brush and a bowl full of mush")
+
+as.factor(x)
+
+```
+
+# Goodnight overfitted things. {data-background=#559955}
+
+```{r, echo=FALSE}
+
+N <- 100
+
+x <- rnorm(N, 0, 10)
+
+e <- rnorm(N, 0, .01)
+
+y <- sin(x)
+
+library(ggplot2)
+
+ggplot(data=NULL,
+       aes(x = x, y = y, color = x)) +
+  geom_point() + 
+  geom_smooth(formula = y~sin(x)) +
+  scale_color_viridis_c() +
+  labs(title="An Overfitted Line",
+       subtitle = "That Follows The Data Too Closely",
+       caption = "What Does This Even Mean?") 
+
+```
+
+# Goodnight anxiety and frustrated thoughts, {data-background=#559955}
+
+```{r}
+
+knitr::include_graphics("cat.gif")
+
+```
+
+
+# Goodnight inconclusive plots. {data-background=#559955}
+
+```{r}
+
+library(ggplot2)
+
+x <- rnorm(100, 100, 10)
+
+y <- rnorm(100, 100, 10)
+
+ggplot(data=NULL,
+       aes(x = x, y = y, group = 1, color=1)) + geom_line() +
+  labs(title = "What Does This Even Mean?",
+       caption = "I mean really? What does this graph say?")
+
+```
+
+
+# Goodnight R {#nextsteps}
