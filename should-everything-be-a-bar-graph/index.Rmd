@@ -66,6 +66,14 @@ xaringanExtra::use_share_again()
 
 ```
 
+# How To Navigate This Presentation
+
+* Use the <span style="font-size:100px">&#8678;</span> and <span style="font-size:100px">&#8680;</span> keys to move through the presentation.
+* Press *o* for *panel overview*.
+* This presentation plays a *tone* when each new item appears. Turn the volume down if you find these tones annoying.
+
+---
+class: animated, slideInRight
 # Introduction
 
 There are many different kinds of data visualization. In the language of the `ggplot` package for R, there are many different kinds of `geom`etries that we can apply to data.
@@ -80,7 +88,6 @@ However, after a number of years of working on data visualization, I have starte
 
 ---
 class: animated, slideInRight
-
 # These Slides
 
 In this slide deck, I use the `ggplot` package to develop bar graphs with `geom_bar`, one of the bar graph `geom`etries. After building a basic bar graph, I apply many formatting ideas, most of which I have learned from the blog of Cedric Scherer ([https://www.cedricscherer.com/](https://www.cedricscherer.com/)).
@@ -174,7 +181,7 @@ p0 +
 `r chunk_reveal("graph1", break_type = "non_seq", widths = c(4,1))`
 
 ---
-class: animated, slideInRight, inverse
+class: animated, slideInRight, inverse, center
 # Some Tweaks
 
 ---
@@ -190,7 +197,6 @@ library(ggsci) # science based color palettes
 
 ---
 class: animated, slideInRight
-
 # Calculate the *Mean*, *Minimum* and *Maximum* outcomes by group.
 
 ```{r}
@@ -206,7 +212,7 @@ mynewdata <- mydata %>%
 ```
 
 ---
-class: animated, slideInRight
+class: animated, slideInRight, inverse, center
 # Bar Graph With Tweaks...
 
 ```{r graph2, include = FALSE, fig.height=4}
@@ -240,7 +246,7 @@ ggplot(mynewdata, # the data I am using
 `r chunk_reveal("graph2", break_type = "auto", widths = c(4,1))`
 
 ---
-class: animated, slideInRight
+class: animated, slideInRight, inverse, center
 # A Last Tweak: Show The Distribution
 
 ```{r graph3, include = FALSE, fig.height=4}

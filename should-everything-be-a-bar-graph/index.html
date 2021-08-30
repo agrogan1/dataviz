@@ -4,7 +4,7 @@
     <title>Should Everything Be A Bar Graph?</title>
     <meta charset="utf-8" />
     <meta name="author" content="Andy Grogan-Kaylor" />
-    <meta name="date" content="2021-08-18" />
+    <meta name="date" content="2021-08-30" />
     <script src="libs/header-attrs-2.8/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/hygge.css" rel="stylesheet" />
@@ -27,7 +27,7 @@ class: center, middle, inverse, title-slide
 # Should Everything Be A Bar Graph?
 ## Use <span style="font-size:50px">⇦</span> and <span style="font-size:50px">⇨</span> to navigate.
 ### Andy Grogan-Kaylor
-### 2021-08-18
+### 2021-08-30
 
 ---
 
@@ -59,6 +59,14 @@ body {
 
 
 
+# How To Navigate This Presentation
+
+* Use the &lt;span style="font-size:100px"&gt;&amp;#8678;&lt;/span&gt; and &lt;span style="font-size:100px"&gt;&amp;#8680;&lt;/span&gt; keys to move through the presentation.
+* Press *o* for *panel overview*.
+* This presentation plays a *tone* when each new item appears. Turn the volume down if you find these tones annoying.
+
+---
+class: animated, slideInRight
 # Introduction
 
 There are many different kinds of data visualization. In the language of the `ggplot` package for R, there are many different kinds of `geom`etries that we can apply to data.
@@ -72,7 +80,6 @@ However, after a number of years of working on data visualization, I have starte
 
 ---
 class: animated, slideInRight
-
 # These Slides
 
 In this slide deck, I use the `ggplot` package to develop bar graphs with `geom_bar`, one of the bar graph `geom`etries. After building a basic bar graph, I apply many formatting ideas, most of which I have learned from the blog of Cedric Scherer ([https://www.cedricscherer.com/](https://www.cedricscherer.com/)).
@@ -109,12 +116,12 @@ head(mydata) # show the top of the data
 
 ```
   group   outcome
-1     A 11.221835
-2     A  8.746314
-3     A 10.311156
-4     A 11.530645
-5     A 12.365583
-6     A 10.572382
+1     A  8.295291
+2     A 10.340607
+3     A  9.407740
+4     A 10.581353
+5     A  8.949180
+6     A 10.773687
 ```
 
 ---
@@ -230,7 +237,7 @@ p0 +
 
 
 ---
-class: animated, slideInRight, inverse
+class: animated, slideInRight, inverse, center
 # Some Tweaks
 
 ---
@@ -245,7 +252,6 @@ library(ggsci) # science based color palettes
 
 ---
 class: animated, slideInRight
-
 # Calculate the *Mean*, *Minimum* and *Maximum* outcomes by group.
 
 
@@ -260,7 +266,7 @@ mynewdata &lt;- mydata %&gt;%
 ```
 
 ---
-class: animated, slideInRight
+class: animated, slideInRight, inverse, center
 # Bar Graph With Tweaks...
 
 
@@ -585,7 +591,7 @@ ggplot(mynewdata,  # the data I am using
 
 
 ---
-class: animated, slideInRight
+class: animated, slideInRight, inverse, center
 # A Last Tweak: Show The Distribution
 
 
