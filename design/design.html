@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Design</title>
   <meta name="description" content="Design" />
-  <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Design" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Andrew Grogan-Kaylor" />
 
 
-<meta name="date" content="2021-03-01" />
+<meta name="date" content="2021-09-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,8 @@
   
 
 
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,12 +51,11 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.16/datatables.js"></script>
+<script src="libs/datatables-binding-0.15/datatables.js"></script>
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
@@ -64,18 +64,18 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -95,7 +95,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; } /* Alert */
 code span.an { color: #008000; } /* Annotation */
@@ -123,6 +123,28 @@ code span.vs { color: #008080; } /* VerbatimString */
 code span.wa { color: #008000; font-weight: bold; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="UM.css" type="text/css" />
 </head>
@@ -138,7 +160,8 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 
 <ul class="summary">
 <li class="chapter" data-level="1" data-path=""><a href="#intro"><i class="fa fa-check"></i><b>1</b> Intro</a></li>
-<li class="chapter" data-level="2" data-path=""><a href="#color"><i class="fa fa-check"></i><b>2</b> Color</a><ul>
+<li class="chapter" data-level="2" data-path=""><a href="#color"><i class="fa fa-check"></i><b>2</b> Color</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path=""><a href="#color-model"><i class="fa fa-check"></i><b>2.1</b> Color Model</a></li>
 <li class="chapter" data-level="2.2" data-path=""><a href="#three-types-of-palettes"><i class="fa fa-check"></i><b>2.2</b> Three Types Of Palettes</a></li>
 <li class="chapter" data-level="2.3" data-path=""><a href="#where-do-the-colors-in-ggplot-come-from"><i class="fa fa-check"></i><b>2.3</b> Where Do The Colors in <code>ggplot</code> Come From?</a></li>
@@ -146,15 +169,19 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="2.5" data-path=""><a href="#many-many-color-options"><i class="fa fa-check"></i><b>2.5</b> Many Many Color Options</a></li>
 <li class="chapter" data-level="2.6" data-path=""><a href="#other-color-and-palette-options"><i class="fa fa-check"></i><b>2.6</b> Other Color and Palette Options</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path=""><a href="#fonts"><i class="fa fa-check"></i><b>3</b> Fonts</a><ul>
+<li class="chapter" data-level="3" data-path=""><a href="#fonts"><i class="fa fa-check"></i><b>3</b> Fonts</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path=""><a href="#three-major-types-of-fonts"><i class="fa fa-check"></i><b>3.1</b> Three Major Types of Fonts</a></li>
-<li class="chapter" data-level="3.2" data-path=""><a href="#font-rules"><i class="fa fa-check"></i><b>3.2</b> Font Rules</a><ul>
+<li class="chapter" data-level="3.2" data-path=""><a href="#font-rules"><i class="fa fa-check"></i><b>3.2</b> Font Rules</a>
+<ul>
 <li class="chapter" data-level="3.2.1" data-path=""><a href="#dont-have-too-many-fonts"><i class="fa fa-check"></i><b>3.2.1</b> <font face="Comic Sans MS">Don’t</font> have <code>too many</code> <font face="Times New Roman">fonts!</font></a></li>
 <li class="chapter" data-level="3.2.2" data-path=""><a href="#interesting-font-for-heading-standard-font-for-text"><i class="fa fa-check"></i><b>3.2.2</b> Interesting Font For Heading; Standard Font For Text</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path=""><a href="#cognition"><i class="fa fa-check"></i><b>4</b> Cognition</a><ul>
-<li class="chapter" data-level="4.1" data-path=""><a href="#dimensions-of-data"><i class="fa fa-check"></i><b>4.1</b> Dimensions of Data</a><ul>
+<li class="chapter" data-level="4" data-path=""><a href="#cognition"><i class="fa fa-check"></i><b>4</b> Cognition</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path=""><a href="#dimensions-of-data"><i class="fa fa-check"></i><b>4.1</b> Dimensions of Data</a>
+<ul>
 <li class="chapter" data-level="4.1.1" data-path=""><a href="#basic-idea-definition"><i class="fa fa-check"></i><b>4.1.1</b> Basic Idea / Definition</a></li>
 <li class="chapter" data-level="4.1.2" data-path=""><a href="#species-of-iris"><i class="fa fa-check"></i><b>4.1.2</b> Species of Iris</a></li>
 <li class="chapter" data-level="4.1.3" data-path=""><a href="#philosophies"><i class="fa fa-check"></i><b>4.1.3</b> Philosophies</a></li>
@@ -182,15 +209,15 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <div id="header">
 <h1 class="title">Design</h1>
 <p class="author"><em>Andrew Grogan-Kaylor</em></p>
-<p class="date"><em>2021-03-01</em></p>
+<p class="date"><em>2021-09-01</em></p>
 </div>
-<div id="intro" class="section level1">
+<div id="intro" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Intro</h1>
 <p>This document consists of some <em>rough draft</em> ideas about things that I am learning about design.</p>
 </div>
-<div id="color" class="section level1">
+<div id="color" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> Color</h1>
-<div id="color-model" class="section level2">
+<div id="color-model" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Color Model</h2>
 <p><a href="https://www.nceas.ucsb.edu/~frazier/RSpatialGuides/colorPaletteCheatsheet.pdf">https://www.nceas.ucsb.edu/~frazier/RSpatialGuides/colorPaletteCheatsheet.pdf</a></p>
 <div class="figure">
@@ -202,33 +229,33 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <p>R can use many different color models, but often uses a #<strong>R</strong>ed, <strong>G</strong>reen, <strong>B</strong>lue model with the amount of each color indicated in Hexadecimal, 00 to FF, notation.</p>
 </blockquote>
 </div>
-<div id="three-types-of-palettes" class="section level2">
+<div id="three-types-of-palettes" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> Three Types Of Palettes</h2>
 <p><a href="http://colorbrewer2.org/">http://colorbrewer2.org/</a></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">library</span>(RColorBrewer)</span></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">display.brewer.pal</span>(<span class="dv">7</span>,<span class="st">&quot;Set1&quot;</span>) <span class="co"># qualitative</span></span></code></pre></div>
-<div class="figure"><span id="fig:unnamed-chunk-4"></span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RColorBrewer)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">display.brewer.pal</span>(<span class="dv">7</span>,<span class="st">&quot;Set1&quot;</span>) <span class="co"># qualitative</span></span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
 <img src="design_files/figure-html/unnamed-chunk-4-1.png" alt="Qualitative" width="672" />
 <p class="caption">
 Figure 2.1: Qualitative
 </p>
 </div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">display.brewer.pal</span>(<span class="dv">7</span>,<span class="st">&quot;YlOrRd&quot;</span>) <span class="co"># sequential</span></span></code></pre></div>
-<div class="figure"><span id="fig:unnamed-chunk-5"></span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">display.brewer.pal</span>(<span class="dv">7</span>,<span class="st">&quot;YlOrRd&quot;</span>) <span class="co"># sequential</span></span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-5"></span>
 <img src="design_files/figure-html/unnamed-chunk-5-1.png" alt="Sequential" width="672" />
 <p class="caption">
 Figure 2.2: Sequential
 </p>
 </div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">display.brewer.pal</span>(<span class="dv">7</span>,<span class="st">&quot;Spectral&quot;</span>) <span class="co"># diverging</span></span></code></pre></div>
-<div class="figure"><span id="fig:unnamed-chunk-6"></span>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">display.brewer.pal</span>(<span class="dv">7</span>,<span class="st">&quot;Spectral&quot;</span>) <span class="co"># diverging</span></span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-6"></span>
 <img src="design_files/figure-html/unnamed-chunk-6-1.png" alt="Spectral" width="672" />
 <p class="caption">
 Figure 2.3: Spectral
 </p>
 </div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">display.brewer.all</span>() <span class="co"># all palettes</span></span></code></pre></div>
-<div class="figure"><span id="fig:unnamed-chunk-7"></span>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">display.brewer.all</span>() <span class="co"># all palettes</span></span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-7"></span>
 <img src="design_files/figure-html/unnamed-chunk-7-1.png" alt="All Palettes" width="672" />
 <p class="caption">
 Figure 2.4: All Palettes
@@ -236,36 +263,36 @@ Figure 2.4: All Palettes
 </div>
 <div style="page-break-after: always;"></div>
 </div>
-<div id="where-do-the-colors-in-ggplot-come-from" class="section level2">
+<div id="where-do-the-colors-in-ggplot-come-from" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> Where Do The Colors in <code>ggplot</code> Come From?</h2>
 <p>Equally spaced around the color wheel.</p>
 <div class="figure">
 <img src="colorwheel.png" style="width:20.0%" alt="" />
 <p class="caption">color wheel</p>
 </div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">library</span>(scales)</span>
-<span id="cb6-2"><a href="#cb6-2"></a></span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="kw">show_col</span>(<span class="kw">hue_pal</span>()(<span class="dv">4</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">show_col</span>(<span class="fu">hue_pal</span>()(<span class="dv">4</span>))</span></code></pre></div>
 <p><img src="design_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 </div>
-<div id="color-is" class="section level2">
+<div id="color-is" class="section level2" number="2.4">
 <h2><span class="header-section-number">2.4</span> Color is…</h2>
 <blockquote>
 <p>What is the purpose for which you are using color?</p>
 </blockquote>
 <p><a href="../political-social-work/index.html#/color-scroll-down">See these notes</a> from my video lecture on Data Visualization in Political Social Work.</p>
 </div>
-<div id="many-many-color-options" class="section level2">
+<div id="many-many-color-options" class="section level2" number="2.5">
 <h2><span class="header-section-number">2.5</span> Many Many Color Options</h2>
 <p>e.g. Viridis, which is designed to be <em>perceptually uniform</em>.</p>
-<div class="figure"><span id="fig:unnamed-chunk-9"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-9"></span>
 <img src="design_files/figure-html/unnamed-chunk-9-1.png" alt="Viridis Palettes" width="672" />
 <p class="caption">
 Figure 2.5: Viridis Palettes
 </p>
 </div>
 </div>
-<div id="other-color-and-palette-options" class="section level2">
+<div id="other-color-and-palette-options" class="section level2" number="2.6">
 <h2><span class="header-section-number">2.6</span> Other Color and Palette Options</h2>
 <ul>
 <li><a href="https://www.garrickadenbuie.com/project/ggpomological/">https://www.garrickadenbuie.com/project/ggpomological/</a></li>
@@ -274,9 +301,9 @@ Figure 2.5: Viridis Palettes
 </ul>
 </div>
 </div>
-<div id="fonts" class="section level1">
+<div id="fonts" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Fonts</h1>
-<div id="three-major-types-of-fonts" class="section level2">
+<div id="three-major-types-of-fonts" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Three Major Types of Fonts</h2>
 <ul>
 <li><font face="Arial">San Serif</font> e.g. Arial, Helvetica</li>
@@ -284,12 +311,12 @@ Figure 2.5: Viridis Palettes
 <li><code>Monospaced Fonts</code> e.g. <code>Courier</code> (good for code).</li>
 </ul>
 </div>
-<div id="font-rules" class="section level2">
+<div id="font-rules" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Font Rules</h2>
-<div id="dont-have-too-many-fonts" class="section level3">
+<div id="dont-have-too-many-fonts" class="section level3" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> <font face="Comic Sans MS">Don’t</font> have <code>too many</code> <font face="Times New Roman">fonts!</font></h3>
 </div>
-<div id="interesting-font-for-heading-standard-font-for-text" class="section level3">
+<div id="interesting-font-for-heading-standard-font-for-text" class="section level3" number="3.2.2">
 <h3><span class="header-section-number">3.2.2</span> Interesting Font For Heading; Standard Font For Text</h3>
 <blockquote>
 <p><font face="Impact">Interesting Font for Heading</font></p>
@@ -300,27 +327,27 @@ Figure 2.5: Viridis Palettes
 </div>
 </div>
 </div>
-<div id="cognition" class="section level1">
+<div id="cognition" class="section level1" number="4">
 <h1><span class="header-section-number">4</span> Cognition</h1>
-<div id="dimensions-of-data" class="section level2">
+<div id="dimensions-of-data" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Dimensions of Data</h2>
-<div id="basic-idea-definition" class="section level3">
+<div id="basic-idea-definition" class="section level3" number="4.1.1">
 <h3><span class="header-section-number">4.1.1</span> Basic Idea / Definition</h3>
 <blockquote>
 <p><em>Dimensions</em> of the Data, <em>Columns</em> of the Data, <em>Measures</em>, and <em>Questions</em> are all terms essentially pointing at the same concept.</p>
 </blockquote>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">data</span>(iris) <span class="co"># iris data set</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a></span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="kw">library</span>(DT) <span class="co"># nicely formatted data tables</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a></span>
-<span id="cb7-5"><a href="#cb7-5"></a><span class="kw">datatable</span>(iris) <span class="co"># dimensions of the data</span></span></code></pre></div>
-<div id="htmlwidget-2acb8050cf89dc463fb5" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2acb8050cf89dc463fb5">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9,5.4,4.8,4.8,4.3,5.8,5.7,5.4,5.1,5.7,5.1,5.4,5.1,4.6,5.1,4.8,5,5,5.2,5.2,4.7,4.8,5.4,5.2,5.5,4.9,5,5.5,4.9,4.4,5.1,5,4.5,4.4,5,5.1,4.8,5.1,4.6,5.3,5,7,6.4,6.9,5.5,6.5,5.7,6.3,4.9,6.6,5.2,5,5.9,6,6.1,5.6,6.7,5.6,5.8,6.2,5.6,5.9,6.1,6.3,6.1,6.4,6.6,6.8,6.7,6,5.7,5.5,5.5,5.8,6,5.4,6,6.7,6.3,5.6,5.5,5.5,6.1,5.8,5,5.6,5.7,5.7,6.2,5.1,5.7,6.3,5.8,7.1,6.3,6.5,7.6,4.9,7.3,6.7,7.2,6.5,6.4,6.8,5.7,5.8,6.4,6.5,7.7,7.7,6,6.9,5.6,7.7,6.3,6.7,7.2,6.2,6.1,6.4,7.2,7.4,7.9,6.4,6.3,6.1,7.7,6.3,6.4,6,6.9,6.7,6.9,5.8,6.8,6.7,6.7,6.3,6.5,6.2,5.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1,3.7,3.4,3,3,4,4.4,3.9,3.5,3.8,3.8,3.4,3.7,3.6,3.3,3.4,3,3.4,3.5,3.4,3.2,3.1,3.4,4.1,4.2,3.1,3.2,3.5,3.6,3,3.4,3.5,2.3,3.2,3.5,3.8,3,3.8,3.2,3.7,3.3,3.2,3.2,3.1,2.3,2.8,2.8,3.3,2.4,2.9,2.7,2,3,2.2,2.9,2.9,3.1,3,2.7,2.2,2.5,3.2,2.8,2.5,2.8,2.9,3,2.8,3,2.9,2.6,2.4,2.4,2.7,2.7,3,3.4,3.1,2.3,3,2.5,2.6,3,2.6,2.3,2.7,3,2.9,2.9,2.5,2.8,3.3,2.7,3,2.9,3,3,2.5,2.9,2.5,3.6,3.2,2.7,3,2.5,2.8,3.2,3,3.8,2.6,2.2,3.2,2.8,2.8,2.7,3.3,3.2,2.8,3,2.8,3,2.8,3.8,2.8,2.8,2.6,3,3.4,3.1,3,3.1,3.1,3.1,2.7,3.2,3.3,3,2.5,3,3.4,3],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5,1.5,1.6,1.4,1.1,1.2,1.5,1.3,1.4,1.7,1.5,1.7,1.5,1,1.7,1.9,1.6,1.6,1.5,1.4,1.6,1.6,1.5,1.5,1.4,1.5,1.2,1.3,1.4,1.3,1.5,1.3,1.3,1.3,1.6,1.9,1.4,1.6,1.4,1.5,1.4,4.7,4.5,4.9,4,4.6,4.5,4.7,3.3,4.6,3.9,3.5,4.2,4,4.7,3.6,4.4,4.5,4.1,4.5,3.9,4.8,4,4.9,4.7,4.3,4.4,4.8,5,4.5,3.5,3.8,3.7,3.9,5.1,4.5,4.5,4.7,4.4,4.1,4,4.4,4.6,4,3.3,4.2,4.2,4.2,4.3,3,4.1,6,5.1,5.9,5.6,5.8,6.6,4.5,6.3,5.8,6.1,5.1,5.3,5.5,5,5.1,5.3,5.5,6.7,6.9,5,5.7,4.9,6.7,4.9,5.7,6,4.8,4.9,5.6,5.8,6.1,6.4,5.6,5.1,5.6,6.1,5.6,5.5,4.8,5.4,5.6,5.1,5.1,5.9,5.7,5.2,5,5.2,5.4,5.1],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1,0.2,0.2,0.1,0.1,0.2,0.4,0.4,0.3,0.3,0.3,0.2,0.4,0.2,0.5,0.2,0.2,0.4,0.2,0.2,0.2,0.2,0.4,0.1,0.2,0.2,0.2,0.2,0.1,0.2,0.2,0.3,0.3,0.2,0.6,0.4,0.3,0.2,0.2,0.2,0.2,1.4,1.5,1.5,1.3,1.5,1.3,1.6,1,1.3,1.4,1,1.5,1,1.4,1.3,1.4,1.5,1,1.5,1.1,1.8,1.3,1.5,1.2,1.3,1.4,1.4,1.7,1.5,1,1.1,1,1.2,1.6,1.5,1.6,1.5,1.3,1.3,1.3,1.2,1.4,1.2,1,1.3,1.2,1.3,1.3,1.1,1.3,2.5,1.9,2.1,1.8,2.2,2.1,1.7,1.8,1.8,2.5,2,1.9,2.1,2,2.4,2.3,1.8,2.2,2.3,1.5,2.3,2,2,1.8,2.1,1.8,1.8,1.8,2.1,1.6,1.9,2,2.2,1.5,1.4,2.3,2.4,1.8,1.8,2.1,2.4,2.3,1.9,2.3,2.5,2.3,1.9,2,2.3,1.8],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(iris) <span class="co"># iris data set</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT) <span class="co"># nicely formatted data tables</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">datatable</span>(iris) <span class="co"># dimensions of the data</span></span></code></pre></div>
+<div id="htmlwidget-975112adf3765cde10f0" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-975112adf3765cde10f0">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9,5.4,4.8,4.8,4.3,5.8,5.7,5.4,5.1,5.7,5.1,5.4,5.1,4.6,5.1,4.8,5,5,5.2,5.2,4.7,4.8,5.4,5.2,5.5,4.9,5,5.5,4.9,4.4,5.1,5,4.5,4.4,5,5.1,4.8,5.1,4.6,5.3,5,7,6.4,6.9,5.5,6.5,5.7,6.3,4.9,6.6,5.2,5,5.9,6,6.1,5.6,6.7,5.6,5.8,6.2,5.6,5.9,6.1,6.3,6.1,6.4,6.6,6.8,6.7,6,5.7,5.5,5.5,5.8,6,5.4,6,6.7,6.3,5.6,5.5,5.5,6.1,5.8,5,5.6,5.7,5.7,6.2,5.1,5.7,6.3,5.8,7.1,6.3,6.5,7.6,4.9,7.3,6.7,7.2,6.5,6.4,6.8,5.7,5.8,6.4,6.5,7.7,7.7,6,6.9,5.6,7.7,6.3,6.7,7.2,6.2,6.1,6.4,7.2,7.4,7.9,6.4,6.3,6.1,7.7,6.3,6.4,6,6.9,6.7,6.9,5.8,6.8,6.7,6.7,6.3,6.5,6.2,5.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1,3.7,3.4,3,3,4,4.4,3.9,3.5,3.8,3.8,3.4,3.7,3.6,3.3,3.4,3,3.4,3.5,3.4,3.2,3.1,3.4,4.1,4.2,3.1,3.2,3.5,3.6,3,3.4,3.5,2.3,3.2,3.5,3.8,3,3.8,3.2,3.7,3.3,3.2,3.2,3.1,2.3,2.8,2.8,3.3,2.4,2.9,2.7,2,3,2.2,2.9,2.9,3.1,3,2.7,2.2,2.5,3.2,2.8,2.5,2.8,2.9,3,2.8,3,2.9,2.6,2.4,2.4,2.7,2.7,3,3.4,3.1,2.3,3,2.5,2.6,3,2.6,2.3,2.7,3,2.9,2.9,2.5,2.8,3.3,2.7,3,2.9,3,3,2.5,2.9,2.5,3.6,3.2,2.7,3,2.5,2.8,3.2,3,3.8,2.6,2.2,3.2,2.8,2.8,2.7,3.3,3.2,2.8,3,2.8,3,2.8,3.8,2.8,2.8,2.6,3,3.4,3.1,3,3.1,3.1,3.1,2.7,3.2,3.3,3,2.5,3,3.4,3],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5,1.5,1.6,1.4,1.1,1.2,1.5,1.3,1.4,1.7,1.5,1.7,1.5,1,1.7,1.9,1.6,1.6,1.5,1.4,1.6,1.6,1.5,1.5,1.4,1.5,1.2,1.3,1.4,1.3,1.5,1.3,1.3,1.3,1.6,1.9,1.4,1.6,1.4,1.5,1.4,4.7,4.5,4.9,4,4.6,4.5,4.7,3.3,4.6,3.9,3.5,4.2,4,4.7,3.6,4.4,4.5,4.1,4.5,3.9,4.8,4,4.9,4.7,4.3,4.4,4.8,5,4.5,3.5,3.8,3.7,3.9,5.1,4.5,4.5,4.7,4.4,4.1,4,4.4,4.6,4,3.3,4.2,4.2,4.2,4.3,3,4.1,6,5.1,5.9,5.6,5.8,6.6,4.5,6.3,5.8,6.1,5.1,5.3,5.5,5,5.1,5.3,5.5,6.7,6.9,5,5.7,4.9,6.7,4.9,5.7,6,4.8,4.9,5.6,5.8,6.1,6.4,5.6,5.1,5.6,6.1,5.6,5.5,4.8,5.4,5.6,5.1,5.1,5.9,5.7,5.2,5,5.2,5.4,5.1],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1,0.2,0.2,0.1,0.1,0.2,0.4,0.4,0.3,0.3,0.3,0.2,0.4,0.2,0.5,0.2,0.2,0.4,0.2,0.2,0.2,0.2,0.4,0.1,0.2,0.2,0.2,0.2,0.1,0.2,0.2,0.3,0.3,0.2,0.6,0.4,0.3,0.2,0.2,0.2,0.2,1.4,1.5,1.5,1.3,1.5,1.3,1.6,1,1.3,1.4,1,1.5,1,1.4,1.3,1.4,1.5,1,1.5,1.1,1.8,1.3,1.5,1.2,1.3,1.4,1.4,1.7,1.5,1,1.1,1,1.2,1.6,1.5,1.6,1.5,1.3,1.3,1.3,1.2,1.4,1.2,1,1.3,1.2,1.3,1.3,1.1,1.3,2.5,1.9,2.1,1.8,2.2,2.1,1.7,1.8,1.8,2.5,2,1.9,2.1,2,2.4,2.3,1.8,2.2,2.3,1.5,2.3,2,2,1.8,2.1,1.8,1.8,1.8,2.1,1.6,1.9,2,2.2,1.5,1.4,2.3,2.4,1.8,1.8,2.1,2.4,2.3,1.9,2.3,2.5,2.3,1.9,2,2.3,1.8],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <blockquote>
 <p>The <code>iris</code> data set has 5 dimensions Sepal.Length, Sepal.Width, Petal.Length, Petal.Width, Species.</p>
 </blockquote>
 </div>
-<div id="species-of-iris" class="section level3">
+<div id="species-of-iris" class="section level3" number="4.1.2">
 <h3><span class="header-section-number">4.1.2</span> Species of Iris</h3>
 <p>Setosa: <img src="Kosaciec_szczecinkowaty_Iris_setosa.jpg" style="width:20.0%" alt="Setosa" />
 Versicolor: <img src="Blue_Flag_Ottawa.jpg" style="width:20.0%" alt="Versicolor" /> Virginica: <img src="Iris_virginica_2.jpg" style="width:20.0%" alt="Virginica" /></p>
@@ -328,21 +355,21 @@ Versicolor: <img src="Blue_Flag_Ottawa.jpg" style="width:20.0%" alt="Versicolor"
 <p>Iris species images courtesy <a href="https://www.wikipedia.org/">Wikipedia</a>.</p>
 </blockquote>
 </div>
-<div id="philosophies" class="section level3">
+<div id="philosophies" class="section level3" number="4.1.3">
 <h3><span class="header-section-number">4.1.3</span> Philosophies</h3>
-<div class="figure"><span id="fig:unnamed-chunk-12"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-12"></span>
 <img src="design_files/figure-html/unnamed-chunk-12-1.png" alt="Minimal Philosophy With 2 Data Dimensions" width="672" />
 <p class="caption">
 Figure 4.1: Minimal Philosophy With 2 Data Dimensions
 </p>
 </div>
-<div class="figure"><span id="fig:unnamed-chunk-13"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-13"></span>
 <img src="design_files/figure-html/unnamed-chunk-13-1.png" alt="Minimal Philosophy With 3 Data Dimensions" width="672" />
 <p class="caption">
 Figure 4.2: Minimal Philosophy With 3 Data Dimensions
 </p>
 </div>
-<div class="figure"><span id="fig:unnamed-chunk-14"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-14"></span>
 <img src="design_files/figure-html/unnamed-chunk-14-1.png" alt="Maximal Philosophy" width="672" />
 <p class="caption">
 Figure 4.3: Maximal Philosophy
@@ -350,7 +377,7 @@ Figure 4.3: Maximal Philosophy
 </div>
 </div>
 </div>
-<div id="some-geometries-are-easier-to-understand-than-others" class="section level2">
+<div id="some-geometries-are-easier-to-understand-than-others" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Some Geometries Are Easier To Understand Than Others</h2>
 <p>“Ordering elementary tasks by accuracy <span class="citation">(Cleveland and McGill 1985)</span>:”</p>
 <ol style="list-style-type: decimal">
@@ -367,9 +394,9 @@ Figure 4.3: Maximal Philosophy
 </div>
 <div id="references" class="section level1 unnumbered">
 <h1>References</h1>
-<div id="refs" class="references">
-<div id="ref-Cleveland1985">
-<p>Cleveland, William S, and Robert McGill. 1985. “Graphical Perception and Graphical Methods for Analyzing Scientific Data.” <em>Science</em> 229 (4716): 828–33. <a href="http://www.jstor.org/stable/1695272">http://www.jstor.org/stable/1695272</a>.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Cleveland1985" class="csl-entry">
+Cleveland, William S, and Robert McGill. 1985. <span>“<span class="nocase">Graphical Perception and Graphical Methods for Analyzing Scientific Data</span>.”</span> <em>Science</em> 229 (4716): 828–33. <a href="http://www.jstor.org/stable/1695272">http://www.jstor.org/stable/1695272</a>.
 </div>
 </div>
 </div>
@@ -402,6 +429,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -422,10 +450,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": false,
 "toc": {
 "collapse": "subsection"
-},
-"search": false
+}
 });
 });
 </script>
