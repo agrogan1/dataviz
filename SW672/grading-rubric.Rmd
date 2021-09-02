@@ -1,9 +1,9 @@
 ---
-title: "Grading Rubric"
-subtitle: "SW 672"
-author: "Andy Grogan-Kaylor"
-institute: "University of Michigan"
-date: "`r Sys.Date()`"
+title: "<mark>Grading Rubric<mark>"
+subtitle: "<mark>SW 672</mark>"
+author: "<mark>Andy Grogan-Kaylor</mark>"
+institute: "<mark>University of Michigan</mark>"
+date: "<mark>`r Sys.Date()`</mark>"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -18,11 +18,13 @@ output:
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 .title-slide { 
-  color: white;
+  color: black;
   background-color: black; 
+  background-image: url("images/M-Zoom-BG6.png");
+  background-size: contain;
 }
-.title-slide h1 {
-    color: white;
+.title-slide h1, h2, h3 {
+    color: #FFCB05;
     font-weight: bold;
 }
 pre {
