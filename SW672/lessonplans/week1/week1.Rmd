@@ -1,9 +1,9 @@
 ---
-title: "Data Visualization"
-subtitle: "Week 1"
-author: "Andy Grogan-Kaylor"
-institute: "University of Michigan"
-date: "`r Sys.Date()`"
+title: "<mark>Data Visualization</mark>"
+subtitle: "<mark>Week 1</mark>"
+author: "<mark>Andy Grogan-Kaylor</mark>"
+institute: "<mark>University of Michigan</mark>"
+date: "<mark>`r Sys.Date()`</mark>"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -27,17 +27,13 @@ xaringanExtra::use_slide_tone()
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 .title-slide { 
-  color: #ffcb05;
-  background-color: #00274C; 
-  background-image: url("M-Zoom-BG1.png");
-  background-size: cover;
+  color: black;
+  background-color: black; 
+  background-image: url("M-Zoom-BG6.png");
+  background-size: contain;
 }
-.title-slide h1 {
-    color: #ffcb05;
-    font-weight: bold;
-}
-.title-slide h2, .title-slide h3 {
-    color: #ffcb05;
+.title-slide h1, h2, h3 {
+    color: white;
     font-weight: bold;
 }
 pre {
@@ -52,20 +48,23 @@ body {
 blockquote {
   background: #FFFFFF;
   color: #000;
-  border-left: 5px solid #ffcb05;
+  border-left: 5px solid #FFCB05;
   margin: 1.5em 10px;
   padding: 0.5em 10px;
 }
 a, a > code {
-  color: #2F65A7;
+  color: blue;
 }
 .author, .date {
   font-family: 'Montserrat', sans-serif;
 }
-.inverse {
-  background-color: #00274C;
-  color: #ffcb05;
+.emphasized {
+  background-color: black;
+  color: white;
+  font-size: 200%;
+  text-align: center;
 }
+
 ```
 
 # Lesson Plan

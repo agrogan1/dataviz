@@ -1,9 +1,9 @@
 ---
-title: "<mark>Grading Rubric<mark>"
-subtitle: "<mark>SW 672</mark>"
-author: "<mark>Andy Grogan-Kaylor</mark>"
-institute: "<mark>University of Michigan</mark>"
-date: "<mark>`r Sys.Date()`</mark>"
+title: "Grading Rubric"
+subtitle: "SW 672"
+author: "Andy Grogan-Kaylor"
+institute: "University of Michigan"
+date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -19,12 +19,14 @@ output:
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 .title-slide { 
   color: black;
-  background-color: black; 
-  background-image: url("images/M-Zoom-BG6.png");
-  background-size: contain;
+  background-color: black;
 }
-.title-slide h1, h2, h3 {
-    color: #FFCB05;
+.title-slide h1 {
+    color: white;
+    font-weight: bold;
+}
+.title-slide h2, .title-slide h3 {
+    color: white;
     font-weight: bold;
 }
 pre {
@@ -39,7 +41,7 @@ body {
 blockquote {
   background: #FFFFFF;
   color: #000;
-  border-left: 5px solid #EC1F27;
+  border-left: 5px solid red;
   margin: 1.5em 10px;
   padding: 0.5em 10px;
 }
@@ -49,6 +51,10 @@ a, a > code {
 .author, .date {
   font-family: 'Montserrat', sans-serif;
 }
+.inverse {
+  background-color: black;
+  color: white;
+}
 .emphasized {
   background-color: black;
   color: white;
@@ -56,7 +62,6 @@ a, a > code {
   text-align: center;
   text-shadow: 0 0 20px #333;
 }
-
 ```
 
 ```{r setup, include=FALSE}
