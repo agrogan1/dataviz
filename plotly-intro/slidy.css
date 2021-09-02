@@ -20,7 +20,7 @@ slide.title-slide{
   color: white;
   font-size: 200%;
   font-weight: bold;
-  background-color: navy; /* #418FDE */
+  background-color: #00B2A9;
 }
 blockquote {
   background: #FFFFFF;
@@ -36,9 +36,9 @@ blockquote {
    font-size: 125%;
 }
 #majorsection {
-   color: white;
+   color: black;
    background-position: center;
-   background-color: #000000;
+   background-color: #989C97;
    text-align: center;
    font-size: 300%;
 }
