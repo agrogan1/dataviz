@@ -27,7 +27,6 @@ xaringanExtra::use_slide_tone()
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 .title-slide { 
-  color: black;
   background-color: black; 
   background-image: url("M-Zoom-BG6.png");
   background-size: contain;
