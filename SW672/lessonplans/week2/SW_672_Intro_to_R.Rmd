@@ -32,7 +32,7 @@ knitr::opts_chunk$set(echo = TRUE,
 
 # local file
 
-load("GSS2014.Rdata") # make sure you are in the right directory
+load("GSS2014.RData") # make sure you are in the right directory
 
 GSS2014$health <- factor(GSS2014$health,
                              levels = c(1,2,3,4),
