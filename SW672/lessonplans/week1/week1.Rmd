@@ -63,6 +63,9 @@ a, a > code {
   font-size: 200%;
   text-align: center;
 }
+.inverse {
+  text-shadow: none !important;
+}
 
 ```
 
