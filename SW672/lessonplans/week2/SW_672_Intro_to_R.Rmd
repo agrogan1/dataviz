@@ -52,7 +52,7 @@ GSS2014$depress <- factor(GSS2014$depress,
 - Open source
 - World wide community
 - Free
-- Used by organizations like Google, *New York Times*, *Financial Times*
+- Used by organizations like Google, *New York Times*, *Financial Times*, NPR, Urban Institute
 
 > Let's make sure we understand installing R, and calling libraries.
 
