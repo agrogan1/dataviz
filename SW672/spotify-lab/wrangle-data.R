@@ -36,6 +36,6 @@ ggplot(spotify_songs,
        x = "Date",
        y = "Spotify Measure of Song Energy")
 
-ggsave("song-energy-by-time.png")
+ggsave("./SW672/spotify-lab/song-energy-by-time.png")
 
 
