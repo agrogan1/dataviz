@@ -13,6 +13,10 @@ spotify_songs$song_date <- as.Date(spotify_songs$track_album_release_date)
 
 save(spotify_songs, file = "./SW672/spotify-lab/spotify.RData")
 
+# load data
+
+load("./SW672/spotify-lab/spotify.RData")
+
 # demonstration graph
 
 library(ggplot2) # call ggplot 
@@ -23,7 +27,8 @@ ggplot(spotify_songs,
        aes(x = song_date,
            y = energy,
            color = playlist_genre)) + 
-  geom_point() +
+  geom_point(alpha = .1, size = 1) +
+  geom_smooth() +
   scale_color_pander(name = "Genre") +
   theme_minimal() +
   labs(title = "Song Energy by Date and Genre",
@@ -31,6 +36,6 @@ ggplot(spotify_songs,
        x = "Date",
        y = "Spotify Measure of Song Energy")
 
-
+ggsave("song-energy-by-time.png")
 
 
