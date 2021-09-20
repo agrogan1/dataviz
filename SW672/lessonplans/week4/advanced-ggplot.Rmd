@@ -1,0 +1,49 @@
+---
+title: "Advanced `ggplot`"
+author: "Andy Grogan-Kaylor"
+date: "9/20/2021"
+output: 
+  slidy_presentation: 
+    fig_caption: yes
+    incremental: yes
+    highlight: haddock
+    css: ../../../UMslidy.css
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE)
+
+```
+
+# Review of Basic `ggplot`
+
+1. data
+2. `aes`thetic
+3. `geom`etry
+
+# Alternate Geometries
+
+## Bars
+
+## Points
+
+## Jittered Points
+
+## Dotplots
+
+# Use of Color
+
+## Color As An Aesthetic Element
+
+## Color As Information
+
+## Color Palettes
+
+# Coordinate Systems
+
+## Flipping The Coordinates
+
+# Theming
+
+
