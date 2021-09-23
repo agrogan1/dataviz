@@ -1,0 +1,217 @@
+---
+title: "Advanced `ggplot`"
+author: "Andy Grogan-Kaylor"
+date: "9/20/2021"
+output: 
+  slidy_presentation: 
+    fig_caption: yes
+    incremental: yes
+    highlight: haddock
+    css: ../../../UMslidy.css
+    fig_height: 4
+    fig_retina: 3
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+# Simulated Data From Social Service Agency
+
+These are *simulated* data designed to be similar to the data that might come from a social service agency.
+
+The data contain the following (*simulated*) variables:  "ID", "age", "gender", "race_ethnicity", "family_income", "program", "mental_health_T1", "mental_health_T2", "latitude", "longitude".
+
+The *mental health* variables are scaled to have an average of 100. Lower numbers indicate lower mental health, while higher numbers indicate higher mental health.
+
+There are some differences in *mental health* status in the data and an interesting exercise could be to use software like Excel, Google Sheets, Tableau or R to try to see which factors predict these differences.
+
+```{r, echo=FALSE, eval=FALSE}
+
+load("social-service-agency.RData")
+
+clients$neighborhood <- sample(c("Neighborhood A",
+                                 "Neighborhood B",
+                                 "Neighborhood C"), 
+                               453, 
+                               replace = TRUE)
+
+save(clients, file = "clients.RData")
+
+```
+
+# The Data
+
+```{r}
+
+load("clients.RData")
+
+```
+
+```{r, echo=FALSE}
+
+DT::datatable(clients,
+              extensions = 'Buttons', 
+              options = list(dom = 'Bfrtip', 
+                             buttons = c('copy', 
+                                         'csv', 
+                                         'excel')))
+
+```
+
+
+# Review of Basic `ggplot`
+
+1. data
+2. `aes`thetic
+3. `geom`etry
+
+```{r}
+
+library(ggplot2) # call the library
+
+ggplot(clients,
+       aes(x = program,
+           y = mental_health_T2)) +
+  stat_summary(fun = mean, # summarizing y 
+               geom = "bar") # with bars
+
+```
+
+# Alternate Geometries
+
+## Points
+
+```{r}
+
+ggplot(clients,
+       aes(x = program,
+           y = mental_health_T2)) +
+  geom_point()
+
+```
+
+## Jittered Points
+
+```{r}
+
+ggplot(clients,
+       aes(x = program,
+           y = mental_health_T2)) +
+  geom_jitter()
+
+```
+
+## Dotplots
+
+```{r}
+
+# install.packages("ggdist")
+
+library(ggdist) # distribution plots
+
+ggplot(clients,
+       aes(x = program,
+           y = mental_health_T2)) +
+   stat_dots() # dotplot geometry
+
+```
+
+# Use of Color
+
+## Color As An Aesthetic Element
+
+> e.g. *U.N. Blue*
+
+```{r}
+
+ggplot(clients,
+       aes(x = program,
+           y = mental_health_T2)) +
+   stat_dots(fill = "#009edb") # dotplot geometry
+
+```
+
+## Color As Information
+
+> compare the minimal and maximal philosophies.
+
+```{r}
+
+ggplot(clients,
+       aes(x = program,
+           fill = gender, # color as `information`
+           y = mental_health_T2)) +
+   stat_dots() # dotplot geometry
+
+```
+
+## Color Palettes
+
+> `viridis` color palette
+
+```{r}
+
+ggplot(clients,
+       aes(x = program,
+           fill = gender, # color as `information`
+           y = mental_health_T2)) +
+  stat_dots() + # dotplot geometry
+  scale_fill_viridis_d()
+
+```
+
+# Coordinate Systems
+
+## Flipping The Coordinates
+
+```{r}
+
+ggplot(clients,
+       aes(x = program,
+           fill = gender, # color as `information`
+           y = mental_health_T2)) +
+  stat_dots() + # dotplot geometry
+  scale_fill_viridis_d() +
+  coord_flip()
+
+```
+
+# Small Multiples
+
+```{r}
+
+ggplot(clients,
+       aes(x = program,
+           fill = gender, # color as `information`
+           y = mental_health_T2)) +
+  stat_dots() + # dotplot geometry
+  scale_fill_viridis_d() +
+  coord_flip() +
+  facet_wrap(~neighborhood)
+
+```
+
+# Titles, Labels and Theming
+
+```{r, fig.height=6}
+
+ggplot(clients,
+       aes(x = program,
+           fill = gender, # color as `information`
+           y = mental_health_T2)) +
+  stat_dots() + # dotplot geometry
+  scale_fill_viridis_d() +
+  coord_flip() +
+  labs(title = "Program Enrollment",
+       subtitle = "By Gender Identity",
+       caption = "Higher Mental Health Scores Are Better",
+       y = "Mental Health At Time 2",
+       x = "Program") +
+  theme_minimal() +
+  theme(plot.title = element_text(size = rel(1.5),
+                             color = "darkblue"))
+
+```
