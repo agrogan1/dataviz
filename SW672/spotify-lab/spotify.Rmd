@@ -1,0 +1,98 @@
+---
+title: "Creating a Cutoff In The Spotify Data"
+subtitle: "Use <span style='font-size:50px'>&#8678;</span> and <span style='font-size:50px'>&#8680;</span> to navigate."
+author: "Andy Grogan-Kaylor"
+date: '`r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["default", "metropolis", "metropolis-fonts"]
+    nature:
+      ratio: 16:10
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include = F}
+
+# This is the recommended set up for flipbooks
+# you might think about setting cache to TRUE as you gain practice --- building flipbooks from scracth can be time consuming
+
+knitr::opts_chunk$set(fig.width = 6, 
+                      message = FALSE, 
+                      warning = FALSE, 
+                      comment = "", 
+                      cache = FALSE, 
+                      fig.retina = 3)
+
+library(flipbookr)
+
+library(tidyverse)
+
+library(xaringanExtra)
+
+xaringanExtra::use_tile_view()
+
+xaringanExtra::use_slide_tone()
+
+xaringanExtra::use_share_again()
+
+
+```
+
+
+# Get Started
+
+```{r graph0, include = FALSE}
+
+library(ggplot2) # beautiful graphs
+
+library(ggthemes) # nice themes 
+
+load("spotify.RData") # load the spotify data
+
+```
+
+---
+
+```{r, code = knitr::knit_code$get("graph0"), eval = FALSE, echo = FALSE}
+```
+
+`r chunk_reveal("graph0", break_type = "auto", widths = c(4,2))`
+
+---
+# Graph
+
+```{r graph1, include = FALSE}
+
+# use `ifelse` to create a new variable
+# for very loud songs
+
+spotify_songs$veryloud <- ifelse(spotify_songs$loudness > 0,
+                                 1, # 1 if loud
+                                 NA) # NA (missing), otherwise
+
+
+ggplot(spotify_songs,
+       aes(x = loudness,
+           color = loudness,
+           y = danceability)) +
+  geom_point() +
+  geom_smooth(color = "red") +
+  scale_color_gradient(low = "lightgrey",
+                       high = "darkgrey") +
+  geom_point(aes(x = veryloud), # use the new variable
+             color = "red") +
+  labs(title = "Danceability by Loudness",
+       subtitle = "Of Spotify Songs")
+
+```
+
+---
+
+```{r, code = knitr::knit_code$get("graph1"), eval = FALSE, echo = FALSE}
+```
+
+`r chunk_reveal("graph1", break_type = "auto", widths = c(4,2))`
+
