@@ -30,6 +30,7 @@ An example data driven document can be found here.
 > Slide show formats can be beautiful and effective for presentations. However, slide show formats may not work equally well with all screen resolutions and sizes. Slide shows may have varying performance on mobile devices.
 
 * [Slidy HTML Slide Show](data-driven-report-demo-slidy.html)
+* [Reveal.js Slide Show](data-driven-report-demo-revealjs.html)
 
 ### Alternative PDF formats
 

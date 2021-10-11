@@ -79,6 +79,7 @@ Data were provided via the `gapminder` library which provides a sample of data a
 
 Results indicate the per capita GDP and life expectancy are related in a non-linear way.
 
+## Graph
 
 ```{r}
 
@@ -96,6 +97,9 @@ ggplot(gapminder,
   theme_minimal()
 
 ```
+
+
+## Table
 
 ```{r}
 
