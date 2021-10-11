@@ -14,6 +14,8 @@ An example data driven document can be found here.
 
 ### Major Formats
 
+> Note: HTML and Word are generally the easiest formats to generate. PDF requires your system to have the [LaTeX](https://www.latex-project.org/) (generally pronounced "*La-Tech*") typesetting system. LaTeX can be installed by hand, which is often a difficult process. To facilitate the process of installing LaTeX, Yihui Xie has developed the `tinytex` package. The steps are: (a) `install.packages("tinytex")`; (b) `tinytex::install_tinytex()`. Note that this process can be time consuming, and may not work well on machines more than a few years old.
+
 * [HTML file](data-driven-report-demo.html)
 * [PDF](data-driven-report-demo.pdf)
 * [Word](data-driven-report-demo.docx)

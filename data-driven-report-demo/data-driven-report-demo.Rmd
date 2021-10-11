@@ -3,6 +3,12 @@ title: "Data Driven Report Demo"
 author: "Andrew Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
+  pdf_document: 
+    fig_height: 2.0
+    highlight: haddock
+    latex_engine: xelatex
+    number_sections: yes
+    toc: yes
   html_document: 
     code_download: yes
     fig_height: 3
@@ -13,18 +19,12 @@ output:
     toc_float:
       collapsed: yes
       smooth_scroll: yes
-  pdf_document: 
-    fig_height: 2.0
-    highlight: haddock
-    latex_engine: xelatex
-    number_sections: yes
-    toc: yes
   bookdown::epub_book: default  
   word_document: 
     fig_height: 3
     toc: yes
     reference_docx: "markstat.docx"
-mainfont: Tw Cen MT
+mainfont: Futura
 fontsize: 12pt
 ---
 
