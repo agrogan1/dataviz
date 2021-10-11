@@ -12,6 +12,8 @@ library(tufte) # tufte handouts
 
 library(distill) # distill
 
+setwd("./data-driven-report-demo")
+
 # library(pagedreport) # paged reports
 
 # render home page
