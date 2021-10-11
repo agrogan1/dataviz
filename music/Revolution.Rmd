@@ -3,16 +3,18 @@ title: "Revolution"
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
+  pdf_document: 
+    highlight: tango
   html_document: 
     highlight: haddock
     code_folding: hide
-  pdf_document:
-    highlight: haddock
 ---
 
 ```{r setup, include=FALSE}
 
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE)
 
 ```
 
@@ -34,41 +36,40 @@ count2 <- c(100, 0)
 
 mydata <- tibble::tibble(yousay, count1, whatwewant, count2)
 
-mydata # play back
-
 ```
 
-```{r}
+```{r, fig.height=6}
+
 p1 <- ggplot(mydata, 
              aes(x = yousay,
                  y = count1,
                  fill = yousay)) +
-  geom_bar(stat="identity") +
+  geom_bar(stat="identity", color = "black") +
   labs(title = "You say ...",
        x = "you say", 
        y = "percentage") +
+  theme_minimal() +
   theme(axis.text.x = element_blank(),
         axis.ticks.x = element_blank()) +
-  scale_fill_viridis_d(name = "what you say",
-                       direction = -1,
-                       option = "plasma")
+  scale_fill_manual(name = "what you say",
+                    values = c("white", "white"))
 
 p2 <- ggplot(mydata,
              aes(x = 1,
                  y = count2,
                  fill = whatwewant)) +
-  geom_bar(stat = "identity") +
+  geom_bar(stat = "identity", color = "black") +
   coord_polar() +
   labs(title = "Well...",
        x = "what we want", 
        y = "") +
+  theme_minimal() +
   theme(axis.text.x = element_blank(),
         axis.ticks = element_blank()) +
-  scale_fill_viridis_d(name = "what we want",
-                       direction = 1,
-                       option = "plasma")
+  scale_fill_manual(name = "we all want",
+                    values = c("white", "white"))
 
-p1 + p2
+p1 / p2
 
 ```
 

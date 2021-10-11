@@ -1,0 +1,73 @@
+---
+title: "One Love"
+author: "Andy Grogan-Kaylor"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: 
+    highlight: tango
+  html_document: 
+    highlight: haddock
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE)
+
+```
+
+```{r}
+
+library(ggplot2) # beautiful graphs
+
+library(patchwork) # stitch graphs together
+
+things <- c("Love",
+            "Heart")
+
+count1 <-c(1,1)
+
+mydata1 <- tibble::tibble(things, count1)
+
+otherthings <- c("Let's get together", "Feel All Right")
+
+mydata2 <- tibble::tibble(otherthings)
+
+```
+
+```{r, fig.height=6}
+
+p1 <- ggplot(mydata1, 
+             aes(x = things,
+                 y = count1,
+                 fill = things)) +
+  geom_bar(stat="identity", color = "black") +
+  labs(title = "",
+       x = "things", 
+       y = "count") +
+  theme_minimal() +
+  theme(axis.text.x = element_blank(),
+        axis.ticks.x = element_blank()) +
+  scale_fill_manual(name = "",
+                    values = c("white", "white"))
+
+
+p2 <- ggplot(mydata2, 
+             aes(x = 1,
+                 fill = otherthings)) +
+  geom_bar(color = "black") +
+  coord_polar(theta = "y") +
+  labs(x = "", y = "") +
+  theme_void() +
+  theme(axis.text.x = element_blank(),
+        axis.ticks.x = element_blank()) +
+  scale_fill_manual(name = "",
+                    values = c("white", "white"))
+
+p1 / p2
+
+```
+
+
