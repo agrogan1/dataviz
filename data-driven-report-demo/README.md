@@ -16,7 +16,7 @@ An example data driven document can be found here.
 
 ```
 install.packages("tinytex") # install tinytex
-tinytex::install_tinytex() # use tinytext to install a small version of LaTeX 
+tinytex::install_tinytex() # install small version of LaTeX 
 ```
 > Note that this process can be very time consuming, or buggy, or both, and may not work well on machines more than a few years old.
 
