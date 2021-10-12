@@ -1,4 +1,6 @@
 .slide-background:first-child {
-  color: #00274C;
   background-color: #FFCB05;
+}
+.reveal h1, h2, h3 {
+  color: black;
 }
