@@ -1,0 +1,283 @@
+---
+title: "How To Choose A Chart: An Intuitive Guide"
+author: "Andy Grogan-Kaylor"
+date: "`r Sys.Date()`"
+output:
+  bookdown::epub_book: 
+    stylesheet: UM.css 
+    cover_image: intuitive-guide.png
+    fig_width: 7
+    fig_height: 8
+  html_document:
+    fig_width: 10
+    highlight: haddock
+    code_download: yes
+  pdf_document: 
+    fig_width: 10
+    latex_engine: xelatex
+    fig_height: 8
+  bookdown::gitbook:
+    split_by: none
+    highlight: haddock
+    fig_height: 8
+    config:
+      toc:
+        collapse: none
+      download:
+      - how-to-choose-a-chart-intuitive.pdf
+      - how-to-choose-a-chart-intuitive.epub
+mainfont: Futura
+fontsize: 12pt
+classoption: portrait
+geometry: margin=.5in
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE,
+                      message = FALSE,
+                      warning = FALSE)
+
+library(ggplot2) # beautiful graphs
+
+library(ggbeeswarm) # beeswarm geometry
+
+library(ggdist) # distribution geometries
+
+library(patchwork) # stitch ggplots together
+
+library(michigancolors) # michigan colors for graphs
+
+```
+
+A more *intuitive* guide to [*How To Choose A Chart*](https://agrogan1.github.io/dataviz/how-to-choose-a-chart/how-to-choose-a-chart-a-visual-guide.pdf).
+
+```{r}
+
+# simulated data
+
+N <- 1000
+
+predictor <- rbeta(N, 2, 7)
+
+group <- factor(rbinom(N, 1, .4),
+                levels = c(0, 1),
+                labels = c("Group A", "Group B"))
+
+outcome <- predictor + rnorm(N, 0, .5)
+
+outcome <- ifelse(group == "Group B",
+                  outcome + 1.5,
+                  outcome)
+
+outcomeC <- ifelse(outcome >= quantile(outcome, c(.60)),
+                   1,
+                   0)
+
+outcomeC <- factor(outcomeC,
+                   levels = c(0,1),
+                   labels = c("Did Not \nExperience \nOutcome", 
+                              "Experienced \nOutcome"))
+
+t <- round(runif(N, 1, 7), 
+           digits = 2)
+
+outcome2 <- log(t) + rnorm(N, 0, 1)
+
+mydata <- data.frame(predictor, 
+                     group, 
+                     outcome, 
+                     outcomeC,
+                     t,
+                     outcome2)
+
+
+```
+
+```{r}
+
+# first plot
+
+myoutcome <- ggplot(data = mydata,
+                    aes(x = outcome,
+                        fill = factor(1),
+                        color = factor(2))) +
+  labs(title = "How Many People \nExperience This Outcome?",
+       x = "Outcome",
+       y = "Count") +
+  scale_color_manual(values = c(michigancolors("angell hall ash"), 
+                                michigancolors("blue"))) +
+  scale_fill_manual(values = c(michigancolors("blue"),
+                               michigancolors("maize"))) +
+  theme_minimal() +
+  theme(legend.position = "none",
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        title = element_text(size = rel(.75)))
+
+```
+
+```{r}
+
+# other plots, many of which build upon first plot
+
+mydensity <- myoutcome + 
+  geom_density(alpha = .5) +
+  labs(subtitle = "Density Plot")
+
+myhistogram <- myoutcome + 
+  geom_histogram() +
+  labs(subtitle = "Histogram")
+
+mybeeswarm <- myoutcome + 
+  geom_beeswarm(aes(y = 1),
+                size = .2,
+                groupOnX = FALSE,
+                color = michigancolors("arboretum blue")) +
+  labs(subtitle = "Beeswarm Plot",
+       caption = "Every point is an individual.",
+       y = "") +
+  theme(axis.text.y = element_blank(),
+        axis.ticks.y = element_blank())
+
+mydotplot <- myoutcome + 
+  geom_dotplot(dotsize = .75,
+               fill = michigancolors("wave field green")) +
+  labs(subtitle = "Dot Plot",
+       caption = "Every point is an individual.",
+       y = "") +
+  theme(axis.text.y = element_blank())
+
+mydotplot2 <- myoutcome +
+  stat_dots(color = michigancolors("ann arbor amethyst")) +
+  labs(subtitle = "Dot Plot",
+       caption = "Every point is an individual.") +
+  theme(axis.text.y = element_blank())
+
+mycomparison <- myoutcome + 
+  geom_histogram(aes(fill = group, color = group)) + 
+  facet_wrap(~group, 
+             ncol = 1, 
+             strip.position = "top") +
+  labs(subtitle = "Histogram With Comparison") +
+  theme(strip.text = element_text(size = rel(.75)),
+        axis.text.y = element_text(size = rel(.5)))
+
+mybar <- ggplot(data = mydata,
+                aes(x = outcomeC,
+                    fill = outcomeC)) +
+  geom_bar(color = michigancolors("angell hall ash")) +
+  scale_fill_manual(values = c(michigancolors("taubman teal"),
+                               michigancolors("arboretum blue"))) +
+  labs(title = "How Many People \nExperience Each Outcome?",
+       subtitle = "Bar Chart",
+       x = "",
+       y = "Count") +
+  theme_minimal() +
+  theme(legend.position = "none",
+        title = element_text(size = rel(.75)))
+
+mycomparisonC <- ggplot(data = mydata,
+                        aes(x = outcomeC,
+                            fill = outcomeC)) +
+  geom_bar(color = michigancolors("angell hall ash")) + 
+  facet_wrap(~group,
+             ncol = 2, 
+             strip.position = "top") +
+  scale_fill_manual(values = c(michigancolors("taubman teal"),
+                               michigancolors("arboretum blue"))) +
+  labs(title = "How Many People \nExperience Each Outcome?",
+       subtitle = "Bar Chart With Comparison",
+       x = "",
+       y = "Count") +
+  theme_minimal() +
+  theme(legend.position = "none",
+        title = element_text(size = rel(.75)),
+        axis.text.x = element_text(size = rel(.5),
+                                   angle = 0,
+                                   hjust = .5),
+        strip.text = element_text(size = rel(.75)))
+
+mypie <- ggplot(data = mydata,
+                aes(x = 1,
+                    fill = group)) +
+  geom_bar() +
+  coord_polar(theta = "y") +
+  scale_fill_manual(values = michigancolors()) +
+  labs(title = "How Many People Are In Each Group?",
+       subtitle = "Pie Chart") +
+  theme_void() +
+  theme(title = element_text(size = rel(.5)),
+        legend.position = "none")
+  
+myscatterplot <- ggplot(mydata,
+                        aes(x = predictor,
+                            y = outcome,
+                            color = factor(1))) +
+  geom_point() +
+  geom_smooth(color = michigancolors("arboretum blue")) +
+  scale_color_manual(values = michigancolors("matthaei violet")) +
+  labs(title = "What is the Relationship of Predictor to Outcome?",
+       subtitle = "Scatterplot") +
+  theme(legend.position = "none",
+        title = element_text(size = rel(.5)))
+  
+mylongitudinal <- ggplot(mydata,
+                         aes(x = t,
+                             y = outcome2,
+                             color = factor(1))) +
+  geom_point(size = .25) +
+  geom_smooth(color = michigancolors("arboretum blue")) +
+  scale_color_manual(values = michigancolors("wave field green")) +
+  labs(title = "Is the Outcome \nChanging Over Time?",
+       subtitle = "Scatterplot",
+       caption = "Every point is an individual.",
+       x = "Time",
+       y = "Outcome") +
+  theme_minimal() +
+  theme(legend.position = "none",
+        title = element_text(size = rel(.75)),
+        axis.text.y = element_blank(),
+        axis.ticks.y=element_blank())
+
+```
+
+```{r}
+
+# save plots in a data file for later use
+
+save(myhistogram, 
+     mycomparison,
+     mybar,
+     mycomparisonC,
+     mybeeswarm,
+     mydotplot,
+     myscatterplot,
+     mylongitudinal,
+     file = "how-to-choose-a-chart.RData")
+
+```
+
+
+```{r}
+
+# stitch the plots together with patchwork
+
+p0 <- myhistogram + mycomparison  +
+  mybar + mycomparisonC + 
+  mydotplot2 + mylongitudinal +
+  plot_layout(ncol = 2, nrow = 3, widths = 1)
+
+p0 # replay
+
+p0A <- myhistogram + 
+  labs(title = "") +
+  plot_annotation(title = 'How To Choose A Chart', 
+                  subtitle = 'An Intuitive Guide')
+
+# save a cover image
+
+ggsave("intuitive-guide.png", width = 4, height = 4)
+
+```
+
