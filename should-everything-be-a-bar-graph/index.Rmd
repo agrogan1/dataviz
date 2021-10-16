@@ -249,6 +249,8 @@ ggplot(mynewdata, # the data I am using
 class: animated, slideInRight, inverse, center
 # A Last Tweak: Show The Distribution
 
+This example moves beyond a bar graph.
+
 ```{r graph3, include = FALSE, fig.height=4}
 
 ggplot(mynewdata, # the data I am using
