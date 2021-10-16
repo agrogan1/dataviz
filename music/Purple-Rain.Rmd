@@ -17,7 +17,9 @@ mainfont: Helvetica
 
 ```{r setup, include=FALSE}
 
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE)
 
 ```
 
@@ -25,28 +27,48 @@ knitr::opts_chunk$set(echo = TRUE)
 
 library(ggplot2) # beautiful graphs
 
+library(plotly) # animated interactive graphs
+
 library(patchwork) # stitch graphs together
-
-whatIwantedtosee <- c("laughing", "something else", "laughing", "something else")
-
-where <- c("in the purple rain", "in the purple rain", "somewhere else", "somewhere else")
-
-count <- c(100, 0, 0, 0)
-
-mydata <- tibble::tibble(whatIwantedtosee, where, count)
 
 ```
 
 ```{r}
 
-ggplot(mydata, 
-       aes(x = whatIwantedtosee, y = where, size = count, color = count)) +
-  geom_point() +
-  labs(title = "I only wanted to see you ...", x = "what I wanted to see", y = "where") +
-  scale_color_viridis_c(guide = "legend", direction = -1) +
+what_I_wanted_to_see <- c("you laughing", 
+                      "something else", 
+                      "you laughing", 
+                      "something else")
+
+where <- c("in the purple rain", 
+           "in the purple rain", 
+           "somewhere else", 
+           "somewhere else")
+
+count <- c(100, 0, 0, 0)
+
+mydata <- tibble::tibble(what_I_wanted_to_see, where, count)
+
+```
+
+```{r}
+
+p1 <- ggplot(mydata, 
+             aes(x = what_I_wanted_to_see, 
+                 y = where, 
+                 size = count, 
+                 color = count)) +
+  geom_point(alpha = .75) +
+  labs(title = "I only wanted to see ...", 
+       x = "what I wanted to see", 
+       y = "where") +
+  scale_color_viridis_c(guide = "legend", 
+                        direction = -1) +
   scale_size_continuous(range = c(0, 30)) +
   theme_minimal() +
   theme(legend.position = "none")
+
+ggplotly(p1)
 
 ```
 
