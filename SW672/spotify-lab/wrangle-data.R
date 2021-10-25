@@ -13,6 +13,14 @@ spotify_songs$song_date <- as.Date(spotify_songs$track_album_release_date)
 
 save(spotify_songs, file = "./SW672/spotify-lab/spotify.RData")
 
+write.csv(spotify_songs, file = "./SW672/spotify-lab/spotify.csv")
+
+# library(foreign)
+
+# write.dta(spotify_songs, file = "./SW672/spotify-lab/spotify.dta")
+
+haven::write_dta(spotify_songs, "./SW672/spotify-lab/spotify.dta")
+
 # load data
 
 load("./SW672/spotify-lab/spotify.RData")
