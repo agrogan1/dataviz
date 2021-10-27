@@ -141,9 +141,11 @@ ggplot(clients,
 
 # Use of Color
 
-## Color As An Aesthetic Element
+## Color As An *Aesthetic Element*
 
-> e.g. *U.N. Blue*
+> e.g. *U.N. Blue*. 
+
+Here the use of color adds *aesthetic appeal*. We do this by placing color in the `geom`etry.
 
 ```{r}
 
@@ -156,7 +158,9 @@ ggplot(clients,
 
 ## Color As Information
 
-> compare the minimal and maximal philosophies.
+> Compare the minimal and maximal philosophies.
+
+Here, we place color in the `aes`thetic so that color adds additional information, i.e. the gender of respondents.
 
 ```{r}
 
