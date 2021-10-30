@@ -1,12 +1,14 @@
 # To Do's
 
+GIS and GIS data
 projections
+CRS
 shape files
 joining data to shapefiles
+geocoding
 library(maps) base layers
 background layers
 maps with ggplot
 maps with plotly; maps with leaflet
-CRS
 mapping latitude and longitude
 KML?
