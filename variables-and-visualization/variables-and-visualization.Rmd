@@ -14,6 +14,7 @@ output:
     fig_height: 4
     highlight: haddock
     slide_level: 2
+    incremental: true
 subtitle: <mark>What Is The Story You Are Trying To Tell?</mark>
 mainfont: Arial
 ---
@@ -99,6 +100,14 @@ mydata <- data.frame(age, mental_health, group, neighborhood)
 
 ```{css, echo=FALSE}
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
+}
+body { 
+  font-family: 'Montserrat', sans-serif;
+}
 .slide.titlepage {
   font-size: 100%;
   font-weight: bold;
