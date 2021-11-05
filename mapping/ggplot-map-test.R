@@ -17,8 +17,11 @@ pdf("./mapping/mymap.pdf") # open PDF device
 ggplot(buildings) +
   geom_sf(aes(color = Struc_Type,
               fill = Struc_Type)) +
-  scale_color_viridis_d(option = "turbo") +
-  scale_fill_viridis_d(option = "turbo") # nice colors
+  scale_color_brewer(palette = "Set1",
+                     direction = -1) +
+  scale_fill_brewer(palette = "Set1",
+                    direction = -1) + # nice colors
+  theme_minimal()
 
 dev.off() # turn off PDF device
 
