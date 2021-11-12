@@ -11,6 +11,8 @@ library(ggplot2) # beautiful graphs
 
 library(sf) # simple (spatial) features
 
+library(readr) # import csv
+
 library(here) # where am I?
 
 # Set working directory
@@ -29,7 +31,11 @@ trees <- read_sf("./mapping/shapefiles/a2trees/AA_Trees.shp")
 
 parks <- read_sf("./mapping/shapefiles/AA_Parks/AA_Parks.shp")
 
-watersheds <- read_sf("./mapping/shapefiles/watersheds/Watersheds.shp")
+# watersheds <- read_sf("./mapping/shapefiles/watersheds/Watersheds.shp")
+
+# use read_csv to read text file with client data
+
+clients <- read_csv("./mapping/location-data/clients.csv")
 
 # use ggplot to make the map
 
@@ -43,8 +49,12 @@ watersheds <- read_sf("./mapping/shapefiles/watersheds/Watersheds.shp")
 # pdf("./mapping/mymap.pdf") # open PDF device (uncomment on Mac)
 
 ggplot(buildings) +
-  geom_sf(aes(color = Struc_Type, # color helps to see shapes on map
-              fill = Struc_Type)) + # fill helps to see legend
+  # geom_sf(aes(color = Struc_Type, # color helps to see shapes on map
+  #             fill = Struc_Type)) + # fill helps to see legend
+  # geom_point(data = clients, 
+  #            aes(x = longitude,
+  #                y = latitude),
+  #            color = "red") +
   # geom_sf(data = trees, 
   #         size = .1,
   #         color = "darkgreen") +
@@ -61,7 +71,9 @@ ggplot(buildings) +
                                 "grey")) +
   labs(title = "Ann Arbor") +
   theme_minimal() +
-  theme(axis.text = element_text(size = rel(.5)))
+  theme(axis.text = element_text(size = rel(.5))) +
+  xlim(-84, -80) +
+  ylim(41, 43)
 
 # dev.off() # turn off PDF device (uncomment on Mac)
 
