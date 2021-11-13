@@ -46,12 +46,16 @@ clients <- read_csv("./mapping/location-data/clients.csv")
 # and don't see the graph in our RStudio window
 # we have to manually open the PDF to see the created map
 
+# Note, haven't figured out how to add clients w/o goofing up the map
+
+# Apparently, the first layer is important for setting the CRS of the map
+
 # pdf("./mapping/mymap.pdf") # open PDF device (uncomment on Mac)
 
 ggplot(buildings) +
-  # geom_sf(aes(color = Struc_Type, # color helps to see shapes on map
-  #             fill = Struc_Type)) + # fill helps to see legend
-  # geom_point(data = clients, 
+  geom_sf(aes(color = Struc_Type, # color helps to see shapes on map
+               fill = Struc_Type)) + # fill helps to see legend
+  # geom_point(data = clients,
   #            aes(x = longitude,
   #                y = latitude),
   #            color = "red") +
@@ -71,9 +75,8 @@ ggplot(buildings) +
                                 "grey")) +
   labs(title = "Ann Arbor") +
   theme_minimal() +
-  theme(axis.text = element_text(size = rel(.5))) +
-  xlim(-84, -80) +
-  ylim(41, 43)
+  theme(axis.text = element_text(size = rel(.5))) 
+
 
 # dev.off() # turn off PDF device (uncomment on Mac)
 
