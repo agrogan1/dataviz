@@ -37,6 +37,20 @@ parks <- read_sf("./mapping/shapefiles/AA_Parks/AA_Parks.shp")
 
 clients <- read_csv("./mapping/location-data/clients.csv")
 
+# seems to work; what am I doing?
+# converting clients to sf object?
+# 4326 -> WGS1984
+
+# point <- st_as_sf(clients, 
+#                   coords = c("longitude", "latitude"), 
+#                   crs = 4326)
+
+# 4269 -> NAD1983
+
+point <- st_as_sf(clients, 
+                  coords = c("longitude", "latitude"), 
+                  crs = 4269)
+
 # use ggplot to make the map
 
 # NB RE Macs: the plotting device on Macs is actually pretty slow
@@ -55,6 +69,7 @@ clients <- read_csv("./mapping/location-data/clients.csv")
 ggplot(buildings) +
   geom_sf(aes(color = Struc_Type, # color helps to see shapes on map
                fill = Struc_Type)) + # fill helps to see legend
+  geom_sf(data = point) +
   # geom_point(data = clients,
   #            aes(x = longitude,
   #                y = latitude),
