@@ -2,6 +2,8 @@
 
 library(english)
 
+library(stringr)
+
 library(ggplot2)
 
 N <- 100 # sample size
@@ -12,11 +14,19 @@ N <- 100 # sample size
 
 id <- seq(1, N)
 
+gender <- sample(c("male",
+                   "female",
+                   "other identity"), 
+                 N, 
+                 replace = TRUE)
+
 streetnumber <- sample(1:1000, N, replace = TRUE) # streetnumber
 
 streetname <- sample(c(ordinal(1:25), LETTERS), # what to sample
                      N, # how many times
                      replace = TRUE) # sample w replacement
+
+streetname <- str_to_title(streetname, locale = "en")
 
 street_or_avenue <- rbinom(N, 1, .5)
 
@@ -38,6 +48,7 @@ mental_health <- 90 +
   45 * (abs(latitude - 42.25) + abs(longitude + 83.75))
 
 spatialdata <- data.frame(id, 
+                          gender,
                           streetnumber, 
                           streetname,
                           street_or_avenue,
