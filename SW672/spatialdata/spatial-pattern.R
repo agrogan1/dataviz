@@ -55,7 +55,7 @@ ggplot(spatialdata,
   geom_point() +
   scale_color_viridis_c()
 
-write.csv(spatialdata, "spatialdata.csv")
+write.csv(spatialdata, "./SW672/spatialdata/spatialdata.csv")
 
 
 
