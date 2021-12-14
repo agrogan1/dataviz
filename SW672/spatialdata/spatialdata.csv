@@ -1,0 +1,101 @@
+"","id","gender","streetnumber","streetname","street_or_avenue","streetaddress","city","state","latitude","longitude","mental_health"
+"1",1,"other identity",874,"Eighteenth","Street","874 Eighteenth Street","Ann Arbor","Michigan",42.4214996659773,-83.6583541848369,101.841546651318
+"2",2,"other identity",972,"J","Street","972 J Street","Ann Arbor","Michigan",42.011583948131,-83.6744605382273,104.127998113878
+"3",3,"female",10,"K","Street","10 K Street","Ann Arbor","Michigan",42.1108627953222,-83.6797996205467,99.4201912858998
+"4",4,"female",985,"L","Street","985 L Street","Ann Arbor","Michigan",42.2696256886837,-83.6780180003096,94.1223459768347
+"5",5,"male",724,"P","Street","724 P Street","Ann Arbor","Michigan",42.3678649951118,-83.8090706058912,97.9621020451341
+"6",6,"other identity",95,"Q","Street","95 Q Street","Ann Arbor","Michigan",42.3701363554234,-83.9612177518461,104.910934827131
+"7",7,"female",599,"G","Avenue","599 G Avenue","Ann Arbor","Michigan",42.20199780442,-83.645419310484,96.8662298293214
+"8",8,"female",170,"Twenty-First","Avenue","170 Twenty-First Avenue","Ann Arbor","Michigan",42.2780750570648,-83.7719853791097,92.2527196278517
+"9",9,"male",966,"Third","Avenue","966 Third Avenue","Ann Arbor","Michigan",42.1902958006958,-83.7279391111909,93.6794289650979
+"10",10,"other identity",560,"N","Street","560 N Street","Ann Arbor","Michigan",42.4721551188117,-83.6412439791493,104.891001284807
+"11",11,"male",210,"Fifth","Avenue","210 Fifth Avenue","Ann Arbor","Michigan",42.3670664007563,-83.7889346372457,97.0200467100901
+"12",12,"female",506,"Fourteenth","Avenue","506 Fourteenth Avenue","Ann Arbor","Michigan",42.1719745222929,-83.9129027961331,100.841772322809
+"13",13,"female",333,"S","Avenue","333 S Avenue","Ann Arbor","Michigan",42.1965852923739,-83.8491498283028,96.8654041168003
+"14",14,"female",373,"E","Avenue","373 E Avenue","Ann Arbor","Michigan",42.1535005074675,-83.6370404501037,99.425656909292
+"15",15,"female",945,"Y","Street","945 Y Street","Ann Arbor","Michigan",42.1918233496342,-83.6051697762826,99.1353093337456
+"16",16,"female",335,"N","Street","335 N Street","Ann Arbor","Michigan",42.2802819562215,-83.7577496366289,91.7114216782681
+"17",17,"female",505,"P","Street","505 P Street","Ann Arbor","Michigan",42.4335147864402,-83.7584481939666,98.6383341183069
+"18",18,"female",890,"Nineteenth","Street","890 Nineteenth Street","Ann Arbor","Michigan",42.38499332978,-83.6976706349078,98.4295212692487
+"19",19,"male",317,"Fifth","Avenue","317 Fifth Avenue","Ann Arbor","Michigan",42.1357788509263,-83.7324712602869,95.9287449954034
+"20",20,"other identity",874,"J","Street","874 J Street","Ann Arbor","Michigan",42.1527433894489,-83.8004226735988,96.6455677867453
+"21",21,"other identity",775,"Z","Avenue","775 Z Avenue","Ann Arbor","Michigan",42.287437715756,-83.6883550942571,94.4587179674512
+"22",22,"other identity",18,"Thirteenth","Avenue","18 Thirteenth Avenue","Ann Arbor","Michigan",42.4640970359374,-83.7623223814373,100.188873781862
+"23",23,"female",182,"B","Street","182 B Street","Ann Arbor","Michigan",42.192050150768,-83.7548436035669,92.8257053759489
+"24",24,"other identity",767,"Fourth","Avenue","767 Fourth Avenue","Ann Arbor","Michigan",42.3577233075215,-83.8524033549908,99.4556998130545
+"25",25,"female",349,"Thirteenth","Street","349 Thirteenth Street","Ann Arbor","Michigan",42.2512697343016,-83.5770592117793,97.839473513502
+"26",26,"female",693,"Q","Street","693 Q Street","Ann Arbor","Michigan",42.3742365993913,-83.7392433441772,96.0746964846354
+"27",27,"male",371,"S","Street","371 S Street","Ann Arbor","Michigan",42.1049354531481,-83.6508033015243,100.99175603974
+"28",28,"other identity",13,"Second","Avenue","13 Second Avenue","Ann Arbor","Michigan",42.2938013393685,-83.8407996074811,96.0570426082327
+"29",29,"other identity",377,"Z","Street","377 Z Street","Ann Arbor","Michigan",42.7225030133864,-83.7963201855844,113.347043953686
+"30",30,"other identity",515,"Twelfth","Avenue","515 Twelfth Avenue","Ann Arbor","Michigan",42.1764533952631,-83.7658594156328,94.0232709166356
+"31",31,"other identity",759,"Nineteenth","Street","759 Nineteenth Street","Ann Arbor","Michigan",42.1276647850449,-83.8928484755506,101.933266072753
+"32",32,"female",477,"Fifth","Street","477 Fifth Street","Ann Arbor","Michigan",42.0408356227087,-83.8184666096216,102.493394411081
+"33",33,"other identity",688,"A","Avenue","688 A Avenue","Ann Arbor","Michigan",42.138809532242,-83.7063547220374,96.9676085574284
+"34",34,"female",255,"S","Avenue","255 S Avenue","Ann Arbor","Michigan",42.2100085397838,-83.7904363305623,93.6192505850309
+"35",35,"other identity",980,"Z","Street","980 Z Street","Ann Arbor","Michigan",42.1440198382791,-83.8267335240443,98.2221158594359
+"36",36,"male",275,"Eighteenth","Avenue","275 Eighteenth Avenue","Ann Arbor","Michigan",42.1717491734128,-83.702053450091,95.67888194233
+"37",37,"female",65,"Seventh","Avenue","65 Seventh Avenue","Ann Arbor","Michigan",42.3924410290087,-83.6753384690714,99.7696151971789
+"38",38,"female",914,"L","Street","914 L Street","Ann Arbor","Michigan",42.3272068035182,-83.7989700845753,95.6779599642067
+"39",39,"male",182,"J","Street","182 J Street","Ann Arbor","Michigan",42.3270246668909,-83.8518461224543,98.0491855205348
+"40",40,"female",102,"X","Street","102 X Street","Ann Arbor","Michigan",42.1108533677713,-83.7872658686789,97.9385625408405
+"41",41,"male",789,"D","Street","789 D Street","Ann Arbor","Michigan",42.2280750460904,-83.7432979403568,91.2882156098776
+"42",42,"other identity",525,"D","Avenue","525 D Avenue","Ann Arbor","Michigan",42.3958199251635,-83.7710686337956,97.5099851531621
+"43",43,"male",137,"Fourteenth","Avenue","137 Fourteenth Avenue","Ann Arbor","Michigan",42.0681989849734,-83.5799762442253,105.832114686058
+"44",44,"other identity",996,"Fifth","Street","996 Fifth Street","Ann Arbor","Michigan",42.0449611204074,-83.8978151840961,105.878432865993
+"45",45,"female",748,"A","Street","748 A Street","Ann Arbor","Michigan",42.4641664284533,-83.9418558991332,108.271004741394
+"46",46,"male",748,"Seventh","Street","748 Seventh Street","Ann Arbor","Michigan",42.3287896594916,-83.8852800896859,99.6331387129877
+"47",47,"other identity",356,"K","Avenue","356 K Avenue","Ann Arbor","Michigan",42.1669615802484,-83.9226580454892,101.506340935837
+"48",48,"other identity",376,"Twelfth","Street","376 Twelfth Street","Ann Arbor","Michigan",42.3878563493874,-83.9176294551355,103.746861203531
+"49",49,"male",108,"Third","Street","108 Third Street","Ann Arbor","Michigan",42.2894091524667,-83.7699532088449,92.6713062590213
+"50",50,"female",494,"Seventh","Street","494 Seventh Street","Ann Arbor","Michigan",42.3166797965714,-83.7539737266207,93.1794085436454
+"51",51,"other identity",294,"Twenty-Fourth","Street","294 Twenty-Fourth Street","Ann Arbor","Michigan",42.3075022649952,-83.8586609805854,97.4773460511244
+"52",52,"male",836,"Tenth","Avenue","836 Tenth Avenue","Ann Arbor","Michigan",42.2147061794898,-83.772712886999,92.6103018379146
+"53",53,"other identity",703,"Eighteenth","Street","703 Eighteenth Street","Ann Arbor","Michigan",42.249252822308,-83.8427722274029,94.2083732292719
+"54",54,"female",453,"Z","Avenue","453 Z Avenue","Ann Arbor","Michigan",42.1061350467874,-83.6598868834879,100.529013137614
+"55",55,"other identity",13,"Twenty-First","Avenue","13 Twenty-First Avenue","Ann Arbor","Michigan",42.2433172677832,-83.7276786296389,91.3051846160026
+"56",56,"female",801,"Q","Avenue","801 Q Avenue","Ann Arbor","Michigan",42.0923526974205,-83.6812172510866,100.189352317183
+"57",57,"other identity",825,"K","Street","825 K Street","Ann Arbor","Michigan",42.3178595908299,-83.6311227706698,98.4031569072048
+"58",58,"male",504,"Sixth","Avenue","504 Sixth Avenue","Ann Arbor","Michigan",42.2582438928765,-83.7056968550367,92.3646167027911
+"59",59,"male",750,"Twentieth","Street","750 Twentieth Street","Ann Arbor","Michigan",42.1629200527726,-83.8299674136169,97.5171312379929
+"60",60,"male",888,"Twelfth","Avenue","888 Twelfth Avenue","Ann Arbor","Michigan",42.4377230976448,-83.7776570165156,99.6921051372162
+"61",61,"male",745,"V","Avenue","745 V Avenue","Ann Arbor","Michigan",42.2680817774334,-83.689884878448,93.518860454347
+"62",62,"other identity",997,"Twentieth","Avenue","997 Twentieth Avenue","Ann Arbor","Michigan",42.2386291962095,-83.7601764883763,90.9696281475044
+"63",63,"other identity",27,"Twenty-Fourth","Avenue","27 Twenty-Fourth Avenue","Ann Arbor","Michigan",42.2925217652361,-83.7906642252729,93.7433695729054
+"64",64,"other identity",804,"Twentieth","Avenue","804 Twentieth Avenue","Ann Arbor","Michigan",42.1110536356993,-83.6838657144209,99.2286292445877
+"65",65,"female",960,"Twenty-Second","Avenue","960 Twenty-Second Avenue","Ann Arbor","Michigan",42.1141425932967,-83.8695513790484,101.493395358829
+"66",66,"other identity",972,"O","Avenue","972 O Avenue","Ann Arbor","Michigan",42.4439991032533,-83.7248287337892,99.8626666258884
+"67",67,"other identity",203,"K","Avenue","203 K Avenue","Ann Arbor","Michigan",42.1976475335189,-83.8609633120616,97.3492100344207
+"68",68,"female",168,"K","Avenue","168 K Avenue","Ann Arbor","Michigan",42.4024408015745,-83.6433651787748,101.658403025986
+"69",69,"other identity",695,"P","Street","695 P Street","Ann Arbor","Michigan",42.194696289873,-83.6258621280864,98.0748711918281
+"70",70,"male",467,"D","Street","467 D Street","Ann Arbor","Michigan",42.2587556130407,-83.8548420427887,95.1118945123224
+"71",71,"female",957,"Fifteenth","Street","957 Fifteenth Street","Ann Arbor","Michigan",42.1574747888013,-83.7446988640395,94.4021856221627
+"72",72,"other identity",902,"Seventeenth","Avenue","902 Seventeenth Avenue","Ann Arbor","Michigan",42.2221635458729,-83.7356825556232,91.8969254326738
+"73",73,"female",981,"Twelfth","Street","981 Twelfth Street","Ann Arbor","Michigan",42.1775502689954,-83.8021389709906,95.6064915897853
+"74",74,"male",224,"First","Avenue","224 First Avenue","Ann Arbor","Michigan",42.3809833175645,-83.9247184857281,103.756581148166
+"75",75,"other identity",697,"N","Avenue","697 N Avenue","Ann Arbor","Michigan",42.2275461326143,-83.7005768321482,93.2344665856852
+"76",76,"other identity",760,"B","Street","760 B Street","Ann Arbor","Michigan",42.2174132444035,-83.623309543919,97.1674745254865
+"77",77,"female",946,"G","Street","946 G Street","Ann Arbor","Michigan",42.3605486376116,-83.7505547427797,94.9996521176068
+"78",78,"female",396,"J","Avenue","396 J Avenue","Ann Arbor","Michigan",42.1679113582405,-83.7482829128629,93.7712578003489
+"79",79,"male",86,"Z","Avenue","86 Z Avenue","Ann Arbor","Michigan",42.1366398663514,-83.836687878557,99.0021605492542
+"80",80,"other identity",9,"Z","Street","9 Z Street","Ann Arbor","Michigan",42.3153691607563,-83.8051580799463,95.4237258316192
+"81",81,"male",822,"Twelfth","Avenue","822 Twelfth Avenue","Ann Arbor","Michigan",42.3913722788687,-83.6904739720728,99.0404238058161
+"82",82,"other identity",171,"Tenth","Street","171 Tenth Street","Ann Arbor","Michigan",42.2646496523389,-83.5816505329347,98.2349603731871
+"83",83,"other identity",714,"Y","Avenue","714 Y Avenue","Ann Arbor","Michigan",42.2121873585102,-83.6833047672258,94.702854341881
+"84",84,"female",529,"Sixteenth","Street","529 Sixteenth Street","Ann Arbor","Michigan",42.327739724677,-83.7770457744122,94.7153474590138
+"85",85,"other identity",462,"Thirteenth","Avenue","462 Thirteenth Avenue","Ann Arbor","Michigan",42.2287709145415,-83.5769410436664,98.7429618806429
+"86",86,"male",778,"Fifteenth","Street","778 Fifteenth Street","Ann Arbor","Michigan",42.1678950478014,-83.7121670879751,95.3972038900541
+"87",87,"male",958,"T","Street","958 T Street","Ann Arbor","Michigan",42.2290845619089,-83.7468340072369,91.0836643884385
+"88",88,"male",4,"E","Avenue","4 E Avenue","Ann Arbor","Michigan",42.2763152750807,-83.712666001352,92.8642173177899
+"89",89,"male",512,"Fourth","Street","512 Fourth Street","Ann Arbor","Michigan",42.314026193513,-83.5808622680007,100.492376648056
+"90",90,"other identity",963,"E","Street","963 E Street","Ann Arbor","Michigan",42.1256347964732,-83.9730453965603,105.63347700392
+"91",91,"female",99,"H","Street","99 H Street","Ann Arbor","Michigan",42.3166755199186,-83.8754601247775,98.6461040113249
+"92",92,"male",195,"T","Avenue","195 T Avenue","Ann Arbor","Michigan",42.1441901419053,-83.6531182164174,99.1211238754778
+"93",93,"male",968,"Seventh","Avenue","968 Seventh Avenue","Ann Arbor","Michigan",42.1581088784292,-83.8023061989294,96.4888794225105
+"94",94,"other identity",863,"Seventh","Avenue","863 Seventh Avenue","Ann Arbor","Michigan",42.325104448799,-84.0007667586964,104.664204337292
+"95",95,"male",329,"J","Avenue","329 J Avenue","Ann Arbor","Michigan",42.2994399240961,-83.6709175999281,95.7835045875633
+"96",96,"other identity",780,"T","Avenue","780 T Avenue","Ann Arbor","Michigan",42.1794506550961,-83.8323490356583,96.8804271252986
+"97",97,"male",674,"First","Avenue","674 First Avenue","Ann Arbor","Michigan",42.4095463063745,-83.9259938804468,105.099308406957
+"98",98,"female",397,"D","Avenue","397 D Avenue","Ann Arbor","Michigan",42.1801362167487,-83.9139777908343,100.522870833853
+"99",99,"female",221,"H","Street","221 H Street","Ann Arbor","Michigan",42.1987895089287,-83.6899985556382,95.0045370944926
+"100",100,"other identity",288,"E","Avenue","288 E Avenue","Ann Arbor","Michigan",42.5072896491227,-83.8578729019742,106.43231479936

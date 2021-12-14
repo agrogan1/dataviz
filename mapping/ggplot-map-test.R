@@ -9,6 +9,8 @@
 
 library(ggplot2) # beautiful graphs
 
+library(dplyr) # data wrangling
+
 library(sf) # simple (spatial) features
 
 library(readr) # import csv
@@ -49,7 +51,11 @@ clients <- read_csv("./mapping/location-data/clients.csv")
 
 point <- st_as_sf(clients, 
                   coords = c("longitude", "latitude"), 
-                  crs = 4269)
+                  crs = 4269) 
+
+# set default CRS
+
+# default_crs = sf::st_crs(4326)
 
 # use ggplot to make the map
 
@@ -69,7 +75,7 @@ point <- st_as_sf(clients,
 ggplot(buildings) +
   geom_sf(aes(color = Struc_Type, # color helps to see shapes on map
                fill = Struc_Type)) + # fill helps to see legend
-  geom_sf(data = point) +
+  # geom_sf(data = point, color = "red") +
   # geom_point(data = clients,
   #            aes(x = longitude,
   #                y = latitude),
@@ -91,7 +97,6 @@ ggplot(buildings) +
   labs(title = "Ann Arbor") +
   theme_minimal() +
   theme(axis.text = element_text(size = rel(.5))) 
-
 
 # dev.off() # turn off PDF device (uncomment on Mac)
 
