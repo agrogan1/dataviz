@@ -16,6 +16,6 @@
 
 [Dashboard Demo](./dashboard/dashboard.html)
 
-[Mapping in R](./mapping/ggplot-map-test.pdf)
+[Mapping in R](./mapping/)
 
 Created by [Andy Grogan-Kaylor](https://agrogan1.github.io/)
