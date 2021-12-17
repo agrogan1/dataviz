@@ -1,15 +1,16 @@
 # Mapping (GIS and GIS Data)
 
-## Concepts
+## Geographical Concepts
 
 * latitude and longitude
 * map projections
 * CRS
+* symbology
 
 ## GIS Data
 
 * shape files
-    - joining data to shapefiles
+    - joining external data to shapefiles
 * text files w/ latitude and longitude
 * addresses (*geocoding*)
 * base layers
@@ -21,6 +22,9 @@
 * `ggplot` 
 * `plotly`
 * `leaflet`
+* `sf`
+* `tidycensus`
+* `mapboxapi`
 
 ## More Advanced Concepts
 
