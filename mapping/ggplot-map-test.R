@@ -27,11 +27,15 @@ setwd(here()) # set working directory so pathnames below work correctly
 # use read_sf to open shapefiles
 # getting the directory and filename right is important
 
+city_boundary <- read_sf("./mapping/shapefiles/AA_City_Boundary/AA_City_Boundary.shp")
+
 buildings <- read_sf("./mapping/shapefiles/AA_Building_Footprints/AA_Building_Footprints.shp")
 
 trees <- read_sf("./mapping/shapefiles/a2trees/AA_Trees.shp")
 
 parks <- read_sf("./mapping/shapefiles/AA_Parks/AA_Parks.shp")
+
+university <- read_sf("./mapping/shapefiles/AA_University/AA_University.shp")
 
 # watersheds <- read_sf("./mapping/shapefiles/watersheds/Watersheds.shp")
 
@@ -52,11 +56,11 @@ clients <- clients %>%
 
 # 4326 -> WGS1984
 
-# point <- st_as_sf(clients, 
-#                   coords = c("longitude", "latitude"), 
+# point <- st_as_sf(clients,
+#                   coords = c("longitude", "latitude"),
 #                   crs = 4326)
 
-# 4269 -> NAD1983
+# 4269 -> NAD1983 (A2 is NAD1983)
 
 point <- st_as_sf(clients, 
                   coords = c("longitude", "latitude"), 
@@ -81,29 +85,20 @@ point <- st_as_sf(clients,
 
 # pdf("./mapping/ggplot-map-test.pdf") # open PDF device (uncomment on Mac)
 
-ggplot(buildings) +
-  geom_sf(aes(color = Struc_Type, # color helps to see shapes on map
-               fill = Struc_Type)) + # fill helps to see legend
-  geom_sf(data = point, color = "purple", size = 1) +
-  # geom_point(data = clients,
-  #            aes(x = longitude,
-  #                y = latitude),
-  #            color = "red") +
+ggplot(city_boundary) +
+  geom_sf(color = "red") +
+  # geom_sf(data = buildings,
+  #         aes(color = Struc_Type, # color helps to see shapes on map
+  #              fill = Struc_Type)) + # fill helps to see legend
+  geom_sf(data = point, aes(color = program), size = 3) +
+  geom_sf(data = university, fill = "blue") + 
   # geom_sf(data = trees, 
   #         size = .1,
   #         color = "darkgreen") +
-  # geom_sf(data = parks, fill = "darkgreen") +
-  scale_color_manual(name = "Structure Type", 
-                     values = c("red",
-                                "orange",
-                                "blue",
-                                "grey")) +
-  scale_fill_manual(name = "Structure Type", 
-                    values = c("red",
-                                "orange",
-                                "blue",
-                                "grey")) +
+  geom_sf(data = parks, fill = "darkgreen") +
   labs(title = "Ann Arbor") +
+  scale_color_viridis_d(option = "turbo") +
+  scale_fill_viridis_d(option = "turbo") +
   theme_minimal() +
   theme(axis.text = element_text(size = rel(.5))) 
 
