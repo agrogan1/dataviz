@@ -39,8 +39,17 @@ parks <- read_sf("./mapping/shapefiles/AA_Parks/AA_Parks.shp")
 
 clients <- read_csv("./mapping/location-data/clients.csv")
 
+# only clients in Ann Arbor area
+
+clients <- clients %>% 
+  filter(latitude <= 42.35 &
+           latitude >= 42.2 &
+           longitude >= -83.8 &
+           longitude <= -83.65)
+
 # seems to work; what am I doing?
-# converting clients to sf object?
+# converting clients to sf object while denoting CRS?
+
 # 4326 -> WGS1984
 
 # point <- st_as_sf(clients, 
@@ -70,12 +79,12 @@ point <- st_as_sf(clients,
 
 # Apparently, the first layer is important for setting the CRS of the map
 
-# pdf("./mapping/mymap.pdf") # open PDF device (uncomment on Mac)
+# pdf("./mapping/ggplot-map-test.pdf") # open PDF device (uncomment on Mac)
 
 ggplot(buildings) +
   geom_sf(aes(color = Struc_Type, # color helps to see shapes on map
                fill = Struc_Type)) + # fill helps to see legend
-  # geom_sf(data = point, color = "red") +
+  geom_sf(data = point, color = "purple", size = 1) +
   # geom_point(data = clients,
   #            aes(x = longitude,
   #                y = latitude),
@@ -83,7 +92,7 @@ ggplot(buildings) +
   # geom_sf(data = trees, 
   #         size = .1,
   #         color = "darkgreen") +
-  geom_sf(data = parks, fill = "darkgreen") +
+  # geom_sf(data = parks, fill = "darkgreen") +
   scale_color_manual(name = "Structure Type", 
                      values = c("red",
                                 "orange",
