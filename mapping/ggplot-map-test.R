@@ -96,13 +96,22 @@ ggplot(city_boundary) +
   # geom_sf(data = trees, 
   #         size = .1,
   #         color = "darkgreen") +
-  labs(title = "Ann Arbor") +
+  labs(title = "Ann Arbor",
+       subtitle = "Locations of Clients",
+       caption = "Simulated Social Service Agency Data") +
   scale_color_viridis_d() +
   scale_fill_viridis_d() +
   theme_minimal() +
-  theme(axis.text = element_text(size = rel(.5))) 
+  theme(plot.title = element_text(size = rel(2)), 
+        axis.text = element_text(size = rel(.5))) 
 
-ggsave("./mapping/ggplot-map-test.png")
+ggsave("./mapping/social-service-agency.png", 
+       height = 11, 
+       width = 8.5)
+
+ggsave("./mapping/social-service-agency.pdf", 
+       height = 11, 
+       width = 8.5)
 
 # dev.off() # turn off PDF device (uncomment on Mac)
 
