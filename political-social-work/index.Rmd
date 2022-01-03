@@ -25,7 +25,7 @@ knitr::opts_chunk$set(echo = FALSE,
                       message = FALSE,
                       fig.margin = TRUE)
 
-library(tint)
+# library(tint)
 
 library(tufte)
 
@@ -108,7 +108,7 @@ The data that we are using come from the **W**orld **D**evelopment **I**ndicator
 
 ## Visualization Possibilities
 
-[How To Choose A Chart](http://www-personal.umich.edu/~agrogan/how_to_choose_a_chart/how_to_choose_a_chart_a_visual_guide.pdf)
+[How To Choose A Chart](https://agrogan1.github.io/dataviz/how-to-choose-a-chart/how-to-choose-a-chart-a-visual-guide.pdf)
 
 ![](how-to-choose-a-chart-a-visual-guide.png){ width=50% } 
 
@@ -314,7 +314,7 @@ p2
 
 [agrogan@umich.edu](agrogan@umich.edu)
 
-[www.umich.edu/~agrogan](www.umich.edu/~agrogan)
+[https://agrogan1.github.io/](https://agrogan1.github.io/)
 
 ## References
 
