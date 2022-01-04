@@ -17,12 +17,7 @@ library(readr) # import csv
 
 library(here) # where am I?
 
-# Set working directory
-
-setwd(here()) # set working directory so pathnames below work correctly
-
-# here() only works with R projects
-# if you are not using an R project you can just use setwd("...")
+setwd(here()) # set the working directory
 
 # use read_sf to open shapefiles
 # getting the directory and filename right is important
@@ -51,8 +46,7 @@ clients <- clients %>%
            longitude >= -83.8 &
            longitude <= -83.65)
 
-# seems to work; what am I doing?
-# converting clients to sf object while denoting CRS?
+# convert clients to sf object while denoting CRS
 
 # 4326 -> WGS1984
 
@@ -65,10 +59,6 @@ clients <- clients %>%
 point <- st_as_sf(clients, 
                   coords = c("longitude", "latitude"), 
                   crs = 4269) 
-
-# set default CRS
-
-# default_crs = sf::st_crs(4326)
 
 # use ggplot to make the map
 
@@ -86,21 +76,42 @@ point <- st_as_sf(clients,
 # pdf("./mapping/ggplot-map-test.pdf") # open PDF device (uncomment on Mac)
 
 ggplot(city_boundary) +
-  geom_sf(color = "red") +
+  geom_sf(color = "red", alpha = .5) +
   # geom_sf(data = buildings,
   #         aes(color = Struc_Type, # color helps to see shapes on map
   #              fill = Struc_Type)) + # fill helps to see legend
-  geom_sf(data = point, aes(color = program), size = 3) +
-  geom_sf(data = university, fill = "blue") + 
+  geom_sf(data = university, 
+          fill = "blue", 
+          alpha = .5) + 
+  geom_sf(data = parks, 
+          fill = "darkgreen", 
+          alpha = .5) +
+  geom_sf(data = point, 
+          aes(color = program), 
+          size = 3, 
+          alpha = 1.0) +
+  geom_sf(data = point, 
+          size = 3, 
+          pch = 21) + # 21 is outlines
   # geom_sf(data = trees, 
   #         size = .1,
   #         color = "darkgreen") +
-  geom_sf(data = parks, fill = "darkgreen") +
-  labs(title = "Ann Arbor") +
-  scale_color_viridis_d(option = "turbo") +
-  scale_fill_viridis_d(option = "turbo") +
+  labs(title = "Ann Arbor",
+       subtitle = "Locations of Clients",
+       caption = "Simulated Social Service Agency Data") +
+  scale_color_viridis_d() +
+  scale_fill_viridis_d() +
   theme_minimal() +
-  theme(axis.text = element_text(size = rel(.5))) 
+  theme(plot.title = element_text(size = rel(2)), 
+        axis.text = element_text(size = rel(.5))) 
+
+ggsave("./mapping/social-service-agency.png", 
+       height = 11, 
+       width = 8.5)
+
+ggsave("./mapping/social-service-agency.pdf", 
+       height = 11, 
+       width = 8.5)
 
 # dev.off() # turn off PDF device (uncomment on Mac)
 
