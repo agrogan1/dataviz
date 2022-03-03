@@ -10,6 +10,7 @@ output:
     css: ../UMslidy.css
     fig_height: 4
     fig_retina: 3
+    slide_level: 2
 ---
 
 ```{r setup, include=FALSE}
@@ -26,7 +27,7 @@ This is a slide deck. You may need to **scroll down** to see everything on longe
 
 These are *simulated* data designed to be similar to the data that might come from a social service agency.
 
-The data contain the following (*simulated*) variables:  "ID", "age", "gender", "race_ethnicity", "family_income", "program", "mental_health_T1", "mental_health_T2", "latitude", "longitude".
+The data contain the following (*simulated*) variables:  `ID`, `age`, `gender`, `race_ethnicity`, `family_income`, `program`, `mental_health_T1`, `mental_health_T2`, `latitude`, `longitude`.
 
 The *mental health* variables are scaled to have an average of 100. Lower numbers indicate lower mental health, while higher numbers indicate higher mental health.
 
@@ -88,7 +89,7 @@ ggplot(clients,
 
 ```
 
-# Alternate Geometries
+# Alternate Geometries {#majorsection}
 
 ## Points
 
@@ -139,7 +140,7 @@ ggplot(clients,
 ```
 
 
-# Use of Color
+# Use of Color {#majorsection}
 
 ## Color As An *Aesthetic Element*
 
@@ -187,7 +188,7 @@ ggplot(clients,
 
 ```
 
-# Coordinate Systems
+# Coordinate Systems {#majorsection}
 
 ## Flipping The Coordinates
 
@@ -239,3 +240,5 @@ ggplot(clients,
                              color = "darkblue"))
 
 ```
+
+# Questions? {#majorsection}
