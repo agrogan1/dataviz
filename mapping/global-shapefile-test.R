@@ -8,13 +8,19 @@ library(countrycode) # manipulate country names and codes
 
 library(dplyr) # data wrangling
 
+library(sf) # simple features
+
 data(wrld_simpl) # world simple data
 
-global_data <- st_as_sf(wrld_simpl) # make an sf dataset
+global_data <- st_as_sf(wrld_simpl) %>% # make an sf dataset
+  select(-POP2005) # remove POP2005
+  
 
 # write sf to shapefile
 
-st_write(global_data, "mapping/shapefiles/wrld_simpl/wrld_simpl.shp")
+st_write(global_data, 
+         "mapping/shapefiles/wrld_simpl/wrld_simpl.shp",
+         append = FALSE) # replace; don't append
 
 # get MICS countries
 
@@ -52,9 +58,15 @@ country_iso <- countrycode(country,
 MICS <- global_data %>% 
   filter(ISO3 %in% country_iso)
 
-st_write(MICS, "mapping/shapefiles/MICS/MICS.shp")
+st_write(MICS, 
+         "mapping/shapefiles/MICS/MICS.shp",
+         append = FALSE) # replace; don't append
 
-
+zip(zipfile = "mapping/shapefiles/MICS/MICS.zip",
+    files = c("mapping/shapefiles/MICS/MICS.dbf",
+              "mapping/shapefiles/MICS/MICS.prj",
+              "mapping/shapefiles/MICS/MICS.shp",
+              "mapping/shapefiles/MICS/MICS.shx"))
 
 
 
