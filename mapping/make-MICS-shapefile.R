@@ -1,4 +1,4 @@
-# testing out writing a global shapefile
+# creating a shapefile of MICS countries
 
 library(maps) # maps
 
