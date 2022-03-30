@@ -32,6 +32,11 @@ parks <- read_sf("./mapping/shapefiles/AA_Parks/AA_Parks.shp")
 
 university <- read_sf("./mapping/shapefiles/AA_University/AA_University.shp")
 
+WashtenawRoads <- read_sf("./mapping/shapefiles/Roads/RoadCenterlines.shp")
+
+AnnArborRoads <- st_crop(WashtenawRoads, 
+                         city_boundary) # crop to only get A2 roads
+
 # watersheds <- read_sf("./mapping/shapefiles/watersheds/Watersheds.shp")
 
 # use read_csv to read text file with client data
@@ -76,22 +81,23 @@ point <- st_as_sf(clients,
 # pdf("./mapping/ggplot-map-test.pdf") # open PDF device (uncomment on Mac)
 
 ggplot(city_boundary) +
-  geom_sf(color = "red", alpha = .5) +
   # geom_sf(data = buildings,
-  #         aes(color = Struc_Type, # color helps to see shapes on map
-  #              fill = Struc_Type)) + # fill helps to see legend
+  #         fill = "lightgrey") +
+  geom_sf(data = AnnArborRoads, 
+          color = "lightgrey") +
+  geom_sf(color = "red", alpha = .5) +
   geom_sf(data = university, 
           fill = "blue", 
-          alpha = .5) + 
+          alpha = .25) + 
   geom_sf(data = parks, 
           fill = "darkgreen", 
-          alpha = .5) +
+          alpha = .25) +
   geom_sf(data = point, 
           aes(color = program), 
-          size = 3, 
+          size = 5, 
           alpha = 1.0) +
   geom_sf(data = point, 
-          size = 3, 
+          size = 5, 
           pch = 21) + # 21 is outlines
   # geom_sf(data = trees, 
   #         size = .1,
