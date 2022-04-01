@@ -1,6 +1,7 @@
 #' ---
 #' title: "ggplot map test"
 #' output: pdf_document
+#' author: Andy Grogan-Kaylor
 #' ---
 
 # Demo of making maps with R
