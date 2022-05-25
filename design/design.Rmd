@@ -7,15 +7,6 @@ output:
     highlight: haddock
     css: UM.css
     split_by: none
-  tint::tintPdf:
-    highlight: haddock
-    latex_engine: xelatex
-    number_sections: yes
-    toc: yes
-  tufte::tufte_handout:
-    highlight: haddock
-    number_sections: yes
-    toc: yes
   pdf_document: 
     fig_height: 2
     highlight: haddock
@@ -40,6 +31,8 @@ library(ggplot2)
 library(dplyr)
 
 library(cowplot)
+
+library(plotly)
 
 ```
 
@@ -75,25 +68,19 @@ plot(hue,
      pch=19,
      main = "Draft Color Model Plot")
 
-```
-
-```{r, eval=FALSE, echo=FALSE}
-
-library(rgl) # 3D graphics
-
-library(knitr) # explicit call to knitr
-
-knit_hooks$set(webgl = hook_webgl) # "webhook"
-
-plot3d(x = hue,
-       y = saturation,
-       z = value,
-       col = color,
-       size = 10,
-       main = "Draft Interactive Color Model",
-       phi = 90 + 45)
 
 ```
+
+```{r, eval=FALSE}
+
+plot_ly(x = ~hue, 
+        y = ~value, 
+        z = ~saturation, 
+        color = ~color)
+         
+```
+
+
 
 > R can use many different color models, but often uses a #**R**ed, **G**reen, **B**lue model with the amount of each color indicated in Hexadecimal, 00 to FF, notation.
 

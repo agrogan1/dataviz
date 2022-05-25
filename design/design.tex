@@ -4,10 +4,10 @@
 %
 \documentclass[
 ]{article}
+\usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{amssymb,amsmath}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
@@ -81,7 +81,7 @@
 \newcommand{\VariableTok}[1]{#1}
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{\textbf{#1}}}
-\usepackage{graphicx,grffile}
+\usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -98,10 +98,36 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
 
 \title{Design}
 \author{Andrew Grogan-Kaylor}
-\date{2020-11-10}
+\date{2022-05-25}
 
 \begin{document}
 \maketitle
@@ -132,6 +158,15 @@ that I am learning about design.
 
 \includegraphics{design_files/figure-latex/unnamed-chunk-1-1.pdf}
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot\_ly}\NormalTok{(}\AttributeTok{x =} \SpecialCharTok{\textasciitilde{}}\NormalTok{hue, }
+        \AttributeTok{y =} \SpecialCharTok{\textasciitilde{}}\NormalTok{value, }
+        \AttributeTok{z =} \SpecialCharTok{\textasciitilde{}}\NormalTok{saturation, }
+        \AttributeTok{color =} \SpecialCharTok{\textasciitilde{}}\NormalTok{color)}
+\end{Highlighting}
+\end{Shaded}
+
 \begin{quote}
 R can use many different color models, but often uses a \#\textbf{R}ed,
 \textbf{G}reen, \textbf{B}lue model with the amount of each color
@@ -145,13 +180,13 @@ indicated in Hexadecimal, 00 to FF, notation.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{library}\NormalTok{(RColorBrewer)}
+\FunctionTok{library}\NormalTok{(RColorBrewer)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{display.brewer.pal}\NormalTok{(}\DecValTok{7}\NormalTok{,}\StringTok{"Set1"}\NormalTok{) }\CommentTok{# qualitative}
+\FunctionTok{display.brewer.pal}\NormalTok{(}\DecValTok{7}\NormalTok{,}\StringTok{"Set1"}\NormalTok{) }\CommentTok{\# qualitative}
 \end{Highlighting}
 \end{Shaded}
 
@@ -163,7 +198,7 @@ indicated in Hexadecimal, 00 to FF, notation.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{display.brewer.pal}\NormalTok{(}\DecValTok{7}\NormalTok{,}\StringTok{"YlOrRd"}\NormalTok{) }\CommentTok{# sequential}
+\FunctionTok{display.brewer.pal}\NormalTok{(}\DecValTok{7}\NormalTok{,}\StringTok{"YlOrRd"}\NormalTok{) }\CommentTok{\# sequential}
 \end{Highlighting}
 \end{Shaded}
 
@@ -175,7 +210,7 @@ indicated in Hexadecimal, 00 to FF, notation.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{display.brewer.pal}\NormalTok{(}\DecValTok{7}\NormalTok{,}\StringTok{"Spectral"}\NormalTok{) }\CommentTok{# diverging}
+\FunctionTok{display.brewer.pal}\NormalTok{(}\DecValTok{7}\NormalTok{,}\StringTok{"Spectral"}\NormalTok{) }\CommentTok{\# diverging}
 \end{Highlighting}
 \end{Shaded}
 
@@ -187,7 +222,7 @@ indicated in Hexadecimal, 00 to FF, notation.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{display.brewer.all}\NormalTok{() }\CommentTok{# all palettes}
+\FunctionTok{display.brewer.all}\NormalTok{() }\CommentTok{\# all palettes}
 \end{Highlighting}
 \end{Shaded}
 
@@ -213,9 +248,9 @@ Equally spaced around the color wheel.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{library}\NormalTok{(scales)}
+\FunctionTok{library}\NormalTok{(scales)}
 
-\KeywordTok{show_col}\NormalTok{(}\KeywordTok{hue_pal}\NormalTok{()(}\DecValTok{4}\NormalTok{))}
+\FunctionTok{show\_col}\NormalTok{(}\FunctionTok{hue\_pal}\NormalTok{()(}\DecValTok{4}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
@@ -316,15 +351,15 @@ at the same concept.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{data}\NormalTok{(iris) }\CommentTok{# iris data set}
+\FunctionTok{data}\NormalTok{(iris) }\CommentTok{\# iris data set}
 
-\KeywordTok{library}\NormalTok{(DT) }\CommentTok{# nicely formatted data tables}
+\FunctionTok{library}\NormalTok{(DT) }\CommentTok{\# nicely formatted data tables}
 
-\KeywordTok{datatable}\NormalTok{(iris) }\CommentTok{# dimensions of the data}
+\FunctionTok{datatable}\NormalTok{(iris) }\CommentTok{\# dimensions of the data}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{htmlwidget-0e555e92e57b7fc5eafb}{}
+\includegraphics{design_files/figure-latex/unnamed-chunk-10-1.pdf}
 
 \begin{quote}
 The \texttt{iris} data set has 5 dimensions Sepal.Length, Sepal.Width,
@@ -399,9 +434,12 @@ Others}\label{some-geometries-are-easier-to-understand-than-others}}
 \addcontentsline{toc}{section}{References}
 
 \hypertarget{refs}{}
-\leavevmode\hypertarget{ref-Cleveland1985}{}%
-Cleveland, William S, and Robert McGill. 1985. ``Graphical Perception
-and Graphical Methods for Analyzing Scientific Data.'' \emph{Science}
+\begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-Cleveland1985}{}}%
+Cleveland, William S, and Robert McGill. 1985. {``{Graphical Perception
+and Graphical Methods for Analyzing Scientific Data}.''} \emph{Science}
 229 (4716): 828--33. \url{http://www.jstor.org/stable/1695272}.
+
+\end{CSLReferences}
 
 \end{document}
