@@ -18,7 +18,7 @@ An example data driven document can be found here.
 install.packages("tinytex") # install tinytex
 tinytex::install_tinytex() # install small version of LaTeX 
 ```
-> Note that this process can be very time consuming, or buggy, or both, and may not work well on machines more than a few years old.
+> Note that this process can be very time consuming, or buggy, or both, and may not work well--nor be advisable to use--on machines more than a few years old.
 
 ### Major Formats
 
@@ -36,7 +36,7 @@ tinytex::install_tinytex() # install small version of LaTeX
 > Slide show formats can be beautiful and effective for presentations. However, slide show formats may not work equally well with all screen resolutions and sizes. Slide shows may have varying performance on mobile devices.
 
 * [Slidy HTML Slide Show](data-driven-report-demo-slidy.html)
-* [Reveal.js Slide Show](data-driven-report-demo-revealjs.html)
+* [Reveal.js Slide Show](data-driven-report-demo-revealjs.html) (Note that `Reveal.js` is a *2 dimensional* slide show format, so you will to pay careful attention to using both $\leftarrow$ and $\rightarrow$ but also $\uparrow$ and $\downarrow$. Press `o` for an overview of the presentation.)
 
 ### Alternative PDF formats
 
