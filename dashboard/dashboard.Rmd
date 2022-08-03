@@ -4,8 +4,10 @@ date: '`r format(Sys.Date(), format="%B %d, %Y")`'
 output:
   flexdashboard::flex_dashboard:
     navbar:
-      - { title: "by Andy Grogan-Kaylor", href: "https://www.umich.edu/~agrogan", align: left }
-    theme: cerulean
+      - { title: "by Andy Grogan-Kaylor", href: "https://agrogan1.github.io/", align: left }
+    theme:
+      version: 4
+      bootswatch: cerulean
     vertical_layout: fill
     orientation: rows
     social: [ "twitter", "facebook", "menu" ]
@@ -93,7 +95,8 @@ valueBox(paste("Simulation"),
 ```{r}
 
 valueBox(length(simulated_agency_data$ID), 
-         icon = "fa-user")
+         icon = "fa-user",
+         color = "success")
 
 ```
 
@@ -119,7 +122,8 @@ gauge(round(mean(simulated_agency_data$mentalHealthScore),
 ```{r}
 
 valueBox(sum(simulated_agency_data$program == "Program A"),
-         icon = "fa-building-o")
+         icon = "fa-building-o",
+         color = "primary")
 
 ```
 
@@ -128,7 +132,8 @@ valueBox(sum(simulated_agency_data$program == "Program A"),
 ```{r}
 
 valueBox(sum(simulated_agency_data$program == "Program B"),
-         icon = "fa-building")
+         icon = "fa-building",
+         color = "secondary")
 
 ```
 
@@ -137,7 +142,8 @@ valueBox(sum(simulated_agency_data$program == "Program B"),
 ```{r}
 
 valueBox(sum(simulated_agency_data$program == "Program C"),
-         icon = "fa-building-o")
+         icon = "fa-building-o",
+         color = "primary")
 
 ```
 
@@ -146,7 +152,8 @@ valueBox(sum(simulated_agency_data$program == "Program C"),
 ```{r}
 
 valueBox(sum(simulated_agency_data$program == "Program D"),
-         icon = "fa-home")
+         icon = "fa-home",
+         color = "secondary")
 
 ```
 
