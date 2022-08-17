@@ -89,6 +89,19 @@ ggplot(clients,
 
 ```
 
+# Add A Theme
+
+```{r}
+
+ggplot(clients,
+       aes(x = program,
+           y = mental_health_T2)) +
+  stat_summary(fun = mean, # summarizing y 
+               geom = "bar") + # with bars
+  theme_minimal()
+
+```
+
 # Alternate Geometries {#majorsection}
 
 ## Points
@@ -98,7 +111,8 @@ ggplot(clients,
 ggplot(clients,
        aes(x = program,
            y = mental_health_T2)) +
-  geom_point()
+  geom_point() +
+  theme_minimal()
 
 ```
 
@@ -109,7 +123,8 @@ ggplot(clients,
 ggplot(clients,
        aes(x = program,
            y = mental_health_T2)) +
-  geom_jitter()
+  geom_jitter() +
+  theme_minimal()
 
 ```
 
@@ -124,7 +139,8 @@ library(ggdist) # distribution plots
 ggplot(clients,
        aes(x = program,
            y = mental_health_T2)) +
-   stat_dots() # dotplot geometry
+  stat_dots() + # dotplot geometry
+  theme_minimal()
 
 ```
 
@@ -135,7 +151,8 @@ ggplot(clients,
 ggplot(clients,
        aes(x = program,
            y = mental_health_T2)) +
-   geom_boxplot() # boxplot geometry
+  geom_boxplot() + # boxplot geometry
+  theme_minimal()
 
 ```
 
@@ -153,7 +170,8 @@ Here the use of color adds *aesthetic appeal*. We do this by placing color in th
 ggplot(clients,
        aes(x = program,
            y = mental_health_T2)) +
-   stat_dots(fill = "#009edb") # dotplot geometry
+  stat_dots(fill = "#009edb") + # dotplot geometry
+  theme_minimal()
 
 ```
 
@@ -169,7 +187,8 @@ ggplot(clients,
        aes(x = program,
            fill = gender, # color as `information`
            y = mental_health_T2)) +
-   stat_dots() # dotplot geometry
+  stat_dots()+ # dotplot geometry
+  theme_minimal()
 
 ```
 
@@ -184,7 +203,8 @@ ggplot(clients,
            fill = gender, # color as `information`
            y = mental_health_T2)) +
   stat_dots() + # dotplot geometry
-  scale_fill_viridis_d()
+  scale_fill_viridis_d() + # beautiful colors
+  theme_minimal()
 
 ```
 
@@ -199,8 +219,9 @@ ggplot(clients,
            fill = gender, # color as `information`
            y = mental_health_T2)) +
   stat_dots() + # dotplot geometry
-  scale_fill_viridis_d() +
-  coord_flip()
+  scale_fill_viridis_d() + # beautiful colors
+  coord_flip() + # flip the coordinates
+  theme_minimal()
 
 ```
 
@@ -213,13 +234,14 @@ ggplot(clients,
            fill = gender, # color as `information`
            y = mental_health_T2)) +
   stat_dots() + # dotplot geometry
-  scale_fill_viridis_d() +
-  coord_flip() +
-  facet_wrap(~neighborhood)
+  scale_fill_viridis_d() + # beautiful colors
+  coord_flip() + # flip the coordinates
+  facet_wrap(~neighborhood) + # facet on neighborhood
+  theme_minimal()
 
 ```
 
-# Titles, Labels and Theming
+# Titles & Labels
 
 ```{r, fig.height=6}
 
