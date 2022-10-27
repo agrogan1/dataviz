@@ -17,11 +17,15 @@ output:
 
 knitr::opts_chunk$set(echo = TRUE)
 
+library(emo)
+
 ```
 
 # Navigation
 
-This is a slide deck. You may need to **scroll down** to see everything on longer slides.
+* This is a slide deck. You may need to **scroll down** to see everything on longer slides.
+* Use the `r emo::ji("left_arrow")` `r emo::ji("right_arrow")` keys to move through the presentation.
+* Press `b` to make text *bigger*. Press `s` to make text *smaller*.
 
 # Simulated Data From Social Service Agency
 
@@ -163,14 +167,15 @@ ggplot(clients,
 
 > e.g. *U.N. Blue*. 
 
-Here the use of color adds *aesthetic appeal*. We do this by placing color in the `geom`etry.
+Here the use of color adds *aesthetic appeal*. We do this by placing `fill` and `color` in the `geom`etry.
 
 ```{r}
 
 ggplot(clients,
        aes(x = program,
            y = mental_health_T2)) +
-  stat_dots(fill = "#009edb") + # dotplot geometry
+  stat_dots(fill = "#009edb", # fill color
+            color = "black") + # outline color
   theme_minimal()
 
 ```
@@ -179,7 +184,9 @@ ggplot(clients,
 
 > Compare the minimal and maximal philosophies.
 
-Here, we place color in the `aes`thetic so that color adds additional information, i.e. the gender of respondents.
+Here, we place `fill` color in the `aes`thetic so that color adds additional information, i.e. the gender of respondents.
+
+(We still retain `color` in the `geom` to govern *outline* color)
 
 ```{r}
 
@@ -187,7 +194,7 @@ ggplot(clients,
        aes(x = program,
            fill = gender, # color as `information`
            y = mental_health_T2)) +
-  stat_dots()+ # dotplot geometry
+  stat_dots(color = "black") + # dotplot geometry
   theme_minimal()
 
 ```
@@ -202,7 +209,7 @@ ggplot(clients,
        aes(x = program,
            fill = gender, # color as `information`
            y = mental_health_T2)) +
-  stat_dots() + # dotplot geometry
+  stat_dots(color = "black") + # dotplot geometry
   scale_fill_viridis_d() + # beautiful colors
   theme_minimal()
 
@@ -218,14 +225,16 @@ ggplot(clients,
        aes(x = program,
            fill = gender, # color as `information`
            y = mental_health_T2)) +
-  stat_dots() + # dotplot geometry
+  stat_dots(color = "black") + # dotplot geometry
   scale_fill_viridis_d() + # beautiful colors
   coord_flip() + # flip the coordinates
   theme_minimal()
 
 ```
 
-# Small Multiples
+# Small Multiples {#majorsection}
+
+# Using `facet_wrap()`
 
 ```{r}
 
@@ -233,7 +242,7 @@ ggplot(clients,
        aes(x = program,
            fill = gender, # color as `information`
            y = mental_health_T2)) +
-  stat_dots() + # dotplot geometry
+  stat_dots(color = "black") + # dotplot geometry
   scale_fill_viridis_d() + # beautiful colors
   coord_flip() + # flip the coordinates
   facet_wrap(~neighborhood) + # facet on neighborhood
@@ -241,7 +250,9 @@ ggplot(clients,
 
 ```
 
-# Titles & Labels
+# Titles & Labels {#majorsection}
+
+## Adding Titles and Labels
 
 ```{r, fig.height=6}
 
@@ -249,7 +260,7 @@ ggplot(clients,
        aes(x = program,
            fill = gender, # color as `information`
            y = mental_health_T2)) +
-  stat_dots() + # dotplot geometry
+  stat_dots(color = "black") + # dotplot geometry
   scale_fill_viridis_d() +
   coord_flip() +
   labs(title = "Program Enrollment",
