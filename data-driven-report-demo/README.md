@@ -8,9 +8,16 @@ These different document formats will be *knit* using the most up to date data f
 
 The RMarkdown system allows rapid updating of timely content into multiple output formats. 
 
-An example data driven document can be found here.
+An example data driven document can be found below.
 
 ## Output Examples
+
+### Major Formats
+
+* [HTML file](data-driven-report-demo.html)
+* [PDF](data-driven-report-demo.pdf)
+* [Word](data-driven-report-demo.docx)
+* [epub](data-driven-report-demo.epub)
 
 > Note: HTML and Word are generally the easiest formats to generate. PDF requires your system to have the [LaTeX](https://www.latex-project.org/) (generally pronounced "*La-Tech*") typesetting system. LaTeX can be installed by hand, which is often a difficult process. To facilitate the process of installing LaTeX, Yihui Xie has developed the `tinytex` package. The steps are below 
 
@@ -19,13 +26,6 @@ install.packages("tinytex") # install tinytex
 tinytex::install_tinytex() # install small version of LaTeX 
 ```
 > Note that this process can be very time consuming, or buggy, or both, and may not work well--nor be advisable to use--on machines more than a few years old.
-
-### Major Formats
-
-* [HTML file](data-driven-report-demo.html)
-* [PDF](data-driven-report-demo.pdf)
-* [Word](data-driven-report-demo.docx)
-* [epub](data-driven-report-demo.epub)
 
 ### Alternative HTML Formats
 
