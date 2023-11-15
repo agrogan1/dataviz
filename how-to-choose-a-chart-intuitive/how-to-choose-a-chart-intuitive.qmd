@@ -1,35 +1,24 @@
 ---
 title: "How To Choose A Chart: An Intuitive Guide"
 author: "Andy Grogan-Kaylor"
-date: "`r Sys.Date()`"
-output:
-  bookdown::epub_book: 
-    stylesheet: UM.css 
-    cover_image: intuitive-guide.png
-    fig_width: 7
-    fig_height: 8
-  html_document:
-    fig_width: 10
-    highlight: haddock
-    code_download: yes
-  pdf_document: 
-    fig_width: 10
-    latex_engine: xelatex
-    fig_height: 8
-  bookdown::gitbook:
-    split_by: none
-    highlight: haddock
-    fig_height: 8
-    config:
-      toc:
-        collapse: none
-      download:
-      - how-to-choose-a-chart-intuitive.pdf
-      - how-to-choose-a-chart-intuitive.epub
-mainfont: Futura
-fontsize: 12pt
-classoption: portrait
-geometry: margin=.5in
+date: "today"
+format:
+  html:
+    toc: true
+    number-sections: true
+    anchor-sections: true
+    theme:
+      light: cosmo
+      dark: vapor
+    fig-height: 7
+  pdf:
+    include-in-header:
+      - text: | 
+          \usepackage[sfdefault]{roboto}
+    toc: false
+    number-sections: true
+    geometry: margin=1in
+    fig-height: 6.5
 ---
 
 ```{r setup, include=FALSE}
@@ -230,7 +219,7 @@ mylongitudinal <- ggplot(mydata,
   geom_smooth(color = michigancolors("arboretum blue")) +
   scale_color_manual(values = michigancolors("wave field green")) +
   labs(title = "Is the Outcome \nChanging Over Time?",
-       subtitle = "Scatterplot",
+       subtitle = "Scatterplot With Smoother",
        caption = "Every point is an individual.",
        x = "Time",
        y = "Outcome") +
