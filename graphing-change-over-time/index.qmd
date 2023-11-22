@@ -6,6 +6,7 @@ format:
   html:
     toc: true
     number-sections: true
+    fig-height: 3
     theme:
       light: cosmo
       dark: vapor
@@ -15,6 +16,7 @@ format:
           \usepackage[sfdefault]{roboto}
     toc: true
     number-sections: true
+    fig-height: 1.75
 reference-location: margin
 ---
 
@@ -23,7 +25,6 @@ reference-location: margin
 knitr::opts_chunk$set(echo=FALSE, 
                       warning=FALSE, 
                       message=FALSE,
-                      fig.height = 3.0, 
                       tidy = FALSE, 
                       cache.extra = packageVersion('tufte'))
 
@@ -292,8 +293,6 @@ mysmoother
 ```
 
 [^smoothedtrajectories]: One needs to be careful, however, as the smoothed trajectories may give the impression of having more data points than one actually has.
-
-\newpage
 
 ## Slopegraph
 
