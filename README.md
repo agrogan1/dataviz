@@ -16,6 +16,6 @@
 
 [Dashboard Demo](./dashboard/dashboard.html)
 
-[Mapping in R](https://agrogan1.github.io/mapping/)
+[Mapping & GIS](https://agrogan1.github.io/mapping/)
 
 Created by [Andy Grogan-Kaylor](https://agrogan1.github.io/)
