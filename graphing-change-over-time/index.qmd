@@ -1,43 +1,29 @@
 ---
 title: 'Telling Stories With Data: Graphing Change Over Time'
 author: "Andy Grogan-Kaylor"
-date: "`r format(Sys.Date(), format='%B %d, %Y')`"
-output:
-  tufte::tufte_handout: 
-    latex_engine: xelatex
-  html_document:
-    fig_height: 2
-    highlight: haddock
-    keep_md: no
-    number_sections: yes
-    theme: default
-    toc: yes
-    toc_float:
-      collapsed: yes
-      smooth_scroll: yes
-  pdf_document: 
-    latex_engine: xelatex
-    number_sections: yes
-    toc: yes
-  tufte::tufte_html:
-    css: mycss.css
-    tufte_features:
-    - fonts
-    - italics
-  tint::tintPdf:
-    highlight: haddock
-    number_sections: yes
-    toc: no
+date: "today"
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme:
+      light: cosmo
+      dark: vapor
+  pdf:
+    include-in-header:
+      - text: | 
+          \usepackage[sfdefault]{roboto}
+    toc: true
+    number-sections: true
+reference-location: margin
 ---
 
 ```{r global_options, echo=FALSE, warning=FALSE}
 
-library(tufte)
-
 knitr::opts_chunk$set(echo=FALSE, 
                       warning=FALSE, 
                       message=FALSE,
-                      fig.height = 2.0, 
+                      fig.height = 3.0, 
                       tidy = FALSE, 
                       cache.extra = packageVersion('tufte'))
 
@@ -245,23 +231,26 @@ myslopegraph <- ggplot(data = newdata,
 
 # Graphs
 
-```{r, fig.margin=TRUE}
+## Scatterplot
+
+We start in thinking about graphing change over time with a scatterplot.[^scatterplot] [^color]
+
+```{r}
 
 myscatterplot
 
 ```
 
-We start in thinking about graphing change over time with a scatterplot.[^scatterplot] [^color]
-
 [^scatterplot]:  Scatterplots show every data point.  However, with many data points, scatterplots may become overcomplicated, and difficult to interpret.  Points may even be plotted over other data points.
 
 [^color]: Note that we are using *color* and *line type* to distinguish different individuals. This may not always be possible, especially when there are a large number of individuals in the data.
 
+## Line Plot
+
 A natural next step is to connect the dots of a scatterplot with straight line segments to form a line plot. [^smallmultiples] 
 
-[^smallmultiples]: With any of the options discussed, one may consider *small multiples* where each individual trajectory is placed in its own sub-graph.
-
-```{r, fig.margin=TRUE}
+```{r}
+#| column: margin
 
 mylineplot + facet_wrap(~id) 
 
@@ -273,6 +262,10 @@ mylineplot
 
 ```
 
+[^smallmultiples]: With any of the options discussed, one may consider *small multiples* where each individual trajectory is placed in its own sub-graph.
+
+## Spaghetti Plot
+
 Instead of simply connecting the observations, one may estimate an individual linear trajectory.  In *multilevel modeling* these line plots showing individual estimated linear trajectories are sometimes called *spaghetti plots*.
 
 ```{r}
@@ -281,35 +274,41 @@ myspaghettiplot
 
 ```
 
-```{r fig.margin=TRUE}
+## Smoothed Trajectories
 
-mysmoother
+Alternatively, rather than connecting observations with straight lines, or estimating an overall straight line trajectory for each individual, it may be useful to *smooth* the trajectories by drawing curved lines between individual observations.[^smoothedtrajectories] 
 
-```
-
-```{r fig.margin=TRUE}
+```{r}
+#| column: margin
 
 mysmoother + facet_wrap(~id)
 
 ```
 
-Alternatively, rather than connecting observations with straight lines, or estimating an overall straight line trajectory for each individual, it may be useful to *smooth* the trajectories by drawing curved lines between individual observations.[^smoothedtrajectories] 
+```{r}
+
+mysmoother
+
+```
 
 [^smoothedtrajectories]: One needs to be careful, however, as the smoothed trajectories may give the impression of having more data points than one actually has.
 
 \newpage
 
+## Slopegraph
+
 An increasingly popular option is a slope graph.[^slopegraph]
 
 [^slopegraph]:  In order to be clear and effective, a slope graph may often only show the outcome at the beginning point, and at the end point.  A slope graph may be less satisfactory when there are multiple timepoints. The small multiple idea works with a slopegraph as well.
 
-```{r fig.margin=TRUE, eval=TRUE}
+```{r}
+#| column: margin
 
 myslopegraph + facet_wrap(~id) 
 
 ```
 
-```{r fig.margin=FALSE, eval=TRUE}
+```{r}
 
 myslopegraph
 
@@ -317,7 +316,11 @@ myslopegraph
 
 # The Data Used In This Example Are Simulated.
 
-```{r, eval = TRUE, fig.caption = "Long Data", fig.margin=TRUE, fig.height= 9}
+```{r}
+#| eval: true
+#| fig-cap: "Long Data"
+#| fig-height: 9
+#| column: margin
 
 img <- readPNG("longdata.png")
 
@@ -343,7 +346,6 @@ Data can be *reshaped* from *wide* to *long* format, and *vice versa*.  Two stra
 
 Graphics made with [ggplot2](http://ggplot2.org/)created by Hadley Wickham.
 
-[*Graphing Change Over Time*](https://agroganweb.wordpress.com/data-visualization-dataviz/) by Andrew Grogan-Kaylor is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
 
 
 
