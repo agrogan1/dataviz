@@ -42,10 +42,6 @@ tinytex::install_tinytex() # install small version of LaTeX
 
 * [Tufte](data-driven-report-demo-tufte.pdf) (Inspired by the work of Edward Tufte)
 
-### GitBook Format
-
-The [GitBook format](./book/background.html) is designed as an online HTML book format and may be most suitable for longer more complicated documents. Note the links to various social media in the navigation bar.
-
 ## Rmarkdown Source Code
 
 * [Rmarkdown file](https://github.com/agrogan1/dataviz/blob/master/data-driven-report-demo/data-driven-report-demo.Rmd)
