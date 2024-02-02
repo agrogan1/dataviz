@@ -1,6 +1,0 @@
-background
-methods
-results
-graph
-table
-discussion
