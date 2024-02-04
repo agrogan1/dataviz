@@ -1,12 +1,12 @@
 # Data Driven Report Demo
 
-## RMarkdown
+## Quarto
 
-RMarkdown is an almost *magical* system that allows you to create documents in multiple formats. These documents may be driven by data, or contain no data whatsoever. With the click of a button, the same content can be written out (*knit*) to multiple formats: HTML web pages; Gitbook web books; PDF documents; epub ebooks.  
+Quarto is an almost *magical* system that allows you to create documents in multiple formats. These documents may be driven by data, or contain no data whatsoever. With the click of a button, the same content can be written out (*rendered*) to multiple formats: HTML web pages; PDF documents; Microsoft Word documents, epub ebooks, HTML slide shows, and more.  
 
-These different document formats will be *knit* using the most up to date data from the data source, meaning that documents can in some sense be *self-updating*.
+These different document formats will be *rendered* using the most up to date data from the data source, meaning that documents can in some sense be *self-updating*. Additionally, if documents contain code, they provide an *audit trail* that allows for *replicability* and *error detection*.
 
-The RMarkdown system allows rapid updating of timely content into multiple output formats. 
+Quarto allows rapid updating of timely content into multiple output formats. 
 
 An example data driven document can be found below.
 
@@ -19,32 +19,17 @@ An example data driven document can be found below.
 * [Word](data-driven-report-demo.docx)
 * [epub](data-driven-report-demo.epub)
 
-> Note: HTML and Word are generally the easiest formats to generate. PDF requires your system to have the [LaTeX](https://www.latex-project.org/) (generally pronounced "*La-Tech*") typesetting system. LaTeX can be installed by hand, which is often a difficult process. To facilitate the process of installing LaTeX, Yihui Xie has developed the `tinytex` package. The steps are below 
+> Note: HTML and Word are generally the easiest formats to generate. PDF requires your system to have the latest version of  [Quarto](https://quarto.org/) to make use of the `typst` typesetting system, which is only available with more recent versions of Quarto.  
 
-```
-install.packages("tinytex") # install tinytex
-tinytex::install_tinytex() # install small version of LaTeX 
-```
-> Note that this process can be very time consuming, or buggy, or both, and may not work well--nor be advisable to use--on machines more than a few years old.
-
-### Alternative HTML Formats
-
-* [Distill](data-driven-report-demo-distill.html) (The Distill format for scientific publishing)
-
-### Slide Show Formats
+### Slide Show Format
 
 > Slide show formats can be beautiful and effective for presentations. However, slide show formats may not work equally well with all screen resolutions and sizes. Slide shows may have varying performance on mobile devices.
 
-* [Slidy HTML Slide Show](data-driven-report-demo-slidy.html)
 * [Reveal.js Slide Show](data-driven-report-demo-revealjs.html) (Note that `Reveal.js` is a *2 dimensional* slide show format, so you will to pay careful attention to using the *left* and *right* arrows, but also the *up* and *down* arrows. Press `o` for an overview of the presentation.)
 
-### Alternative PDF formats
+## Quarto Source Code
 
-* [Tufte](data-driven-report-demo-tufte.pdf) (Inspired by the work of Edward Tufte)
-
-## Rmarkdown Source Code
-
-* [Rmarkdown file](https://github.com/agrogan1/dataviz/blob/master/data-driven-report-demo/data-driven-report-demo.Rmd)
+* [Quarto file](https://github.com/agrogan1/dataviz/blob/master/data-driven-report-demo/data-driven-report-demo.qmd)
 
 
 
