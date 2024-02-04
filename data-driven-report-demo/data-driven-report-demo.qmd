@@ -39,6 +39,8 @@ library(gapminder) # gapminder data
 
 library(ggplot2) # beautiful graphs
 
+library(ggdist) # beautiful geoms
+
 library(pander) # beautiful tables
 
 ```
@@ -53,7 +55,7 @@ Life expectancy differs in countries around the world. Life expectancy and *per 
 ggplot(gapminder,
        aes(x = lifeExp, 
            fill = continent)) +
-  geom_histogram() + 
+  geom_histogram() +
   labs(title = "Distribution of Life Expectancy",
        x = "Life Expectancy") + 
   theme_minimal() +
@@ -85,6 +87,11 @@ ggplot(gapminder,
        caption = "Gapminder Data") +
   scale_color_viridis_d() +
   theme_minimal()
+
+ggsave("scatterplot.png",
+       last_plot() + theme(legend.position = "none"),
+       width = 3, 
+       height = 3)
 
 ```
 
