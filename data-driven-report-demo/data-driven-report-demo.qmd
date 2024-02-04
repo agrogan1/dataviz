@@ -21,7 +21,7 @@ format:
     toc: true
     number-sections: true
   revealjs: 
-    output-file: data-drive-report-demo-revealjs.html
+    output-file: data-driven-report-demo-revealjs.html
     transition: slide
     controls: true
     controls-tutorial: true
