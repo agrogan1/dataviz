@@ -10,29 +10,17 @@ format:
     theme:
       light: cosmo
       dark: vapor
-  pdf:
-    include-in-header:
-      - text: | 
-          \usepackage[sfdefault]{roboto}
+  typst: 
     toc: true
     number-sections: true
     fig-height: 1.75
 reference-location: margin
+execute: 
+  echo: false
 ---
 
-```{r global_options, echo=FALSE, warning=FALSE}
-
-knitr::opts_chunk$set(echo=FALSE, 
-                      warning=FALSE, 
-                      message=FALSE,
-                      tidy = FALSE, 
-                      cache.extra = packageVersion('tufte'))
-
-options(htmltools.dir.version = FALSE)
-
-```
-
 ```{r call_libraries}
+#| output: false
 
 library(ggplot2) # beautiful graphs
 
@@ -126,9 +114,9 @@ group <- c(rep("A", 5),
 mydata <- data.frame(id, t, outcome)
 
 mydata_wide <- reshape(mydata, 
-                       idvar='id', 
-                       timevar='t', 
-                       direction='wide')
+                       idvar = 'id', 
+                       timevar = 't', 
+                       direction = 'wide')
 
 row.names(mydata_wide) <- NULL # remove rownames from wide data
 
@@ -158,16 +146,16 @@ myscatterplot <- p +
   ggtitle("scatterplot")
     
 mylineplot <- p + 
-  geom_line(size=mylinewidth) + 
+  geom_line(linewidth=mylinewidth) + 
   ggtitle("line plot") 
   
 myspaghettiplot <- p + 
   geom_smooth(method = lm, 
-              size = mylinewidth, 
-              se=FALSE) + 
+              linewidth = mylinewidth, 
+              se = FALSE) + 
   geom_smooth(aes(x = t, 
                   y = outcome), 
-              size = 2, 
+              linewidth = 2, 
               linetype = "dashed", 
               color = "black", 
               method = lm, 
@@ -179,12 +167,12 @@ myspaghettiplot2 <- p +
                   y = outcome, 
                   group = id), 
               method = lm, 
-              size = mylinewidth, 
+              linewidth = mylinewidth, 
               se = FALSE, 
               color = "black") + 
   geom_smooth(aes(x = t, 
                   y = outcome), 
-              size = 2, 
+              linewidth = 2, 
               linetype = "dashed", 
               color = "black", 
               method = lm, 
@@ -192,7 +180,7 @@ myspaghettiplot2 <- p +
   ggtitle("spaghetti plot") 
 
 mysmoother <- p + 
-  geom_smooth(size = mylinewidth, 
+  geom_smooth(linewidth = mylinewidth, 
               span = 1.0, 
               se = FALSE) + 
   ggtitle("smoothed trajectories")
@@ -214,7 +202,7 @@ myslopegraph <- ggplot(data = newdata,
                            color = id, 
                            fill = id,
                            linetype = id)) + 
-  geom_line(size = mylinewidth, 
+  geom_line(linewidth = mylinewidth, 
             show.legend = FALSE) + 
   geom_point(size = 3, 
              shape = 21) + 
@@ -270,6 +258,7 @@ mylineplot
 Instead of simply connecting the observations, one may estimate an individual linear trajectory.  In *multilevel modeling* these line plots showing individual estimated linear trajectories are sometimes called *spaghetti plots*.
 
 ```{r}
+#| message: false
 
 myspaghettiplot
 
@@ -281,12 +270,14 @@ Alternatively, rather than connecting observations with straight lines, or estim
 
 ```{r}
 #| column: margin
+#| message: false
 
 mysmoother + facet_wrap(~id)
 
 ```
 
 ```{r}
+#| message: false
 
 mysmoother
 
@@ -302,12 +293,14 @@ An increasingly popular option is a slope graph.[^slopegraph]
 
 ```{r}
 #| column: margin
+#| message: false
 
 myslopegraph + facet_wrap(~id) 
 
 ```
 
 ```{r}
+#| message: false
 
 myslopegraph
 
@@ -321,19 +314,23 @@ myslopegraph
 #| fig-height: 9
 #| column: margin
 
-img <- readPNG("longdata.png")
+# img <- readPNG("longdata.png")
+# 
+# grid.raster(img)
 
-grid.raster(img)
+pander(mydata)
 
 ```
 
 Many data sets, but not all, are originally created in the *wide* format--as shown below--where every row of data is an *individual*, and an individual only has a *single row*.  Ideally, every row in *wide* data is uniquely identified by an individual *id* number.  
 
-```{r, eval=TRUE, fig.fullwidth = TRUE, fig.width = 10}
+```{r}
+#| fig-cap: "Wide Data"
+#| eval: true
 
 panderOptions('table.continues', ' ')
 
-pander(mydata_wide, title="Data in wide format")
+pander(mydata_wide)
 
 ```
 
