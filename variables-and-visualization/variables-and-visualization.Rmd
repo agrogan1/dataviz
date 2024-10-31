@@ -3,18 +3,18 @@ title: "<mark>Variables & Visualization</mark>"
 author: "<mark>Andy Grogan-Kaylor</mark>"
 date: '<mark>`r Sys.Date()`</mark>'
 output:
-  pdf_document:
-    fig_height: 3
-    highlight: haddock
-    latex_engine: xelatex
-    number_sections: yes
-    toc: yes
   slidy_presentation:
     fig_caption: yes
     fig_height: 4
     highlight: haddock
     slide_level: 2
     incremental: true
+  pdf_document:
+    fig_height: 3
+    highlight: haddock
+    latex_engine: xelatex
+    number_sections: yes
+    toc: yes
 subtitle: <mark>What Is The Story You Are Trying To Tell?</mark>
 mainfont: Arial
 ---
