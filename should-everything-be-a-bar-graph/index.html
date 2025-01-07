@@ -4,8 +4,8 @@
     <title>Should Everything Be A Bar Graph?</title>
     <meta charset="utf-8" />
     <meta name="author" content="Andy Grogan-Kaylor" />
-    <meta name="date" content="2021-10-16" />
-    <script src="libs/header-attrs-2.10/header-attrs.js"></script>
+    <meta name="date" content="2025-01-07" />
+    <script src="libs/header-attrs-2.25/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/hygge.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/ninjutsu.css" rel="stylesheet" />
@@ -24,10 +24,18 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
+.title[
 # Should Everything Be A Bar Graph?
+]
+.subtitle[
 ## Use <span style="font-size:50px">⇦</span> and <span style="font-size:50px">⇨</span> to navigate.
+]
+.author[
 ### Andy Grogan-Kaylor
-### 2021-10-16
+]
+.date[
+### 2025-01-07
+]
 
 ---
 
@@ -116,12 +124,12 @@ head(mydata) # show the top of the data
 
 ```
   group   outcome
-1     A 10.326064
-2     A 11.165971
-3     A  9.267804
-4     A 11.133150
-5     A 10.812310
-6     A  8.227487
+1     A  9.218592
+2     A  9.641217
+3     A 10.372485
+4     A  8.768238
+5     A  9.183850
+6     A  9.471335
 ```
 
 ---
@@ -1026,6 +1034,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable
