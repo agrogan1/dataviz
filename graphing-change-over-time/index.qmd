@@ -1,5 +1,5 @@
 ---
-title: 'Telling Stories With Data: Graphing Change Over Time'
+title: "Graphing Change Over Time"
 author: "Andy Grogan-Kaylor"
 date: "today"
 format:
@@ -7,14 +7,15 @@ format:
     toc: true
     number-sections: true
     fig-height: 3
+    lightbox: true
     theme:
-      light: cosmo
+      light: yeti
       dark: vapor
-  typst: 
+  pdf: 
+    mainfont: "Arial"
     toc: true
     number-sections: true
     fig-height: 1.75
-reference-location: margin
 execute: 
   echo: false
 ---
@@ -26,13 +27,13 @@ library(ggplot2) # beautiful graphs
 
 library(ggthemes) # even more beautiful graphs
 
-library(cowplot) # graph layout
+# library(cowplot) # graph layout
 
 library(knitr) # knitting documents
 
 library(pander) # nice tables
 
-library(xtable) # nice tables that "integrate well" with Tufte Latex
+# library(xtable) # nice tables that "integrate well" with Tufte Latex
 
 library(png) # for png's
 
@@ -120,7 +121,7 @@ mydata_wide <- reshape(mydata,
 
 row.names(mydata_wide) <- NULL # remove rownames from wide data
 
-save(mydata, file="graphing change over time.RData")
+save(mydata, file="graphing-change-over-time.RData")
 
 ```
 
@@ -289,7 +290,7 @@ mysmoother
 
 An increasingly popular option is a slope graph.[^slopegraph]
 
-[^slopegraph]:  In order to be clear and effective, a slope graph may often only show the outcome at the beginning point, and at the end point.  A slope graph may be less satisfactory when there are multiple timepoints. The small multiple idea works with a slopegraph as well.
+[^slopegraph]:  In order to be clear and effective, a slope graph may often only show the outcome at the beginning point, and at the end point.  A slope graph may be less satisfactory when there are multiple timepoints, unless the slopegraph shows *all* the timepoints. The small multiple idea works with a slopegraph as well.
 
 ```{r}
 #| column: margin
@@ -308,9 +309,10 @@ myslopegraph
 
 # The Data Used In This Example Are Simulated.
 
+Many data sets, but not all, are originally created in the *wide* format--as shown below--where every row of data is an *individual*, and an individual only has a *single row*.  Ideally, every row in *wide* data is uniquely identified by an individual *id* number.  
+
 ```{r}
 #| eval: true
-#| fig-cap: "Long Data"
 #| fig-height: 9
 #| column: margin
 
@@ -322,10 +324,7 @@ pander(mydata)
 
 ```
 
-Many data sets, but not all, are originally created in the *wide* format--as shown below--where every row of data is an *individual*, and an individual only has a *single row*.  Ideally, every row in *wide* data is uniquely identified by an individual *id* number.  
-
 ```{r}
-#| fig-cap: "Wide Data"
 #| eval: true
 
 panderOptions('table.continues', ' ')
@@ -336,7 +335,7 @@ pander(mydata_wide)
 
 Generally, for graphing change over time, it is most appropriate to have data that are in a *long* format, as shown in the margin.  In *long* data every row represents a particular *measurement occasion* for a *particular individual*.  Each individual in the data set thus has *multiple rows*.  Ideally, every row in data in the *long* format is uniquely identified by the combination of an *id* number and a *study wave*.
 
-Data can be *reshaped* from *wide* to *long* format, and *vice versa*.  Two straightforward options are the `reshape` command, as available in both [Stata](http://www.stata.com) and [R](https://www.r-project.org/).
+Data can be *reshaped* from *wide* to *long* format, and *vice versa*. Two straightforward options are the `reshape` command as available in both [Stata](http://www.stata.com) and the `pivot_*()` commands available in [R](https://www.r-project.org/).
 
 \footnotesize
 
