@@ -18,6 +18,9 @@ format:
     fig-height: 1.75
 execute: 
   echo: false
+bibliography: graphing-change-over-time.bib
+csl: apa.csl
+reference-location: margin
 ---
 
 ```{r call_libraries}
@@ -357,11 +360,7 @@ Generally, for graphing change over time, it is most appropriate to have data th
 
 Data can be *reshaped* from *wide* to *long* format, and *vice versa*. Two straightforward options are the `reshape` command as available in [Stata](http://www.stata.com) and the `pivot_*()` commands available in [R](https://www.r-project.org/).
 
-\footnotesize
-
-Graphics made with [ggplot2](http://ggplot2.org/) created by Hadley Wickham.
-
-
+Graphics made with `ggplot2` [@ggplot2].
 
 
 
