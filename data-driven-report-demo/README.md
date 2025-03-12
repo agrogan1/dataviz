@@ -25,7 +25,7 @@ An example data driven document can be found below.
 
 > Slide show formats can be beautiful and effective for presentations. However, slide show formats may not work equally well with all screen resolutions and sizes. Slide shows may have varying performance on mobile devices.
 
-* [Reveal.js Slide Show](data-driven-report-demo-revealjs.html) (Note that `Reveal.js` is a *2 dimensional* slide show format, so you will to pay careful attention to using the *left* and *right* arrows, but also the *up* and *down* arrows. Press `o` for an overview of the presentation.)
+* [Reveal.js Slide Show](data-driven-report-demo-revealjs.html) (Note that `Reveal.js` is a *2 dimensional* slide show format, so you will to pay careful attention to using the &#8592; and *right* arrows, but also the *up* and *down* arrows. Press `o` for an overview of the presentation.)
 
 ## Quarto Source Code
 
