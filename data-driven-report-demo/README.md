@@ -4,6 +4,8 @@
 
 Quarto is an almost *magical* system that allows you to create documents in multiple formats. These documents may be driven by data, or contain no data whatsoever. With the click of a button, the same content--written in a simple format called *markdown*--can be written out (*rendered*) to multiple formats: HTML web pages; PDF documents; Microsoft Word documents, epub ebooks, HTML slide shows, and more.  
 
+More information about *markdown* can be found [here](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+
 These different document formats will be *rendered* using the most up to date data from the data source, meaning that documents can in some sense be *self-updating*. Additionally, if documents contain code, they provide an *audit trail* that allows for *replicability* and *error detection*.
 
 Quarto allows rapid updating of timely content into multiple output formats. 
