@@ -1,3 +1,9 @@
+# markdown
+
+*markdown* text is plain text that is *marked* with a set of very simple tags to produce formatted text.
+
+The basic idea is simple, as indicated below. More information about *markdown* can be found [here](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+
 ```
 # This is a first level heading
 ## This is a second level heading
