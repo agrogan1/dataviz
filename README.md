@@ -6,7 +6,7 @@
 
 [How To Choose A Chart: A Visual Guide](./how-to-choose-a-chart/how-to-choose-a-chart-a-visual-guide.pdf) [[Extended Version](./how-to-choose-a-chart/how-to-choose-a-chart-v3.html)]
 
-[Graphing Change Over Time](./graphing-change-over-time/index.html) [[PDF](./graphing-change-over-time/index.pdf)]
+[Graphing Change Over Time](./graphing-change-over-time/graphing-change-over-time.html) [[PDF](./graphing-change-over-time/graphing-change-over-time.pdf)]
 
 [Data Driven Report Demo](./data-driven-report-demo/)
 
