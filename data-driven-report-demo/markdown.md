@@ -16,7 +16,7 @@ This is normal text.
 
 `This text is in monospaced font, often used to represent code.`
 ```
-
+$\beta$
 This text renders as follows:
 
 # This is a first level heading
