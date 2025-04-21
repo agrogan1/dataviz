@@ -1,0 +1,122 @@
+---
+title: "Data Driven Document Demo"
+author: "Andrew Grogan-Kaylor"
+date: "today"
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme:
+      light: cosmo
+      dark: vapor
+  typst: 
+    toc: true
+    number-sections: true
+    columns: 1
+  docx: 
+    toc: true
+    number-sections: true
+    reference-doc: markstat.docx
+    fig-dpi: 600
+    fig-height: 3
+  epub: 
+    toc: true
+    number-sections: true
+  revealjs: 
+    output-file: data-driven-document-demo-revealjs.html
+    transition: slide
+    controls: true
+    controls-tutorial: true
+execute: 
+  echo: false
+  message: false
+  warning: false
+fig-height: 3
+---
+
+
+```{r}
+
+library(gapminder) # gapminder data
+
+library(ggplot2) # beautiful graphs
+
+library(ggdist) # beautiful geoms
+
+library(pander) # beautiful tables
+
+```
+
+# Background
+
+Life expectancy differs in countries around the world. Life expectancy and *per capita* *Gross Domestic Product* (GDP) appear to be related.
+
+
+```{r}
+
+ggplot(gapminder,
+       aes(x = lifeExp, 
+           fill = continent)) +
+  geom_histogram() +
+  labs(title = "Distribution of Life Expectancy",
+       x = "Life Expectancy") + 
+  theme_minimal() +
+  scale_fill_viridis_d() 
+
+```
+
+# Methods
+
+Data were provided via the `gapminder` library which provides a sample of data available on [gapminder.org](http://www.gapminder.org)
+
+# Results
+
+Results indicate the per capita GDP and life expectancy are related in a non-linear way.
+
+## Graph
+
+```{r}
+
+ggplot(gapminder,
+       aes(x = gdpPercap,
+           y = lifeExp,
+           color = continent)) +
+  geom_point() +
+  geom_smooth() +
+  labs(title = "Life Expectancy by GDP",
+       x = "GDP Per Capita",
+       y = "Life Expectancy",
+       caption = "Gapminder Data") +
+  scale_color_viridis_d() +
+  theme_minimal()
+
+ggsave("scatterplot.png",
+       last_plot() + theme(legend.position = "none"),
+       width = 3, 
+       height = 3)
+
+```
+
+
+## Table
+
+```{r}
+
+# pander(table(gapminder$continent),
+#        caption = "Data Points by Continent")
+
+pander(summary(gapminder$lifeExp),
+       caption = "Life Expectancy")
+
+pander(summary(gapminder$gdpPercap),
+       caption = "GDP Per Capita")
+
+```
+
+
+# Discussion
+
+*Per capita* GDP and life expectancy appear to be related. These findings may have implications for public health policy, for development policy, for intervention, and for advocacy.
+
+
+
