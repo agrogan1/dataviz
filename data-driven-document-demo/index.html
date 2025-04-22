@@ -134,30 +134,31 @@ window.Quarto = {
 <div>
 <p></p><figure class="figure"><p></p>
 <div>
-<pre class="mermaid mermaid-js">%%{
-  init: {
-    'theme': 'base',
-    'look': 'handDrawn',
-    'themeVariables': {
-      'primaryColor': '#FFCB05',
-      'primaryTextColor': '#000000',
-      'primaryBorderColor': '#00274C',
-      'lineColor': '#00274C',
-      'secondaryColor': '#00274C',
-      'secondaryTextColor': '#000000',
-      'tertiaryColor': '#F2F2F2',
-      'tertiaryBorderColor': '#00274C',
-      'nodeTextColor': '#FF0000'
-    }
-  }
-}%%
+<pre class="mermaid mermaid-js">flowchart LR
 
-flowchart LR
-  markdown --&gt; HTML
-  markdown --&gt; PDF
-  markdown --&gt; Word
-  markdown --&gt; epub
-  markdown --&gt; revealjs
+  %% node class definitions
+
+ classDef yellow fill:#FFC20E,stroke:#000000,stroke-width:2px,color:#000000;
+  
+ classDef blue fill:#374EA2,stroke:#000000,stroke-width:2px,color:#FFFFFF;
+  
+ classDef green fill:#00833D,stroke:#000000,stroke-width:2px,color:#FFFFFF;
+  
+ classDef orange fill:#D86018,stroke:#000000,stroke-width:2px,color:#FFFFFF;
+  
+ classDef red fill:#9A3324,stroke:#000000,stroke-width:2px,color:#FFFFFF;
+
+ classDef purple fill:#6A1E74,stroke:#000000,stroke-width:2px,color:#FFFFFF;
+ 
+ markdown:::red --&gt; HTML:::yellow
+ 
+ markdown --&gt; PDF:::green
+ 
+ markdown --&gt; Word:::blue
+ 
+ markdown --&gt; epub:::orange
+ 
+ markdown --&gt; revealjs:::purple
   
 </pre>
 </div>
