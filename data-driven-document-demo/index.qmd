@@ -20,33 +20,46 @@ These different document formats will be *rendered* using the most up to date da
 
 Quarto allows rapid updating of timely content into multiple output formats. 
 
+```{r}
+#| echo: false
+#| eval: false
+
+library(scales)
+
+viridis_pal()(6)
+
+show_col(viridis_pal()(6))
+
+```
+
 ```{mermaid}
+%%| fig-cap: "One Source; Many Outputs"
 
 flowchart LR
 
   %% node class definitions
 
- classDef yellow fill:#FFC20E,stroke:#000000,stroke-width:2px,color:#000000;
+ classDef yellow fill:#FDE725,stroke:#000000,stroke-width:2px,color:#000000;
   
- classDef blue fill:#374EA2,stroke:#000000,stroke-width:2px,color:#FFFFFF;
+ classDef blue fill:#2A788E,stroke:#000000,stroke-width:2px,color:#FFFFFF;
   
- classDef green fill:#00833D,stroke:#000000,stroke-width:2px,color:#FFFFFF;
+ classDef darkgreen fill:#22A884,stroke:#000000,stroke-width:2px,color:#000000;
   
- classDef orange fill:#D86018,stroke:#000000,stroke-width:2px,color:#FFFFFF;
-  
- classDef red fill:#9A3324,stroke:#000000,stroke-width:2px,color:#FFFFFF;
+ classDef lightgreen fill:#7AD151,stroke:#000000,stroke-width:2px,color:#000000;
 
- classDef purple fill:#6A1E74,stroke:#000000,stroke-width:2px,color:#FFFFFF;
+ classDef lightpurple fill:#414487,stroke:#000000,stroke-width:2px,color:#FFFFFF;
+
+ classDef purple fill:#440154,stroke:#000000,stroke-width:2px,color:#FFFFFF;
  
- markdown:::red --> HTML:::yellow
+ markdown:::purple --> HTML:::yellow
  
- markdown --> PDF:::green
+ markdown --> PDF:::lightgreen
  
- markdown --> Word:::blue
+ markdown --> Word:::darkgreen
  
- markdown --> epub:::orange
+ markdown --> epub:::blue
  
- markdown --> revealjs:::purple
+ markdown --> revealjs:::lightpurple
   
 ```
 
