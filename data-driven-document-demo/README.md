@@ -28,6 +28,10 @@ Quarto allows rapid updating of timely content into multiple output formats.
 
 flowchart LR
   markdown --> HTML
+  markdown --> PDF
+  markdown --> Word
+  markdown --> epub
+  markdown --> revealjs
 ```
 
 
