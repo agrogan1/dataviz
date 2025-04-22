@@ -8,7 +8,7 @@
 
 [Graphing Change Over Time](https://agrogan1.github.io/dataviz/graphing-change-over-time/graphing-change-over-time.html) [[PDF](https://agrogan1.github.io/dataviz/graphing-change-over-time/graphing-change-over-time.pdf)]
 
-[Data Driven Report Demo](./data-driven-report-demo/)
+[Data Driven Document Demo](./data-driven-document-demo/)
 
 [Introduction to Plotly](./plotly-intro/)
 
