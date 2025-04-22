@@ -8,6 +8,29 @@ These different document formats will be *rendered* using the most up to date da
 
 Quarto allows rapid updating of timely content into multiple output formats. 
 
+```mermaid
+%%{
+  init: {
+    'theme': 'base',
+    'look': 'handDrawn',
+    'themeVariables': {
+      'primaryColor': '#FFCB05',
+      'primaryTextColor': '#000000',
+      'primaryBorderColor': '#00274C',
+      'lineColor': '#00274C',
+      'secondaryColor': '#00274C',
+      'secondaryTextColor': '#000000',
+      'tertiaryColor': '#F2F2F2',
+      'tertiaryBorderColor': '#00274C'
+    }
+  }
+}%%
+
+flowchart LR
+  markdown --> HTML
+```
+
+
 An example data driven document can be found below.
 
 ## Output Examples
