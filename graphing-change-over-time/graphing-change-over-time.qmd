@@ -222,11 +222,15 @@ myslopegraph <- ggplot(data = newdata,
 
 ```
 
+{{< pagebreak >}}
+
 # Graphs
 
 ## Scatterplot
 
 We start in thinking about graphing change over time with a scatterplot.[^scatterplot] [^color]
+
+[^color]: Note that we are using *color* and *line type* to distinguish different individuals. This may not always be possible, especially when there are a large number of individuals in the data.
 
 ```{r}
 #| fig-cap: "scatterplot"
@@ -237,8 +241,6 @@ myscatterplot
 ```
 
 [^scatterplot]:  Scatterplots show every data point.  However, with many data points, scatterplots may become overcomplicated, and difficult to interpret.  Points may even be plotted over other data points.
-
-[^color]: Note that we are using *color* and *line type* to distinguish different individuals. This may not always be possible, especially when there are a large number of individuals in the data.
 
 ## Line Plot
 
