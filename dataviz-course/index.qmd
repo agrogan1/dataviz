@@ -1,26 +1,22 @@
 ---
 title: "Data Visualization (Dataviz) Course"
-description: |
-  <mark>SW 672</mark>
+subtitle: SW 672
 author:
   - name: Andy Grogan-Kaylor
-    url: https://www.umich.edu/~agrogan
+    url: https://agrogan1.github.io/
     affiliation: University of Michigan
     affiliation_url: https://www.umich.edu
-date: "`r Sys.Date()`"
-output: 
-  distill::distill_article:
-    highlight: haddock
-    toc: yes
+date: "today"
+format:
+  html: 
+    toc: true
+    number-sections: true
+    theme: yeti
+    lightbox: true
 ---
 
-```{r setup, include=FALSE}
-
-knitr::opts_chunk$set(echo = FALSE)
-
-```
-
 ```{r}
+#| echo: false
 
 knitr::include_graphics("images/banner.png")
 
@@ -30,13 +26,14 @@ knitr::include_graphics("images/banner.png")
 
 In an era of evidence based practice, community workers, advocates, and evaluators will likely find that they need to interpret and visualize data from a wide variety of sources. Understanding, interpreting and visualizing data (including some basic coding) can make the difference in successfully or unsuccessfully advocating for communities, clients or programs, and for understanding the impact of programs on clients. Increasingly, data relevant to community, participant and client well-being are available from a broad range of sources, whether those be databases of volunteers and donors, the Census, the World Bank, in addition to many others. <mark>This course will be focused on the acquisition of concrete applicable skills and strategies for interpreting and visualizing community data, including learning in R, Tableau and QGIS.</mark>
 
-<aside>
-```{r, fig.cap="Dataviz Examples"}
+```{r}
+#| column: margin
+#| fig-cap: "Dataviz Examples"
+#| echo: false
 
 knitr::include_graphics("images/banner-vv.png")
 
 ```
-</aside>
 
 > <span style="background-color: #00FFFF">This will be a challenging class. Some learning of basic in R will be involved in this course.</span>
 
@@ -48,19 +45,23 @@ knitr::include_graphics("images/banner-vv.png")
 4. Students will be able to produce various forms of standard graphs and data visualizations.
 5. Students will be able to produce various types of maps and visualizations of spatial data.
 
-<aside>
-```{r, eval=TRUE, fig.cap="Chart Ideas"}
+```{r}
+#| fig-cap: "Chart Ideas"
+#| column: margin
+#| echo: false
 
 knitr::include_graphics("images/chartgrid.png")
 
 ```
 
-```{r, fig.cap="Mapping Example"}
+```{r}
+#| fig-cap: "Mapping Example"
+#| column: margin
+#| echo: false
 
 knitr::include_graphics("images/cpbans.png")
 
 ```
-</aside>
 
 # Course Design
 
