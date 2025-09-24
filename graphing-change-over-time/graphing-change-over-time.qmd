@@ -142,8 +142,8 @@ p <- ggplot(data = mydata,
                 linetype = id)) + # basic plot structure 
   xlab("time") + ylab("outcome") + 
   theme_minimal() + 
-  scale_color_viridis_d() +
-  scale_fill_viridis_d() 
+  scale_color_viridis_d(option = "turbo") +
+  scale_fill_viridis_d(option = "turbo") 
 
 myscatterplot <- p + 
   geom_point(size = mypointsize) +
@@ -216,8 +216,8 @@ myslopegraph <- ggplot(data = newdata,
   scale_y_continuous(breaks=c(0, 1, 2, 3, 4, 5)) + 
   scale_x_continuous(breaks=c(1,5)) + 
   theme_minimal() + 
-  scale_color_viridis_d() +
-  scale_fill_viridis_d()
+  scale_color_viridis_d(option="turbo") +
+  scale_fill_viridis_d(option = "turbo")
 
 
 ```
