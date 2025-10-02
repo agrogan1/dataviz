@@ -1,10 +1,24 @@
-# markdown
+---
+title: "Markdown"
+author: "Andrew Grogan-Kaylor"
+date: "today"
+format:
+  html:
+    toc: false
+    number-sections: false
+    theme:
+      light: yeti
+      dark: vapor
+---      
 
 *markdown* is plain text that is *marked* with a set of very simple tags to produce formatted text.
 
 The basic idea is simple, as indicated below. More information about *markdown* can be found [here](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
 
-```
+```{r}
+#| echo: true
+#| eval: false
+
 # This is a first level heading
 ## This is a second level heading
 
@@ -15,6 +29,7 @@ This is normal text.
 **This text is bold.**
 
 `This text is in monospaced font, often used to represent code.`
+
 ```
 
 This text renders as follows:
