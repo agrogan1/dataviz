@@ -8,9 +8,7 @@ format:
     number-sections: true
     fig-height: 3
     lightbox: true
-    theme:
-      light: yeti
-      dark: vapor
+    theme: yeti
   pdf: 
     mainfont: "Arial"
     toc: true
@@ -131,7 +129,7 @@ save(mydata, file="graphing-change-over-time.RData")
 
 ```{r make_plots}
 
-mypointsize <- 2
+mypointsize <- 3
 
 mylinewidth <- 1 
 
@@ -150,7 +148,7 @@ myscatterplot <- p +
   ggtitle("scatterplot")
     
 mylineplot <- p + 
-  geom_line(linewidth=mylinewidth) + 
+  geom_line(linewidth = mylinewidth) + 
   ggtitle("line plot") 
   
 myspaghettiplot <- p + 
@@ -360,7 +358,7 @@ pander(mydata_wide)
 
 Generally, for graphing change over time, it is most appropriate to have data that are in a *long* format, as shown in @fig-long.  In *long* data every row represents a particular *measurement occasion* for a *particular individual*.  Each individual in the data set thus has *multiple rows*.  Ideally, every row in data in the *long* format is uniquely identified by the combination of an *id* number and a *study wave*.
 
-Data can be *reshaped* from *wide* to *long* format, and *vice versa*. Two straightforward options are the `reshape` command as available in [Stata](http://www.stata.com) and the `pivot_*()` commands available in [R](https://www.r-project.org/).
+Data can be *reshaped* from *wide* to *long* format, and *vice versa*. Two straightforward options are the `reshape` command as available in [Stata](http://www.stata.com) and the `pivot_*()` commands available in [R](https://www.r-project.org/) [`tidyr`](https://tidyr.tidyverse.org/index.html).
 
 Graphics made with `ggplot2` [@ggplot2].
 
