@@ -7,9 +7,8 @@ format:
     toc: true
     number-sections: true
     anchor-sections: true
-    theme:
-      light: cosmo
-      dark: vapor
+    theme: yeti
+    lightbox: true
     fig-height: 7
   pdf:
     include-in-header:
