@@ -36,6 +36,7 @@ This is an equation: $y = mx + b$
 This text renders as follows:
 
 # This is a first level heading
+
 ## This is a second level heading
 
 This is normal text.
