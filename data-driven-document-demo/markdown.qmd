@@ -6,9 +6,7 @@ format:
   html:
     toc: false
     number-sections: false
-    theme:
-      light: yeti
-      dark: vapor
+    theme: yeti
 ---      
 
 *markdown* is plain text that is *marked* with a set of very simple tags to produce formatted text.
@@ -20,6 +18,7 @@ The basic idea is simple, as indicated below. More information about *markdown* 
 #| eval: false
 
 # This is a first level heading
+
 ## This is a second level heading
 
 This is normal text.
@@ -30,6 +29,8 @@ This is normal text.
 
 `This text is in monospaced font, often used to represent code.`
 
+This is an equation: $y = mx + b$
+  
 ```
 
 This text renders as follows:
@@ -44,6 +45,8 @@ This is normal text.
 **This text is bold.**
 
 `This text is in monospaced font, often used to represent code.`
+
+This is an equation: $y = mx + b$
 
 
 
