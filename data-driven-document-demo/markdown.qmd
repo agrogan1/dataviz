@@ -9,7 +9,7 @@ format:
     theme: yeti
 ---      
 
-*markdown* is plain text that is *marked* with a set of very simple tags to produce formatted text.
+*markdown* is plain text that is designed to be easily readable by humans, and at the same time is *marked* with a set of very simple tags to produce formatted text.
 
 The basic idea is simple, as indicated below. More information about *markdown* can be found [here](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
 
