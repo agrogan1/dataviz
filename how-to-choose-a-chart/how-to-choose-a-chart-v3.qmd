@@ -1,43 +1,27 @@
 ---
 title: "How to Choose a Chart"
+subtitle: "A Statistically Motivated Guide"
 author: "Andy Grogan-Kaylor"
-date: '`r format(Sys.Date(), format="%B %d, %Y")`'
-output:
-  pdf_document: 
-    highlight: tango
-    latex_engine: xelatex
-    fig_height: 2
-  html_document:
-    code_folding: hide
-    highlight: haddock
-    toc: no
-    fig_height: 3
-always_allow_html: yes
-mainfont: Arial
-geometry: margin=0.75in
-subtitle: A Statistically Motivated Guide
-fontsize: 11pt
+date: "today"
+format:
+  html:
+    toc: true
+    number-sections: true
+    anchor-sections: true
+    theme: yeti
+    lightbox: true
+    fig-height: 3
+    code-fold: true
+    code-summary: "Show the code"
+  pdf:
+    include-in-header:
+      - text: | 
+          \usepackage[sfdefault]{roboto}
+    toc: false
+    number-sections: true
+    geometry: margin=1in
+    fig-height: 3
 ---
-
-```{r global_options, echo=FALSE}
-
-if(knitr::opts_knit$get("rmarkdown.pandoc.to") == "html") { 
-  
-  knitr::opts_chunk$set(echo = TRUE, 
-                        warning = FALSE, 
-                        message = FALSE)
-  
-}
-
-if(knitr::opts_knit$get("rmarkdown.pandoc.to") == "latex") { 
-
-  knitr::opts_chunk$set(echo = TRUE, 
-                        warning = FALSE, 
-                        message = FALSE)
-
-}
-
-```
 
 ```{r, call_libraries}
 
@@ -55,7 +39,9 @@ library(pander) # nice tables
 
 ```
 
-```{r, eval=TRUE, echo=FALSE}
+```{r}
+#| eval: true
+#| echo: false
 
 htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
@@ -95,24 +81,27 @@ Once we have discerned the type of variable that have, there are two followup qu
 
 Graphs should have clear titles and labels.
 
-```{r, echo=FALSE}
+```{r}
+#| echo: false
 
 library(ggbeeswarm) # beeswarm plots
+
+library(ggdist) # distribution plots
 
 x <- rnorm(100, 100, 10)
 
 ggplot(data = NULL,
        aes(x = x,
            y = 1,
-           color = x)) +
-  geom_beeswarm(groupOnX = FALSE) +
-  geom_label(aes(x = 115, 
-                 y = 1, 
-                 label = "possibly \ninformative \nkey takeaway"),
-             size = 2, 
-             color = "red") +
-  scale_colour_gradientn(colours=rainbow(7),
-                         name = "some other \npiece of \ninformation") +
+           fill = x,
+           group = 1)) +
+  geom_dots() + 
+  annotate("text", 
+           x = 115, 
+           y = 1.75, 
+           label = "possibly \ninformative \nkey takeaway",
+           color = "red") + 
+  scale_fill_viridis_c(name = "some other \npiece of \ninformation") +
   ylab(" ") +
   xlab("informative label goes here") +
   labs(title = "Informative Title",
@@ -199,7 +188,8 @@ ann_arbor_amethyst <- "#7207a5"
 
 # A Simulated Data File of Continuous and Categorical Data
 
-```{r simulate_data, echo = FALSE}
+```{r simulate_data}
+#| echo: false
 
 # simulated data
 
@@ -280,7 +270,8 @@ save(mydata,
 
 A few randomly selected observations...
 
-```{r, echo = FALSE}
+```{r}
+#| echo: false
 
 mysample <- mydata[sample(1:nrow(mydata), 10, replace=FALSE),]
 
@@ -288,7 +279,7 @@ pander(mysample) # nice table
 
 ```
 
-# One Thing At A Time \hspace{\stretch{1}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Two Things At A Time
+# One Thing At A Time \hspace{\stretch{1}} &nbsp; &nbsp; Two Things At A Time
 
 # Continuous \hspace{\stretch{1}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Continuous By Categorical
 
@@ -321,6 +312,8 @@ pander(mysample) # nice table
 <a id="histogram"></a>
 
 ```{r}
+#| warning: false
+#| message: false
 
 my_histogram <- ggplot(mydata, aes(x = x)) + 
   geom_histogram(fill = arboretum_blue) + 
