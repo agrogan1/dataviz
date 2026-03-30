@@ -3,15 +3,15 @@ title: "How to Choose a Chart"
 author: "Andy Grogan-Kaylor"
 date: '`r format(Sys.Date(), format="%B %d, %Y")`'
 output:
+  pdf_document: 
+    highlight: tango
+    latex_engine: xelatex
+    fig_height: 2
   html_document:
     code_folding: hide
     highlight: haddock
     toc: no
     fig_height: 3
-  pdf_document: 
-    highlight: tango
-    latex_engine: xelatex
-    fig_height: 2
 always_allow_html: yes
 mainfont: Arial
 geometry: margin=0.75in
