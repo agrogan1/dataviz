@@ -21,6 +21,7 @@ format:
     number-sections: true
     geometry: margin=1in
     fig-height: 3
+prefer-html: true
 ---
 
 ```{r, call_libraries}
@@ -43,7 +44,7 @@ library(pander) # nice tables
 #| eval: true
 #| echo: false
 
-htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+# htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ```
 
@@ -83,8 +84,6 @@ Graphs should have clear titles and labels.
 
 ```{r}
 #| echo: false
-
-library(ggbeeswarm) # beeswarm plots
 
 library(ggdist) # distribution plots
 
@@ -947,7 +946,9 @@ plot_grid(my_area, my_contour)
 
 ```
 
-```{r, eval=TRUE, echo=FALSE}
+```{r}
+#| eval: true
+#| echo: false
 
 chartgrid <- plot_grid(my_histogram + 
                          theme(title=element_text(size = 20)), 
