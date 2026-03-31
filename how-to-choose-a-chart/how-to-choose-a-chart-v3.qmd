@@ -25,6 +25,7 @@ prefer-html: true
 ---
 
 ```{r, call_libraries}
+#| message: false
 
 library(ggplot2) # beautiful graphs
 
@@ -48,7 +49,11 @@ library(pander) # nice tables
 
 ```
 
-```{r, eval = TRUE, echo = FALSE, fig.width = 7, fig.height = 2}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-width: 7
+#| fig-height: 2
 
 library(png)
 
@@ -105,7 +110,7 @@ ggplot(data = NULL,
   xlab("informative label goes here") +
   labs(title = "Informative Title",
        subtitle = "Maybe The Title Is Even Your Main Takeaway",
-       caption = "Words should be spelled out.  \nEvery extra 'dimension' (axes, color, shape) should convey information.") +
+       caption = "Words should be spelled out.  \nEvery extra 'dimension' (axes, color, shape, size) should convey information.") +
   theme_minimal() +
   theme(axis.text.x = element_blank(), 
         axis.ticks.x = element_blank(),
@@ -129,7 +134,14 @@ Note that ggplot2 can be MUCH simpler than these examples make it look.
 
 For example, 
 
-`ggplot(mydata, aes(x = x)) + geom_histogram()`
+```{r}
+#| echo: true
+#| eval: false
+#| code-fold: false
+
+ggplot(mydata, aes(x = x)) + geom_histogram()
+
+```
 
 will produce a perfectly serviceable histogram.
 
@@ -138,13 +150,28 @@ Much of the complication of the code in this document is simply the result of fo
 Observe also, that for layout purposes, I am reading each ggplot call
 into an object, e.g.
 
-`p1 <- ggplot(mydata, aes(x = x)) + geom_histogram()`
+```{r}
+#| echo: true
+#| eval: false
+#| code-fold: false
+
+p1 <- ggplot(mydata, aes(x = x)) + 
+  geom_histogram()
+
+```
 
 so that I can later use `plot_grid` to lay out the graphs.
 
 In your own work, you do not need to do this, and it may be simpler to simply say:
 
-`ggplot(...) + ...`
+```{r}
+#| echo: true
+#| eval: false
+#| code-fold: false
+
+ggplot(...) + ...
+
+```
 
 <a id="colors"></a>
 
