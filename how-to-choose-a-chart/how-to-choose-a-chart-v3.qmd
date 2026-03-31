@@ -22,6 +22,11 @@ format:
     geometry: margin=1in
     fig-height: 3
 prefer-html: true
+bibliography: how-to-choose-a-chart-v3.bib
+csl: apa.csl
+execute: 
+  message: false
+  warning: false
 ---
 
 ```{r, call_libraries}
@@ -89,6 +94,8 @@ Graphs should have clear titles and labels.
 
 ```{r}
 #| echo: false
+#| message: false
+#| warning: false
 
 library(ggdist) # distribution plots
 
@@ -101,7 +108,7 @@ ggplot(data = NULL,
            group = 1)) +
   geom_dots() + 
   annotate("text", 
-           x = 115, 
+           x = 80, 
            y = 1.75, 
            label = "possibly \ninformative \nkey takeaway",
            color = "red") + 
@@ -126,7 +133,7 @@ ggplot(data = NULL,
 
 The principles of graphing discussed in this document transcend any particular software package, and could be implemented in many different software packages, such as SPSS, SAS, Stata, or R.
 
-The graphs in these particular examples use [ggplot2](http://ggplot2.org/), a graphing library in R. `ggplot2` graph syntax can be formidably complex, with a steep learning curve. More information about ggplot can be found [here](https://agrogan1.github.io/R/introduction-to-ggplot2/introduction-to-ggplot2.html).
+The graphs in these particular examples use [ggplot2](http://ggplot2.org/) [@ggplot2], a graphing library in R. `ggplot2` graph syntax can be formidably complex, with a steep learning curve. More information about ggplot can be found [here](https://agrogan1.github.io/R/introduction-to-ggplot2/introduction-to-ggplot2.html).
 
 ## A Note About The Code In This Document
 
@@ -290,7 +297,7 @@ mydata <- data.frame(x, y, z, u, v, w, s, q)
 # save data to file
 
 save(mydata, 
-     file="how to choose a chart v3.RData")
+     file="how-to-choose-a-chart-v3.RData")
 
 ```
 
@@ -307,7 +314,7 @@ pander(mysample) # nice table
 
 # One Thing At A Time \hspace{\stretch{1}} &nbsp; &nbsp; Two Things At A Time
 
-# Continuous \hspace{\stretch{1}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Continuous By Categorical
+# Continuous \hspace{\stretch{1}} &nbsp; &nbsp; Continuous By Categorical
 
 ```{r, eval=FALSE, echo=FALSE}
 
@@ -317,9 +324,9 @@ pander(mysample) # nice table
 
 # HTML
 
-# One Thing At A Time &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Two Things At A Time
+# One Thing At A Time &nbsp; &nbsp;  Two Things At A Time
 
-# Continuous &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Continuous By Categorical
+# Continuous &nbsp; &nbsp;  &nbsp; Continuous By Categorical
 
 # PDF
 
@@ -362,6 +369,8 @@ plot_grid(my_histogram, my_facet_histogram, ncol=2)
 <a id="density"></a>
 
 ```{r}
+#| message: false
+#| warning: false
 
 my_density <- ggplot(mydata, aes(x = y)) + 
   geom_density(fill = michigan_maize) + 
@@ -384,6 +393,8 @@ plot_grid(my_density, my_facet_density, ncol = 2)
 <a id="barchart_of_mean"></a>
 
 ```{r}
+#| message: false
+#| warning: false
 
 my_m_barchart <- ggplot(mydata, 
                         aes(x = 1, 
@@ -392,7 +403,7 @@ my_m_barchart <- ggplot(mydata,
   stat_summary(fun = mean, geom = "bar") +
   scale_fill_manual(values = c(arboretum_blue)) + 
   ggtitle("barchart of mean") + 
-  guides(fill=FALSE) +
+  guides(fill="none") +
   xlab(" ") + 
   ylab("mean of continuous") + 
   theme_minimal() +
@@ -409,7 +420,7 @@ my_facet_m_barchart <- ggplot(mydata,
                                michigan_blue,
                                michigan_maize)) + 
   ggtitle("barchart of mean \nby group") + 
-  guides(fill=FALSE) +
+  guides(fill="none") +
   xlab("categorical") + ylab("mean of continuous") + 
   theme_minimal()
 
@@ -420,6 +431,8 @@ plot_grid(my_m_barchart,
 ```
 
 ```{r}
+#| message: false
+#| warning: false
 
 my_horiz_m_barchart <- ggplot(mydata, 
                               aes(x = 1, 
@@ -463,6 +476,8 @@ plot_grid(my_horiz_m_barchart,
 <a id="dotchart_of_mean"></a>
 
 ```{r}
+#| message: false
+#| warning: false
 
 my_horiz_m_dotchart <- ggplot(mydata, 
                               aes(x = 1, 
@@ -509,6 +524,8 @@ plot_grid(my_horiz_m_dotchart,
 <a id="lollipop_chart_of_mean"></a>
 
 ```{r}
+#| message: false
+#| warning: false
 
 my_horiz_m_lollipop_chart <- ggplot(mydata, 
                                     aes(x = 1, 
@@ -564,6 +581,8 @@ plot_grid(my_horiz_m_lollipop_chart,
 <a id="linechart_of_mean"></a>
 
 ```{r}
+#| message: false
+#| warning: false
 
 my_m_linechart <- ggplot(mydata, 
                          aes(x = factor(s), 
@@ -601,6 +620,8 @@ plot_grid(my_m_linechart, my_facet_m_linechart)
 <a id="violin_plot"></a>
 
 ```{r}
+#| message: false
+#| warning: false
 
 my_violin <- ggplot(mydata, 
                     aes(x = 1, 
@@ -633,12 +654,13 @@ plot_grid(my_violin, my_facet_violin, ncol = 2)
 <a id="boxplot"></a>
 
 ```{r}
+#| message: false
+#| warning: false
 
 my_boxplot <- ggplot(mydata, 
                      aes(x = 2, 
                          y = y)) + 
   geom_boxplot(colour=tappan_red) + 
-  scale_x_discrete(limit = c(0,1,2)) +
   ggtitle("boxplot") + 
   xlab(" ") + 
   ylab("continuous") + 
@@ -659,44 +681,13 @@ plot_grid(my_boxplot, my_conditional_boxplot, ncol = 2)
 
 ```
 
-<a id="beeswarm"></a>
 
-```{r}
-
-library(ggbeeswarm) # beeswarm geometry
-
-my_beeswarm <- ggplot(mydata, 
-                      aes(x = y, 
-                          y = 1)) + 
-  geom_beeswarm(colour = ann_arbor_amethyst, 
-                groupOnX = FALSE) + 
-  ggtitle("beeswarm plot") + 
-  xlab("continuous") + 
-  ylab("") + 
-  theme_minimal() +
-  theme(axis.text=element_text(size = 5), 
-        axis.text.y = element_blank()) 
-
-my_facet_beeswarm <- ggplot(mydata, 
-                            aes(x = y, 
-                                y = 1)) + 
-  geom_beeswarm(colour = ann_arbor_amethyst, 
-                groupOnX = FALSE) + 
-  facet_wrap(~w, nrow = 2) +
-  ggtitle("beeswarm plot \nby group") + 
-  xlab("continuous") + 
-  ylab("") + 
-  theme_minimal() +
-  theme(axis.text.x = element_text(size = 5),
-        axis.text.y = element_blank()) 
-
-plot_grid(my_beeswarm, my_facet_beeswarm)
-
-```
 
 <a id="dotplot"></a>
 
 ```{r}
+#| message: false
+#| warning: false
 
 library(ggdist) # 'distribution' geometries
 
@@ -722,17 +713,17 @@ plot_grid(my_dotplot, my_facet_dotplot, ncol = 2)
 
 ```
 
-# One Thing At A Time \hspace{\stretch{1}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Two Things At A Time
+# One Thing At A Time \hspace{\stretch{1}} &nbsp; &nbsp; Two Things At A Time
 
-# Categorical \hspace{\stretch{1}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Categorical By Categorical
+# Categorical \hspace{\stretch{1}} &nbsp; &nbsp; Categorical By Categorical
 
 ```{r, eval=FALSE, echo=FALSE}
 
 #HTML
 
-# One Thing At A Time &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Two Things At A Time
+# One Thing At A Time &nbsp; &nbsp;  Two Things At A Time
 
-# Categorical &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Categorical By Categorical
+# Categorical &nbsp; &nbsp;  &nbsp; Categorical By Categorical
 
 # PDF
 
@@ -745,6 +736,8 @@ plot_grid(my_dotplot, my_facet_dotplot, ncol = 2)
 <a id="barchart"></a>
 
 ```{r}
+#| message: false
+#| warning: false
 
 my_barchart <- ggplot(mydata, 
                       aes(s, 
@@ -781,6 +774,8 @@ plot_grid(my_barchart, my_facet_barchart, ncol = 2)
 
 
 ```{r}
+#| message: false
+#| warning: false
 
 my_horiz_barchat <- ggplot(mydata, aes(s, fill = s)) + 
   geom_bar(width = 1.0) + 
@@ -816,6 +811,8 @@ plot_grid(my_horiz_barchat, my_horiz_facet_barchart, ncol = 2)
 
 
 ```{r}
+#| message: false
+#| warning: false
 
 my_pie <- ggplot(mydata, aes(x = 1, fill = v)) + 
   geom_bar(width = 1) + 
@@ -849,6 +846,8 @@ plot_grid(my_pie, my_facet_pie, ncol = 2)
 
 
 ```{r}
+#| message: false
+#| warning: false
 
 my_doughnut <- ggplot(mydata, aes(x = 2, fill = v)) + 
   geom_bar() + 
@@ -886,6 +885,8 @@ plot_grid(my_doughnut, my_facet_doughnut, ncol = 2)
 # Continuous by Continuous
 
 ```{r}
+#| message: false
+#| warning: false
 
 my_scatterplot <- ggplot(mydata, aes(x=x, y=y)) + 
   geom_point(colour = ann_arbor_amethyst) + 
@@ -913,6 +914,8 @@ plot_grid(my_scatterplot, my_scatterplot_smoother)
 ```
 
 ```{r}
+#| message: false
+#| warning: false
 
 my_hexagon <- ggplot(mydata, aes(x=x, y=y)) + 
   geom_hex() + 
@@ -945,9 +948,12 @@ plot_grid(my_hexagon, my_smoother)
 
 
 ```{r}
+#| message: false
+#| warning: false
 
 my_area <- ggplot(mydata, aes(x=x, y=y)) + 
-  geom_area(position = "stack", fill = ross_school_orange) +
+  stat_smooth(geom = "area",
+              fill = ross_school_orange) + 
   ggtitle("area plot") + 
   xlab("continuous") + 
   ylab("continuous") + 
@@ -957,7 +963,7 @@ my_area <- ggplot(mydata, aes(x=x, y=y)) +
   theme(axis.ticks = element_blank())
 
 my_contour <- ggplot(mydata, aes(x=x, y=y)) + 
-  stat_density_2d(aes(fill = ..level..), 
+  stat_density_2d(aes(fill = after_stat(level)), 
                   geom = "polygon") + 
   ggtitle("contour plot") + 
   xlab("continuous") + 
@@ -1058,18 +1064,18 @@ save_plot("s.png",
             theme(title = element_text(size = 20)),
           base_height = 4)
 
-
-
 ```
 
 
-Graphics made with the [ggplot2](http://ggplot2.org/) graphing library created by Hadley Wickham.
+Graphics made with the ggplot2 [@ggplot2] graphing library created by Hadley Wickham.
 
 Available online at [https://agrogan1.github.io/](https://agrogan1.github.io/)
 
-*How to Choose a Chart* by Andrew Grogan-Kaylor is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).  You are welcome to download and use this handout in your own classes, or work, as long as the handout remains properly attributed.
+*How to Choose a Chart* by Andrew Grogan-Kaylor is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). You are welcome to download and use this handout in your own classes, or work, as long as the handout remains properly attributed.
 
-Last updated: ```r format(Sys.Date(),"%B %d %Y")```  at ```r format(Sys.time(),"%H:%M")```
+
+
+
 
 
 
