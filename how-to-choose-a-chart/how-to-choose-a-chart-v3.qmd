@@ -226,6 +226,8 @@ ann_arbor_amethyst <- "#7207a5"
 
 # simulated data
 
+set.seed(1234) # random seed for reproducibility
+
 N <- 1000 # set sample size 
 
 # categorical variables
