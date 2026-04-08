@@ -54,21 +54,7 @@ library(pander) # nice tables
 
 ```
 
-```{r}
-#| eval: true
-#| echo: false
-#| fig-width: 7
-#| fig-height: 2
-
-library(png)
-
-library(grid)
-
-banner <- readPNG("banner.png")
-
-grid.raster(banner)
-
-```
+![](banner.png)
 
 # How to Choose a Chart
 
