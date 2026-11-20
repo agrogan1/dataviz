@@ -26,7 +26,7 @@ In an era of evidence based practice, community workers, advocates, and evaluato
 :::
 
 ::: {.callout-important}
-This will be a challenging class. Some learning of basic in R will be involved in this course.
+This will be a challenging class. Some learning of basic coding in R will be involved in this course.
 :::
 
 # Course Objectives
