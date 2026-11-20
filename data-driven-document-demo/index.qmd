@@ -1,5 +1,6 @@
 ---
 title: "Data Driven Documents"
+subtitle: "The idea of *literate programming* allows one to mix code and text, to produce complex documents combining text, tables of results and visualizations."
 author:
   - name: Andy Grogan-Kaylor
     url: https://agrogan1.github.io/
