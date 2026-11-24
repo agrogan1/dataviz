@@ -2,5 +2,14 @@ figcaption {
   color: red;
 }
 
+h1.title, .reveal p.date, .reveal p.subtitle {
+  background-color: yellow;
+}
 
+.reveal .slide-number a {
+  color: red;
+}
 
+.reveal .progress {
+  color: red;
+}

@@ -1,5 +1,5 @@
 ---
-title: "<mark>Variables & Visualization</mark>"
+title: "Variables & Visualization"
 author: "<mark>Andy Grogan-Kaylor</mark>"
 date: "today"
 format:
@@ -21,7 +21,7 @@ format:
     chalkboard: true
     view-distance: 10
     mobile-view-distance: 10
-subtitle: "<mark>What Is The Story You Are Trying To Tell?</mark>"
+subtitle: "What Is The Story You Are Trying To Tell?"
 bibliography: variables-and-visualization.bib
 csl: apa.csl
 ---
@@ -207,21 +207,25 @@ z <- factor(z,
 
 ```{r}
 #| eval: TRUE
+#| fig-height: 5
+#| fig-cap: "a data visualization strategy"
 
 ggplot(data = NULL,
        aes(x = x)) +
   stat_dots(aes(fill = z), position = "dodge", alpha = 1.0) +
-  geom_label(aes(x=125, y=.2), label="Key \nTakeaway") +
+  geom_label(aes(x = 125, y = .2), label="Key \nTakeaway") +
   scale_fill_manual(name = "some other \npiece of \ninformation", 
                     values = c("darkblue", "gold")) +
-  ylab("possibly another dimension of the data") +
+  ylab("possibly another \ndimension of the data") +
   xlab("one dimension of the data") +
   labs(title = "Informative Title",
        subtitle = "Maybe The Title Is Even Your Main Takeaway",
        caption = "Every extra 'dimension' (x axis, y axis, color, shape) \n can convey an extra piece of information. \n Words should be spelled out.") + 
   theme_minimal() +
   theme(title = element_text(size = rel(1.25)),
-        axis.text.y = element_blank())
+        plot.caption = element_text(size = rel(1.25)),
+        axis.text.y = element_blank()) +
+  guides(fill = guide_legend(override.aes = list(size = 5)))
 
 ```
 
