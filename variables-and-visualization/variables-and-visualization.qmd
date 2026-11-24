@@ -1,40 +1,36 @@
 ---
 title: "<mark>Variables & Visualization</mark>"
 author: "<mark>Andy Grogan-Kaylor</mark>"
-date: '<mark>`r Sys.Date()`</mark>'
-output:
-  slidy_presentation:
-    fig_caption: yes
-    fig_height: 4
-    highlight: haddock
-    slide_level: 2
-    incremental: true
-  pdf_document:
-    fig_height: 3
-    highlight: haddock
-    latex_engine: xelatex
-    number_sections: yes
-    toc: yes
-subtitle: <mark>What Is The Story You Are Trying To Tell?</mark>
-mainfont: Arial
+date: "today"
+format:
+  revealjs: 
+    theme: [default, theme.scss]
+    css: variables-and-visualization.css
+    title-slide-attributes:
+      data-background-image: "iceland-1500x844.png"
+    fig-height: 4
+    slide-level: 2
+    lightbox: true
+    scrollable: true
+    controls: true
+    controls-tutorial: true
+    slide-number: true
+    progress: true
+    transition: convex
+    transition-speed: slow
+    chalkboard: true
+    view-distance: 10
+    mobile-view-distance: 10
+subtitle: "<mark>What Is The Story You Are Trying To Tell?</mark>"
+bibliography: variables-and-visualization.bib
+csl: apa.csl
 ---
 
 ```{r setup, include=FALSE}
 
-# invalidate cache when the tufte version changes
-
-knitr::opts_chunk$set(tidy = FALSE, 
-                      echo = FALSE,
-                      message = FALSE,
-                      warning = FALSE,
-                      fig.margin = TRUE,
-                      cache.extra = packageVersion('tufte'))
-
-options(htmltools.dir.version = FALSE)
-
 options(scipen = 999)
 
-library(tufte)
+# library(tufte)
 
 library(png) # png
 
@@ -70,6 +66,8 @@ library(choroplethrMaps) # map data
 
 ```{r}
 
+set.seed(3846)
+
 N <- 100
 
 age <- rnorm(N, 40, 10)
@@ -97,45 +95,11 @@ mydata <- data.frame(age, mental_health, group, neighborhood)
 
 ```
 
-
-```{css, echo=FALSE}
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-h1, h2, h3 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: normal;
-}
-body { 
-  font-family: 'Montserrat', sans-serif;
-}
-.slide.titlepage {
-  font-size: 100%;
-  font-weight: bold;
-  background-color: #00274C; 
-  background-image: url("iceland-1500x844.png");
-  background-size: cover;
-}
-blockquote {
-  background: #FFFFFF;
-  color: #000;
-  border-left: 5px solid #ffcb05;
-  margin: 1.5em 10px;
-  padding: 0.5em 10px;
-}
-#majorsection {
-   color: white;
-   background-position: center;
-   background-color: #00274C;
-   text-align: center;
-   font-size: 200%;
-}
-
-```
-
-
 # Possibilities
 
-```{r, eval = TRUE, fig.margin=FALSE, fig.cap="possible visualizations"}
+```{r}
+#| eval: true
+#| fig-cap: "possible visualizations"
 
 img <- readPNG("banner.png")
 
@@ -143,33 +107,27 @@ grid.raster(img)
 
 ```
 
-> As you move forward through this presentation you can press `b` to make text bigger, or `s` to make text smaller.
-
 # Background
 
+::: {.incremental}
 * Deciding upon the right data visualization to represent your data can be a daunting process.
 * I believe that a *starting point* for this thinking is some basic statistical thinking about the *type* of variables that you have. 
 * At the broadest level, variables may be conceptualized as *categorical* variables, or *continuous* variables.
+:::
 
 # Data Often Come From A Survey Questionnaire.
 
-```{r, eval = TRUE, fig.margin=TRUE, fig.height=3, fig.cap="hypothetical questionnaire"}
+![hypothetical questionnaire](questionnaire.png)
 
-img <- readPNG("questionnaire.png")
+# What is Data? {.smaller}
 
-grid.raster(img)
+A data set is nothing more than a series of rows and columns that contain answers to responses to a survey.
 
-```
-
-# What is Data? 
-
-A data set is nothing more than a series of rows and columns that contain
-answers to responses to a survey.
-
+::: {.incremental}
 * Rows are usually used for individuals, while columns indicate the
 questionnaire answers, or measures, from those people.
-* Answers to questions are often given numerical responses (e.g. "no"
-is frequently coded as "0" and "yes" is frequently coded as "1")
+* Answers to questions are often given numerical responses (e.g. "no" is frequently coded as "0" and "yes" is frequently coded as "1")
+:::
 
 ```{r}
 
@@ -190,40 +148,48 @@ pander(sample_dataset,
 
 ```
 
-\newpage
+## Some Notes on Data {.smaller}
 
-## Some Notes on Data
-
+::: {.incremental}
 * In working through our research questions, we'll constantly be going back and forth between the actual data (to see the pattern of responses) and the documentation, to figure out the actual question asked as well as how the different responses are coded.
 * Often in a spreadsheet, you'll see the full text of a question written out (e.g. "What is your gender identity"?)
 * Most programs that work with data are going to want abbreviations (e.g. "Q1" or "gender"") for the questions. These abbreviations should usually have no spaces and be 8 characters or less.
+:::
 
-## Missing Data
+## Missing Data {.smaller}
 
+::: {.incremental}
 * One cell of the sample data set has a negative number.
 * Frequently negative numbers are used to indicate what are called "missing values". A missing value is a response like "don't know"" or "refused to answer" or "did not answer". 
 * Before we start doing calculations with our data, we'll want to change negative numbers to true missing values (usually symbolized by a "." or "NA", so that they don't goof up our calculations.)
+:::
 
 # What are Variables?
 
+::: {.incremental}
 * By variables, I simply mean the columns of data that you have.
 * For our purposes, you may think of variables as synonymous with questionnaire items, or columns of data.
+:::
 
 ## Variable Types
 
+::: {.incremental}
 * *categorical variables* represent unordered categories like *neighborhood*, or *religious affiliation*, or *place of residence*.
 * *continuous variables* represent a continuous scale like a *mental health scale*, or a *measure of life expectancy*.
+:::
 
-# A Data Visualization Strategy
+# A Data Visualization Strategy {.smaller}
 
 Once we have discerned the type of variable that have, there are two followup questions we may ask before deciding upon a chart strategy:
 
+::: {.incremental}
 * Is our graph about **one thing at a time**?
      + How much of *x* is there? 
      + What is the distribution of *x*?
 * Is our graph about **two things at a time**?
      + What is the relationship of *x* and *y*?
      + How are *x* and *y* associated?
+:::
 
 ## More On Strategy
 
@@ -239,7 +205,8 @@ z <- factor(z,
 
 ```
 
-```{r, eval=TRUE, fig.margin = TRUE, fig.fullwidth = FALSE}
+```{r}
+#| eval: TRUE
 
 ggplot(data = NULL,
        aes(x = x)) +
@@ -251,19 +218,20 @@ ggplot(data = NULL,
   xlab("one dimension of the data") +
   labs(title = "Informative Title",
        subtitle = "Maybe The Title Is Even Your Main Takeaway",
-       caption = "Every extra 'dimension' (x axis, y axis, color, shape) 
-       can convey an extra piece of information.
-       \n Words should be spelled out.") + 
+       caption = "Every extra 'dimension' (x axis, y axis, color, shape) \n can convey an extra piece of information. \n Words should be spelled out.") + 
   theme_minimal() +
-  theme(axis.text.y = element_blank())
+  theme(title = element_text(size = rel(1.25)),
+        axis.text.y = element_blank())
 
 ```
 
-# Simulated Data
+# Simulated Data {.smaller}
 
 This example uses simulated data on social work clients, of the kind that a social service agency might collect.
 
-```{r, fig.margin=TRUE, eval=FALSE, fig.cap="Descriptive Statistics"}
+```{r}
+#| eval: FALSE
+#| fig-cap: "descriptive statistics"
 
 pander(describe(mydata, 
                 skew = FALSE,
@@ -272,24 +240,27 @@ pander(describe(mydata,
 
 ```
 
-```{r, eval=TRUE, fig.cap="First Few Lines of Data File"}
+```{r}
+#| eval: TRUE
+#| fig-cap: "first few lines of data"
 
 # head(mydata)
 
-pander(head(mydata, 5),
+pander(head(mydata, 3),
        caption = "Simulated Data")
 
 ```
 
-# Show One Thing At A Time {#majorsection}
+# Show One Thing At A Time 
 
 We start by visualizing one indicator at a time.
 
-## Continuous Variable
+## Continuous Variable {.smaller}
 
 Sometimes the most interesting visualizations, are visualizations that give us a sense of the maximum, minimum, and average values.  For example, the *histogram* and *dotplot* display information on *age*.
 
-```{r, fig.cap="Histogram and Dotplot"}
+```{r}
+#| fig-cap: "histogram and dotplot"
 
 p1 <- ggplot(mydata, 
              aes(x = age)) +
@@ -318,11 +289,12 @@ plot_grid(p1a, p1b)
 ```
 
 
-## Categorical Variable
+## Categorical Variable {.smaller}
 
 We would use a slightly different visualization, for example, a barchart, when our data are grouped into categories.
 
-```{r, fig.cap="Barchart"}
+```{r}
+#| fig-cap: "barchart"
 
 p2 <- ggplot(mydata,
              aes(x = neighborhood,
@@ -338,15 +310,16 @@ p2
 
 ```
 
-# Show The Relationship Of Two Things {#majorsection}
+# Show The Relationship Of Two Things 
 
 Our task becomes somewhat more complicated when we want to understand the relationship of *one thing* to *another thing.*
 
-## Categorical by Categorical
+## Categorical by Categorical {.smaller}
 
 Here, for example, we visualize two *categorical* variables, *neighborhood*, by *group*. In this graph, the height of the bars represents the *count* of observations.
 
-```{r, fig.cap="Barchart"}
+```{r}
+#| fig-cap: "barchart"
 
 p3 <- ggplot(mydata,
              aes(x = neighborhood, 
@@ -366,11 +339,12 @@ p3
 
 ```
 
-## Continuous by Continuous
+## Continuous by Continuous {.smaller}
 
 Here, we visualize two *continuous* variables, *mental health*, by *age*. 
 
-```{r, fig.cap="Scatterplot"}
+```{r}
+#| fig-cap: "scatterplot"
 
 p4 <- ggplot(mydata,
              aes(x = age, y = mental_health)) + 
@@ -384,11 +358,12 @@ p4
 
 ```
 
-## Continuous by Categorical
+## Continuous by Categorical {.smaller}
 
 Last, we visualize a *continuous* variable by a categorical variable, *mental health*, by *group*. In this graph, the height of the bars represents the *mean score*.
 
-```{r, fig.cap="BarChart"}
+```{r}
+#| fig-cap: "barchart"
 
 p5 <- ggplot(mydata,
              aes(x = group,
@@ -407,19 +382,14 @@ p5
 
 ```
 
-```{r, eval = FALSE}
-
-# Show a process
-
-```
-
-# Show Where Something Is {#majorsection}
+# Show Where Something Is 
 
 Sometimes our task is different. We want to visualize information, but add information on spatial location, using a map.
 
-## Map
+## Map {.smaller}
 
-```{r, fig.cap="Map", fig.height=4}
+```{r}
+#| fig-cap: "map"
 
 world <- map_data("world")
 
@@ -438,7 +408,8 @@ mymap <- ggplot() +
                                  fill = myfill),
                color = "grey") + 
   labs(title = "Location of Agency Clients") +
-  scale_fill_manual(values = c("gold",
+  scale_fill_manual(name = "locations",
+                    values = c("gold",
                                "darkblue")) +
   theme_minimal()  + 
   coord_fixed(1.3) 
@@ -449,10 +420,10 @@ mymap
 
 # Credits 
 
-Graphics made with the [ggplot2](http://ggplot2.org/) graphing library created by Hadley Wickham.
-
+Graphics made with the ggplot2 [@ggplot] graphing library created by Hadley Wickham.
 
 ```{r make_banner}
+#| output: false
 
 banner <- plot_grid(p1b + 
                       theme(plot.title=element_text(size = 20)), 
@@ -475,7 +446,7 @@ save_plot("banner.png",
 
 ```
 
-
+# References
 
 
 
