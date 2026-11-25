@@ -21,6 +21,11 @@ format:
     chalkboard: true
     view-distance: 10
     mobile-view-distance: 10
+  typst:
+    toc: true
+    number-sections: true
+    echo: false
+    message: false
 subtitle: "What Is The Story You Are Trying To Tell?"
 bibliography: variables-and-visualization.bib
 csl: apa.csl
@@ -350,7 +355,7 @@ p3
 Here, we visualize two *continuous* variables, *mental health*, by *age*. 
 
 ```{r}
-#| fig-cap: "scatterplot"
+#| fig-cap: "scatterplot of mental health by age"
 
 p4 <- ggplot(mydata,
              aes(x = age, y = mental_health)) + 
@@ -395,7 +400,7 @@ Sometimes our task is different. We want to visualize information, but add infor
 ## Map {.smaller}
 
 ```{r}
-#| fig-cap: "map"
+#| fig-cap: "map of client locations"
 
 world <- map_data("world")
 
@@ -433,9 +438,6 @@ mymap
     + Understanding *how many dimensions of the data* we are trying include in a single visualization.
 :::
 
-# Credits 
-
-Graphics made with the ggplot2 [@ggplot] graphing library created by Hadley Wickham.
 
 ```{r make_banner}
 #| output: false
@@ -463,6 +465,9 @@ save_plot("banner.png",
 
 # References
 
+::: {.callout-note}
+Visualizations were made with the ggplot2 [@ggplot] graphing library created by Hadley Wickham.
+:::
 
 
 
