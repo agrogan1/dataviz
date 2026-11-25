@@ -180,7 +180,7 @@ pander(sample_dataset,
 
 # A Data Visualization Strategy {.smaller}
 
-Once we have discerned the type of variable that have, there are two followup questions we may ask before deciding upon a chart strategy:
+Once we have discerned the *type of variable* that we have, there are some follow-up questions that we should ask before deciding upon a chart strategy. These questions have to do with the number of *dimensions* of our data that we are trying to visualize. Usually, we are trying to visualize only 1 or 2 dimensions of the data:
 
 ::: {.incremental}
 * Is our graph about **one thing at a time**?
@@ -421,6 +421,10 @@ mymap <- ggplot() +
 mymap
 
 ```
+
+# Conclusion
+
+Data visualization can become complicated. However, *good basic data visualization* begins with understanding *the nature of our variables*, as well as understanding *how many dimensions of the data* we are trying include in a single visualization.
 
 # Credits 
 
